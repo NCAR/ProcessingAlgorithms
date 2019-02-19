@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -44,6 +44,8 @@ hanging
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -86,6 +88,7 @@ hanging
 \suppress_date true
 \justification true
 \use_refstyle 0
+\use_minted 0
 \backgroundcolor #ffffff
 \index Index
 \shortcut idx
@@ -111,7 +114,10 @@ hanging
 \tocdepth 2
 \paragraph_separation skip
 \defskip medskip
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
@@ -153,7 +159,7 @@ centerline{
 
 \end_inset
 
-version: November 2017
+version: February 2019
 \begin_inset ERT
 status open
 
@@ -216,11 +222,29 @@ Current PDF version of this document:
 \begin_inset CommandInset href
 LatexCommand href
 name "Processing Algorithms"
-target "http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf"
+target "https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/ProcessingAlgorithms.pdf"
+literal "false"
 
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vskip1in
+\end_layout
+
+\end_inset
+
+Download this to a browser or pdf viewer for functional URL links.
 \end_layout
 
 \begin_layout Standard
@@ -543,6 +567,8 @@ status collapsed
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "idx"
+name "Index"
+literal "true"
 
 \end_inset
 
@@ -573,6 +599,8 @@ variable names!table of
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "var"
+name "Variable Names"
+literal "true"
 
 \end_inset
 
@@ -3228,7 +3256,29 @@ It is sometimes easiest to edit the PDF file directly.
  For this purpose, I found master-pdf-editor useful.
  This will lose continuity, however, because then the links can't be re-generate
 d by running LyX.
- 
+\end_layout
+
+\begin_layout Enumerate
+As of Feb 2019, manylinks formerly to google-drive addresses or eol system
+ files have been changed to https://github.com/NCAR/aircraft_ProcessingAlgorithms
+ links.
+ In that directory there is a file ('links') with a list of all the links
+ in the document.
+ It is worthwhile when updating this document to check that all the links
+ remain current.
+ One way is to use these R statements: 
+\begin_inset Newline newline
+\end_inset
+
+links <- readlines('./links'); EURL <- rep(FALSE, length(links));
+\begin_inset Newline newline
+\end_inset
+
+for (i in 1:length(links)) {EURL[i] <- RCurl::url.exists(links[i])}
+\begin_inset Newline newline
+\end_inset
+
+## and then check EURL to see that the links are all found.
 \end_layout
 
 \begin_layout Section*
@@ -3436,93 +3486,108 @@ hypertarget but displace the reference upward one line.) In addition, when
 \end_layout
 
 \begin_layout Section*
+\begin_inset Note Note
+status open
+
+\begin_layout Section*
 List of Web Links in this Document:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
-The links at the top, to Google Drive locations, should be changed once
- the linked files are moved to EOL web space.
+The links at the top, to Google Drive locations, reference files in the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+RAF Processing Algorithms
+\begin_inset Quotes erd
+\end_inset
+
+ team drive.
+ The files are also archived in the github directory https://github.com/NCAR/airc
+raft_ProcessingAlgorithms.
 \end_layout
 
-\begin_layout Standard
-
-\bar under
-Files needing transfer:
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "https://drive.google.com/open?id=0B1kIUH45ca5AekJYZmlsOV9sQ28"
+target "https://drive.google.com/open?id=0B1kIUH45ca5AblFpc3pMc0RXWnc"
+literal "false"
 
 \end_inset
 
 [ADSHistory.pdf]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "https://drive.google.com/a/ucar.edu/file/d/0B1kIUH45ca5AWlFWYXBDRlI1VnM"
+target "https://drive.google.com/open?id=1PQ87DHyxmmZRyz0JfctHF0qoz5EQjM9v"
+literal "false"
 
 \end_inset
 
 [PcorCalculation.pdf]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "https://drive.google.com/open?id=0B1kIUH45ca5AY0k0cTB6QlBEQUU"
+target "https://drive.google.com/open?id=1_aDmC6owMAT0RC72IH18gNZKvUU3ESQi"
+literal "false"
 
 \end_inset
 
 [checkCompFilter.pdf]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "https://drive.google.com/open?id=0B1kIUH45ca5AN2VYdFF2V0tHcVU"
+target "https://drive.google.com/open?id=0B1kIUH45ca5AaDlUY1lCejVSLUk"
+literal "false"
 
 \end_inset
 
 [AKRDC130.pdf]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "https://drive.google.com/open?id=0B1kIUH45ca5AOFpZUGxGVUg3VWc"
+target "https://drive.google.com/open?id=1u9y5VPE30ZQ5GJK6nlHMtzgC6yEh-maR"
+literal "false"
 
 \end_inset
 
 [Bansemer2DProcessing.pdf]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "https://drive.google.com/open?id=0B1kIUH45ca5ATkNyTlZVRm11WDA"
+target "https://drive.google.com/open?id=0B1kIUH45ca5AR2puc2RsQ0RjcE0"
+literal "false"
 
 \end_inset
 
  [HeightOfTerrain.pdf]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "https://drive.google.com/open?id=0B1kIUH45ca5AdVdRQ25BdG1GUXc"
+target "https://drive.google.com/open?id=0B1kIUH45ca5AeTVlcTNYc3NoS2c"
+literal "false"
 
 \end_inset
 
- [Correction for GPS antenna location]
+ [Recommendation161107.pdf – Correction for GPS antenna location]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset line
 LatexCommand rule
 offset "0.5ex"
@@ -3534,664 +3599,630 @@ height "1pt"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \bar under
 Links not needing any action except monitoring for continued availability:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/ProcessingAlgorithms.pdf"
+literal "false"
+
+\end_inset
+
+[This will be at 
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf "
 
 \end_inset
 
-[but should update to the current version of this document]
+ also but the github version is more likely to be the last update.]
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-name "https://www.eol.ucar.edu/system/files/PressureAltitude.pdf"
-target "https://www.eol.ucar.edu/system/files/PressureAltitude.pdf"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-name "https://www.eol.ucar.edu/system/files/PCOR_1.pdf"
-target "https://www.eol.ucar.edu/system/files/PCOR_1.pdf"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-name "https://www.eol.ucar.edu/system/files/VaporPressureV3.pdf"
-target "https://www.eol.ucar.edu/system/files/VaporPressureV3.pdf"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-name "https://www.eol.ucar.edu/system/files/ThetaE.pdf"
-target "https://www.eol.ucar.edu/system/files/ThetaE.pdf"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-name "https://www.eol.ucar.edu/system/files/VirtualTemperature.pdf"
-target "https://www.eol.ucar.edu/system/files/VirtualTemperature.pdf"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-name "https://www.eol.ucar.edu/system/files/PLWCCrev140414.pdf"
-target "https://www.eol.ucar.edu/system/files/PLWCCrev140414.pdf"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.unidata.ucar.edu/software/netcdf/docs/"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/raf/Software/netCDF.html"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.eol.ucar.edu/raf/Bulletins/bulletin9.html"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/data/software/nidas"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/raf/Software/aeros_dnld.html"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "mailto:mailto:raf-dm@eol.ucar.edu"
 type "mailto:"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://webbook.nist.gov"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://physics.nist.gov/.cuu/.Constants"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://earth-info.nga.mil/GandG/publications/tr8350.2/wgs84fin.pdf"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.bipm.org/en/si/si_brochure/chapter2/2-2/table3.html#notes"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/raf/Software/TimeExamp.html"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-064.pdf"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.eol.ucar.edu/raf/Bulletins/bulletin23.html"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/inertial-navigation-system-aka-inertial-reference-unit"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/c-migits-insgps-system"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://dx.doi.org/10.5065/D60G3HJ8"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/research-global-positioning-system"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://earth-info.nga.mil/GandG/publications/tr8350.2/wgs84fin.pdf"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19770009539_1977009539.pdf"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/aircraft-instrumentation"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.eol.ucar.edu/raf/Bulletins/bulletin21.html"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://opensky.library.ucar.edu/collections/TECH-NOTE-000-000-000-822"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/vertical-cavity-surface-emitting-laser-vcsel-hygrometer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/microwave-temperature-profiler"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/avaps"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/gnss-instrument-system-multi-static-and-occultation-sensing"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "mailto:raf-dm@eol.ucar.edu"
 type "mailto:"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.eol.ucar.edu/raf/Bulletins/bulletin24.html"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/king-csiro-liquid-water-sensor"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/rosemount-icing-probe"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/two-dimensional-optical-array-cloud-probe"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/two-dimensional-optical-array-precipitation-probe"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/three-view-cloud-particle-imager"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/holographic-detector-clouds"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/software/process2d"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/software/xpms2d"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/aero-laser-vuv-resonance-fluorescence-carbon-monoxide-instrument"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/picarro-instrument-airborne-measurement-co2-and-ch4"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/nitric-oxide-chemiluminescence-ozone-instrument"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/thermo-environmental-instruments-model-49-ozone-analyzer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/no-no2-instrument"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/advanced-whole-air-sampler"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/georgia-tech-chemical-ionization-mass-spectrometer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/quantum-cascade-laser-spectrometer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/trace-organic-gas-analyzer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/condensation-nucleus-counter-water-or-butanol"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/ultra-high-sensitivity-aerosol-spectrometer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/passive-cavity-aerosol-spectrometer-probe"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/time-flight-aerosol-mass-spectrometer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/scanning-mobility-particle-spectrometer"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/instruments/giant-nuclei-impactor"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.eol.ucar.edu/raf/Bulletins/bulletin25.html"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-175.pdf"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://journals.ametsoc.org/doi/pdf/10.1175/1520-0450%281977%29016%3C0190%3APFIPP%3E2.0.CO%3B2"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.eol.ucar.edu/aircraft-instrumentation"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.eol.ucar.edu/instruments/hiaper-airborne-radiation-package"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.esrl.noaa.gov/gmd/grad/solcalc/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Some other documents not part of the standard EOL archives available to
+ the public are also copied to the github archive for this document, in
+ directory 
+\begin_inset Quotes eld
+\end_inset
+
+www
+\begin_inset Quotes erd
+\end_inset
+
+, with links.
+ It would be useful to transfer the many documents on the Google drive to
+ this location also, so that they would be preserved along with this archive.
+\end_layout
 
 \end_inset
 
