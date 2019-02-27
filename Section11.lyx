@@ -3061,7 +3061,7 @@ F
 \begin_inset CommandInset href
 LatexCommand href
 name "SPP-100"
-target "https://opensky.ucar.edu/islandora/object/archives%3A8155"`
+target "http://www.eol.ucar.edu/instruments/forward-scattering-spectrometer-probe-model-100"
 literal "false"
 
 \end_inset
@@ -3298,7 +3298,7 @@ F300
 \begin_inset CommandInset href
 LatexCommand href
 name "FSSP-300"
-target "https://opensky.ucar.edu/islandora/object/archives%3A8155"
+target "https://www.eol.ucar.edu/instruments/forward-scattering-spectrometer-probe-model-300"
 literal "false"
 
 \end_inset

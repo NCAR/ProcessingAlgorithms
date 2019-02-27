@@ -78,7 +78,7 @@
   \item baro-loop, \hyperpage{12}
   \item base time, \hyperpage{7}
   \item BDIF, \hyperpage{53}
-  \item BDIFR, \hyperpage{53, 54}
+  \item BDIFR, \hyperpage{53}, \hyperpage{55}
   \item BFIXx, \hyperpage{87}
   \item BLATA, \hyperpage{16}
   \item BLONA, \hyperpage{16}
@@ -317,7 +317,7 @@
     \subitem dead time, \hyperpage{93, 94}
     \subitem dispersion, \hyperpage{63}
     \subitem fast resets, \hyperpage{93}
-    \subitem liquid water content, \hyperpage{63}
+    \subitem liquid water content, \hyperpage{64}
     \subitem mean diameter, \hyperpage{63}
     \subitem range, \hyperpage{65}
     \subitem size distribution, \hyperpage{62}
@@ -479,10 +479,10 @@
   \item latitude, \hyperpage{11}, \hyperpage{27}
   \item lifted condensation level, \hyperpage{47}
   \item linkage. temperature and airspeed, \hyperpage{33}
-  \item liquid water content, \hyperpage{58}, \hyperpage{63}, 
+  \item liquid water content, \hyperpage{58}, \hyperpage{64}, 
 		\hyperpage{67}
     \subitem 1D probes, \hyperpage{63}
-    \subitem FSSP-100, \hyperpage{63}
+    \subitem FSSP-100, \hyperpage{64}
     \subitem King probe, \hyperpage{58}
     \subitem supercooled, \hyperpage{60}
   \item LON, \hyperpage{11}, \hyperpage{28}
@@ -597,7 +597,7 @@
     \subitem dew point housing, \hyperpage{38}
     \subitem dew-point cavity, \hyperpage{32}
     \subitem dynamic, \hyperpage{30, 31}, \hyperpage{33}, 
-		\hyperpage{54}
+		\hyperpage{55}
       \subsubitem corrected, \hyperpage{31}
     \subitem inlet, \hyperpage{73}
     \subitem partial, water vapor, \hyperpage{38}
@@ -879,7 +879,7 @@
   \item water vapor
     \subitem density, \hyperpage{41, 42}, \hyperpage{44}
     \subitem mixing ratio, \hyperpage{45}
-  \item WD, \hyperpage{55}
+  \item WD, \hyperpage{56}
   \item WDC, \hyperpage{56}
   \item WDRCTN, \hyperpage{86}
   \item wetting
@@ -905,7 +905,7 @@
     \subitem vertical, \hyperpage{56}
   \item World Geodetic System, \hyperpage{19}
   \item WP3, \hyperpage{12}
-  \item WS, \hyperpage{55}
+  \item WS, \hyperpage{56}
   \item WSC, \hyperpage{56}
   \item WSPD, \hyperpage{86}
 

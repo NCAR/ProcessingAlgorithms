@@ -816,8 +816,8 @@
 \indexentry{AKRD|hyperpage}{54}
 \indexentry[var]{SSRD|hyperpage}{54}
 \indexentry{SSRD|hyperpage}{54}
-\indexentry{BDIFR|hyperpage}{54}
-\indexentry{pressure!dynamic|hyperpage}{54}
+\indexentry{BDIFR|hyperpage}{55}
+\indexentry{pressure!dynamic|hyperpage}{55}
 \indexentry[lis]{s0@$s_{0,1}$=sensitivity coefficients, sideslip|hyperpage}{55}
 \indexentry[var]{SSLIP|hyperpage}{55}
 \indexentry{SSLIP|hyperpage}{55}
@@ -833,10 +833,10 @@
 \indexentry{wind!vector|hyperpage}{55}
 \indexentry{wind!components|hyperpage}{55}
 \indexentry{wind!sign convention|hyperpage}{55}
-\indexentry[var]{WS|hyperpage}{55}
-\indexentry{WS|hyperpage}{55}
-\indexentry[var]{WD|hyperpage}{55}
-\indexentry{WD|hyperpage}{55}
+\indexentry[var]{WS|hyperpage}{56}
+\indexentry{WS|hyperpage}{56}
+\indexentry[var]{WD|hyperpage}{56}
+\indexentry{WD|hyperpage}{56}
 \indexentry{wind!speed|hyperpage}{56}
 \indexentry{wind!direction|hyperpage}{56}
 \indexentry[con]{Crd@$C_{rd}$= conversion factor, radians to degrees (180/$\pi $)|hyperpage}{56}
@@ -1024,9 +1024,9 @@
 \indexentry[var]{PLWCD|hyperpage}{63}
 \indexentry{PLWCD|hyperpage}{63}
 \indexentry{liquid water content!1D probes|hyperpage}{63}
-\indexentry{liquid water content|hyperpage}{63}
-\indexentry{FSSP-100!liquid water content|hyperpage}{63}
-\indexentry{liquid water content!FSSP-100|hyperpage}{63}
+\indexentry{liquid water content|hyperpage}{64}
+\indexentry{FSSP-100!liquid water content|hyperpage}{64}
+\indexentry{liquid water content!FSSP-100|hyperpage}{64}
 \indexentry{diameter!equivalent|hyperpage}{64}
 \indexentry{ice water content|hyperpage}{64}
 \indexentry[lis]{dei@$d_{e,i}$= equivalent melted diameter for channel i of a hydrometeor spectrometer|hyperpage}{64}
