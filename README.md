@@ -1,5 +1,7 @@
               RAF Technical Note: Processing Algorithms
 
+[![DOI:10.26023/zc3gpm25](https://img.shields.io/badge/DOI-10.26023/zc3gpm25-brightgreen.svg)](<https://doi.org/10.26023/zc3gpm25>)
+
 This repository contains the text files for the RAF Technical Note on
 processing algorithms that are used for processing data collected
 on the RAF research aircraft. The variables that appear in archived
