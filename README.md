@@ -14,4 +14,4 @@ remain current.
 
 When referencing this RAF Technical Note on processing algorithms, please use the identifier 10.26023/zc3gpm25 - for example as a citation:
 
-> UCAR/NCAR - Earth Observing Laboratory (2019) RAF Technical Note: Processing Algorithms. UCAR/NCAR - Earth Observing Laboratory. https://doi.org/10.26023/zc3gpm25 Retrieved *enter date here*
+> UCAR/NCAR - Earth Observing Laboratory (2019) RAF Technical Note: Processing Algorithms. UCAR/NCAR - Earth Observing Laboratory. https://doi.org/10.26023/zc3gpm25  V2019.1 Retrieved *enter date here*
