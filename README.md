@@ -11,3 +11,7 @@ used, but there are many links to such descriptions. The goal of this
 document is to describe both current and past algorithms, so it is
 expected that this document will be modified often so that it can
 remain current. 
+
+When referencing this RAF Technical Note on processing algorithms, please use the identifier 10.26023/zc3gpm25 - for example as a citation:
+
+> UCAR/NCAR - Earth Observing Laboratory (2019) RAF Technical Note: Processing Algorithms. UCAR/NCAR - Earth Observing Laboratory. https://doi.org/10.26023/zc3gpm25 Retrieved *enter date here*
