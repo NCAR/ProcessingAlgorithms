@@ -16,6 +16,8 @@ When referencing this RAF Technical Note on processing algorithms, please use th
 
 > UCAR/NCAR - Earth Observing Laboratory (2019) RAF Technical Note: Processing Algorithms. UCAR/NCAR - Earth Observing Laboratory. https://doi.org/10.26023/zc3gpm25  V2019.1 Retrieved *enter date here*
 
+A list of all versions is available here: https://github.com/NCAR/aircraft_ProcessingAlgorithms/releases . Please update the version number to reflect the version you wish to reference.
+
 ### Notes to maintainers
 
 Instructions for updating this document are at the end of the PDF.
