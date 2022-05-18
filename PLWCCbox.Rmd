@@ -1,0 +1,74 @@
+```{r child='boxStyles.Rmd'}
+```
+<p class=box>
+PLWC = total power dissipated by the probe [W]  
+$P_{D}$ = power dissipated\index{King probe!power dissipated}\sindex[lis]{Power@$P$=power}
+by the cooling effect of dry air alone  
+$P_{W}$ = power needed to heat and vaporize the liquid water that
+hits the probe element  
+$L$ = length\sindex[lis]{L@$L$ =length (of a King-probe element)}
+of the probe sensitive element\index{King probe!element dimensions},
+typically 0.021\ m  
+$d$= diameter\sindex[lis]{d@$d$=diameter} of the probe sensitive
+element, typically 1.805$\times10^{-3}$m  
+$T_{s}$= sensor temperature\index{King probe!sensor temperature}\sindex[lis]{Ts@$T_{s}$=temperature of a sensor}
+[$^{\circ}$C]  
+$T_{a}$= ambient temperature [$^{\circ}$C] = ATX  
+$T_{b}$\sindex[lis]{Tb@$T_{b}$= boiling temperature of water} =
+boiling temperature of water (dependent on pressure):   
+\ \ \ \ \ \ \ \ \ with $x=\log_{10}(p/(1$hPa)), $B=1^{\circ}$C,  
+\ \ \ \ \ \ \ \ \ and \{$b_{0},$ $b_{1}$, $b_{2}$, $b_{3}$\} = \{0.03366503, 1.34236135,
+-0.33479451, 0.0351934\}:  
+\ \ \ \ \ \ \ \ \ \ $T_{b}=B\times10^{(b_{0}+b_{1}x+b_{2}x^{2}+b_{3}x^{3})}$  
+$T_{m}=(T_{a}+T_{s})/2$ = mean temperature for air properties  
+$L_{v}(T_{b})$ = latent heat of vaporization of water\sindex[lis]{Lv@$L_{v}$=latent heat of vaporization of water}\index{latent heat of vaporization}
+= (2.501-0.00237$T_{b}$)$\times10^{6}$J$\,$kg$^{-1}$  
+$c_{w}$\sindex[lis]{cw@$c_{w}$= specific heat of liquid water} =
+specific heat of water = 4190\ J$\,$kg$^{-1}$K$^{-1}$ (mean value,
+0--90$^{\circ}$C)  
+$U_{a}$ = true airspeed [m/s] = TASX  
+$\lambda_{c}$\sindex[lis]{lambdac@$\lambda_{c}$= thermal conductivity, dry air}
+= thermal conductivity\index{thermal conductivity|see {conductivity, thermal}}\index{conductivity!thermal}
+of dry air (2.38+0.0071$T_{m}$)$\times10^{-2}$J$\,$m$^{-1}$s$^{-1}$K$^{-1}$  
+$\mu$\sindex[lis]{mu_{a}= dynamic viscosity of air@$\mu_{a}$= dynamic viscosity of air}
+=viscosity of air =\index{viscosity} (1.718+0.0049$T_{m})\times10^{-5}$
+kg$\,$m$^{-1}$s$^{-1}$  
+$\rho_{a}$\sindex[lis]{rhoa@$\rho_{a}$= density of air} = density
+of air = $p / (R_{d}(T_{a}+T_{0}))$  
+Re\sindex[lis]{Re= Reynolds number} = Reynolds number = $\rho_{a}U_{a}d/\mu_{a}$  
+Nu\sindex[lis]{Nu= Nusselt number} = Nusselt Number relating conduction
+heat loss to the total heat loss for dry air:  
+<font size="2" family="tt">
+\ \ \ \ \ typically Nu=$a_{0}\mathrm{Re}^{a_{1}}$ where  
+\ \ \ \ \ for the GV:  
+\ \ \ \ \ \ \ \ $\{a_{0},\,a_{1}\}=\{1.868,\,0.343\}$ for Re<7244   
+\ \ \ \ \ \ \ \  and $\{0.135,\,0.638\}$ otherwise,  
+\ \ \ \ \ \ \ \ except when TASX < 150 m/s;  
+\ \ \ \ \ \ \ \ then use $\{0.133,\,0.382\}$.  
+\ \ \ \ \ For the C-130:  
+\ \ \ \ \ \ \ \ $\{a_{0},\,a_{1}\}=\{0.118,\,0.675\}$.
+</font>  
+$C_{kg2g}=1000$\sindex[lis]{Ckg2g@$C_{kg2g}$= conversion factor, g to kg} = grams per kilogram  
+\ \ \ \ \ \ \ \ \ \ (unit conversion to conventional units for liquid water content)  
+$\chi$ \sindex[lis]{chi@$\chi$=liquid water content}= liquid water
+content [g/m$^{3}$] = PLWCC
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{PLWC\}} = P_{D}+P_{W}
+(\#eq:PLWCa)
+\end{equation}
+where  
+\begin{equation}
+P_{D}=\pi\mathrm{Nu}\,L\lambda_{c}(T_{s}-T_{a})
+(\#eq:PLWCb)
+\end{equation}
+\begin{equation}
+P_{W}=L\,d[L_{v}(T_{b})+c_{w}(T_{b}-T_{a})]\,U_{a}\chi
+(\#eq:PLWCc)
+\end{equation}
+*Result:*  
+\begin{equation}
+\mathrm{\{PLWCC\}}=\chi=\frac{C_{kg2g}(\mathrm{\{PLWC\}}-P_{D})}{L\,d\,U_{a}[L_{v}(T_{b})+c_{w}(T_{b}-T_{a})]}
+(\#eq:PLWCd)
+\end{equation}
+</p>

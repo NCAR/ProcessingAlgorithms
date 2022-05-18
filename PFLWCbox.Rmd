@@ -1,0 +1,21 @@
+
+<p class=box>
+UPRESS = internal UHSAS pressure [kPa]\index{UPRESS}  
+USMPFLW = measured volumetric sample flow [cm$^{3}$s$^{-1}$]  
+PFLW = sample mass flow referenced to standard conditions [cm$^{3}$s$^{-1}$]  
+$T_{blk}$ = UHSAS optical block temperature, 305 K  
+$p_{std}$ = standard pressure, 1013.25 hPa  
+$T_{std}$ = standard temperature, 298.15 K\index{UHSAS!STP}  
+PSXC = corrected ambient pressure [hPa]  
+ATX = ambient temperature [$^{\circ}$C]  
+$T_{0}$ = 273.15\ K  
+</p><p class=box2>  
+\begin{equation}
+\mathrm{\{PFLWC\}}=\mathrm{\{PFLW\}}\frac{p_{std}}{\mathrm{\{PSXC\}}}\frac{(\mathrm{\{ATX\}}+T_{0})}{T_{std}}  
+(\#eq:PFLWCbox1)
+\end{equation}
+\begin{equation}
+\mathrm{\{USFLWC\}}=\mathrm{\{USMPFLW\}}\frac{\mathrm{\{UPRESS/10\}}}{\mathrm{\{PSXC\}}}\frac{\mathrm{(\{ATX\}}+T_{0})}{T_{blk}}  
+(\#eq:PFLWCbox2)
+\end{equation}
+</p>

@@ -1,0 +1,15 @@
+
+<p class=box>
+EWX = atmospheric water vapor pressure (hPa)  
+ATX = ambient air temperature [$^{\circ}\mathrm{C}$]  
+$T_{0}=273.15$ K  
+$e_{s.i}(\mathrm{ATX+T_{0}})$ = equilibrium water vapor pressure
+at *frostpoint* ATX (hPa)  
+\ \ \ \ \ \ \ \ \ \ (see Eq.\ \@ref(eq:MKi) for the formula
+used.)  
+</p><p class=box2> 
+\begin{equation}
+\mathrm{\{RHUMI\}}=100\%\,\times\,\frac{\mathrm{\{EWX\}}}{e_{s,i}(\mathrm{\{ATX\}+T_{0}})}
+(\#eq:RHUMI)
+\end{equation}
+</p>

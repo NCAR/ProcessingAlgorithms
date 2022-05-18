@@ -1,0 +1,19 @@
+```{r child='boxStyles.Rmd'}
+```
+<p class=box>
+$T_{L}$= temperature at the lifted condensation level, K  
+ATX = ambient temperature [$^{\circ}\mathrm{C}$]  
+EDPC = water vapor pressure [hPa] -- now superceded by EWX  
+MR = mixing ratio [g/kg]  
+THETA = potential temperature [K]  
+</p><p class=box2>  
+\begin{equation}
+T_{L}=\frac{2840.}{3.5\ln(\mathrm{\{ATX\}+T_{0}})-\ln(\mathrm{\{EDPC\}})-4.805}+55
+(\#eq:TLCL2)
+\end{equation}
+\begin{align}
+\mathrm{\{THETAE\}} = & \mathrm{\{THETA\}}\left(\frac{3.376}{T_{L}}-0.00254\right)\notag \\
+& \times (\mathrm{\{MR\}})(1+0.00081(\{MR\}))
+(\#eq:THETAE)
+\end{align}
+</p>  

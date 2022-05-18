@@ -1,0 +1,39 @@
+```{r child='boxStyles.Rmd'}
+```
+<p class=box>
+$e=$\{EDPC\}$*100$ = water vapor pressure [Pa]  
+ATX = ambient temperature ($^{\circ}\mathrm{C}$)  
+$r=$\{MR\}/1000.\index{MR} = mixing ratio (dimensionless)  
+$p_{d}=$(\{PSXC\}$-$\{EDPC\})$*100$ = ambient dry-air pressure [Pa]  
+$p_{0}=$reference pressure for potential temperature, 10$^{5}$Pa  
+$\chi=$\{PLWCC\}/1000.=cloud liquid water content [kg$\,$m$^{-3}$]  
+$R_{d}=$gas constant for dry air$^{\dagger}$  
+$\rho_{d}=$density of dry air = $\frac{p_{d}}{R_{d}(\{ATX\}+T_{0})}$  
+$c_{pd}=$specific heat of dry air$^{\dagger}$  
+$c_{w}=$specific heat of liquid water$^{\dagger}$  
+$L_{v}=L_{0}+L_{1}\mathrm{\{ATX\}}$ where $L_{0}=2.501\times10^{6}\mathrm{J}\,\mathrm{kg^{-1}}$
+and $L_{1}=-2370\,\mathrm{J\,\mathrm{kg^{-1}\,\mathrm{K^{-1}}}}$  
+</p><p class=box2>
+\begin{equation}
+r_{t}=r+(\chi/\rho_{d})
+(\#eq:rtotBox)
+\end{equation}
+\begin{equation}
+c_{pt}=c_{pd}+r_{t}c_{w}
+(\#eq:cptBox)
+\end{equation}  
+If outside cloud or below 100\% relative humidity, define  
+\begin{equation}
+F_{1}=\left(\frac{e}{e_{s,w}(T)}\right)^{-\frac{rR_{w}}{c_{pt}}}
+(\#eq:F1)
+\end{equation}  
+otherwise set $F_{1}=1$. Then  
+\begin{equation}
+T_{1}=\mathrm{(\{ATX\}}+T_{0})\left\{ \frac{p_{0}}{(\mathrm{\{PSXC\}}-\mathrm{\{EDPC\})}}\right\} ^{\frac{R_{d}}{c_{pt}}}
+(\#eq:T1box)
+\end{equation}
+\begin{equation}
+\mathrm{\{THETAQ\}}=T_{1}F_{1}\exp\left\{ \frac{L_{v}r}{c_{pt}(\{\mathrm{ATX\}}+T_{0})}\right\}
+(\#eq:THETAQbox)
+\end{equation}
+</p>  

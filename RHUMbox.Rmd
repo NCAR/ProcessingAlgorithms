@@ -1,0 +1,15 @@
+
+<p class=box>
+EWX = atmospheric water vapor pressure (hPa)  
+ATX = ambient air temperature [$^{\circ}\mathrm{C}$]  
+$T_{0}=273.15$ K  
+$e_{s.w}(\mathrm{ATX+T_{0}})$ = equilibrium water vapor pressure
+at *dewpoint* ATX (hPa)  
+\ \ \ \ \ \ \ \ \ \ (see Eq.\ \@ref(eq:MKw) for the formula
+used.)  
+</p><p class=box2>  
+\begin{equation}
+\mathrm{\{RHUM\}}=100\%\,\times\,\frac{\mathrm{\{EWX\}}}{e_{s,w}(\mathrm{\{ATX\}+T_{0}})}
+(\#eq:RHUM)
+\end{equation}
+</p>

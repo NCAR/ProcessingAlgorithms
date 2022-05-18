@@ -1,0 +1,15 @@
+<p class=box2>
+For air temperature $T < -50^\circ$C:  
+\begin{align}
+\mathrm{\{EDPC\}} &= 4.4685 + T(0.27347 + T (6.83811\times 10^{-3}\notag \\
+&+ T(8.7094x10^{-5} + T(5.63513x10^{-7} + 1.47796 × 10^{-9}T)))
+(\#eq:EDPC1)
+\end{align}
+For air temperature $T \ge -50^\circ$C:  
+\begin{align}
+\mathrm{\{EDPC\}} &= 6.107799961 + T(0.4436518521 + T(0.01428945805\notag \\
+&+ T(2.650648471 × 10^{-4} + T(3.031240396 × 10^{-6}\notag \\
+&+ T (2.034080948 × 10^{-8} + 6.136820929 × 10^{-11}T)))))
+(\#eq:EDPC2)
+\end{align}
+</p>  

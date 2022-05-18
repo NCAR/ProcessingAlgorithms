@@ -1,0 +1,52 @@
+
+<!-- \fbox{\begin{minipage}[t]{0.95\textwidth}% -->
+<p class=box>
+$g_{1}$ = 9.780356 m\ s^-2^  
+$a_{1}$ = 0.31391116$\times$10^-6^m^-1^  
+$a_{2}$ = .0052885 (dimensionless)  
+VEW (VNS) = eastward (northward) groundspeed of the aircraft (see
+below)  
+LAT = latitude measured by the IRS [º]  
+$C_{dr}=\pi/180^{\circ}$ = conversion factor, degrees to radians  
+PALT = pressure altitude of the aircraft  
+$\Omega$ = angular rotation of the earth$^{\dagger}$ = 7.292116$\times10^{6}$
+radians/s  
+$R_{E}$ = radius of the Earth$^{\dagger}$ = 6.371229$\times10^{6}$
+m  
+$g_{f}$ = local gravity corrected for latitude and altitude  
+$V_{c}$ = correction to gravity for the motion of the aircraft  
+$G_{L}$ = local gravity at the location of INS alignment, corrected
+to zero altitude  
+$\{C[0],C[1],C[2]\}$ = feedback coefficients, {0.15, 0.0075, 0.000125}
+for 125-s response  
+</p>
+<p class=box2>
+\ 1. From the pressure altitude PALT (in m) and the latitude LAT, estimate
+the acceleration of gravity:  
+\begin{equation}
+g_{f}=g_{1}\left(1+a_{2}\sin^{2}(\mathrm{C_{dr}\{LAT\})}+a_{1}\mathrm{\{PALT\}}\right)
+(\#eq:gf)
+\end{equation}
+\ 2. Determine corrections for Coriolis acceleration\index{Coriolis acceleration}
+and centrifugal acceleration\index{centrifugal acceleration}:  
+\begin{equation}
+a_{c}=2\Omega\mathrm{\{VEW\}}\cos(C_{r}\mathrm{\{LAT\}})+\frac{\mathrm{\{VEW\}}^{2}+\mathrm{\{VNS\}}^{2}}{R_{E}}
+(\#eq:ac)
+\end{equation}
+\ \ \ Estimate the acceleration $a_{z}$ (code variable 'acz') experienced
+by the aircraft as follows:  
+\begin{equation}
+\mathrm{\{acz\}}=a_{z}=\mathrm{\{ACINS\}}+G_{L}-g_{f}+a_{c}
+(\#eq:acz)
+\end{equation}
+\ \ \ Use a feedback loop to update the integrated value of the acceleration.  
+\ \ \ The following code segment uses *acz* to represent acceleration $a_{z}$,  
+\ \ \ "deltaT" to represent the time between updates, and "hx" and "hxx"
+to store the feedback terms:  
+\ \ \ \ \ wp3[FeedBack] += (acz - C[1] * hx[FeedBack] -- C[2] * hxx[FeedBack]) * deltaT[FeedBack]  
+\ 3. Update the feedback terms (using "hi3" for storage):  
+\ \ \ \ \ hi3[FeedBack] = hi3[FeedBack] + (wp3[FeedBack] -- C[0] * hx[FeedBack]) * deltaT[FeedBack];  
+\ \ \ \ \ hx[FeedBack] = hi3[FeedBack] - palt;  
+\ \ \ \ \ hxx[FeedBack] = hxx[FeedBack] + hx[FeedBack] * deltaT[FeedBack];  
+\ 4. Set WP3 to the average of the last wp3 result and the current wp3
+result.</p>

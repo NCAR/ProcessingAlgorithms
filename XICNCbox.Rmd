@@ -1,0 +1,14 @@
+<p class=box>
+XICN = side-flow rate [SLPM]  
+PCN = pressure at the inlet to the CN counter [hPa]  
+CNTEMP = temperature at the inlet of the sample tube [$^{\circ}$C]  
+$p_{std}$ = standard reference pressure, 1013.25 mb  
+$T_{std}$\sindex[lis]{Tr@$T_{std}$= absolute reference temperature, STP}
+= 294.15 K   
+$T_{0}$ = 273.15\ K  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{XICNC\} = \{XICN\}}\frac{p_{std}}{\mathrm{\{PCN\}}}\frac{(\{\mathrm{CNTEMP\}}+T_{0})}{T_{std}}
+(\#eq:XICNCbox)
+\end{equation}
+</p>  

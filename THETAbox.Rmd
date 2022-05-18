@@ -1,0 +1,13 @@
+
+<p class=box>
+ATX = ambient temperature, $^{\circ}$C  
+PSXC = ambient pressure (hPa)  
+$p_{0}$ = reference pressure = 1000 hPa  
+$R_{d}$ = gas constant for dry air$^{\dagger}$  
+$c_{pd}$ = specific heat at constant pressure for dry air$^{\dagger}$  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{THETA\}}=\left(\mathrm{\{ATX\}}+T_{0}\right)\left(\frac{p_{0}}{\mathrm{\{PSXC\}}}\right)^{R_{d}/c_{pd}}
+(\#eq:THETA)
+\end{equation}
+</p>  

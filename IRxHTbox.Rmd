@@ -1,0 +1,11 @@
+<p class=box>
+IRxHTV = voltage from a platinum resistance thermometer attached to the housing
+of the pyrgeometer [V]  
+{$a_4,\,a_5$} = calibration coefficients [$^\circ$C]  
+$V_1$ = 1 V (for consistency of units)
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{IRxHT\}} = a_4 + a_5\,\log_{10}(\mathrm{\{IRxHTV\}}\,/\,V_1)
+(\#eq:IRxHTbox)
+\end{equation}
+</p>  

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 The State of the Aircraft | RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="3 The State of the Aircraft | RAF Technical Note: Processing Algorithms" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 The State of the Aircraft | RAF Technical Note: Processing Algorithms" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 The State of the Aircraft | RAF Technical Note: Processing Algorithms" />
+  
+  
+  
+
+<meta name="author" content="Al Cooper" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="general-information-about-data-files.html"/>
+<link rel="next" href="the-state-of-the-atmosphere.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#alphabetical-list-of-variables"><i class="fa fa-check"></i><b>1.2</b> Alphabetical List of Variables</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#constants-and-symbols"><i class="fa fa-check"></i><b>1.3</b> Constants and Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html"><i class="fa fa-check"></i><b>2</b> General Information About Data Files</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#system-of-units"><i class="fa fa-check"></i><b>2.1</b> System of Units</a></li>
+<li class="chapter" data-level="2.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variables-used-to-denote-time"><i class="fa fa-check"></i><b>2.2</b> Variables Used to Denote Time</a></li>
+<li class="chapter" data-level="2.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#synchronication-of-measurements"><i class="fa fa-check"></i><b>2.3</b> Synchronization of Measurements</a></li>
+<li class="chapter" data-level="2.4" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#other-comments-on-terminology"><i class="fa fa-check"></i><b>2.4</b> Other Comments on Terminology</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variable-names-in-equations"><i class="fa fa-check"></i><b>2.4.1</b> Variable Names in Equations</a></li>
+<li class="chapter" data-level="2.4.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#distinction-between-original-measurements-and-derived-variables"><i class="fa fa-check"></i><b>2.4.2</b> Distinction Between Original Measurements and Derived Variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#dimensions-in-equations"><i class="fa fa-check"></i><b>2.4.3</b> Dimensions in Equations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html"><i class="fa fa-check"></i><b>3</b> The State of the Aircraft</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#inertial-reference-systems"><i class="fa fa-check"></i><b>3.1</b> Inertial Reference Systems</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#standard-variables"><i class="fa fa-check"></i><b>3.1.1</b> Standard Variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#additional-special-use-variables"><i class="fa fa-check"></i><b>3.1.2</b> Additional Special-Use Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#global-positioning-systems"><i class="fa fa-check"></i><b>3.2</b> Global Positioning Systems</a></li>
+<li class="chapter" data-level="3.3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude"><i class="fa fa-check"></i><b>3.3</b> Other Measurements of Aircraft Altitude</a></li>
+<li class="chapter" data-level="3.4" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#combining-irs-and-gps-measurements"><i class="fa fa-check"></i><b>3.4</b> Combining IRS and GPS Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html"><i class="fa fa-check"></i><b>4</b> The State of the Atmosphere</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations"><i class="fa fa-check"></i><b>4.1</b> Information on Instruments and Calibrations</a></li>
+<li class="chapter" data-level="4.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#variable-names"><i class="fa fa-check"></i><b>4.2</b> Variable Names</a></li>
+<li class="chapter" data-level="4.3" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#pressure"><i class="fa fa-check"></i><b>4.3</b> Pressure</a></li>
+<li class="chapter" data-level="4.4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#temperature-section"><i class="fa fa-check"></i><b>4.4</b> Temperature</a></li>
+<li class="chapter" data-level="4.5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#humidity"><i class="fa fa-check"></i><b>4.5</b> Humidity</a></li>
+<li class="chapter" data-level="4.6" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#derived-thermodynamic-variables"><i class="fa fa-check"></i><b>4.6</b> Derived Thermodynamic Variables</a></li>
+<li class="chapter" data-level="4.7" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind"><i class="fa fa-check"></i><b>4.7</b> Wind</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#relative-wind"><i class="fa fa-check"></i><b>4.7.1</b> Relative Wind</a></li>
+<li class="chapter" data-level="4.7.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector"><i class="fa fa-check"></i><b>4.7.2</b> Wind Components and the Wind Vector</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#special-use-remote-sensors"><i class="fa fa-check"></i><b>4.8</b> Special-Use Remote Sensors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#cloud-physics-variables"><i class="fa fa-check"></i><b>5</b> Cloud Physics Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html"><i class="fa fa-check"></i><b>5.1</b> Measurements of Liquid Water Content</a></li>
+<li class="chapter" data-level="5.2" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#sensors-1-D-probes"><i class="fa fa-check"></i><b>5.2</b> Sensors Detecting Individual Hydrometeors (1-D Probes)</a></li>
+<li class="chapter" data-level="5.3" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#hydrometeor-imaging-probes"><i class="fa fa-check"></i><b>5.3</b> Hydrometeor Imaging Probes</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#two-d-probe"><i class="fa fa-check"></i><b>5.3.1</b> Variables Derived from Measurements from a 2D Probe</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#air-chemistry-measurements"><i class="fa fa-check"></i><b>6</b> Air Chemistry Measurements</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html"><i class="fa fa-check"></i><b>6.1</b> Variables in Standard Data Files</a></li>
+<li class="chapter" data-level="6.2" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html#variables-in-special-data-sets"><i class="fa fa-check"></i><b>6.2</b> Variables in Special Data Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html"><i class="fa fa-check"></i><b>7</b> Aerosol Particle Measurements</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#condensation-nucleus-counter"><i class="fa fa-check"></i><b>7.1</b> Condensation Nucleus Counter</a></li>
+<li class="chapter" data-level="7.2" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#aerosol-spectrometers"><i class="fa fa-check"></i><b>7.2</b> Aerosol Spectrometers</a></li>
+<li class="chapter" data-level="7.3" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#special-aerosol-measurements"><i class="fa fa-check"></i><b>7.3</b> Special Aerosol Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#radiation-variables"><i class="fa fa-check"></i><b>8</b> Radiation Variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radiation-variables.html"><a href="radiation-variables.html"><i class="fa fa-check"></i><b>8.1</b> Measurements of Irradiance and Radiometric Temperature</a></li>
+<li class="chapter" data-level="8.2" data-path="radiation-variables.html"><a href="radiation-variables.html#spectral-irradiance-and-actinic-flux"><i class="fa fa-check"></i><b>8.2</b> Spectral Irradiance and Actinic Flux</a></li>
+<li class="chapter" data-level="8.3" data-path="radiation-variables.html"><a href="radiation-variables.html#solar-angles"><i class="fa fa-check"></i><b>8.3</b> Solar Angles</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="radiation-variables.html"><a href="radiation-variables.html#experimental-variables"><i class="fa fa-check"></i><b>9</b> Experimental Variables</a></li>
+<li class="chapter" data-level="10" data-path="obsolete-variables.html"><a href="obsolete-variables.html"><i class="fa fa-check"></i><b>10</b> Obsolete Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html"><i class="fa fa-check"></i>Appendices</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#suggested-additional-steps"><i class="fa fa-check"></i>Suggested Additional Steps</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-edit-this-document"><i class="fa fa-check"></i>How to Edit This Document</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-reference-specific-sections-or-pages-of-this-document"><i class="fa fa-check"></i>How to Reference Specific Sections or Pages of this Document:</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#page-numbers"><i class="fa fa-check"></i>Page Numbers</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#sections-and-subsections"><i class="fa fa-check"></i>Sections and Subsections</a></li>
+<li class="chapter" data-level="10.0.1" data-path="appendices.html"><a href="appendices.html#adding-new-targets"><i class="fa fa-check"></i><b>10.0.1</b> Adding New Targets</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RAF Technical Note: Processing Algorithms</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-state-of-the-aircraft" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> The State of the Aircraft</h1>
+<p>The primary sources of information on the location and motion of the aircraft are inertial navigation systems and global positioning systems. Both are described in this section, and combined results that merge the best features of each into composite variables for location and motion are also discussed. Useful references for material in this section are <a href="http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-064.pdf">Lenschow (1972)</a> and <a href="https://opensky.ucar.edu/islandora/object/archives%3A8152">RAF Bulletin 23</a>.</p>
+<div id="inertial-reference-systems" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Inertial Reference Systems</h2>
+<!-- <h2 id="inertial-reference-systems">Inertial Reference Systems</h2> -->
+<p>An Inertial Navigation System (INS) or Inertial Reference Unit (IRU) provides measurements of aircraft position, velocity relative to the Earth, acceleration and attitude or orientation. The IRU provides basic measurements of acceleration and angular rotation rate, while the INS integrates those measurements to track the position, altitude, velocity, and orientation of the aircraft. For the GV, the system is a Honeywell Laseref IV HG2001 GD03 Inertial Reference System; for the C-130, it is a Honeywell Model HG1095-AC03 Laseref V SM Inertial Reference System. These systems are described on the EOL web site, at <a href="http://www.eol.ucar.edu/instruments/inertial-navigation-system-aka-inertial-reference-unit">this URL</a>. Data from the IRS come via a serial digital bit stream (the ARINC digital bus) to the ADS (Aircraft Data System). Because there is some delay in transmission and recording of these variables, adjustments for this delay are made when the measurements are merged into the processed data files, as documented in the NetCDF header files and as discussed in Section <a href="general-information-about-data-files.html#synchronication-of-measurements">2.3</a>. Typical delays are about 80 ms for variables including ACINS, PITCH, ROLL, and THDG.</p>
+<p>Some variables are recorded only on the original “raw” data tapes and are not usually included in final archived data files; these are discussed at the end of this subsection. See also the discussion in Section <a href="obsolete-variables.html#obsolete-variables">10</a> for information on results from inertial systems that were used prior to installation of the present Honeywell systems.<span id="punch3.1" label="punch3.1">[punch3.1]</span></p>
+<p>An Inertial Navigation System “aligns” while the aircraft is stationary by measurement of the variations in its reference frame caused by the rotation of the Earth. Small inaccuracy in that alignment leads to a “Schuler oscillation” that produces oscillatory errors in position and other measurements, with a period <span class="math inline"><em>τ</em><sub><em>S</em><em>c</em><em>h</em></sub></span> of about 84 minutes (<span class="math inline"><span class="math inline">\(\tau_{Sch}=2\pi\sqrt{R_{E}/g}\)</span></span>). Position errors of less than 1.0 n mi/h are within normal operating specifications. See Section <a href="the-state-of-the-aircraft.html#combining-irs-and-gps-measurements">3.4</a> for discussion of additional variables, similar to the following, for which corrections are made for these errors via reference to data from a Global Positioning System.</p>
+<p>Some projects have used smaller Systron Donner C-MIGITS Inertial Navigation Systems with GPS coupling, usually in connection with special instruments like a wing-mounted wind-sensing system. For these units, variable names usually begin with the letter C but otherwise have names matching the following variables (e.g., CLAT). GPS coupling via a Kalman filter is incorporated in the measurements from these units. They are described at <a href="https://www.eol.ucar.edu/instruments/c-migits-insgps-system">this web address</a>.</p>
+<p>Uncertainties associated with measurements from the IRS are discussed in a Technical Note, available at <a href="http://dx.doi.org/10.5065/D60G3HJ8">this URL</a>. See page 7 of that document and the tables on pages 41 and 49.</p>
+<div id="standard-variables" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Standard Variables</h3>
+<p><strong>Latitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">LAT</span></strong><br />
+<em>The aircraft latitude</em> <em>or angular distance north of the equator in an Earth reference frame</em>. <em></em> Positive values are north of the equator; negative values are south. The resolution is 0.00017<span class="math inline"><em></em><sup>∘</sup></span> and the accuracy is reported by the manufacturer to be 0.164<span class="math inline"><em></em><sup>∘</sup></span> after 6 h of flight. Values are provided by the INS at a frequency of 10 Hz.</p>
+<p><strong>Longitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">LON</span><span class="underline"></span><span class="underline"></span></strong><br />
+<em>The aircraft longitude</em> or angular distance east of the prime meridian in an Earth reference frame. Positive values are east of the prime meridian; negative values are west. The resolution is 0.00017<span class="math inline"><em></em><sup>∘</sup></span> and the accuracy is reported by the manufacturer to be 0.164<span class="math inline"><em></em><sup>∘</sup></span> after 6 h of flight. Values are provided by the INS at a frequency of 10 Hz.</p>
+<p><strong>Aircraft True Heading (</strong><span class="math inline"><em></em><sup>∘</sup></span><strong>):</strong> <strong><span class="underline">THDG</span></strong><br />
+<em>The azimuthal angle between the centerline of the aircraft (pointing ahead, toward the nose) and a line of meridian.</em> This azimuthal angle is measured in a polar coordinate system oriented relative to the Earth with polar axis upward and azimuthal angle measured relative to true north. The heading thus indicates the orientation of the aircraft, not necessarily the direction in which the aircraft is traveling. The resolution is 0.00017<span class="math inline">º</span> and the accuracy is quoted by the manufacturer as 0.2<span class="math inline">º</span> after 6 h of flight. Values are provided by the INS at a frequency of 25 Hz. “True” distinguishes the heading from the magnetic heading, the heading that would be measured by a magnetic compass. For more information on the coordinate system used, see <a href="https://opensky.ucar.edu/islandora/object/archives%3A8152">RAF Bulletin 23</a>.<span id="punch3.2" label="punch3.2">[punch3.2]</span></p>
+<p><strong>Aircraft Pitch Attitude Angle (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">PITCH</span></strong><br />
+<em>The angle between the centerline of the aircraft (pointing ahead, toward the nose) and the horizontal plane in a reference frame relative to the Earth with polar axis upward.</em> Positive values correspond to the nose of the aircraft pointing above the horizon. The resolution is 0.00017<span class="math inline">º</span> and the accuracy is quoted by the manufacturer as 0.05<span class="math inline">º</span> after 6 h of flight. Values are provided by the INS at a frequency of 50 Hz.</p>
+<p><strong>Aircraft Roll Attitude Angle (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">ROLL</span></strong><br />
+<em>The angle of rotation about the longitudinal axis of the aircraft required to bring the lateral axis (along the wings) to the horizontal plane.</em> Positive angles indicate that the starboard (right) wing is down ((i.e., a clockwise rotation has occurred from level when facing forward in the aircraft). The resolution is 0.00017<span class="math inline">º</span> and the accuracy is quoted by the manufacturer as 0.05<span class="math inline">º</span> after 6 h of flight. Values are provided by the INS at a frequency of 50 Hz.</p>
+<p><strong>Aircraft Vertical Acceleration (m s<span class="math inline"><em></em><sup> − 2</sup></span>):</strong> <strong><span class="underline">ACINS</span></strong><br />
+<em>The acceleration upward (relative to the Earth) as measured by an inertial reference unit.</em> With INSs now in use, the internal drift that arises when this measurement is integrated to get aircraft vertical speed and then altitude is removed by the INS via pressure damping through reference to the pressure altitude.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
+Positive values are upward. The sample rate is 50 Hz and the resolution is 0.0024 m s<span class="math inline"><em></em><sup> − 2</sup></span>.</p>
+<p><strong>Computed Aircraft Vertical Velocity (m/s):</strong> <strong><span class="underline">VSPD</span></strong><br />
+<em>The upward velocity of the aircraft, or rate-of-climb relative to the Earth, as measured by the INS.</em> VSPD is determined within the INS by integration of the vertical acceleration, with damping based on measured pressure to correct for accumulated errors in the integration of acceleration. The sample rate is 50 Hz with a resolution of 0.00016 m/s. The Honeywell Laseref INS employs a baro-inertial loop, similar to that described below for WP3 and the Litton LTN-51, to update the value of the acceleration. This variable is also filtered within the INS so that there is little variance with frequency higher than 0.1 Hz.</p>
+<p><strong>Aircraft Rate of Climb (m/s):</strong> <strong><span class="underline">ROC</span></strong> <strong></strong> (new 2017)<strong></strong><br />
+<em>The rate of climb or upward speed of the aircraft,</em> as measured by the INS with correction so as to represent the derivative of the geometric height. This variable is calculated by integration of the variable ACINS and then addition of the low-pass-filtered difference between that integral and the climb rate determined from the hydrostatic equation. The result retains the high-frequency response from the INS while matching the low-frequency average value determined from the hydrostatic equation, and so represents change in geometric height. <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/Recommendation161107f.pdf">This memo</a> contains additional background information on this variable.<br /></p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<!-- \fbox{\begin{minipage}[t]{0.95\textwidth}% -->
+<p class="box">
+<span class="math inline">\(g^{\dagger}\)</span> = acceleration of gravity (see Eq. <a href="introduction.html#eq:gsublambda">(1.1)</a>)<br />
+<span class="math inline">\(R_{d}{}^{\dagger}\)</span> = gas constant for dry air<br />
+<span class="math inline">\(T_{K}\)</span> = absolute temperature = (ATX + 273.15)<br />
+<span class="math inline">\(a\)</span> = ACINS = upward acceleration as measured by the INS [m s<sup>-2</sup>]<br />
+<span class="math inline">\(p\)</span> = PSXC = measured ambient pressure [hPa]<br />
+<span class="math inline">\(\Delta p\)</span> = difference between current and last value of PSXC<br />
+<span class="math inline">\(\Delta t\)</span> = time between samples (1/<span class="math inline">\(f\)</span> where <span class="math inline">\(f\)</span> is the sample
+frequency)<br />
+<span class="math inline">\(F_{L}\)</span> = low-pass Butterworth filter (cf. p. ).
+</p>
+<p class="box2">
+ 1. From consecutive measurements of pressure, estimate the rate of climb
+from the hydrostatic equation:<br />
+<span class="math display" id="eq:wphe">\[\begin{equation}
+w_{p}=-\frac{R_{d}T_{k}}{gp}\frac{\Delta p}{\Delta t}
+\tag{3.1}  
+\end{equation}\]</span><br />
+ 2. Add the current measurement of acceleration to the cumulative sum:
+<span class="math display" id="eq:wpstar">\[\begin{equation}
+w_{p}^{*}\leftarrow w_{p}^{*}+a\Delta t
+\tag{3.2}
+\end{equation}\]</span><br />
+ 3. Define ROC as the sum of <span class="math inline">\(w_{p}^{*}\)</span> and the low-pass filtered value
+of (<span class="math inline">\(w_{p}-w_{p}^{*}\)</span>):<br />
+<span class="math display" id="eq:ROC">\[\begin{align}
+\mathrm{ROC} &amp; =w_{p}^{*}+F_{L}(w_{p}-w_{p}^{*})
+\tag{3.3}  
+\end{align}\]</span>
+</p>
+<p><strong>Pressure-Damped Aircraft Vertical Velocity (m/s):</strong> <strong><span class="underline">WP3</span></strong> (obsolete)<br />
+<span id="WP3 algorithm" label="WP3 algorithm"></span>This was a derived variable incorporating a third-order damping feedback loop to remove the drift from the inertial system’s vertical accelerometer (ACINS or VZI) using pressure altitude (PALT) as a long-term, stable reference. Positive values are up. The Honeywell INS now in use provides its own version of this measurement, VSPD, and WP3 is now considered obsolete (and in any case should not be calculated from ACINS as provided by the Honeywell Laseref IRS because that ACINS already incorporates pressure damping). Documentation is included here because many old data files include this variable. Note that “pressure altitude” is not a true altitude but an altitude equivalent to the ambient pressure in a standard atmosphere, so updating a variable integrated from inertial measurements to this value can introduce errors vs. the true altitude.. WP3 was calculated by the data-processing software as follows (with coefficients in historical use and not updated to the recommendations elsewhere in this technical note):<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>
+<br /></p>
+<!-- \fbox{\begin{minipage}[t]{0.95\textwidth}% -->
+<p class="box">
+<span class="math inline">\(g_{1}\)</span> = 9.780356 m s<sup>-2</sup><br />
+<span class="math inline">\(a_{1}\)</span> = 0.31391116$$10<sup>-6</sup>m<sup>-1</sup><br />
+<span class="math inline">\(a_{2}\)</span> = .0052885 (dimensionless)<br />
+VEW (VNS) = eastward (northward) groundspeed of the aircraft (see
+below)<br />
+LAT = latitude measured by the IRS [º]<br />
+<span class="math inline">\(C_{dr}=\pi/180^{\circ}\)</span> = conversion factor, degrees to radians<br />
+PALT = pressure altitude of the aircraft<br />
+<span class="math inline">\(\Omega\)</span> = angular rotation of the earth<span class="math inline">\(^{\dagger}\)</span> = 7.292116<span class="math inline">\(\times10^{6}\)</span>
+radians/s<br />
+<span class="math inline">\(R_{E}\)</span> = radius of the Earth<span class="math inline">\(^{\dagger}\)</span> = 6.371229<span class="math inline">\(\times10^{6}\)</span>
+m<br />
+<span class="math inline">\(g_{f}\)</span> = local gravity corrected for latitude and altitude<br />
+<span class="math inline">\(V_{c}\)</span> = correction to gravity for the motion of the aircraft<br />
+<span class="math inline">\(G_{L}\)</span> = local gravity at the location of INS alignment, corrected
+to zero altitude<br />
+<span class="math inline">\(\{C[0],C[1],C[2]\}\)</span> = feedback coefficients, {0.15, 0.0075, 0.000125}
+for 125-s response
+</p>
+<p class="box2">
+ 1. From the pressure altitude PALT (in m) and the latitude LAT, estimate
+the acceleration of gravity:<br />
+<span class="math display" id="eq:gf">\[\begin{equation}
+g_{f}=g_{1}\left(1+a_{2}\sin^{2}(\mathrm{C_{dr}\{LAT\})}+a_{1}\mathrm{\{PALT\}}\right)
+\tag{3.4}
+\end{equation}\]</span>
+ 2. Determine corrections for Coriolis acceleration
+and centrifugal acceleration:<br />
+<span class="math display" id="eq:ac">\[\begin{equation}
+a_{c}=2\Omega\mathrm{\{VEW\}}\cos(C_{r}\mathrm{\{LAT\}})+\frac{\mathrm{\{VEW\}}^{2}+\mathrm{\{VNS\}}^{2}}{R_{E}}
+\tag{3.5}
+\end{equation}\]</span>
+   Estimate the acceleration <span class="math inline">\(a_{z}\)</span> (code variable ‘acz’) experienced
+by the aircraft as follows:<br />
+<span class="math display" id="eq:acz">\[\begin{equation}
+\mathrm{\{acz\}}=a_{z}=\mathrm{\{ACINS\}}+G_{L}-g_{f}+a_{c}
+\tag{3.6}
+\end{equation}\]</span>
+   Use a feedback loop to update the integrated value of the acceleration.<br />
+   The following code segment uses <em>acz</em> to represent acceleration <span class="math inline">\(a_{z}\)</span>,<br />
+   “deltaT” to represent the time between updates, and “hx” and “hxx”
+to store the feedback terms:<br />
+     wp3[FeedBack] += (acz - C[1] * hx[FeedBack] – C[2] * hxx[FeedBack]) * deltaT[FeedBack]<br />
+ 3. Update the feedback terms (using “hi3” for storage):<br />
+     hi3[FeedBack] = hi3[FeedBack] + (wp3[FeedBack] – C[0] * hx[FeedBack]) * deltaT[FeedBack];<br />
+     hx[FeedBack] = hi3[FeedBack] - palt;<br />
+     hxx[FeedBack] = hxx[FeedBack] + hx[FeedBack] * deltaT[FeedBack];<br />
+ 4. Set WP3 to the average of the last wp3 result and the current wp3
+result.
+</p>
+<p><strong>Inertial Altitude (m):</strong> <strong><span class="underline">ALT</span></strong><br />
+<em>The altitude of the aircraft as provided by an INS</em>, with pressure damping applied within the INS to the integrated aircraft vertical velocity to avoid the accumulation of errors. The value therefore is updated to the pressure altitude, not the geometric altitude, and should be regarded as a measurement of pressure altitude that has short-term variations as provided by the INS. The sample rate is 25 Hz with a resolution of 0.038 m. In some projects ALT also referred to the altitude from the avionics GPS system; the preferred and current variable name for that is ALT_G.<span id="punch3.10" label="punch3.10">[punch3.10]</span></p>
+<p><strong>Aircraft Ground Speed (m/s):</strong> <strong><span class="underline">GSF</span></strong><br />
+<em>The ground speed of the aircraft as provided by an INS.</em> The resolution is 0.0020 m/s, and the INS provides this measurement at a frequency of 10 Hz.</p>
+<p><strong>Aircraft Ground Speed East Component (m/s):</strong> <strong><span class="underline">VEW</span></strong><br />
+<em>The east-directed component of ground speed as provided by an INS.</em> The resolution is 0.0020 m/s, and the INS provides this measurement at a frequency of 10 Hz.</p>
+<p><strong>Aircraft Ground Speed North Component (m/s)</strong> <strong><span class="underline">VNS</span></strong><br />
+<em>The north-directed component of ground speed as provided by an INS.</em> The resolution is 0.0020 m/s, and the INS provides this measurement at a frequency of 10 Hz.</p>
+<p><strong>Distance East/North of a Reference (km):</strong> <strong><span class="underline">DEI</span>/<span class="underline">DNI</span></strong><br />
+<em>Distance east or north of a project-dependent reference point.</em> These are derived outputs obtained by subtracting a fixed reference position from the current position. The values are determined from measurements of latitude and longitude and converted from degrees to distance in a rectilinear coordinate system. The reference position can be either the starting location of the flight or a user-defined reference point (e.g., the location of a project radar). The accuracy of these values is dependent on the accuracy of the source of latitude and longitude measurements (see LAT and LON), and the calculations are only appropriate for short distances because they do not take into account the spherical geometry of the Earth.<span id="punch:3.11" label="punch:3.11">[punch:3.11]</span><br /></p>
+<p class="box">
+LON<span class="math inline">\(_{ref}\)</span> = reference longitude (º)<br />
+LAT<span class="math inline">\(_{ref}\)</span> = reference latitude (º)<br />
+<span class="math inline">\(C_{deg2km}=\)</span> conversion factor, degrees latitude to km
+<span class="math inline">\(\equiv\)</span> 111.12 km / <span class="math inline">\(^{\circ}\)</span>
+</p>
+<p class="box2">
+<span class="math display" id="eq:DNSEW">\[\begin{equation}
+\begin{split}
+\mathrm{DEI} = &amp; \mathrm{C_{deg2km}}(\mathrm{\{LON\}}-\{\mathrm{LON}_{ref}\})\cos(\mathrm{\{LAT\}}) \notag \\ 
+\mathrm{DNI} = &amp; \mathrm{C_{deg2km}}(\mathrm{\{LAT\}}-\{\mathrm{LAT}_{ref}\})  
+\end{split}
+\tag{3.7}
+\end{equation}\]</span>
+</p>
+<p><strong>Radial Azimuth/Distance from Fixed Reference:</strong> <strong><span class="underline">FXAZIM</span>,</strong> <strong><span class="underline">FXDIST</span></strong><br />
+<em>Azimuth and distance from a project-dependent reference point.</em> The units of the azimuthal angle are degrees (relative to true north) and the distance is in kilometers. These are calculated by rectangular-to-polar conversion of DEI and DNI, described in the preceding paragraph.</p>
+<!-- <h3 id="section" class="unnumbered">:–</h3> -->
+</div>
+<div id="additional-special-use-variables" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Additional Special-Use Variables</h3>
+<p>The following INS and IRU variables are not normally included in archived data files, but their values are recorded by the ADS and can be obtained from the original “raw” data files:<br /></p>
+<p><strong>Raw Lateral Body Acceleration (m/s<span class="math inline"><em></em><sup>2</sup></span>):</strong> <strong><span class="underline">BLATA</span></strong><br />
+The raw output from the IRU lateral accelerometer. Positive values are toward the starboard, normal to the aircraft center line. The sample rate is 50 Hz with a resolution of 0.0024 m s<span class="math inline"><em></em><sup> − 2</sup></span>.</p>
+<p><strong>Raw Longitudinal Body Acceleration (m/s<span class="math inline"><em></em><sup>2</sup></span>):</strong> <strong><span class="underline">BLONA</span></strong><br />
+The raw output from the IRU longitudinal accelerometer. Positive values are in the direction of the nose of the aircraft and parallel to the aircraft center line. The sample rate is 50 Hz with a resolution of 0.0024 m s<span class="math inline"><em></em><sup> − 2</sup></span>.</p>
+<strong>Raw Normal Body Acceleration (m/s<span class="math inline"><em></em><sup>2</sup></span>):</strong> <strong><span class="underline">BNORMA</span></strong><br />
+The raw output from the IRU vertical accelerometer. Positive values are upward in the reference frame of the aircraft, normal to the aircraft center line and lateral axis. The sample rate is 50 Hz with a resolution of 0.0024 m s<span class="math inline"><em></em><sup> − 2</sup></span>.
+</p>
+<p>
+<p><strong>Raw Body Pitch Rate (</strong><span class="math inline">º</span><strong>/s):</strong> <strong><span class="underline">BPITCHR</span></strong><br />
+The raw output of the IRU pitch rate gyro. Positive values indicate the nose moving upward and refer to rotation about the aircraft’s lateral axis. The sample rate is 50 Hz with a resolution of 0.0039<span class="math inline">º</span>/s.</p>
+<p><strong>Raw Body Roll Rate (</strong><span class="math inline">º</span><strong>/s):</strong> <strong><span class="underline">BROLLR</span></strong><br />
+The raw output of the IRU roll rate gyro. Positive values indicate starboard wing moving down and refer to rotation about the aircraft center line. The sample rate is 50 Hz with a resolution of 0.0039<span class="math inline">º</span>/s.</p>
+<p><strong>Raw Body Yaw Rate (</strong><span class="math inline">º</span><strong>/s):</strong> <strong><span class="underline">BYAWR</span></strong><br />
+The raw output of the IRU yaw rate. Positive values represent the nose turning to the starboard and refer to rotation about the aircraft’s vertical axis. The sample rate is 50 Hz with a resolution of 0.0039<span class="math inline">º</span>/s.</p>
+<!-- <h2 id="global-positioning-systems">Global Positioning Systems</h2> -->
+</div>
+</div>
+<div id="global-positioning-systems" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Global Positioning Systems</h2>
+<p>Primary GPS variables specifying the position and velocity of the aircraft are provided by GPS receivers, currently a NovAtel Model OEM 5 unit on the GV and a NovAtel Model OEM-4 receiver on the C-130 (to be replaced by an OEM-6 after January 2014). See <a href="http://www.eol.ucar.edu/instruments/research-global-positioning-system">this link</a> for a description of these systems. The coordinate system used for all GPS measurements is the World Geodetic System WGS-84; for details, see <a href="http://earth-info.nga.mil/GandG/publications/tr8350.2/wgs84fin.pdf">this link</a>.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>
+The uncertainty of the position measurements is specified by the manufacturer to be 1.5 m CEP horizontal (3.3 m 95% CEP).<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>
+The accuracy of velocity measurements is 0.03 m/s RMS for all axes. All variables are provided by the GPS receivers at 5 Hz. Latitude and longitude are recorded in a special log file (called the GPGGA log) with a resolution of 0.0001 degree, while Earth-relative velocity is recorded in the GPRMC log with resolution of 0.1 m/s. Starting in January 2014 new logs (named BESTPOS and BESTVEL) have also been recorded to preserve more significant digits in the measurements. The BESTPOS log has a position resolution of <span class="math inline">10<sup> − 11</sup>deg </span>, while the BESTVEL log is recorded with 0.0001 m/s resolution.</p>
+<p>Some of the following variables are also available from alternate Garmin GPS16 receivers, for which the variable name is qualified by the name of that unit; e.g., GGLAT_GMN for GGLAT as measured by a Garmin GPS unit. In addition, some of the measurements from the GPS units that are part of the aircraft avionics systems are recorded; these are denoted by a suffix “_G” or “_A”. Measurements from before about 2000 used Trimble TANS-III receivers, <span id="punch3.3" label="punch3.3">[punch3.3]</span>with the ability to track up to 6 satellites at a time but needing only 4 to provide 3-dimensional position and velocity data (3 satellites for 2-dimensions). The accuracy of the position measurements for that unit was stated to be 25 meters (horizontal) and 35 meters (vertical) under “steady-state conditions.”<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>
+Likewise, velocity measurements are within 0.2 m/s for all axes. Measurement resolution is that of 4-byte IEEE format (about 6 significant digits). All variables were provided by the Trimble receivers at 1 Hz.</p>
+<p>A special correction is needed for variables GGVEW, GGVNS, and GGVSPD, which measure the motion <em>at the GPS antenna</em> relative to the Earth. The conventional wind calculation addresses the difference between the motion at the radome (where the relative wind is measured) and the INS (where variables VEW, VNS, VSPD are measured) arising from rotation of the aircraft. However, if GGVSPD is used instead of VSPD for vertical wind or GGVEW and GGVNS are used (perhaps via the complementary filter) for the horizontal wind, an additional correction is needed for the displacement between the GPS antenna and the INS receiver. On the GV, this distance is -4.30 m. A correction for aircraft rotation is therefore applied to GGVSPD, as described below.</p>
+<strong>GPS Latitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">GGLAT</span></strong>, <strong><span class="underline">LAT_G</span></strong>; also formerly <strong><span class="underline">GLAT </span></strong><br />
+<em>The aircraft latitude measured by a global positioning system.</em> Positive values are north of the equator; negative values are south. These variables are recorded in netCDF files as single-precision values. GGLAT is provided by the data-system GPS; LAT_G and LATF_G are from the avionics system GPS. LATF_G is a fine-resolution measurement that requires special processing.
+</p>
+<p>
+<p><strong>GPS Longitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">GGLON</span></strong>, <strong><span class="underline">LON_G</span></strong>; also formerly <strong><span class="underline">GLON</span></strong><br />
+<em>The aircraft longitude measured by a global positioning system.</em> Positive values are east of the prime meridian; negative are west. GGLON is provided by the (or a) data-system GPS; LON_G and LONF_G are from the avionics system GPS. LONF_G is a fine-resolution measurement that requires special processing. <span id="punch:3-12" label="punch:3-12">[punch:3-12]</span></p>
+<p><strong>GPS Ground Speed (m/s):</strong> <strong><span class="underline">GGSPD</span></strong>, <strong><span class="underline">GSF</span>_<span class="underline">G</span></strong><br />
+<em>The aircraft ground speed measured by a global positioning system.</em> GGSPD originates from a data-system GPS; GSF_G originates from an avionics-system GPS.</p>
+<p><strong>GPS Ground Speed Vector East Component (m/s):</strong> <strong><span class="underline">GGVEW</span></strong>, <strong><span class="underline">VEW_G</span></strong><br />
+<em>The eastward component of ground speed measured by a global positioning system.</em> GGVEW originates from a data-system GPS; VEW_G originates from an avionics-system GPS. In the case of GGVEW, when this is used in the calculation of horizontal wind, the following correction would be needed:
+<span class="math display" id="eq:GGVEWA">\[\begin{equation}
+\mathrm{\{GGVEWA\}}=\mathrm{\{GGVEW\}-L_G}\dot{\psi}\frac{\cos\psi}{\cos\phi}
+\tag{3.8}
+\end{equation}\]</span><br />
+where GGVEWA is the corrected value used in the wind calculation, , and <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\phi\)</span> are respectively the heading and roll angles, <span class="math inline"><em>L</em><sub><em>G</em></sub> =  − 4.30</span> m for the GV, and <span class="math inline">\(\dot{\psi}\)</span> is the rate-of-change of heading (in radians). The variable BYAWR transmitted from the INS gives the rate-of-change of heading after conversion from <span class="math inline"><span class="math inline">\(^{\circ}\thinspace s^{-1}\)</span></span> to radians <span class="math inline"><em>s</em><sup> − 1</sup></span>. This correction is not applied in normal processing because the use of the complementary filter, discussed in Sect. <a href="the-state-of-the-aircraft.html#combining-irs-and-gps-measurements">3.4</a>, makes it of negligible importance. More information is contained in <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/Recommendation161107.pdf">this memo</a>.</p>
+<p><strong>GPS Ground Speed Vector North Component (m/s):</strong> <strong><span class="underline">GGVNS</span></strong>, <strong><span class="underline">VNS_G</span></strong><span class="underline"></span><br />
+<em>The northward component of ground speed as measured by a global positioning system.</em> GGVNS originates from a data-system GPS; VNS_G originates from an avionics-system GPS. In the case of GGVNS, when this is used in the calculation of horizontal wind, the following correction would be needed:
+<span class="math display" id="eq:GGVNSA">\[\begin{equation}
+\mathrm{\{GGVNSA\}} = \mathrm{\{GGVNS\}}+L_{G}\dot{\psi}\frac{\sin\psi}{\cos\phi}
+\tag{3.9}
+\end{equation}\]</span><br />
+where GGVNSA is the corrected value used in the wind calculation, <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\phi\)</span> are respectively the heading and roll angles, <span class="math inline"><em>L</em><sub><em>G</em></sub> =  − 4.30</span> m for the GV, and <span class="math inline">\(\dot{\psi}\)</span> is the rate-of-change of heading (in radians). The variable BYAWR transmitted from the INS gives the rate-of-change of heading <span class="math inline"><em>ψ̇</em></span> after conversion from <span class="math inline"><span class="math inline">\(^{\circ}\thinspace s^{-1}\)</span></span> to radians <span class="math inline"><em>s</em><sup> − 1</sup></span>. This correction is not applied in normal processing because the use of the complementary filter, discussed in Sect. <a href="the-state-of-the-aircraft.html#combining-irs-and-gps-measurements">3.4</a>, makes it of negligible importance, as discussed in the note referenced for GGVEW.</p>
+<p><strong>GPS-Measured Aircraft Vertical Velocity (m/s):</strong> <strong></strong> <strong><span class="underline">GGVSPD; also </span></strong> (obsolete) <strong><span class="underline">VSPD_G and GVZI</span></strong><br />
+<em>The aircraft vertical velocity provided by a GPS unit.</em> Positive values are upward.<span id="punch3.9" label="punch3.9">[punch3.9]</span> When GGVSPD is used in the calculation of vertical wind, the following correction (omitted before 2017) is applied:<span id="punch:3-13" label="punch:3-13">[punch:3-13]</span>
+<span class="math display" id="eq:GGVSPDA">\[\begin{equation}
+\mathrm{\{GGVSPDA\}} = \mathrm{\{GGVSPD\}}-L_{G}\dot{\theta}
+\tag{3.10}
+\end{equation}\]</span>
+where <span class="math inline"><em>L</em><sub><em>G</em></sub> =  − 4.30</span> m for the GV and <span class="math inline">\(\dot{\theta}\)</span> is the rate-of-change of the pitch angle, corresponding to the IRU variable BPITCHR<span>*</span><span class="math inline"><em>π</em></span>/180. The variable GGVSPDA is used internally but not recorded in the data archives. See <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/Recommendation161107.pdf">this memo</a> for additional justification.</p>
+<p><strong>GPS Altitude (m MSL):</strong> <strong><span class="underline">GGALT</span></strong>, <strong><span class="underline">GALT_A</span></strong><br />
+<em>The aircraft altitude</em> <em>measured by a global positioning system.</em> The measurement is with respect to the geoid as represented internally by the GPS receiver and is determined by adding the adjustment –GGEOIDHT to the direct measurement relative to the ellipsoidal Earth model of the GPS, which is defined by WGS-84. Positive values are above the reference surface. GGALT originates from a data-system GPS; GALT_A originates from an avionics-system GPS. See the discussion of height at the beginning of this subsection and the variable GGEOIDHT below for interpretation of these GPS-based measurements.</p>
+<p><strong>GPS Altitude above the WGS94 reference ellipse (m):<span class="underline"> GGHWGS</span></strong><br />
+<em>The aircraft altitude above the ellipse that is the reference for the WGS-84 coordinate system.</em> This variable is defined as GGHWGS=GGALT<span class="math inline">+</span>GGEOIDHT.<span id="punch3.4-1" label="punch3.4-1">[punch3.4-1]</span></p>
+<p><strong>GPS Geopotential Altitude (m):</strong> <strong><span class="underline">GEOPTH</span></strong><br />
+<em>The aircraft geopotential altitude above mean sea level.</em> If <span class="math inline"><em>g</em>(<em>z</em>, <em>λ</em>)</span> is the acceleration of gravity as represented by the formula in the Table of Constants in Section <a href="introduction.html#constants-and-symbols">1.3</a>, then the formula used for calculation of GEOPTH is obtained by integrating that formula from the reference surface for MSL (the geoid, <span class="math inline"><em>Δ</em></span> above the WGS84 reference ellipse, to the geometric altitude <span class="math inline"><em>H</em></span>, which is <span class="math inline"><em>H</em> + <em>Δ</em></span> above the reference ellipse. The result is normally close (within about 0.5 m) to that obtained with <span class="math inline"><em>Δ</em> = 0</span>. There are additional details in <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/RecommendationReGEOPHT.pdf">this memo</a>.<br /></p>
+<p class="box">
+<span class="math inline">\(H\)</span> = aircraft altitude above mean sea level, [m] (GGALT)<br />
+<span class="math inline">\(\lambda\)</span> = latitude (GGLAT) converted to radians<br />
+<span class="math inline">\(Z(H,\ \lambda)\)</span> = aircraft geopotential height [m] (GEOPTH)<br />
+<span class="math inline">\(g_{0}\)</span> = constant acceleration of gravity as defined for the International
+Standard Atmosphere<br />
+<span class="math inline">\(g_{e},\,g_{1},\,g_{2},\,k_{i}\)</span> as defined in the Table of Constants
+on p.~ ,<br />
+<span class="math inline">\(\Delta\)</span>= height of the geoid above the WGS-84 reference ellipse
+(GGEOIDHT)
+</p>
+<p class="box2">
+<span class="math display" id="eq:GEOPHT">\[\begin{equation}
+\mathrm{GEOPHT\}}=Z(H,\lambda)=\frac{1}{g_{0}}\Biggl\{ g_{e}\left(\frac{1+g_{1}\sin^{2}\lambda}{(1-g_{2}\sin^{2}\lambda)^{1/2}}\right) \notag \\   
+\times \left(H-\frac{1}{2}\left((H+\Delta)^{2}-\Delta^{2}\right)(k_{1}-k_{2}\sin^{2}\lambda)+\frac{1}{3}\left((H+\Delta)^{3}-\Delta^{3}\right)k_{3}\right)\Biggr\}  
+\tag{3.11}
+\end{equation}\]</span>
+</p>
+<p><strong>GPS Aircraft Track Angle (<span class="math inline">º</span>):</strong> <strong></strong> <strong><span class="underline">GGTRK</span>,<span class="underline"> TKAT_G</span><span class="underline"></span></strong><br />
+<em>The direction of the aircraft track (degrees clockwise from true north)</em> as measured by a data-system global positioning system (GGTRK) or an avionics-system GPS (TKAT_G)<em>.</em></p>
+<p><strong>GPS Height of the Geoid (m):</strong> <strong></strong> <strong><span class="underline">GGEOIDHT</span></strong><br />
+<em>Height of geoid, approximating mean sea level, above the WGS-84 ellipsoid.</em> The height above mean sea level is found by subtracting this value from the height above the WGS-84 reference ellipse as provided by GPS-based measurements.<span id="punch3.4" label="punch3.4">[punch3.4]</span></p>
+<p><strong>GPS Satellites Tracked:</strong> <strong></strong> <strong><span class="underline">GGNSAT</span></strong><br />
+<em>The number of satellites tracked by a GPS unit.</em></p>
+<p><strong>GPS Mode:</strong> <strong></strong> <strong><span class="underline">GGQUAL</span></strong><br />
+<em>GPS quality flag:</em><br /></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:80%; ">
+<table class="table table-bordered" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-31">Table 3.1: </span><strong>Meaning of GGQUAL:</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+GGQUAL
+</th>
+<th style="text-align:left;">
+description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+invalid
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+valid but without quality enhancement
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:left;">
+Measurement enhanced by the Satellite-Based Augmentation System, a means of improving GPS accuracy and integrity by broadcasting from geostationary satellites wide area corrections for GPS satellite orbits and ionospheric delays. In the US, this uses the Wide-Area Augmentation System or WAAS. This is described in some data files as a differential-GPS measurement.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:left;">
+Fully locked-in OmniSTAR XP, usually starting after about 20 minutes of tracking the GPS satellites and receiving the OmniSTAR data feed. This mode tracks the carrier phases of the L1 and L2 GPS carrier frequencies and provides about 15 cm accuracy in position.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>GPS Mode:</strong> <strong></strong> <strong><span class="underline">GMODE </span></strong><em>(obsolete)</em><br />
+This is the former output from the Trimble GPS indicating the mode of operation. The normal value is 4, indicating automatic (not manual) mode and that the receiver is operating in 4-satellite (as opposed to fewer) mode.<span id="punch3.5" label="punch3.5">[punch3.5]</span></p>
+<p><strong>GPS Status:</strong> <strong></strong> <strong><span class="underline">GGSTATUS</span></strong>, <strong><span class="underline">GSTAT_G</span><span class="underline"></span></strong>, <strong><span class="underline">GSTAT</span></strong> (obsolete)<br />
+The status of the GPS receiver. A value of 1 indicates that the receiver is operating normally; a value of 0 indicates a warning regarding data quality. GGSTATUS indicates the status of the data-system GPS; GSTAT_G indicates the status of the avionics-system GPS. The obsolete variable GSTAT, formerly used for the same purpose, has the reverse meaning: A value of 0 indicates normal operation and any other code indicates a malfunction or warning regarding poor data accuracy.</p>
+<p><span id="punch:3-14" label="punch:3-14">[punch:3-14]</span></p>
+<!-- <h2 id="other-measurements-of-aircraft-altitude">Other Measurements of Aircraft Altitude</h2> -->
+</div>
+<div id="other-measurements-of-aircraft-altitude" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Other Measurements of Aircraft Altitude</h2>
+<p><strong>Geometric Radio Altitude (m):</strong> <strong></strong> <strong><span class="underline">HGM</span></strong> <em>- (obsolete)</em><br />
+<em>The distance to the surface below the aircraft,</em> measured by a radar altimeter. The maximum range is 762m (2,500 ft). The instrument changes in accuracy at an altitude of 152 m: The estimated error from 152 m to 762 m is 7%, while the estimated error for altitudes below 152 m is 1.5 m or 5%, whichever is greater.</p>
+<p><strong>Geometric Radar Altitude (Extended Range) (APN-159) (m):</strong> <strong></strong> <strong><span class="underline"><span id="HGME" label="HGME">[HGME]</span>HGME</span></strong><br />
+<em>The distance to the surface below the aircraft, measured by a radar altimeter.</em> There are two outputs from an APN-159 radar altimeter, one with coarse resolution (CHGME) and one with fine resolution (HGME). Both raw outputs cycle through the range 0-360 degrees, where one cycle corresponds to 4,000 feet for HGME and to 100,000 feet for CHGME. To resolve the ambiguity arising from these cycles, 4,000-foot increments are added to HGME to maintain agreement with CHGME. This preserves the fine resolution of HGME (1.86 m) throughout the altitude range of the APN-159.</p>
+<p><strong>Geometric Radar Altitude (Extended Range) (APN-232) (m):</strong> <strong></strong> <strong><span class="underline">HGM232</span></strong><br />
+<em>Altitude above the ground</em> as measured by an APN-232 radar altimeter.</p>
+<p><strong>Height Above Terrain (m):</strong> <strong><span class="underline">ALTG</span></strong><br />
+<em>The aircraft altitude above the Earth’s surface</em> as represented by the next variable. If GGALT is the altitude above mean sea level, ALTG=GGALT<span class="math inline">−</span>SFC.</p>
+<p><strong>Height of the Earth’s Surface (m MSL):</strong> <strong><span class="underline">SFC</span></strong><br />
+<em>The altitude of the Earth’s surface</em> at a location directly below the aircraft. The data source is the Shuttle Radar Topography Mission of 2000. The height estimate is described in <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/HeightOfTerrain.pdf">this memo</a>.</p>
+<p><strong>Pressure-Damped Inertial Altitude (m):</strong> <strong></strong> <strong><span class="underline">HI3</span></strong> (obsolete)<br />
+<em>The aircraft altitude obtained from the twice-integrated IRU acceleration (ACINS), pressure-adjusted to obtain long-term agreement with PALT.</em> Note that this variable has mixed character, producing short-term variations that accurately track the inertial system changes but with adjustment to the pressure altitude, which is not a true altitude. The variable is not appropriate for estimates of true altitude, but proves useful in the updating algorithm used with the LTN-51 INS for vertical wind. See the discussion of WP3. This variable is now obsolete.</p>
+<p><strong>ISA Pressure Altitude (m):</strong> <strong></strong> <strong><span class="underline">PALT</span></strong><br />
+<em>The geopotential altitude in the International Standard Atmosphere where the pressure is equal to the reference barometric (ambient) pressure (PSXC).</em><a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>
+The pressure altitude is best interpreted as a variable equivalent to the measured pressure, not as a geometric altitude. In the following description of the algorithm, some constants (identified by the symbol <span class="math inline"><em></em><sup>‡</sup></span>) are specified as part of the ISA and so should not be “improved” to more modern values such as those given in the table of constants in Section <a href="introduction.html#constants-and-symbols">1.3</a> (e.g., <span class="math inline"><em>R</em><sub>0</sub><sup>‡</sup>).</span><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>
+A note at <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/PressureAltitude.pdf">this link</a> describes the pressure altitude in more detail and documents the change that was made in November 2010.<br /></p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<p class="box">
+<span class="math inline">\(T_{0}^{\ddagger}\)</span>= 288.15 K, reference temperature<br />
+<span class="math inline">\(\lambda_{a}^{\ddagger}\)</span> =
+-0.0065 <span class="math inline">\(^{\circ}\)</span>C per geopotential meter = the lapse rate for the troposphere<span class="math inline">\(^{\ddagger}\)</span><br />
+<span class="math inline">\(p\)</span> = measured static (ambient) pressure, hPa, usually from PSXC<br />
+<span class="math inline">\(p_{0}^{\ddagger}\)</span> = 1013.25 hPa, reference pressure for PALT=0 <span class="math inline">\(^{\ddagger}\)</span><br />
+<span class="math inline">\(M_{d}^{\ddagger}\)</span> = 28.9644 kg/kmol = molecular weight of dry
+air, ISA definition <span class="math inline">\(^{\ddagger}\)</span><br />
+<span class="math inline">\(g^{\ddagger}\)</span> = 9.80665 m s<span class="math inline">\(^{-2}\)</span>, acceleration of gravity <span class="math inline">\(^{\ddagger}\)</span><br />
+<span class="math inline">\(R_{0}^{\ddagger}\)</span> = universal gas constant, defined<span class="math inline">\(^{\ddagger}\)</span>
+as 8.31432<span class="math inline">\(\times10^{3}\)</span> J kmol<sup>-1</sup> K<sup>-1</sup><br />
+<span class="math inline">\(z_{T}^{\ddagger}\)</span> = altitude of the ISA tropopause = 11,000 m <span class="math inline">\(^{\ddagger}\)</span><br />
+<span class="math inline">\(x=-R_{0}^{\ddagger}\lambda_{a}^{\ddagger}/(M_{d}^{\ddagger}g^{\ddagger})\)</span>
+<span class="math inline">\(\approx\)</span> 0.1902632 (dimensionless)
+</p>
+<p class="box2">
+For pressure &gt; 226.3206 hPa (equivalent to a pressure altitude &lt; <span class="math inline">\(z_{T}\)</span>):
+<span class="math display" id="eq:PALT1">\[\begin{equation}
+\mathrm{PALT}=-\left(\frac{T_{0}^{\ddagger}}{\lambda^{\ddagger}}\right)\left(1-\left(\frac{p}{p_{0}^{\ddagger}}\right)^{x}\right)
+\tag{3.12}
+\end{equation}\]</span><br />
+otherwise, if <span class="math inline">\(T_{T}\)</span>
+and <span class="math inline">\(p_{T}\)</span>
+are respectively the temperature and pressure at the altitude <span class="math inline">\(z_{T}\)</span>:<br />
+<span class="math display">\[T_{T}=T_{0}+\lambda^{\ddagger}z_{T}^{\ddagger}=216.65\,\mathrm{K}\]</span>
+<span class="math display">\[p_{T}=p_{0}^{\ddagger}\Bigl(\frac{T_{0}^{\ddagger}}{T_{T}}\Bigr)^{\frac{g^{\ddagger}M_{d}^{\ddagger}}{\lambda^{\ddagger}R_{0}^{\ddagger}}}=226.3206\,\mathrm{hPa}\]</span>
+<span class="math display" id="eq:PALT2">\[\begin{equation}
+\mathrm{PALT}=z_{T}^{\ddagger}+\frac{R_{0}^{\ddagger}T_{T}}{g^{\ddagger}M_{d}^{\ddagger}}\ln\left(\frac{p_{T}}{p}\right)
+\tag{3.13}
+\end{equation}\]</span><br />
+which, after conversion from natural to base-10 logarithm, is coded
+to be equivalent to the following:
+</p>
+<pre class="text box-out"><code>// transition pressure at the assumed ISA tropopause:
+#define ISAP1 226.3206
+// reference pressure for standard atmosphere:
+#define ISAP0 1013.25
+if (psxc &gt; ISAP1):
+ palt = 44330.77 * (1.0 - pow(psxc / ISAP0, 0.1902632));
+else:
+ palt = 11000.0 + 14602.12 * log10(ISAP1 / psxc);</code></pre>
+<p><br />
+<br />
+<br />
+<strong>Altitude, Reference (MSL):</strong> <strong><span class="underline">ALTX</span></strong> <strong></strong> <em>(Obsolete)</em><strong>,</strong> <strong><span class="underline">GGALTC</span></strong> <em>(Obsolete)</em> <span id="punch3.6" label="punch3.6">[punch3.6]</span><br />
+<em>Derived altitude above the geopotential surface,</em> obtained by combining information from a GPS receiver and an inertial reference system. This variable was intended to compensate for times when GPS reception was lost by incorporating information from the IRS measurement of altitude. GPS status measurements were used to detect signal loss, although sometimes this signal was delayed for a few seconds after the signal was lost. A 10-second running average was calculated of the difference between the GPS altitude and the reference altitude. When the sample-to-sample altitude difference changed more than 50 meters or when the GPS status detected a degraded signal, the derived variable (ALTX or GGALTC) became the alternate reference altitude adjusted by the latest running-average difference between that reference altitude and GGALT. When reception was recovered, to avoid a sudden discontinuity in altitude, the derived variable was adjusted back to the GPS altitude gradually over the next 10 seconds.<br />
+<br />
+This obsolete variable should be used with caution because the reference altitude used in past calculations was the IRS altitude updated to the pressure altitude of the aircraft. To account for the difference between pressure and geometric altitude, a regression equation was used, normally <span class="math inline"><em>z</em> = <em>a</em><sub>0</sub> + <em>a</em><sub>1</sub> * <em>P</em><em>A</em><em>L</em><em>T</em></span> where <span class="math inline"><em>a</em><sub>0</sub> =  − 46.3</span> m and <span class="math inline"><em>a</em><sub>1</sub> = 0.97866</span> but often adjusted dependent on project conditions. This introduced problems in early applications with the GV because it did not account for the pressure-altitude transition at the ISA tropopause. Use of a pressure altitude as reference introduces additional errors in altitude in regions that are not barotropic.<br /></p>
+<!-- <h2 id="subsecirsgpscombining-irs-and-gps-measurements"><span id="subsec:IRS/GPS" label="subsec:IRS/GPS">[subsec:IRS/GPS]</span>Combining IRS and GPS Measurements</h2> -->
+</div>
+<div id="combining-irs-and-gps-measurements" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Combining IRS and GPS Measurements</h2>
+<p>Measurements from the global positioning and inertial navigation systems are combined to produce new variables that take advantage of the strengths of each, so that the resulting variables have the long-term stability of the GPS and the short-term resolution of the INS. This section describes some variables that result from this blending of variables. These corrected variables are usually the best available when the GPS and IRS are both functioning.</p>
+<p>One can determine if the GPS is functioning by examining the GPS status variables described in the previous section or by looking for spikes or “flat-lines” in the data. If the GPS data are missing for a short time (a few seconds to a minute), accuracy is not affected. However, longer dropouts will result in uncertainties degrading toward those of the INS. Without the GPS or another ground reference, the IRS error cannot be determined empirically, and one should assume that it is within the manufacturer’s specification (1 nautical mile of error per hour of flight, 90% CEP). When the GPS is active, RAF estimates that the correction algorithm produces a position with an error less than 1.5 m. <span id="punch3.7" label="punch3.7">[punch3.7]</span>Due to the nature of the algorithm, the error will increase from about 1.5 meters to the INS specification in about one-half hour after GPS information is lost.</p>
+<p><strong>GPS-Corrected Inertial Ground Speed Vector, (m/s):</strong> <strong></strong> <strong><span class="underline">VEWC</span>,</strong> <strong><span class="underline">VNSC</span></strong><br />
+These variables result from combining GPS and INS output of the east and north components of ground speed from a complementary-filter algorithm.<span id="compFilter" label="compFilter">[compFilter]</span> Positive values are toward the east and north, respectively. The smooth, high-resolution, continuous measurements from the inertial navigation system, {VNS, VEW}, which can slowly accumulate errors over time, are combined with the measurements from the GPS, {GVNS, GVEW}, which have good long-term stability, via an approach based on a complementary filter. A low-pass filter, <span class="math inline"><em>F</em><sub><em>L</em></sub>({<em>G</em><em>V</em><em>N</em><em>S</em>, <em>G</em><em>V</em><em>E</em><em>W</em>})</span>, is applied to the GPS measurements of groundspeed, which are assumed to be valid for frequencies at or lower than the cutoff frequency <span class="math inline"><em>f</em><sub><em>c</em></sub></span> of the filter. Then the complementary high-pass filter, denoted (<span class="math inline">1 − <em>F</em><sub><em>L</em></sub></span>)(<span class="math inline">{<em>V</em><em>N</em><em>S</em>, <em>V</em><em>E</em><em>W</em>}</span>), is applied to the IRS measurements of groundspeed, which are assumed valid for frequencies at or higher than <span class="math inline"><em>f</em><sub><em>c</em></sub></span>. Ideally, the transition frequency would be selected where the GPS errors (increasing with frequency) are equal to the IRS errors (decreasing with frequency).<br />
+<br />
+The procedure is use now is documented in the <a href="http://dx.doi.org/10.5065/D60G3HJ8">Technical Note on Wind Uncertainty</a>, beginning on p. 125. It is a three-pole Butterworth low-pass filter, originally coded following the algorithm described in Bosic, S. M., 1980: <em>Digital and Kalman filtering : An Introduction to Discrete-Time Filtering and Optimum Linear Estimation,</em> p. 49. As described in <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/checkCompFilter.pdf">this memo</a>, it has been revised (2014) to use coefficients generated by the R routine “butter().” The digital filter used is recursive, not centered, to permit calculation during a single pass through the data. If the cutoff frequency lies where both the GPS and INS measurements are almost the same, then the detailed characteristics of the filter (e.g., phase shift) in the transition region do not matter because the complementary filters have canceling effects when applied to the same signal. The transition frequency <span class="math inline"><em>f</em><sub><em>c</em></sub></span> was chosen to be (1/600) Hz. The Butterworth filter was chosen because it provides flat response away from the transition.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a><br /></p>
+<p class="box">
+<strong>CONSTANTS</strong> (dependent on time constant <span class="math inline">\(\tau\)</span>):<sup>(a)</sup><br />
+<br />
+<span class="math inline">\(a=\frac{2\pi}{\tau}\)</span>,
+<span class="math inline">\(a_{2}\)</span>=<span class="math inline">\(a\ e^{-a/2}(\cos(a\sqrt{\frac{3}{2}})+\sqrt{\frac{1}{3}}\sin(a\sqrt{\frac{3}{2}}))\)</span>,
+<span class="math inline">\(a_{3}\)</span>=2<span class="math inline">\(e^{-a/2}\)</span><span class="math inline">\(\cos(a\sqrt{\frac{3}{2}})\)</span>, <span class="math inline">\(a_{4}\)</span>=<span class="math inline">\(e^{-a}\)</span><br />
+__________<br />
+<sup>(a)</sup> For processing prior to the 2014, the factor <span class="math inline">\(\sqrt{\frac{3}{2}}\)</span>
+was erroneously <span class="math inline">\(\frac{\sqrt{3}}{2}\)</span>.
+</p>
+<pre><code>// input x = unfiltered signal  
+// output returned is low-pass-filtered input  
+// tau determines the cutoff  
+// zf[] saves values for recursion  
+zf[2] = -a * x + a2 * zf[5] + a3 * zf[3] - a4 * zf[4];  
+zf[1] = a{*}x + a4{*}zf[1];     
+zf[4] = zf[3];  
+zf[3] = zf[2];  
+zf[5] = x;  
+return(zf[1] + zf[2]); </code></pre>
+<p>The net result then is the sum of these two filtered signals, calculated as described in the following boxes:</p>
+<p class="box">
+VEW = IRS-measured east component
+of the aircraft ground speed<br />
+VNS = IRS-measured north component of the aircraft ground speed<br />
+GGVEW = GPS-measured east component of the aircraft ground speed<br />
+GGVNS = GPS-measured north component of the aircraft ground speed<br />
+<span class="math inline">\(F_{L}()\)</span> = three-pole Butterworth low-pass recursive digital filter
+</p>
+<p class="box2">
+<span class="math display" id="eq:VC">\[\begin{align}\begin{split}
+\{\mathrm{VNSC}\} &amp; = F_{L}(\mathrm{\{GGVNS\})}+(1-F_{L})(\{\mathrm{VNS\}})\\
+\{\mathrm{VEWC}\} &amp; = F_{L}(\mathrm{\{GGVEW\})}+(1-F_{L})(\{\mathrm{VEW\}})
+\end{split}\tag{3.14}
+\end{align}\]</span>
+</p>
+<p>This result is used as long as the GPS signals are continuous and flagged as being valid. When that is not the case, some means is needed to avoid sudden discontinuities in velocity (and hence wind speed), which would introduce spurious effects into variance spectra and other properties dependent on a continuously valid measurement of wind. To extrapolate measurements through periods when the GPS signals are lost (as sometimes occurs, for example, in turns) a fit is determined to the difference between the best-estimate variables {VNSC,VEWC} and the IRS variables {VNS,VEW} for the period before GPS reception was lost, and that fit is used to extrapolate through periods when GPS reception is not available. The procedure is as described below.<br />
+<span id="punch:3-15" label="punch:3-15">[punch:3-15]</span></p>
+<p class="box">
+ 1. If GPS reception has never been valid earlier in the flight, use the INS values without correction.<br><br />
+ 2. Whenever both GPS and INS are good, update the low-pass-filtered estimate of the difference between them. This is added to the INS measurement to obtain the corrected variable. Also update a least-squares fit to the difference between the GPS and INS groundspeeds, for each component. The errors are assumed to result primarily from a Schuler oscillation, so the three-term fit is of the form <span class="math inline">\(\Delta=a_1+a_2\sin(\Omega_{Sch}t)+a_3\cos(\Omega_{Sch}t)\)</span>, where <span class="math inline">\(\Omega_{Sch}\)</span> is the angular frequency of the Schuler oscillation (taken to be <span class="math inline">\(2\pi/5067\)</span> s, and <span class="math inline">\(t\)</span> is the time since the start of the flight. A separate fit is used for each component of the velocity and each component of the position (discussed below under LATC and LONC). The fit matrix used to determine these coefficients is updated each time step but the accumulated fit factors decay exponentially with a 30-min decay constant, so the terms used to determine the fit are exponentially weighted over the period of valid data with a time constant that decays exponentially into the past with a characteristic time of 30 min. This is long enough to determine a significant portion of the Schuler oscillation but short enough to emphasize recent measurements of the correction.<br><br>
+ 3. When GPS data become invalid, if sufficient data (spanning 30 min) have been accumulated, invert the accumulated fit matrices to determine the coefficients {<span class="math inline">\(a_1,a_2,a_3\)</span>} and then use the formula for <span class="math inline">\(\Delta\)</span> in the preceding step to extrapolate the correction to the IRS measurements while the GPS measurements remain invalid. Doing so immediately would introduce a discontinuity in {VNSC,VEWC}, however, so the correction <span class="math inline">\(\Delta\)</span> is introduced smoothly by adjusting {VNSC, VEWC} as follows: If <span class="math inline">\(dvy\)</span> is the adjustment added to the INS measurement, adjust it according to
+<span class="math inline">\(dvy^\prime=\eta\ dvy+(1-\eta)\Delta\)</span> where <span class="math inline">\(dvy^\prime\)</span> is the sequentially adjusted correction and <span class="math inline">\(\eta=0.995\)</span> s<span class="math inline">\(^{-1}\)</span> is chosen to give a decaying transition with a time constant of about 5.5 min. This has the potential to introduce some artificial variance at this scale and so should be considered in cases where variance spectra are analyzed in detail, but it has much less influence on such spectra than a discontinuous transition would. Ideally, the current fit and the last filtered discrepancy (VNSC<sub>0</sub><span class="math inline">\(-\)</span>GVNS<sub>0</sub> should be about equal, so transitioning between them should not introduce a significant change.<br><br>
+ 4. To avoid transients that would result from switching abruptly to the complementary-filter solution when the GPS measurements again become valid, the correction factors (e.g., <span class="math inline">\(dvy\)</span>) are also updated smoothly toward the complementary-filter solution, using for example <span class="math inline">\(dvy^\prime=\eta\ dvy+(1-\eta)F_L(v_y^{GPS}-v_y^{IRS})\)</span> where <span class="math inline">\(F_L\)</span> is the low-pass filter and <span class="math inline">\(v_y\)</span> is the northward component of aircraft groundspeed.
+</p>
+<p><strong>GPS-Corrected Inertial Latitude and Longitude (</strong><span class="math inline">º</span><strong>):</strong> <strong></strong> <strong><span class="underline">LATC</span>,</strong> <strong><span class="underline">LONC</span></strong><br />
+<em>Combined GPS and IRS output of latitude and longitude.</em> Positive values are north and east, respectively.<span id="punch:3-16" label="punch:3-16">[punch:3-16]</span> These variables are the best estimate of position, obtained by the following approach:<br /></p>
+<style>
+  p.box {
+    background-color: #F8F8F8;
+      padding: 10px;
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+</style>
+<style>
+  p.box2 {
+    background-color: #FFFFFF;
+      padding: 10px;
+    border: 2px solid red;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 1px;
+  }
+</style>
+<p class="box">
+LAT = latitude measured by the IRS<br />
+LON = longitude measured by the IRS<br />
+GGLAT = latitude measured by the GPS<br />
+GGLON = longitude measured by the GPS<br />
+VNSC = aircraft ground speed, north component, corrected<br />
+VEWC = aircraft ground speed, east component, corrected
+</p>
+<p class="box2">
+<strong>1.</strong> Initialize the corrected position at the IRS position at the start of the flight or after
+any large change (&gt;5<span class="math inline">\(^\circ\)</span>) in the IRS position. <br><br>
+<strong>2.</strong> Integrate forward from that position using the aircraft groundspeed with components
+{VNSC,VEWC}. Note that in the absence of GPS information this will introduce
+long-term errors because it does not account for the Earth’s spherical geometry. It
+provides good short-term accuracy, but the GPS updating in the next step is needed to
+compensate for the difference between a rectilinear frame and the Earth’s spherical
+coordinate frame and provides a smooth yet accurate track. <br><br>
+<strong>3.</strong> Use an exponential adjustment to the GPS position, with time constant that is typi-
+cally about 100 s.<sup>(a)</sup> <br><br>
+<strong>4.</strong> To handle periods when the GPS becomes invalid, use an approach analogous to that
+for groundspeed, whereby a Schuler-oscillation fit to the difference between the GPS
+and IRS measurements is accumulated and used to extrapolate through periods when
+the GPS is invalid. <br>
+__________<br />
+<sup>(a)</sup> <em>specifically, LATC += η(GLAT-LATC) with η = 2π/(600 s)</em>
+</p>
+<!-- <strong><span class="underline"></span></strong><br />   -->
+<!-- <h1 id="the-state-of-the-atmospheresecstate-variables"> -->
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>For earlier projects using the Litton LTN-51 INS, this is a direct measurement without adjustment for changes in gravity during flight and without pressure-damping. Previous use employed a baro-inertial loop to compensate for drift in the integrated measurement. See the discussion of WP3 below.<a href="the-state-of-the-aircraft.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Regarding signs, note that ACINS is a number near zero, not near g, and so already has the estimated acceleration of gravity removed. The assumption made in the following is that the INS will report values adjusted for the gravitational acceleration <em>at the point of alignment</em>, which would be <span class="math inline"><em>G</em><sub><em>L</em></sub></span>. If <span class="math inline"><em>g</em><sub><em>F</em></sub></span>, the estimate for gravity at the flight altitude (palt) and latitude (lat), is <em>smaller</em> than <span class="math inline"><em>G</em><sub><em>L</em></sub></span> then the difference (<span class="math inline"><em>G</em><sub><em>L</em></sub> − <em>g</em><sub><em>f</em></sub></span>) will be positive; this will correct for the reference value for ACINS being the gravity measured at alignment (<span class="math inline"><em>G</em><sub><em>L</em></sub></span>) when it should actually be the sensed gravity (<span class="math inline"><em>g</em><sub><em>f</em></sub></span>) at the measurement point, so to obtain (sensed acceleration - <span class="math inline"><em>g</em><sub><em>f</em></sub></span>) it is necessary to add (<span class="math inline"><em>G</em><sub><em>L</em></sub> − <em>g</em><sub><em>f</em></sub></span>) to ACINS, <em>increasing</em> “acz” in this case. However, the situation with “vcorac” is reversed: “vcorac” is a positive term for all eastward flight, for example, but in that case the motion of the aircraft makes objects seem lighter (i.e., they experience less acceleration of gravity) than without such flight. ACINS is positive upward so it represents a net acceleration of the aircraft upward (as imposed by the combination of gravity and the lift force of the aircraft). To accomplish level flight in these circumstances, the aircraft must actually accelerate downward so the accelerometer will experience a negative excursion relative to slower flight. To compensate, “vcorac” must make a positive contribution to remove that negative excursion from “acz”. In the conceptual extreme that the aircraft flies fast enough for the interior to appear weightless, ACINS would reduce to -1<span>*</span><span class="math inline"><em>G</em><sub><em>L</em></sub></span> and vcorac would increase to +<span class="math inline"><em>G</em><sub><em>L</em></sub></span>, leaving acz near zero as required if the aircraft were to remain in level flight in the rotating frame.<a href="the-state-of-the-aircraft.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>There are four measures of height or altitude discussed in this technical note, height relative to the WGS-84 reference surface, geometric height relative to mean sea level, geopotential height and pressure height. The WGS-84 height (measured by GPS instruments) is height relative to a reference system in which zero is defined by a specified reference ellipsoid representing the shape of the Earth, as specified here: <a href="http://earth-info.nga.mil/GandG/publications/tr8350.2/tr8350_2.html">http://earth-info.nga.mil/GandG/publications/tr8350.2/tr8350_2.html</a>,. This is not defined to be a level surface in the sense of being an equipotential surface. A better approximation of mean sea level is the “geoid”, a surface having constant gravitational equipotential that approximates that at mean sea level. The geoid is more structured than the WSR-84 reference ellipsoid and departs significantly from it, often by several 10s of meters. Even the geoid does not represent mean sea level exactly because local mean sea level can be influenced by variations in water density, mean wind, or ocean circulation, but the geoid is usually the reference used for measurements labeled “MSL” except when fine-scale local effects must be considered. The geometric height is the true height above a reference surface, often taken to be mean sea level or the geoid; this may therefore differ significantly from the height measured directly by a GPS unit. There is a variable included below, GGEOIDHT, that provides a measure of the difference. Geopotential height is the height above mean sea level that would give the geopotential, or gravitational potential energy per unit mass, of the actual parcel if that mass were raised against standard gravity (not varying, e.g., with latitude or height) to that altitude. For the purpose of this definition, standard gravity is defined to be 9.80665<span class="math inline"> <em>m</em> <em>s</em><sup> − 2</sup></span>. Finally, pressure altitude, defined in detail below, is the altitude in the ISA Standard Atmosphere where the pressure matches a specified value; it is not a geometric coordinate but rather a measure of pressure.<a href="the-state-of-the-aircraft.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>CEP is the Circular Error Probability, the radius of a circle that contains 50% of the measurements; 95% CEP contains 95% of the measurements. When OnmiSTAR corrections are available (involving extra cost and not available in all areas of the globe, so not available for all projects) the uncertainty decreases to 0.15 m 95% CEP. The vertical uncertainty is about twice as great as the horizontal uncertainty. Because variables are stored as 4-byte single-precision floating point numbers, the inherent storage precision can limit the precision of the recorded position to about 1 m.<a href="the-state-of-the-aircraft.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>The GPS signals at one time suffered from “selective availability,” a US DOD term for a perturbed signal that degraded GPS absolute accuracy to 100 meters. This was especially noticeable in the altitude measurement, so GALT normally was not useful. As of 1 May 2000, selective availability was deactivated to allow everyone to obtain better position measurements. See the Interagency GPS Executive Board web site for more information on selective availability and GPS measurements prior to 2000.<a href="the-state-of-the-aircraft.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>See “U.S. Standard Atmosphere, 1976”, NASA-TM-A-74335, available for download at <a href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19770009539_1977009539.pdf">this URL</a>.<a href="the-state-of-the-aircraft.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>Prior to and including some projects in 2010, processing used slightly different coefficients: for aircraft other than the GV, <span class="math inline"><em>T</em><sub>0</sub>/<em>λ</em></span> was represented by -43308.83, the reference pressure <span class="math inline"><em>p</em><sub>0</sub></span> was taken to be 1013.246, and the exponent <span class="math inline"><em>x</em></span> was represented numerically by 0.190284. For the GV, the value of <span class="math inline"><em>T</em><sub>0</sub>/<em>λ</em></span> was taken to be 44308.0, the transition pressure <span class="math inline"><em>p</em><sub><em>T</em></sub></span> was 226.1551 hPa, <span class="math inline"><em>x</em></span> = 0.190284, and coefficient <span class="math inline"><span class="math inline">\(\frac{R_{0}^{\prime}T_{T}}{gM_{d}}\)</span></span> was taken to be 6340.70 m instead of 6341.620 m as obtained below. The difference between these older values and the ones recommended below is everywhere less than 10 m and so is small compared to the expected uncertainty in pressure measurements, because 1 hPa change in pressure leads to a change in pressure altitude that varies from about 8–40 m over the altitude range of the GV.<a href="the-state-of-the-aircraft.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>For historical reasons, the details of the now obsolete filter as originally coded and used for many years are described here. For the current version with coefficients, see the memo referenced above.<a href="the-state-of-the-aircraft.html#fnref14" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="general-information-about-data-files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-state-of-the-atmosphere.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

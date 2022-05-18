@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Air Chemistry Measurements | RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="6 Air Chemistry Measurements | RAF Technical Note: Processing Algorithms" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Air Chemistry Measurements | RAF Technical Note: Processing Algorithms" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Air Chemistry Measurements | RAF Technical Note: Processing Algorithms" />
+  
+  
+  
+
+<meta name="author" content="Al Cooper" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cloud-physics-variables.html"/>
+<link rel="next" href="aerosol-particle-measurements.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#alphabetical-list-of-variables"><i class="fa fa-check"></i><b>1.2</b> Alphabetical List of Variables</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#constants-and-symbols"><i class="fa fa-check"></i><b>1.3</b> Constants and Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html"><i class="fa fa-check"></i><b>2</b> General Information About Data Files</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#system-of-units"><i class="fa fa-check"></i><b>2.1</b> System of Units</a></li>
+<li class="chapter" data-level="2.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variables-used-to-denote-time"><i class="fa fa-check"></i><b>2.2</b> Variables Used to Denote Time</a></li>
+<li class="chapter" data-level="2.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#synchronication-of-measurements"><i class="fa fa-check"></i><b>2.3</b> Synchronization of Measurements</a></li>
+<li class="chapter" data-level="2.4" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#other-comments-on-terminology"><i class="fa fa-check"></i><b>2.4</b> Other Comments on Terminology</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variable-names-in-equations"><i class="fa fa-check"></i><b>2.4.1</b> Variable Names in Equations</a></li>
+<li class="chapter" data-level="2.4.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#distinction-between-original-measurements-and-derived-variables"><i class="fa fa-check"></i><b>2.4.2</b> Distinction Between Original Measurements and Derived Variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#dimensions-in-equations"><i class="fa fa-check"></i><b>2.4.3</b> Dimensions in Equations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html"><i class="fa fa-check"></i><b>3</b> The State of the Aircraft</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#inertial-reference-systems"><i class="fa fa-check"></i><b>3.1</b> Inertial Reference Systems</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#standard-variables"><i class="fa fa-check"></i><b>3.1.1</b> Standard Variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#additional-special-use-variables"><i class="fa fa-check"></i><b>3.1.2</b> Additional Special-Use Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#global-positioning-systems"><i class="fa fa-check"></i><b>3.2</b> Global Positioning Systems</a></li>
+<li class="chapter" data-level="3.3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude"><i class="fa fa-check"></i><b>3.3</b> Other Measurements of Aircraft Altitude</a></li>
+<li class="chapter" data-level="3.4" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#combining-irs-and-gps-measurements"><i class="fa fa-check"></i><b>3.4</b> Combining IRS and GPS Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html"><i class="fa fa-check"></i><b>4</b> The State of the Atmosphere</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations"><i class="fa fa-check"></i><b>4.1</b> Information on Instruments and Calibrations</a></li>
+<li class="chapter" data-level="4.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#variable-names"><i class="fa fa-check"></i><b>4.2</b> Variable Names</a></li>
+<li class="chapter" data-level="4.3" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#pressure"><i class="fa fa-check"></i><b>4.3</b> Pressure</a></li>
+<li class="chapter" data-level="4.4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#temperature-section"><i class="fa fa-check"></i><b>4.4</b> Temperature</a></li>
+<li class="chapter" data-level="4.5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#humidity"><i class="fa fa-check"></i><b>4.5</b> Humidity</a></li>
+<li class="chapter" data-level="4.6" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#derived-thermodynamic-variables"><i class="fa fa-check"></i><b>4.6</b> Derived Thermodynamic Variables</a></li>
+<li class="chapter" data-level="4.7" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind"><i class="fa fa-check"></i><b>4.7</b> Wind</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#relative-wind"><i class="fa fa-check"></i><b>4.7.1</b> Relative Wind</a></li>
+<li class="chapter" data-level="4.7.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector"><i class="fa fa-check"></i><b>4.7.2</b> Wind Components and the Wind Vector</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#special-use-remote-sensors"><i class="fa fa-check"></i><b>4.8</b> Special-Use Remote Sensors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#cloud-physics-variables"><i class="fa fa-check"></i><b>5</b> Cloud Physics Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html"><i class="fa fa-check"></i><b>5.1</b> Measurements of Liquid Water Content</a></li>
+<li class="chapter" data-level="5.2" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#sensors-1-D-probes"><i class="fa fa-check"></i><b>5.2</b> Sensors Detecting Individual Hydrometeors (1-D Probes)</a></li>
+<li class="chapter" data-level="5.3" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#hydrometeor-imaging-probes"><i class="fa fa-check"></i><b>5.3</b> Hydrometeor Imaging Probes</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#two-d-probe"><i class="fa fa-check"></i><b>5.3.1</b> Variables Derived from Measurements from a 2D Probe</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#air-chemistry-measurements"><i class="fa fa-check"></i><b>6</b> Air Chemistry Measurements</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html"><i class="fa fa-check"></i><b>6.1</b> Variables in Standard Data Files</a></li>
+<li class="chapter" data-level="6.2" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html#variables-in-special-data-sets"><i class="fa fa-check"></i><b>6.2</b> Variables in Special Data Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html"><i class="fa fa-check"></i><b>7</b> Aerosol Particle Measurements</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#condensation-nucleus-counter"><i class="fa fa-check"></i><b>7.1</b> Condensation Nucleus Counter</a></li>
+<li class="chapter" data-level="7.2" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#aerosol-spectrometers"><i class="fa fa-check"></i><b>7.2</b> Aerosol Spectrometers</a></li>
+<li class="chapter" data-level="7.3" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#special-aerosol-measurements"><i class="fa fa-check"></i><b>7.3</b> Special Aerosol Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#radiation-variables"><i class="fa fa-check"></i><b>8</b> Radiation Variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radiation-variables.html"><a href="radiation-variables.html"><i class="fa fa-check"></i><b>8.1</b> Measurements of Irradiance and Radiometric Temperature</a></li>
+<li class="chapter" data-level="8.2" data-path="radiation-variables.html"><a href="radiation-variables.html#spectral-irradiance-and-actinic-flux"><i class="fa fa-check"></i><b>8.2</b> Spectral Irradiance and Actinic Flux</a></li>
+<li class="chapter" data-level="8.3" data-path="radiation-variables.html"><a href="radiation-variables.html#solar-angles"><i class="fa fa-check"></i><b>8.3</b> Solar Angles</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="radiation-variables.html"><a href="radiation-variables.html#experimental-variables"><i class="fa fa-check"></i><b>9</b> Experimental Variables</a></li>
+<li class="chapter" data-level="10" data-path="obsolete-variables.html"><a href="obsolete-variables.html"><i class="fa fa-check"></i><b>10</b> Obsolete Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html"><i class="fa fa-check"></i>Appendices</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#suggested-additional-steps"><i class="fa fa-check"></i>Suggested Additional Steps</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-edit-this-document"><i class="fa fa-check"></i>How to Edit This Document</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-reference-specific-sections-or-pages-of-this-document"><i class="fa fa-check"></i>How to Reference Specific Sections or Pages of this Document:</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#page-numbers"><i class="fa fa-check"></i>Page Numbers</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#sections-and-subsections"><i class="fa fa-check"></i>Sections and Subsections</a></li>
+<li class="chapter" data-level="10.0.1" data-path="appendices.html"><a href="appendices.html#adding-new-targets"><i class="fa fa-check"></i><b>10.0.1</b> Adding New Targets</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RAF Technical Note: Processing Algorithms</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="air-chemistry-measurements" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Air Chemistry Measurements</h1>
+<!-- <h2 id="variables-in-standard-data-filespunch6-1">Variables in Standard Data Files<span id="punch:6-1" label="punch:6-1">[punch:6-1]</span></h2> -->
+<div id="variables-in-standard-data-files" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Variables in Standard Data Files</h2>
+<p>
+<strong>Carbon Monoxide Preliminary Mixing Ratio (ppbv):</strong> <strong></strong> <strong><span class="underline">CORAW_AL</span></strong><br />
+<em>The preliminary measurement of CO mixing ratio from the Aero-Laser model AL-5002 CO analyzer, before final calibrations are applied.</em> This instrument measures CO by vacuum ultraviolet resonance fluorescence. It is a commercial version of the instrument described by Gerbig et al.<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>
+The instrument is described further at <a href="https://www.eol.ucar.edu/instruments/aero-laser-vuv-resonance-fluorescence-carbon-monoxide-instrument">this URL</a>. The time resolution is 1 second. This variable is sometimes present in flight and in preliminary ground processing, but normally it is replaced by COMR_AL in final processing.
+</p>
+<p>
+<p><strong>Carbon Monoxide Mixing Ratio (ppbv):</strong> <strong></strong> <strong><span class="underline">COMR_AL</span></strong><br />
+<em>The mixing ratio measured by the Aero-Laser model AL-5002 CO analyzer.</em> See also CORAW_AL above. The calculation of COMR_AL is based on in-flight calibrations conducted 1-2 times per hour, when a gas of known concentration is supplied to the instrument and then a catalyst trap removes CO to provide a zero reference. The calibration results in a sensitivity and zero that are then used to convert the measurements from the instrument (recorded as counts per second) to a mixing ratio in units of ppbv. Time-dependent sensitivity and zero coefficients are computed post-flight as a linear interpolation between flight calibrations. This variable normally appears in final data sets for a project.<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>
+The algorithm is described in the following box:<br /></p>
+<p class="box">
+CPS = counts per second from the instrument<br />
+S(t) = sensitivity
+at time t<br />
+       = (CPS when exposed to cal gas) / concentration of cal gas<br />
+Z(t) = zero at time t<br />
+       = CPS when exposed to air passing through the catalyst trap
+</p>
+<p class="box2">
+<span class="math display" id="eq:COMRbox">\[\begin{equation}
+\mathrm{\{COMR\_AL\}} = (\mathrm{\{CPS\}}-Z(t))/S(t)
+\tag{6.1}
+\end{equation}\]</span>
+</p>
+See also the obsolete variables in Section <a href="obsolete-variables.html#obsolete-variables">10</a>, where variables from an earlier TECO Model 48 CO analyzer, in use before 2000, are described.
+</p>
+<p>
+<strong></strong>
+</p>
+<p>
+<strong>Carbon Dioxide Mixing Ratio (ppmv):</strong> <strong></strong> <strong><span class="underline">CO2_PIC</span></strong><span class="underline">x</span><br />
+<strong>Methane Mixing Ratio (ppmv):</strong> <strong><span class="underline">CH4_PICx</span></strong>
+</p>
+<p>
+<p><strong></strong><br />
+<em>Respectively, the carbon dioxide and methane mixing ratio measured by a Picarro CO2/CH4 instrument.</em> The letter ’x’ may be replaced by the model number of the instrument (e.g., 1301) or it may be blank. The Picarro CO2/CH4 G1301-f flight analyzer is a fast response trace gas monitor that measures CO<span class="math inline"><em></em><sub>2</sub></span> and CH<span class="math inline"><em></em><sub>4</sub></span> using wavelength-scanned cavity ring-down spectroscopy. The time resolution is 0.2 – 1 seconds. Additional information characterizing the instrument can be found at <a href="https://www.eol.ucar.edu/instruments/picarro-instrument-airborne-measurement-co2-and-ch4">this URL</a>. During flight, both measurements are calibrated 1-2 times per hour via sampling of a working standard, and linear calibration coefficients are applied based on multi-point lab calibration data and in-flight calibration checks. The procedure is analogous to that used for COMR_AL, as described immediately above. When water vapor is not removed from the ambient sample stream (the normal case), a correction factor for water present in the sensing cell must be applied following the approach of Richardson et al.,<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>
+as follows:<br /></p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<p class="box">
+[CO<span class="math inline">\(_{2}\)</span>]<span class="math inline">\(_{wet}\)</span> = carbon dioxide mixing ratio as measured
+in the sensing cell (with water)<br />
+[CO<span class="math inline">\(_{2}\)</span>]<span class="math inline">\(_{dry}\)</span> = carbon dioxide mixing ratio in dry air,
+corrected for the effects of water vapor<br />
+[CH<span class="math inline">\(_{4}\)</span>]<span class="math inline">\(_{wet}\)</span> = methane mixing ratio as measured in the
+sensing cell (with water)<br />
+[CH<span class="math inline">\(_{4}\)</span>]<span class="math inline">\(_{dry}\)</span> = methane mixing ratio in dry air, corrected
+for the effects of water vapor<br />
+<span class="math inline">\(W\)</span> = water vapor mixing ratio measured in the instrument cell [percent
+by volume]<br />
+{<span class="math inline">\(c_{0}\)</span>, <span class="math inline">\(c_{1}\)</span>} = {<span class="math inline">\(-0.01200,\,-2.674\times10^{-4}\)</span>} [dimensionless]<br />
+{<span class="math inline">\(d_{0}\)</span>, <span class="math inline">\(d_{1}\)</span>} = {<span class="math inline">\(-0.00982,\ -2.393\times10^{-4}\)</span>} [dimensionless]
+</p>
+<p class="box2">
+<span class="math display" id="eq:CO2PICbox1">\[\begin{equation}
+\{\mathrm{CO2\_PICX\}}=[\mathrm{CO_{2}]_{dry}=}\frac{[\mathrm{CO_{2}]_{wet}}}{1+c_{0}W+c_{1}W^{2}}
+\tag{6.2}
+\end{equation}\]</span>
+<span class="math display" id="eq:CO2PICbox2">\[\begin{equation}
+\{\mathrm{CH4\_PICX\}}=[\mathrm{CH_{4}]_{dry}=}\frac{[\mathrm{CH_{4}]_{wet}}}{1+d_{0}W+d_{1}W^{2}}
+\tag{6.3}
+\end{equation}\]</span>
+</p>
+<p>
+<strong>Chemiluminescent Ozone Sample Flow Rate (sccm):</strong> <strong></strong> <strong><span class="underline">XFO3FS</span></strong><br />
+<strong>Chemiluminescent Ozone Nitric Oxide Flow Rate (sccm):</strong> <strong></strong> <strong><span class="underline">XFO3FN</span>O</strong><br />
+<strong>Chemiluminescent Ozone Sample Pressure (mb):</strong> <strong></strong> <strong><span class="underline">XFO3P</span></strong>
+</p>
+<p>
+<br />
+<em>Flows and pressure within the chemiluminescence ozone sensor.</em> The sample rate, in standard <span class="math inline"><em>c</em><em>m</em><sup>3</sup>/<em>s</em></span>, is XFO3FS, while XFO3FNO gives the NO flow rate in the same units and XFO3P is the pressure in the ozone sample cell. These variables apply to measurements made by an earlier version of the fast ozone instrument. They have not been present in projects since 2006.
+</p>
+<p>
+<p><strong>Fast response NO chemiluminescence ozone mixing ratio (ppbv):</strong> <strong></strong> <strong><span class="underline">FO3_ACD</span>,</strong> <strong><span class="underline">FO3_CL</span></strong>, <strong>XO3, O3MR_CL</strong><br />
+<em>The ozone mixing ratio (by volume) measured by an NO chemiluminescence instrument.</em> The instrument detects chemiluminescence from the reaction of nitric oxide (NO) with ambient ozone, using a dry-ice cooled, red-sensitive photomultiplier employing photon-counting electronics. The measurement principle is described by Ridley et al. (1992),<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>
+and there is additional information describing the instrument at <a href="https://www.eol.ucar.edu/instruments/nitric-oxide-chemiluminescence-ozone-instrument">this URL</a>. The time resolution is 0.2 seconds, and typical uncertainty is 5%. The background signal is measured 1-2 times hourly during flights. Linear calibration coefficients are applied to the photon count rate to produce mixing ratios, and a correction is applied for water vapor during final processing, as follows:<br /></p>
+<p class="box">
+CPS = counts per second from the instrument<br />
+[O<span class="math inline">\(_{3}\)</span>]<span class="math inline">\(_{wet}\)</span> = ozone mixing ratio as measured in the sensing
+cell (with water)<br />
+[O<span class="math inline">\(_{3}\)</span>]<span class="math inline">\(_{dry}\)</span> = ozone mixing ratio in dry air, corrected
+for the effects of water vapor<br />
+<span class="math inline">\(S(t)\)</span> = sensitivity at time t = (CPS when exposed to cal gas)
+/ concentration of cal gas<br />
+<span class="math inline">\(Z(t)\)</span> = background at time t = CPS when exposed to zero-ozone
+air<br />
+<span class="math inline">\(r_v\)</span> = water vapor mixing ratio by volume
+[expressed as a fraction; dimensionless]<br />
+<span class="math inline">\(\kappa\)</span> = correction factor for water vapor = 4.3 [dimensionless]
+</p>
+<p class="box2">
+<span class="math display" id="eq:O3box1">\[\begin{equation}
+[\mathrm{O}_{3}]_{wet}=\frac{\mathrm{\{CPS\}}-Z(t)}{S(t)}
+\tag{6.4}
+\end{equation}\]</span>
+<span class="math display" id="eq:O3box2">\[\begin{equation}
+\mathrm{\{F03\_ACD\}}=[\mathrm{O_{3}}]_{dry} = \mathrm{[O_{3}]_{wet}}\times(1+\kappa r_{v})
+\tag{6.5}
+\end{equation}\]</span>
+</p>
+<p>
+<strong>Uncorrected TECO Ozone Mixing Ratio (ppb):</strong> <strong></strong> <strong><span class="underline">TEO3</span></strong><br />
+<em>The uncorrected ozone mixing ratio output from the TECO model 49c UV ozone analyzer.</em> See TEO3C.
+</p>
+<p>
+<strong>Internal TECO Ozone Sampling Pressure (hPa):</strong> <strong></strong> <strong><span class="underline">TEP</span>,</strong> <strong><span class="underline">TEO3P</span></strong><br />
+<strong>Internal TECO Ozone Sampling Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>):</strong> <strong></strong> <strong><span class="underline">TET</span></strong>
+</p>
+<p>
+<br />
+<em>The pressure (TEP) or temperature (TET) inside the detection cell of the TECO 49 UV ozone analyzer.</em> These are used to convert the measurements from the instrument to units of ppbv. In many projects, the cell temperature was not recorded so an expected cell temperature in the aircraft cabin must be used in processing.
+</p>
+<p>
+<strong>Corrected TECO Ozone Mixing Ratio (ppbv):</strong> <strong></strong> <strong><span class="underline">TEO3C</span></strong><br />
+<em>The ozone mixing ratio (by volume) determined by the TECO model 49c UV ozone analyzer (cf. <a href="https://www.eol.ucar.edu/instruments/thermo-environmental-instruments-model-49-ozone-analyzer">this description</a>) after correction for the pressure and temperature in the cell by application of the ideal gas law.</em> Because the basic measurement is ozone density in the chamber, this measurement must be converted to a mixing ratio by dividing by the air density, calculated from the pressure and temperature measured in the chamber (TEP and TET respectively).<span id="punch:6-3" label="punch:6-3">[punch:6-3]</span> The instrument provides output only each ten seconds, and measurements are collected in the 3 s preceding the update. The measurements may be artificially high or low when rapid changes in humidity are present, as may occur when crossing the top of the boundary layer or when going through clouds. In operation on the ground prior to takeoff or immediately after landing, a high concentration of hydrocarbons can cause spuriously high measurements. The detection limit is 1 ppbv with an uncertainty of <span class="math inline">±</span>5%. This instrument is seldom used as of 2014 and may soon be classified as obsolete.
+</p>
+<p>
+<strong></strong>
+</p>
+<p>
+<strong>NO Raw Counts (counts per sample interval):</strong> <strong></strong> <strong><span class="underline">XNO</span></strong><br />
+<strong>NOy Raw Counts (counts per sample interval):</strong> <strong></strong> <strong><span class="underline">XNOY</span><span class="underline"></span></strong><br />
+<strong>NO Calibration Flow (SLPM):</strong> <strong></strong> <strong><span class="underline">XNOCF</span></strong><br />
+<strong>NOy Calibration Flow (SLPM):</strong> <strong></strong> <strong><span class="underline">XNCLF</span></strong><br />
+<strong>NO, NOy Measurement Status (dimensionless):</strong> <strong></strong> <strong><span class="underline">XNST</span></strong><br />
+<strong>NO Zero Air Flow (SLPM):</strong> <strong></strong> <strong><span class="underline">XNOZA</span></strong><br />
+<strong>NOy Zero Air Flow (SLPM):</strong> <strong></strong> <strong><span class="underline">XNZAF</span></strong><br />
+<strong>NO Sample Flow (SLPM):</strong> <strong></strong> <strong><span class="underline">XNOSF</span></strong><br />
+<strong>NOy Sample Flow (SLPM):</strong> <strong></strong> <strong><span class="underline">XNSAF</span></strong><br />
+<strong>NOy Reaction Chamber Pressure (mb):</strong> <strong></strong> <strong><span class="underline">XNOYP</span></strong><br />
+<strong>Gold NOy Converter Temperature (<span class="math inline">º</span>C):</strong> <strong></strong> <strong><span class="underline">XNMBT</span></strong>
+</p>
+<p>
+<br />
+<em>The measurements provided by the NO+NO<span class="math inline"><em></em><sub>2</sub></span> instrument,</em> which is described at <a href="https://www.eol.ucar.edu/instruments/no-no2-instrument">this link</a><em>.</em> XNO and XNOY are the raw data counts from the NO and NO<span class="math inline"><em></em><sub>2</sub></span> instruments, respectively, and XNCLF and XNOCF are the respective calibration flows for these instruments. <span id="punch:6-2" label="punch:6-2">[punch:6-2]</span> XNST records the status for both instruments: In measurement mode, XNST is 0, while XNST is 5 when the instruments are in zero mode and 10 when the instruments are in calibration mode. the NOy and NO instruments. The instrument is in the measure mode for XNST of 0. For a XNST reading of 5 the instruments are in the zero mode. XNST value of 10 is the calibration mode. XNOZA and XNZAF are flow rates for zero air used to back flush inlets, typically at takeoff and landing, and for calibration using “zero” air. Even if the status, XNST, is 0, indicating the instrument is in the measurement mode, when XNOZA and XNZAF are approximately 1 SLPM the instrument is measuring zero air and not ambient air. <span id="punch:6-4" label="punch:6-4">[punch:6-4]</span> XNOSF and XNSAF are the sample flow rates through the NO and NO<span class="math inline"><em></em><sub>2</sub></span> instruments respectively. These values are typically about 1 SLPM. XNMBT is the temperature of the gold NO<span class="math inline"><em></em><sub>2</sub></span> converter.
+</p>
+<p>
+C<strong>orrected NO Mixing Ratio (ppbv):</strong> <strong></strong> <strong><span class="underline">XNOCAL</span></strong><br />
+<strong>Corrected NO<span class="math inline"><em></em><sub>2</sub></span> Mixing Ratio (ppbv):</strong> <strong></strong> <strong><span class="underline">XNYCAL</span></strong>
+</p>
+<p>
+<br />
+<em>The calibrated NO and NO<span class="math inline"><em></em><sub>2</sub></span> volumetric mixing ratio, respectively, measured by the NO-NO<span class="math inline"><em></em><sub>2</sub></span> instrument.</em> See <a href="https://www.eol.ucar.edu/instruments/nitric-oxide-chemiluminescence-ozone-instrument">this link</a> for a description of the instrument.<span id="punch:6-5" label="punch:6-5">[punch:6-5]</span> The NO and NO<span class="math inline"><em></em><sub>2</sub></span> data are represented by a cubic spline for baseline subtraction, and then the calibration coefficients are applied and the measurements are converted to units of ppbv. The quality of the data can be assessed by examining the accuracy of the zero correction. This instrument <span id="punch:6-6" label="punch:6-6">[punch:6-6]</span> adds water vapor to the sample stream to reduce the effect of ambient water on the final signal. The water vapor addition is not sufficient to saturate the sample stream, but enough to remove much of the interference. The detection limits of the NO,NO<span class="math inline"><em></em><sub>2</sub></span> instruments are 50 ppbv for a one-second averaging time. The uncertainty is <span class="math inline">±</span> 5%.
+</p>
+<!-- <h2 id="variables-in-special-data-sets">Variables in Special Data Sets</h2> -->
+</div>
+<div id="variables-in-special-data-sets" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Variables in Special Data Sets</h2>
+<p>
+Research projects often incorporate user-supplied instruments into payloads, and those instruments produce data files that are either recorded independently or merged into the standard netCDF data files for the projects. In addition, NCAR offers a set of instruments that require additional data processing and analysis, often because the measurements require special interpretation to obtain the desired measurements. The following instruments can provide such air-chemistry measurements:
+</p>
+<ul>
+<li><p>Advanced Whole Air Sampler <a href="http://www.eol.ucar.edu/instruments/advanced-whole-air-sampler">AWAS</a></p></li>
+<li><p>Chemical Ionization Mass Spectrometer <a href="http://www.eol.ucar.edu/instruments/georgia-tech-chemical-ionization-mass-spectrometer">CIMS</a></p></li>
+<li><p>Quantum Cascade Laser Spectrometer <a href="http://www.eol.ucar.edu/instruments/quantum-cascade-laser-spectrometer">QCLS</a></p></li>
+<li><p>Trace Organic Gas Analyzer <a href="http://www.eol.ucar.edu/instruments/trace-organic-gas-analyzer">TOGA</a></p></li>
+</ul>
+<br />
+Follow the links in the box to descriptions of these instruments on the EOL web site. Those descriptions include brief explanations of how data are acquired and handled. The process varies with instrument; The CIMS and QCLS instruments produce variables that are often merged into the standard netCDF archived data files for projects, the AWAS collects samples that are later analyzed using ground-based instruments but result in a special dataset dependent on analysis technique and sample location and duration, while the TOGA is usually analyzed to produce dozens of trace-gas measurements, some of which can be merged into standard netCDF files.
+</p>
+<p>
+Users interested in using these measurements should contact <a href="mailto:mailto:raf-dm%40eol.ucar.edu">EOL/RAF data management</a> for data access and assistance.
+</p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<!-- <h1 id="aerosol-particle-measurementssecaerosol-particle-measurements">AEROSOL PARTICLE MEASUREMENTS<span id="sec:AEROSOL-PARTICLE-MEASUREMENTS"
+label="sec:AEROSOL-PARTICLE-MEASUREMENTS">[sec:AEROSOL-PARTICLE-MEASUREMENTS]</span></h1> -->
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="46">
+<li id="fn46"><p>Journal of Geophysical Research, Vol. 104, No. D1, 1699-1704, 1999.<a href="air-chemistry-measurements.html#fnref46" class="footnote-back">↩︎</a></p></li>
+<li id="fn47"><p>In isolated cases XCOMR or XCOMR_AL was used for this variable name.<a href="air-chemistry-measurements.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p>Richardson, S. J., N. L. Miles, K. J. Davis, E. R. Crosson, C. W. Rella, and A. E. Andrews, 2012<em>:</em> Field testing of cavity ring-down spectroscopy analyzers measuring carbon dioxide and water vapor. <em>J. Atmos. Oceanic_Technol,</em> <strong><em>29,</em></strong> <em>397–406.</em><a href="air-chemistry-measurements.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p>Ridley, B. A., F. E. Grahek, and J. G. Walega, 1992: A small, high-sensitivity, medium-response ozone detector suitable for measurements from light aircraft. <em>J. Atmos. Oceanic Technol.,</em> <strong>9,</strong> 142–148.<a href="air-chemistry-measurements.html#fnref49" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cloud-physics-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aerosol-particle-measurements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

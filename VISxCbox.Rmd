@@ -1,0 +1,9 @@
+<p class=box>
+VISxV = voltage output by a pyranometer [V]  
+$a_{1}$ = linear calibration coefficient [W\ m$^{-2}$\ V$^{-1}$]  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{VISxC\}}=a_{1}\mathrm{\{VISxV\}}
+(\#eq:VISxC)
+\end{equation}
+</p>  

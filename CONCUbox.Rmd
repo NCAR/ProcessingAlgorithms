@@ -1,0 +1,19 @@
+```{r child='boxStyles.Rmd'}
+```
+<p class=box>
+TCNTU = total particle counts per sample interval, UHSAS  
+TCNTP = total particle counts per sample interval, PCASP  
+$\Delta t$ = \sindex[lis]{Deltat@$\Delta t$=time interval}sample
+interval [s]  
+USFLWC = corrected sample flow rate, UHSAS [cm$^{3}$s$^{-1}$]  
+PFLWC = corrected sample flow rate, PCASP [cm$^{3}$s$^{-1}$]  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{CONCU\}}=\frac{\mathrm{\{TCNTU\}}}{\mathrm{\{USFLWC\}}\Delta t}
+(\#eq:CONCUbox1)
+\end{equation}
+\begin{equation}
+\mathrm{\{CONCP\}}=\frac{\mathrm{\{TCNTP\}}}{\mathrm{\{PFLWC\}}\Delta t}
+(\#eq:CONCUbox2)
+\end{equation}
+</p>

@@ -1,0 +1,16 @@
+
+<p class=box>
+LON$_{ref}$ = reference longitude (º)  
+LAT$_{ref}$ = reference latitude (º)  
+$C_{deg2km}=$ conversion factor, degrees latitude to km\sindex[con]{conversion factor, degrees latitude to km} 
+$\equiv$ 111.12 km / $^{\circ}$  
+</p>
+<p class=box2>
+\begin{equation}
+\begin{split}
+\mathrm{DEI} = & \mathrm{C_{deg2km}}(\mathrm{\{LON\}}-\{\mathrm{LON}_{ref}\})\cos(\mathrm{\{LAT\}}) \notag \\ 
+\mathrm{DNI} = & \mathrm{C_{deg2km}}(\mathrm{\{LAT\}}-\{\mathrm{LAT}_{ref}\})  
+\end{split}
+(\#eq:DNSEW)
+\end{equation}
+</p>

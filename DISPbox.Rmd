@@ -1,0 +1,9 @@
+<p class=box>
+\{DBARx\} = mean particle diameter [$\mu m$]  
+\{Cy$_{i}$\}, i1, i2, $d_{i}$ as for mean diameter above    
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{DISPx\}}==\frac{1}{\{\mathrm{DBARx}\}}\,\left\{ \frac{{\textstyle \sum_{i=i1}^{i2}}{\displaystyle {\displaystyle \left\{ \mathrm{Cy}_{i}\right\} d_{i}^{2}}}}{\sum_{i=i1}^{i2}\left\{ \mathrm{Cy}_{i}\right\} }-\{\mathrm{DBARx}\}^{2}\right\} ^{1/2}
+(\#eq:DISPbox)
+\end{equation}
+</p>  

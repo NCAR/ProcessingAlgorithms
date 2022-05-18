@@ -1,0 +1,46 @@
+<style>
+  p.box {
+    background-color: #F8F8F8;
+      padding: 10px;
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+</style>
+  
+  <style>
+  p.box2 {
+    background-color: #FFFFFF;
+      padding: 10px;
+    border: 2px solid red;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 1px;
+  }
+</style>
+<p class=box>
+LAT = latitude measured by the IRS  
+LON = longitude measured by the IRS  
+GGLAT = latitude measured by the GPS  
+GGLON = longitude measured by the GPS  
+VNSC = aircraft ground speed, north component, corrected  
+VEWC = aircraft ground speed, east component, corrected  
+</p><p class=box2>
+**1.** Initialize the corrected position at the IRS position at the start of the flight or after
+any large change (>5$^\circ$) in the IRS position.  <br><br>
+**2.** Integrate forward from that position using the aircraft groundspeed with components
+{VNSC,VEWC}. Note that in the absence of GPS information this will introduce
+long-term errors because it does not account for the Earth’s spherical geometry. It
+provides good short-term accuracy, but the GPS updating in the next step is needed to
+compensate for the difference between a rectilinear frame and the Earth’s spherical
+coordinate frame and provides a smooth yet accurate track.  <br><br>
+**3.** Use an exponential adjustment to the GPS position, with time constant that is typi-
+cally about 100 s.^(a)^  <br><br>
+**4.** To handle periods when the GPS becomes invalid, use an approach analogous to that
+for groundspeed, whereby a Schuler-oscillation fit to the difference between the GPS
+and IRS measurements is accumulated and used to extrapolate through periods when
+the GPS is invalid.  <br>
+\_\_\_\_\_\_\_\_\_\_  
+^(a)^ *specifically, LATC += η(GLAT-LATC) with η = 2π/(600 s)*
+</p>

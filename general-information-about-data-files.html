@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 General Information About Data Files | RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="2 General Information About Data Files | RAF Technical Note: Processing Algorithms" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 General Information About Data Files | RAF Technical Note: Processing Algorithms" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 General Information About Data Files | RAF Technical Note: Processing Algorithms" />
+  
+  
+  
+
+<meta name="author" content="Al Cooper" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="the-state-of-the-aircraft.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#alphabetical-list-of-variables"><i class="fa fa-check"></i><b>1.2</b> Alphabetical List of Variables</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#constants-and-symbols"><i class="fa fa-check"></i><b>1.3</b> Constants and Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html"><i class="fa fa-check"></i><b>2</b> General Information About Data Files</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#system-of-units"><i class="fa fa-check"></i><b>2.1</b> System of Units</a></li>
+<li class="chapter" data-level="2.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variables-used-to-denote-time"><i class="fa fa-check"></i><b>2.2</b> Variables Used to Denote Time</a></li>
+<li class="chapter" data-level="2.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#synchronication-of-measurements"><i class="fa fa-check"></i><b>2.3</b> Synchronization of Measurements</a></li>
+<li class="chapter" data-level="2.4" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#other-comments-on-terminology"><i class="fa fa-check"></i><b>2.4</b> Other Comments on Terminology</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variable-names-in-equations"><i class="fa fa-check"></i><b>2.4.1</b> Variable Names in Equations</a></li>
+<li class="chapter" data-level="2.4.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#distinction-between-original-measurements-and-derived-variables"><i class="fa fa-check"></i><b>2.4.2</b> Distinction Between Original Measurements and Derived Variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#dimensions-in-equations"><i class="fa fa-check"></i><b>2.4.3</b> Dimensions in Equations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html"><i class="fa fa-check"></i><b>3</b> The State of the Aircraft</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#inertial-reference-systems"><i class="fa fa-check"></i><b>3.1</b> Inertial Reference Systems</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#standard-variables"><i class="fa fa-check"></i><b>3.1.1</b> Standard Variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#additional-special-use-variables"><i class="fa fa-check"></i><b>3.1.2</b> Additional Special-Use Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#global-positioning-systems"><i class="fa fa-check"></i><b>3.2</b> Global Positioning Systems</a></li>
+<li class="chapter" data-level="3.3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude"><i class="fa fa-check"></i><b>3.3</b> Other Measurements of Aircraft Altitude</a></li>
+<li class="chapter" data-level="3.4" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#combining-irs-and-gps-measurements"><i class="fa fa-check"></i><b>3.4</b> Combining IRS and GPS Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html"><i class="fa fa-check"></i><b>4</b> The State of the Atmosphere</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations"><i class="fa fa-check"></i><b>4.1</b> Information on Instruments and Calibrations</a></li>
+<li class="chapter" data-level="4.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#variable-names"><i class="fa fa-check"></i><b>4.2</b> Variable Names</a></li>
+<li class="chapter" data-level="4.3" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#pressure"><i class="fa fa-check"></i><b>4.3</b> Pressure</a></li>
+<li class="chapter" data-level="4.4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#temperature-section"><i class="fa fa-check"></i><b>4.4</b> Temperature</a></li>
+<li class="chapter" data-level="4.5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#humidity"><i class="fa fa-check"></i><b>4.5</b> Humidity</a></li>
+<li class="chapter" data-level="4.6" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#derived-thermodynamic-variables"><i class="fa fa-check"></i><b>4.6</b> Derived Thermodynamic Variables</a></li>
+<li class="chapter" data-level="4.7" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind"><i class="fa fa-check"></i><b>4.7</b> Wind</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#relative-wind"><i class="fa fa-check"></i><b>4.7.1</b> Relative Wind</a></li>
+<li class="chapter" data-level="4.7.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector"><i class="fa fa-check"></i><b>4.7.2</b> Wind Components and the Wind Vector</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#special-use-remote-sensors"><i class="fa fa-check"></i><b>4.8</b> Special-Use Remote Sensors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#cloud-physics-variables"><i class="fa fa-check"></i><b>5</b> Cloud Physics Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html"><i class="fa fa-check"></i><b>5.1</b> Measurements of Liquid Water Content</a></li>
+<li class="chapter" data-level="5.2" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#sensors-1-D-probes"><i class="fa fa-check"></i><b>5.2</b> Sensors Detecting Individual Hydrometeors (1-D Probes)</a></li>
+<li class="chapter" data-level="5.3" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#hydrometeor-imaging-probes"><i class="fa fa-check"></i><b>5.3</b> Hydrometeor Imaging Probes</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#two-d-probe"><i class="fa fa-check"></i><b>5.3.1</b> Variables Derived from Measurements from a 2D Probe</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#air-chemistry-measurements"><i class="fa fa-check"></i><b>6</b> Air Chemistry Measurements</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html"><i class="fa fa-check"></i><b>6.1</b> Variables in Standard Data Files</a></li>
+<li class="chapter" data-level="6.2" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html#variables-in-special-data-sets"><i class="fa fa-check"></i><b>6.2</b> Variables in Special Data Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html"><i class="fa fa-check"></i><b>7</b> Aerosol Particle Measurements</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#condensation-nucleus-counter"><i class="fa fa-check"></i><b>7.1</b> Condensation Nucleus Counter</a></li>
+<li class="chapter" data-level="7.2" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#aerosol-spectrometers"><i class="fa fa-check"></i><b>7.2</b> Aerosol Spectrometers</a></li>
+<li class="chapter" data-level="7.3" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#special-aerosol-measurements"><i class="fa fa-check"></i><b>7.3</b> Special Aerosol Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#radiation-variables"><i class="fa fa-check"></i><b>8</b> Radiation Variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radiation-variables.html"><a href="radiation-variables.html"><i class="fa fa-check"></i><b>8.1</b> Measurements of Irradiance and Radiometric Temperature</a></li>
+<li class="chapter" data-level="8.2" data-path="radiation-variables.html"><a href="radiation-variables.html#spectral-irradiance-and-actinic-flux"><i class="fa fa-check"></i><b>8.2</b> Spectral Irradiance and Actinic Flux</a></li>
+<li class="chapter" data-level="8.3" data-path="radiation-variables.html"><a href="radiation-variables.html#solar-angles"><i class="fa fa-check"></i><b>8.3</b> Solar Angles</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="radiation-variables.html"><a href="radiation-variables.html#experimental-variables"><i class="fa fa-check"></i><b>9</b> Experimental Variables</a></li>
+<li class="chapter" data-level="10" data-path="obsolete-variables.html"><a href="obsolete-variables.html"><i class="fa fa-check"></i><b>10</b> Obsolete Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html"><i class="fa fa-check"></i>Appendices</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#suggested-additional-steps"><i class="fa fa-check"></i>Suggested Additional Steps</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-edit-this-document"><i class="fa fa-check"></i>How to Edit This Document</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-reference-specific-sections-or-pages-of-this-document"><i class="fa fa-check"></i>How to Reference Specific Sections or Pages of this Document:</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#page-numbers"><i class="fa fa-check"></i>Page Numbers</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#sections-and-subsections"><i class="fa fa-check"></i>Sections and Subsections</a></li>
+<li class="chapter" data-level="10.0.1" data-path="appendices.html"><a href="appendices.html#adding-new-targets"><i class="fa fa-check"></i><b>10.0.1</b> Adding New Targets</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RAF Technical Note: Processing Algorithms</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="general-information-about-data-files" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> General Information About Data Files</h1>
+<!-- %<h2 id="system-of-unitssubsecsystem-of-units">System of Units<span id="subsec:System-of-Units" %label="subsec:System-of-Units">[subsec:System-of-Units]</span></h2> -->
+<div id="system-of-units" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> System of Units</h2>
+<p>This report uses the SI system of units, but with many exceptions. Among them are the following:</p>
+<ol style="list-style-type: decimal">
+<li>The millibar (mb), equal to one hectopascal (hPa), was used for pressure with some older variables.<br />
+</li>
+<li>Many variables are presented in the units most often used for that variable, even when they involve CGS units or mixed CGS-MKS units, as for example [g m<sup>-3</sup>] for liquid water content or
+[cm<sup>-3</sup>] for droplet concentration.<br />
+</li>
+<li>Flow rates are often quoted in liters per minute (LPM) or standard liters per minute (SLPM) because those terms are linked to properties of commercially available instruments with flow control. One liter is 10<sup>-3</sup>m<sup>3</sup>. Standard temperature and pressure are respectively 273.15 K and 1013.25 hPa. However, there is considerable ambiguity in the definition of “standard” conditions (mostly regarding the choice of the reference temperature) because some flow controllers and flowmeters specify a different “standard” temperature, so the particular usage will be documented when this term is used. Mass flow meters provide a measure of the flow of mass but usually report the measurement in terms of the volume flow that would be present under standard conditions (i.e., SLPM). Therefore, to convert to volumetric flow at other conditions, if the fluid density is <span class="math inline"><em>ρ</em></span> and the mass flow rate in units of mass per time is denoted by <span class="math inline"><em>ṁ</em><sup>′</sup></span>, the volumetric flow <span class="math inline"><em>Q</em></span> is <span class="math inline"><em>ṁ</em><sup>′</sup>/<em>ρ</em></span>. Then the mass flow rate in units of standard volume per time is <span class="math inline"><em>ṁ</em> = <em>ṁ</em><sup>′</sup>/<em>ρ</em><sub><em>s</em></sub></span> where <span class="math inline"><em>ρ</em><sub><em>s</em></sub></span> is the density of the fluid under standard conditions. To convert to volumetric flow under other conditions, <span class="math inline"><em>Q</em> = <em>ṁ</em><sup>′</sup>/<em>ρ</em> = <em>ṁ</em><em>ρ</em><sub><em>s</em></sub>/<em>ρ</em></span>=<span class="math inline"><span class="math inline">\(\dot{m}p_{s}T/(p\thinspace T_{s})\)</span></span> where <span class="math inline"><em>p</em></span> and <span class="math inline"><em>T</em></span> are the pressure and absolute temperature for the desired measurement and <span class="math inline"><em>p</em><sub><em>s</em></sub></span> and <span class="math inline"><em>T</em><sub><em>s</em></sub></span> are the corresponding values for standard conditions.<br />
+</li>
+<li><span id="enu:ppmv" label="enu:ppmv"></span>The International Bureau of Weights and Measures recommends against use of units like percent or parts per million, but these are in common use in atmospheric chemistry and elsewhere so data files continue to use those units for relative humidity or the concentration of chemical species. Although a proper SI unit for a volumetric mixing ratio would be <span class="math inline"><em>μ</em></span>mol mol<span class="math inline"><em></em><sup> − 1</sup></span>, nmol mol<span class="math inline"><em></em><sup> − 1</sup></span>, or pmol mol<span class="math inline"><em></em><sup> − 1</sup></span>, variables are instead often assigned the respective units of ppmv, ppbv or pptv for parts per million, billion or trillion by volume. Care must be taken to interpret ppbv especially, because “billion” has different meaning in different languages and different countries; herein, 1 ppbv means a volumetric ratio of 1:10<span class="math inline"><em></em><sup>9</sup></span>. Many measurements produce native results in terms of a mass ratio, often described as a mixing ratio <span class="math inline"><em>r</em><sub><em>m</em></sub></span> in terms of mass of the measured gas per unit mass of “air” (where the mass of the “air” does not include the variable constituents, usually only significant for water vapor). The perfect gas law relates the density ratio of two gases (<span class="math inline"><em>ρ</em><sub>1</sub> : <em>ρ</em><sub>2</sub>)</span> to the ratio of their partial pressures (<span class="math inline"><em>p</em><sub>1</sub> : <em>p</em><sub>2</sub></span>) or number densities (<span class="math inline"><em>n</em><sub>1</sub> : <em>n</em><sub>2</sub></span>), as follows:<br />
+<span class="math display" id="eq:rm">\[\begin{align}
+r_{m}=\frac{\rho_{1}}{\rho_{2}}=\frac{p_{1}M_{1}}{p_{2}M_{2}}=\frac{n_{1}M_{1}}{n_{2}M_{2}}
+\tag{2.1}
+\end{align}\]</span>
+where <span class="math inline"><em>M</em><sub>1</sub></span> and <span class="math inline"><em>M</em><sub>2</sub></span> are respective molecular weights for the two gases. The ratio of number densities or, equivalently, partial pressures, denoted here as <span class="math inline"><em>r</em><sub><em>v</em></sub></span> because it is also the volumetric mixing ratio, is related to the mass mixing ratio as follows:<br />
+<span class="math display" id="eq:rv">\[\begin{equation}
+r_{v}=\frac{n_{1}}{n_{2}}=\left(\frac{M_{2}}{M_{1}}\right)r_{m}
+\tag{2.2}
+\end{equation}\]</span>
+When concentrations are recorded with units of “ppmv”, “ppbv” or “pptv”, these units refer respectively to <span class="math inline">10<sup>6</sup><em>r</em><sub><em>v</em></sub></span>, <span class="math inline">10<sup>9</sup><em>r</em><sub><em>v</em></sub></span>, or <span class="math inline">10<sup>12</sup><em>r</em><sub><em>v</em></sub></span> with <span class="math inline"><em>r</em><sub><em>v</em></sub></span> given by the above equation.<br />
+</li>
+<li>The unit “hertz” (abbreviation Hz) is the proper unit for a periodic sampling frequency and will be used here in place of the more awkward “samples per second.” This usage is favored by the International Bureau of Weights and Measures (cf. <a href="http://www.bipm.org/en/si/si_brochure/chapter2/2-2/table3.html#notes">http://www.bipm.org/en/si/si_brochure/chapter2/2-2/table3.html#notes</a>) when the frequency represented refers to the rate of sampling.<br />
+</li>
+<li>In some cases, particularly for older data files, speed has been recorded in units of knots (= 0.514444 m/s) and distance in nautical miles <span class="math inline">≡</span> 1852 m).</li>
+</ol>
+Near the end of this technical note, there is a list of symbols.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+The next table defines some abbreviations and additional symbols used for units in this report, in addition to the standard abbreviations for the mks system of units:<span id="punch1.2" label="punch1.2">[punch1.2]</span><br />
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">
+<strong>abbreviation/symbol</strong>
+</th>
+<th style="text-align: left;">
+<strong>definition</strong><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">
+º
+</td>
+<td style="text-align: left;">
+degree, angle measurement <span class="math inline">≡</span> (<span class="math inline"><em>π</em></span>/180) radian
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+ft
+</td>
+<td style="text-align: left;">
+foot <span class="math inline">≡</span> 0.3048 m
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+mb
+</td>
+<td style="text-align: left;">
+millibar <span class="math inline">≡</span> 100 Pa <span class="math inline">≡</span> 1 hPa
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+ppmv
+</td>
+<td style="text-align: left;">
+parts per million by volume (see item 4 above)
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+ppbv
+</td>
+<td style="text-align: left;">
+parts per billion (<span class="math inline">10<sup>9</sup>)</span> by volume (see item 4 above)
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+pptv
+</td>
+<td style="text-align: left;">
+parts per trillion (<span class="math inline">10<sup>12</sup>)</span> by volume (see item 4 above)
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+n mi
+</td>
+<td style="text-align: left;">
+nautical mile <span class="math inline">≡</span>1852 m
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+kt
+</td>
+<td style="text-align: left;">
+knot (n mi/hour) <span class="math inline">≡</span> (1852/3600) m/s = 0.514444… m/s
+</td>
+</tr>
+</tbody>
+</table>
+<!-- % <h2 id="variables-used-to-denote-time">Variables Used To Denote Time</h2> -->
+</div>
+<div id="variables-used-to-denote-time" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Variables Used to Denote Time</h2>
+<p>
+Although there are some exceptions in old archived data files, the data in all modern output files are referenced to Coordinated Universal Time (UTC). The time and date of the data acquisition system are synchronized to time from the Global Positioning System (GPS) at the beginning of each flight, and for data acquired by the present ADS-3 (NIDAS) data acquisition system time is synchronized continuously with the GPS time. Time variables vary for older archived data files; some of the following are obsolete, but are included here for reference because they are important to those wanting to use those archives.<br />
+</p>
+<p>
+<strong>Time (s):</strong> <strong><span class="underline">Time</span></strong><span id="han:Time-(s):-TimeThis-1" label="han:Time-(s):-TimeThis-1"></span><br />
+<em>The reference-time</em> counter <em>for the output data files,</em> used by data system versions beginning with ADS-3. It is an integer output at 1 Hz <em>and has an initial value of zero at the start of the flight</em>. Add this to the “Time:units” attribute found in the NETCDF header section to obtain the UTC time.
+</p>
+<p>
+Example attribute: <code></code> <br />
+<code></code><code>Time:units = “seconds since 2006-04-26 12:55:00 +0000” </code>;
+</p>
+<p>
+For code examples that show how to use “Time” see:<br />
+<code></code><a href="http://www.eol.ucar.edu/raf/Software/TimeExamp.html">http://www.eol.ucar.edu/raf/Software/TimeExamp.html</a>
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>Reference Start Time (s):</strong> <strong><span class="underline">base_time</span></strong> (<em>Obsolete; versions before ADS-3 only</em>)<br />
+<em>The reference time for the netCDF output data files for data system versions before ADS-3.</em> It represents the time of the first data record. Its format is Unix time (elapsed seconds after midnight 1 January 1970). Add time_offset (below) to obtain the time for each data record. (Note: base_time is a single scalar, not a “record” variable, so it occurs just once in the output file.)
+</p>
+<p>
+<strong>Time Offset from Reference Start Time (s):</strong> <strong><span class="underline">time_offset</span></strong> (<em>Obsolete)</em><br />
+<em>The time offset from base_time of each data record used for the NETCDF output files produced by data system versions before ADS-3.</em> It starts at zero (0) and increments each second, so it can also be thought of as a record counter. Use this measurement and add base_time to obtain the time for each data record.
+</p>
+<p>
+<strong>Raw Tape Time (hour, minute, s):</strong> <strong><span class="underline">HOUR</span>,</strong> <strong><span class="underline">MINUTE</span>,</strong> <strong><span class="underline">SECOND</span></strong> <strong></strong> (<em>Obsolete</em>)<br />
+These three time variables are recorded directly from the aircraft’s data system. Since ADS-3, this information is replaced by the “Time” variable and the “Time:units” attribute of that variable.
+</p>
+<p>
+<strong>Date (m, d, y):</strong> <strong><span class="underline">MONTH</span>,</strong> <strong><span class="underline">DAY</span>,</strong> <strong><span class="underline">YEAR</span></strong> (<em>Obsolete</em>)<br />
+These three variables represent the date when the aircraft’s data system began recording data. They are repeated as 1 Hz variables but are NOT incremented if the time rolls over to the next day. Use base_time and time_offset for reference timing. Since ADS-3, this information is replaced by the “Time” variable and the “Time:units” attribute of that variable.
+</p>
+<!-- % <h2 id="synchronization-of-measurementssubsecsynchronization-of-measurements">Synchronization of Measurements<span id="subsec:Synchronization-of-Measurements" label="subsec:Synchronization-of-Measurements">[subsec:Synchronization-of-Measurements]</span></h2> -->
+</div>
+<div id="synchronication-of-measurements" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Synchronization of Measurements</h2>
+<p>
+Measurements sampled under control of the “NIDAS” sampling system are acquired at 50 Hz. However, the standard archive files are produced at a rate of 1 Hz, and each sample is the average of 50 samples. Therefore, the time associated with measurements reported at 1 Hz is actually an average over the specified second, so the reference time for the averaged measurement is actually 0.5 s past the reported time. Analogous offsets apply to variables reported at other rates different from 50 Hz. Where it applies, electronic filters with cutoff frequency of 25 Hz are used with analog measurements. Higher-rate files are sometimes produced, standardized to 25 Hz but sometimes at other frequencies.
+</p>
+There are time shifts inherent in many of the measurements, and in some cases (e.g., those produced by inertial reference units) these time shifts arise because the information is transmitted from the measuring system at a time later than when it was sampled. In these cases, shifts (“lags”) are applied to the measurements. The lags may be either static or dynamic. Static lags are specified in a configuration file, saved for each project; dynamic lags provided as part of data sampling by specific instruments are recorded by NIDAS for use in processing. Dynamic lags are usually a difference in time from a gridded time value to the time it was actually acquired. e.g. for a 5-Hz parameter the expected or gridded millisecond offset into each second would be 0, 200, 400, 600, and 800. If the data actually were sampled or acquired at 50, 250, 450, 650, and 850 ms then the dynamic lag for this particular second would be -50 ms. Corrections for time lags are applied to measurements before conversion to one of the standard data rates.
+</p>
+<p>
+<p>Where data rates for particular measurements do not match the basic 50 Hz sampling rate, linear interpolation is used to obtain higher-rate values. For 1 Hz data files, measurements are then averaged within each second. For 25 Hz files, 50 Hz measurements are digitally filtered using a finite impulse response (FIR) filter, while data acquired at less than 25 Hz are linearly interpolated to 25 Hz and then FIR-filtered for smoothing.</p>
+<p>
+<span id="punch1.3" label="punch1.3">[punch1.3]</span>
+</p>
+<!-- % <h2 id="other-comments-on-terminology">Other Comments On Terminology</h2> -->
+<!-- % <h3 id="variable-names-in-equations">Variable Names In Equations</h3> -->
+</div>
+<div id="other-comments-on-terminology" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Other Comments on Terminology</h2>
+<div id="variable-names-in-equations" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Variable Names in Equations</h3>
+<p>This report often uses variable names in equations, and sometimes there is potential for confusion because the variable names consist of multiple characters. In most cases, to denote that the variable name is the variable in the equation (as opposed to each of the letters in the variable name representing quantities to be multiplied together), the variable name has been enclosed in brackets, as in {TASX}. In addition, variable names are displayed with upright Roman character sets, while other symbols in equations are shown using slanted (script) character sets as is conventional for mathematical equations. In cases where code segments (usually expressed in C code) are included to document how calculations are performed, typewriter character sets indicate that the segment is a representation of how the processing could be coded. Such a code segment is not always a direct copy of the code in use, but such code is sometimes the most convenient way to express the algorithm in use.</p>
+<!-- <h3 id="distinction-between-original-measurements-and-derived-variables">Distinction Between Original Measurements and Derived Variables</h3> -->
+</div>
+<div id="distinction-between-original-measurements-and-derived-variables" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Distinction Between Original Measurements and Derived Variables</h3>
+<p>Many of the variables in the data files and in this report are derived from combinations of measurements. The terms “raw” or “original” measurement are sometimes used for a minimally processed output received directly from a sensor or instrument. Such measurements may be converted to engineering units via calibration coefficients, but otherwise they are a direct representation of the output from a sensor.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
+In contrast, derived variables (e.g., potential temperature) depend on one or more “raw” measurements and are not direct results of output from an instrument. For most derived measurements, a box that follows an introductory comment is used in this report to document the processing algorithm. The box has two parts; in the top are definitions used and explanations regarding variables that enter the calculation, while the bottom portion contains the equation, algorithm, or code segment that documents how the variable is calculated.<span id="punch1.4" label="punch1.4">[punch1.4]</span></p>
+<!-- <h3 id="dimensions-in-equations">Dimensions in Equations</h3> -->
+</div>
+<div id="dimensions-in-equations" class="section level3" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Dimensions in Equations</h3>
+<p>An effort has been made to avoid dimensions in equations except where it would be awkward otherwise. Some scale factors are introduced for only this purpose (e.g., to avoid dimensions in arguments to logarithmic or exponential functions), and some effort was made to isolate dimensions to defined constants rather than requiring that variables in equations be used with specific units. However, some exceptions remain to be consistent with historical usage.</p>
+<!-- <h1 id="the-state-of-the-aircraftsecins">THE STATE OF THE AIRCRAFT<span id="sec:INS" label="sec:INS">[sec:INS]</span></h1> -->
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>Some symbols used only once and defined where they are used are omitted from this list<a href="general-information-about-data-files.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>where the symbol <span class="math inline">≡</span> is used, the relationship is exact by definition<a href="general-information-about-data-files.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Calibration coefficients, e.g. those used to convert from voltage output from an analog sensor to a measured quantity with physical units like <span class="math inline">º</span>C, are not included or discussed in this report. They are normally included in project reports and, in recent years, many are included in the header of the NETCDF file.<a href="general-information-about-data-files.html#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-state-of-the-aircraft.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

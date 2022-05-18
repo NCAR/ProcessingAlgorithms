@@ -1,0 +1,13 @@
+<p class=box>
+UI = easterly component of the horizontal wind  
+VI = northerly component of the horizontal wind  
+atan2 = 4-quadrant arc-tangent function producing output in radians
+from -$\pi$ to $\pi$  
+$C_{rd}$ = conversion factor, radians to degrees, = 180/$\pi$ [units: $^{\circ}$\,/\,radian]  
+</p><p class=box2>
+\begin{align}
+\mathrm{WS} = & \sqrt{\mathrm{\{UI\}}^{2}+\{\mathrm{VI\}}^{2}}(\#eq:WS)\\
+\mathrm{WD} = & C_{rd}\mathrm{\,atan2(\{UI\},\,\{VI\})}+180^{\circ}  
+(\#eq:WD)
+\end{align}
+</p>  

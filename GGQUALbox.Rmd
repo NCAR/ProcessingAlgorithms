@@ -1,0 +1,11 @@
+
+
+```{r echo = FALSE, include = TRUE, results = 'asis'}
+library(kableExtra)
+A <- data.frame(GGQUAL=c(0,1,2,5))
+A$description=c('invalid', 'valid but without quality enhancement',
+                'Measurement enhanced by the Satellite-Based Augmentation System, a means of improving GPS accuracy and integrity by broadcasting from geostationary satellites wide area corrections for GPS satellite orbits and ionospheric delays. In the US, this uses the Wide-Area Augmentation System or WAAS. This is described in some data files as a differential-GPS measurement.', 'Fully locked-in OmniSTAR XP, usually starting after about 20 minutes of tracking the GPS satellites and receiving the OmniSTAR data feed. This mode tracks the carrier phases of the L1 and L2 GPS carrier frequencies and provides about 15 cm accuracy in position.')
+Ak <- kbl(A, align=c('c', 'l'), caption = "**Meaning of GGQUAL:**")
+Ak %>% kable_styling(bootstrap_options = 'bordered') %>% scroll_box(width='80%')
+```
+

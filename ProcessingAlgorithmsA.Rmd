@@ -1,0 +1,66 @@
+---
+title: 'RAF Technical Note: Processing Algorithms'
+author: "Al Cooper"
+date: "11/9/2020"
+site: bookdown::bookdown_site
+documentclass: book
+output: 
+  bookdown::gitbook: default
+    #number_sections: true
+    #toc: true
+    #toc_float: true
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<p><br />
+Algorithms Used to Produce Data Products from Research Aircraft;<br />
+also Definitions of Variables in Archived Data Files</p>
+
+<p>Current PDF version of this document: <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/ProcessingAlgorithms.pdf">Processing Algorithms</a><br />
+Download this to a browser or pdf viewer for functional URL links.</p>
+<p>    </p>
+```{r child='boxStyles.Rmd'}
+
+```
+
+```{r child='Section1.Rmd'}
+```
+
+```{r child='Section2.Rmd'}
+```
+
+```{r child='Section3.Rmd'}
+```
+
+```{r child='Section7.Rmd'}
+```
+
+```{r child='Section9.Rmd'}
+```
+
+```{r child='Section11.Rmd'}
+```
+
+```{r child='Section13.Rmd'}
+```
+
+```{r child='Section12.Rmd'}
+```
+
+```{r child='Section10.Rmd'}
+```
+
+```{r child='Section14.Rmd'}
+```
+
+```{r child='Section15.Rmd'}
+```
+
+```{r child='Appendices.Rmd'}
+```
+
+

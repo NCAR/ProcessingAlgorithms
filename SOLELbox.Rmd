@@ -1,0 +1,28 @@
+<p class=box>
+$\theta_{G}$ = Greenwich hour angle\sindex[lis]{thetaG@$\theta_{G}$=Greenwich hour angle}
+[radians]  
+$\theta_{L}$ = local hour angle\sindex[lis]{thetaL@$\theta_{L}$=local hour angle}
+[radians]  
+$N$ = day number [see SOLDE box above]  
+$Y$ = year (format as in 1980)
+$\lambda$ = latitude\sindex[lis]{lambda@$\lambda$=latitude} [radians]  
+$\psi$ = longitude\sindex[lis]{psi@$\psi$=longitude} [radians]
+$h$ = fractional hour = (hour + minute/60. + second/3600.)  
+$\alpha$\ \ \ \ \ \ see \@ref(eq:SOLDEalpha) in the SOLDE box above  
+$\epsilon$\ \ \ \ \ \ see \@ref(eq:SOLDEeps) in the SOLDE box  
+\{SOLDE\} = solar declination angle (radians) described above; cf.\ \@ref(eq:SOLDEbox).  
+</p><p class=box2>
+\begin{equation}
+\theta_{G}=\arctan(\frac{\sin\alpha\cos\epsilon}{\cos\alpha})
+(\#eq:SOLELbox1)
+\end{equation}
+\begin{align}
+\theta_{L} = & \theta_{G}+\psi-2\pi\frac{h}{24}-1.759335\notag \\
+ - &2\pi(\frac{N}{365}-Y+1980)-3.694\times10^{-7}N
+(\#eq:SOLELbox2)
+\end{align}
+\begin{equation}
+\mathrm{\mathrm{\{SOLEL\}}=\arcsin\left(\sin\lambda\sin\mathrm{\{SOLDE\}+\cos\lambda}\cos\mathrm{\{SOLDE\}}\cos\theta_{L}\right)}
+(\#eq:SOLELbox3)
+\end{equation}
+</p>

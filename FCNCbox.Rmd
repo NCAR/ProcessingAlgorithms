@@ -1,0 +1,17 @@
+```{r child='boxStyles.Rmd'}
+```
+
+<p class=box>
+PCN = pressure at the inlet to the CN counter [hPa]  
+CNTEMP = temperature at the inlet of the sample tube [$^{\circ}$C]  
+$p_{std}$ = \sindex[lis]{Pstd@$p_{std}$=standard pressure}standard
+reference pressure, 1013.25\ hPa  
+$T_{std}$ = \sindex[lis]{Tstd@$T_{std}$=standard temperature}standard
+reference temperature, 294.15 K   
+$T_{0}$ = 273.15\ K  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{FCNC\} = \{FCN\}}\frac{p_{std}}{\mathrm{\{PCN\}}}\frac{(\{\mathrm{CNTEMP\}}+T_{0})}{T_{std}}
+(\#eq:FCNCbox)
+\end{equation}
+</p>  

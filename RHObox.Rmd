@@ -1,0 +1,14 @@
+
+<p class=box>
+ATX = ambient temperature ($^{\circ}\mathrm{C}$)  
+EWX = water vapor pressure, hPa  
+$C_{mb2Pa}$= conversion factor, hPa to Pa} = 100 Pa\ hPa$^{-1}$ (conversion factor to MKS units)   
+$C_{kg2g}=10^{3}\,\mathrm{g\,kg}^{-1}$ = (conversion
+factor to give final units of g$\,$m$^{-3}$)  
+$T_{0}$ = 273.15\,K
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{RHOx\}} = C_{kg2g}\frac{C_{mb2Pa}\mathrm{\{EWX\}}}{R_{w}\mathrm{(\{ATX\}+T_{0})}}
+(\#eq:RHOx)
+\end{equation}
+</p>

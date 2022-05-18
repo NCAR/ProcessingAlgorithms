@@ -1,0 +1,14 @@
+<p class=box>
+IRx = raw pyrgeometer output [W$\,$m$^{-2}$]  
+$T_{D}$ = dome temperature [K]  
+$T_{S}$ = ``sink'' temperature (approx.\ the thermopile temperature)
+[K]  
+$\epsilon$ = emissivity of the thermopile (dimensionless) = 0.986  
+$\beta$ = empirical constant dependent on the dome type = 5.5  
+$\sigma$ = Stephan-Boltzmann constant = 5.6704$\times10^{-8}$ W$\,$m$^{-2}$K$^{-4}$  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{IRxC\}}=\mathrm{\{IRx\}}-\beta\sigma(T_{D}^{4}-T_{S}^{4})+\epsilon\sigma T_{S}^{4}
+(\#eq:IRxTbox)
+\end{equation}
+</p>  

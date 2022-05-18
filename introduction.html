@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="RAF Technical Note: Processing Algorithms" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="RAF Technical Note: Processing Algorithms" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="RAF Technical Note: Processing Algorithms" />
+  
+  
+  
+
+<meta name="author" content="Al Cooper" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="general-information-about-data-files.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#alphabetical-list-of-variables"><i class="fa fa-check"></i><b>1.2</b> Alphabetical List of Variables</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#constants-and-symbols"><i class="fa fa-check"></i><b>1.3</b> Constants and Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html"><i class="fa fa-check"></i><b>2</b> General Information About Data Files</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#system-of-units"><i class="fa fa-check"></i><b>2.1</b> System of Units</a></li>
+<li class="chapter" data-level="2.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variables-used-to-denote-time"><i class="fa fa-check"></i><b>2.2</b> Variables Used to Denote Time</a></li>
+<li class="chapter" data-level="2.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#synchronication-of-measurements"><i class="fa fa-check"></i><b>2.3</b> Synchronization of Measurements</a></li>
+<li class="chapter" data-level="2.4" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#other-comments-on-terminology"><i class="fa fa-check"></i><b>2.4</b> Other Comments on Terminology</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#variable-names-in-equations"><i class="fa fa-check"></i><b>2.4.1</b> Variable Names in Equations</a></li>
+<li class="chapter" data-level="2.4.2" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#distinction-between-original-measurements-and-derived-variables"><i class="fa fa-check"></i><b>2.4.2</b> Distinction Between Original Measurements and Derived Variables</a></li>
+<li class="chapter" data-level="2.4.3" data-path="general-information-about-data-files.html"><a href="general-information-about-data-files.html#dimensions-in-equations"><i class="fa fa-check"></i><b>2.4.3</b> Dimensions in Equations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html"><i class="fa fa-check"></i><b>3</b> The State of the Aircraft</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#inertial-reference-systems"><i class="fa fa-check"></i><b>3.1</b> Inertial Reference Systems</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#standard-variables"><i class="fa fa-check"></i><b>3.1.1</b> Standard Variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#additional-special-use-variables"><i class="fa fa-check"></i><b>3.1.2</b> Additional Special-Use Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#global-positioning-systems"><i class="fa fa-check"></i><b>3.2</b> Global Positioning Systems</a></li>
+<li class="chapter" data-level="3.3" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude"><i class="fa fa-check"></i><b>3.3</b> Other Measurements of Aircraft Altitude</a></li>
+<li class="chapter" data-level="3.4" data-path="the-state-of-the-aircraft.html"><a href="the-state-of-the-aircraft.html#combining-irs-and-gps-measurements"><i class="fa fa-check"></i><b>3.4</b> Combining IRS and GPS Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html"><i class="fa fa-check"></i><b>4</b> The State of the Atmosphere</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations"><i class="fa fa-check"></i><b>4.1</b> Information on Instruments and Calibrations</a></li>
+<li class="chapter" data-level="4.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#variable-names"><i class="fa fa-check"></i><b>4.2</b> Variable Names</a></li>
+<li class="chapter" data-level="4.3" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#pressure"><i class="fa fa-check"></i><b>4.3</b> Pressure</a></li>
+<li class="chapter" data-level="4.4" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#temperature-section"><i class="fa fa-check"></i><b>4.4</b> Temperature</a></li>
+<li class="chapter" data-level="4.5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#humidity"><i class="fa fa-check"></i><b>4.5</b> Humidity</a></li>
+<li class="chapter" data-level="4.6" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#derived-thermodynamic-variables"><i class="fa fa-check"></i><b>4.6</b> Derived Thermodynamic Variables</a></li>
+<li class="chapter" data-level="4.7" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind"><i class="fa fa-check"></i><b>4.7</b> Wind</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#relative-wind"><i class="fa fa-check"></i><b>4.7.1</b> Relative Wind</a></li>
+<li class="chapter" data-level="4.7.2" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector"><i class="fa fa-check"></i><b>4.7.2</b> Wind Components and the Wind Vector</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#special-use-remote-sensors"><i class="fa fa-check"></i><b>4.8</b> Special-Use Remote Sensors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-state-of-the-atmosphere.html"><a href="the-state-of-the-atmosphere.html#cloud-physics-variables"><i class="fa fa-check"></i><b>5</b> Cloud Physics Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html"><i class="fa fa-check"></i><b>5.1</b> Measurements of Liquid Water Content</a></li>
+<li class="chapter" data-level="5.2" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#sensors-1-D-probes"><i class="fa fa-check"></i><b>5.2</b> Sensors Detecting Individual Hydrometeors (1-D Probes)</a></li>
+<li class="chapter" data-level="5.3" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#hydrometeor-imaging-probes"><i class="fa fa-check"></i><b>5.3</b> Hydrometeor Imaging Probes</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#two-d-probe"><i class="fa fa-check"></i><b>5.3.1</b> Variables Derived from Measurements from a 2D Probe</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cloud-physics-variables.html"><a href="cloud-physics-variables.html#air-chemistry-measurements"><i class="fa fa-check"></i><b>6</b> Air Chemistry Measurements</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html"><i class="fa fa-check"></i><b>6.1</b> Variables in Standard Data Files</a></li>
+<li class="chapter" data-level="6.2" data-path="air-chemistry-measurements.html"><a href="air-chemistry-measurements.html#variables-in-special-data-sets"><i class="fa fa-check"></i><b>6.2</b> Variables in Special Data Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html"><i class="fa fa-check"></i><b>7</b> Aerosol Particle Measurements</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#condensation-nucleus-counter"><i class="fa fa-check"></i><b>7.1</b> Condensation Nucleus Counter</a></li>
+<li class="chapter" data-level="7.2" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#aerosol-spectrometers"><i class="fa fa-check"></i><b>7.2</b> Aerosol Spectrometers</a></li>
+<li class="chapter" data-level="7.3" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#special-aerosol-measurements"><i class="fa fa-check"></i><b>7.3</b> Special Aerosol Measurements</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="aerosol-particle-measurements.html"><a href="aerosol-particle-measurements.html#radiation-variables"><i class="fa fa-check"></i><b>8</b> Radiation Variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radiation-variables.html"><a href="radiation-variables.html"><i class="fa fa-check"></i><b>8.1</b> Measurements of Irradiance and Radiometric Temperature</a></li>
+<li class="chapter" data-level="8.2" data-path="radiation-variables.html"><a href="radiation-variables.html#spectral-irradiance-and-actinic-flux"><i class="fa fa-check"></i><b>8.2</b> Spectral Irradiance and Actinic Flux</a></li>
+<li class="chapter" data-level="8.3" data-path="radiation-variables.html"><a href="radiation-variables.html#solar-angles"><i class="fa fa-check"></i><b>8.3</b> Solar Angles</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="radiation-variables.html"><a href="radiation-variables.html#experimental-variables"><i class="fa fa-check"></i><b>9</b> Experimental Variables</a></li>
+<li class="chapter" data-level="10" data-path="obsolete-variables.html"><a href="obsolete-variables.html"><i class="fa fa-check"></i><b>10</b> Obsolete Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html"><i class="fa fa-check"></i>Appendices</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#suggested-additional-steps"><i class="fa fa-check"></i>Suggested Additional Steps</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-edit-this-document"><i class="fa fa-check"></i>How to Edit This Document</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#how-to-reference-specific-sections-or-pages-of-this-document"><i class="fa fa-check"></i>How to Reference Specific Sections or Pages of this Document:</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#page-numbers"><i class="fa fa-check"></i>Page Numbers</a></li>
+<li class="chapter" data-level="" data-path="appendices.html"><a href="appendices.html#sections-and-subsections"><i class="fa fa-check"></i>Sections and Subsections</a></li>
+<li class="chapter" data-level="10.0.1" data-path="appendices.html"><a href="appendices.html#adding-new-targets"><i class="fa fa-check"></i><b>10.0.1</b> Adding New Targets</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RAF Technical Note: Processing Algorithms</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">RAF Technical Note: Processing Algorithms</h1>
+<p class="author"><em>Al Cooper</em></p>
+<p class="date"><em>11/9/2020</em></p>
+</div>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<div id="background-information" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Background Information</h2>
+<!-- %<h2 id="background-information">Background Information</h2> -->
+<p>This technical report defines the variables used in data sets that are collected by the research aircraft operated by the Research Aviation Facility (RAF) of the National Center for Atmospheric Research. Where appropriate, it also documents the equations that are used by the processing software (currently “nimbus”) to calculate the derived measurements that result from the use of one or more other basic measurements (e.g., potential temperature). Since 1993, data from research flights have been archived in NetCDF format (cf. <a href="http://www.unidata.ucar.edu/software/netcdf/docs/">http://www.unidata.ucar.edu/software/netcdf/docs/</a>), and the NetCDF header for recent projects includes detailed information on the measurements present in the file, how they depend on other measurements, units, etc. The conventions that the RAF uses for NetCDF data files are documented at <a href=" http://www.eol.ucar.edu/raf/Software/netCDF.html "> http://www.eol.ucar.edu/raf/Software/netCDF.html </a>.</p>
+<p>This document should change as changes in processing algorithms are implemented, but the intent is also to provide a history of algorithms that have been used, so there is an effort to document how past archives were processed along with the descriptions of current algorithms. Unlike some technical reports, this document is likely to change over time and should provide a history extending back to <a href="https://opensky.ucar.edu/islandora/object/archives%3A8729">RAF Bulletin 9</a>, which documented the processing algorithms as they existed before about 2003.</p>
+<p>Currently, the data acquisition process on the research aircraft of the Research Aviation Facility, Earth Observing Laboratory, proceeds as follows:<br />
+<!-- <span id="DataAcquisitionDescription" label="DataAcquisitionDescription">[DataAcquisitionDescription]</span></p> -->
+<!-- <ol class="incremental"> --></p>
+<ol style="list-style-type: decimal">
+<li>Analog or digital outputs from instruments are sampled at regular intervals, typically 50 Hz when possible. Analog outputs are converted to digital values via analog-to-digital converters. The investigator’s handbooks for each aircraft describe this process in detail, including resolution of the sampling and handling of the results. Often, signals from user-supplied instruments are also included in the measured values that are handled by the data system.<br />
+</li>
+<li>The digital outputs are then recorded by the data system on the aircraft. Currently, this is a task of the <a href="http://www.eol.ucar.edu/data/software/nidas">“NIDAS”</a> system described below. That system also controls the sampling, time stamps, and other aspects of data recording.<br />
+</li>
+<li>In flight, the data are processed by the <em>“nimbus”</em> data processing program, which makes them available for display via <a href="http://www.eol.ucar.edu/raf/Software/aeros_dnld.html">“aeros”</a> for real-time monitoring of measurements.<br />
+</li>
+<li>Following the flight, <em>nimbus</em> again processes the data. At this stage, measurements can be re-sampled with averaging and/or interpolation to produce various data rates, usually 1 Hz or 25 Hz, and known lags in measurements can be introduced to adjust measurements to a common time basis. As part of this processing, <em>nimbus</em> applies calibration coefficients where appropriate to convert recorded values (e.g., voltage) to engineering units (e.g., <span class="math inline">\(^\circ\)</span>C). Determining or checking these calibration coefficients is part of the pre-flight and post-flight procedures for each project.<br />
+</li>
+<li>The output from <em>nimbus</em> is the data file that is the permanent archive from the experiment, often after merging in additional data sets from users that are not recorded in the original data file produced by <em>NIDAS.</em> These files, in NetCDF format, have headers that contain metadata on each measurement (such as the calibration coefficients, the instrument that produced the measurement, etc.). Many of the variables in these files are discussed in this technical note, but the files may also include additional project-specific measurements for which the NetCDF header and the project reports will be the only documentation.</li>
+</ol>
+<p>For assistance accessing data from RAF-supported projects, contact the RAF data management group via <a href="mailto:raf-dm%40eol.ucar.edu">this email address</a>.</p>
+The data system has changed several times over the history of RAF. For a discussion of the history of the data systems, see <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/ADSHistory.pdf">this note</a> written by Richard Friesen. The versions of data systems that produced most of the data still available were, approximately, as given in the following table:
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:80%; ">
+<table class="table table-bordered" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Data.System
+</th>
+<th style="text-align:center;">
+start
+</th>
+<th style="text-align:center;">
+end
+</th>
+<th style="text-align:left;">
+aircraft
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+ADS I
+</td>
+<td style="text-align:center;">
+1984
+</td>
+<td style="text-align:center;">
+1992
+</td>
+<td style="text-align:left;">
+King Air 200T, Sabreliner (1987), Electra (1991)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+ADS II
+</td>
+<td style="text-align:center;">
+1992
+</td>
+<td style="text-align:center;">
+2007
+</td>
+<td style="text-align:left;">
+C-130
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+ADS III (NIDAS)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+</td>
+<td style="text-align:center;">
+2005
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:left;">
+GV, C-130 after 2007
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Before 1993, data were processed by a different program, “GENPRO,” and a different output format (also named GENPRO) was used for archived datasets. Appendix E in <a href="https://opensky.ucar.edu/islandora/object/archives%3A8729">RAF Bulletin 9</a>, the previous description of RAF data products that is now superseded by this technical note, describes that format. Some variable names in this document, esp. in section <a href="obsolete-variables.html#obsolete-variables">10</a>, refer to obsolete variable names, some used with GENPRO and others referring to instruments that are now retired. These names are included here so that this report can be a reference for older archived data as well as for current data files.</p>
+<!-- %<h2 id="alphabetical-list-of-variables">Alphabetical List of Variables </h2> -->
+</div>
+<div id="alphabetical-list-of-variables" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Alphabetical List of Variables</h2>
+<p>At the end of this document, there is a list of all the variable names that appear in standard data files along with links to the primary discussion of those variables. The index to this technical report also includes all variables described here, and also some variables not discussed in detail in this document. Where possible, reference to those variables and information on the project(s) where they were used have been included also. In cases with multiple references, the bold entry is the primary discussion of the variable.</p>
+<p>In some cases redundant measurements are present, often for key measurements like pressure or temperature. When these are used in subsequent calculation of derived variables like potential temperature, some choice is usually made regarding which measurement is considered most reliable for a particular project or flight, and a single derived variable is calculated on the basis of the chosen input variable(s). To record which measurements were so designated, a reference measurement chosen from a group of redundant measurements usually has a variable name ending with the letter(s) X or XC.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+To see the variables in a particular netCDF data file, use the command “ncdump -h file.nc”.</p>
+<!-- % <h2 id="Punch1.1">Constants and Symbols</h2> -->
+</div>
+<div id="constants-and-symbols" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Constants and Symbols</h2>
+<p>The following table contains values used for some constants in this document. For reference, the symbols used here and elsewhere in this document are defined in the List of Symbols near the end of the document (cf. page ), and links are provided to where they are used. Where references are to the “NIST Chemistry WebBook”, the associated URL is <a href="http://webbook.nist.gov">http://webbook.nist.gov</a>. References to the CODATA Internationally recommended values of the Fundamental Physical Constants are available at <a href="http://physics.nist.gov/.cuu/.Constants">http://physics.nist.gov/.cuu/.Constants</a>. The optimization involved in adjustment of these coefficients is documented in <a href="https://physics.nist.gov/cuu/pdf/RevModPhys_80_000633acc.pdf">Mohr et al., 2008a</a> and 2008b, referenced at that URL.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+In this technical note, references to these symbols will often have these symbols or definitions marked by the symbol <span class="math inline">\(^\dagger\)</span> to indicate that the values used are the standard ones in the following table.</p>
+<hr />
+<blockquote>
+<center>
+<strong><span id="constants-table">Values Used for “Constants”</span></strong>
+</center>
+<p><br>
+<span class="math inline">\(g\)</span> = acceleration
+of gravity  <span class="math inline">\(^{(a)}\)</span> at latitude <span class="math inline">\(\lambda\)</span>  and
+altitude <span class="math inline">\(z\)</span> above the WGS-84 geoid,  <span class="math inline">\(^{(b)}\)</span><br />
+<span class="math display" id="eq:gsublambda">\[\begin{align}
+g(z,\lambda)=g_{e}\left(\frac{1+g_{1}\sin^{2}(\lambda)}{(1-g_{2}\sin^{2}\lambda)^{1/2}}\right)(1-(k_{1}-k_{2}\sin^{2}(\lambda))z+k_{3}z^{2})
+\tag{1.1}
+\end{align}\]</span><br />
+       where <span class="math inline">\(g_{e}=9.780327\)</span> m s<span class="math inline">\(^{-2}\)</span>, <span class="math inline">\(g_{1}=0.00193185\)</span>, <span class="math inline">\(g_{2}=0.00669438\)</span>, and<br />
+        {<span class="math inline">\(k_{1},k_{2},k_{3}\)</span>} = {3.15704<span class="math inline">\(\times 10^{-7}\mathrm{m}^{-1}\)</span>,
+2.10269<span class="math inline">\(\times 10^{-9}\mathrm{m}^{-1}\)</span>, 7.37452<span class="math inline">\(\times 10^{-14}\mathrm{m}^{-2}\)</span>}<br />
+<span class="math inline">\(T_{0}\)</span> = temperature in kelvin corresponding to <span class="math inline">\(0^{\circ}\)</span>C = 273.15 K<br />
+<span class="math inline">\(T_{3}\)</span> = temperature
+corresponding to the triple point of water
+= 273.16 K<br />
+<span class="math inline">\(M_{d}\)</span> = molecular
+weight of dry air<span class="math inline">\(^{(a)}\)</span>, 28.9637
+kg<span class="math inline">\(\,\)</span>kmol<span class="math inline">\(^{-1}\)</span>  <span class="math inline">\(^{(c)}\)</span><br />
+<span class="math inline">\(M_{w}\)</span> = molecular
+weight of water, 18.0153 kg kmol<span class="math inline">\(^{-1}\)</span>  <span class="math inline">\(^{(d)}\)</span><br />
+<span class="math inline">\(R_{0}\)</span> = universal
+gas constant<span class="math inline">\(^{a}\)</span>
+= 8.314472<span class="math inline">\(\times 10^{3}\)</span> J kmol<span class="math inline">\(^{-1}\)</span>K<span class="math inline">\(^{-1}\)</span>   <span class="math inline">\(^{(e)}\)</span><br />
+<span class="math inline">\(N_{A}\)</span> = Avogadro constant = 6.022141<span class="math inline">\(\times 10^{26}\)</span> molecules kmol<span class="math inline">\(^{-1}\)</span><br />
+<span class="math inline">\(k=R_{0}/(\mathrm{N_{A})}=1.38065\times10^{-23}\mathrm{J}\,\mathrm{K}^{-1}\)</span><br />
+<span class="math inline">\(R_{d}=(R_{0}/M_{d}\)</span>) = gas
+constant for dry air<br />
+<span class="math inline">\(R_{w}\)</span> = (<span class="math inline">\(R_{0}/M_{w})\)</span> = gas
+constant for water vapor<br />
+<span class="math inline">\(R_{E}\)</span> = radius of
+the Earth = 6.371229<span class="math inline">\(\times 10^{6}\)</span>m  <span class="math inline">\(^{(f)}\)</span><br />
+<span class="math inline">\(c_{p}\)</span> = specific
+heat of dry air at constant pressure
+= <span class="math inline">\(\frac{7}{2}R_{d}\)</span> = 1.00473<span class="math inline">\(\times10^{3}\)</span> J kg<span class="math inline">\(^{-1}\)</span>K<span class="math inline">\(^{-1}\)</span>  <span class="math inline">\(^{(g)}\)</span><br />
+<span class="math inline">\(c_{v}\)</span> = specific
+heat of dry air at constant volume
+= <span class="math inline">\(\frac{5}{2}R_{d}\)</span> = 0.71766<span class="math inline">\(\times 10^{3}\)</span> J kg<span class="math inline">\(^{-1}\)</span>K<span class="math inline">\(^{-1}\)</span><br />
+     <em>(specific heat values are at 0<span class="math inline">\(^{\circ}\)</span>C; small variations
+with temperature are not included here)</em><br />
+<span class="math inline">\(\gamma\)</span> = ratio
+of specific heats, <span class="math inline">\(c_{p}/c_{v}\)</span>,
+taken to be 1.4 (dimensionless) for dry air<br />
+<span class="math inline">\(\Omega\)</span> = angular
+rotation rate of the Earth =
+7.292115<span class="math inline">\(\times10^{-5}\)</span> radians/s<br />
+<span class="math inline">\(\Omega_{Sch}\)</span> = angular
+frequency of the Schuler oscillation =
+<span class="math inline">\(\sqrt{\frac{g}{R_{E}}}\)</span><br />
+<span class="math inline">\(\sigma\)</span> = Stephan-Boltzmann
+Constant = 5.6704<span class="math inline">\(\times10^{-8}\)</span>W m<span class="math inline">\(^{-2}\)</span>K<span class="math inline">\(^{-4}\)</span>  <span class="math inline">\(^{(e)}\)</span></p>
+__________<br>
+<sup>(a)</sup> The International Standard Atmosphere specifies <span class="math inline">\(g=9.80665\)</span> m s<sup>-2</sup>,
+<span class="math inline">\(M_{w}\)</span>=28.9644 and <span class="math inline">\(R_{0}\)</span> = 8.31432x10<sup>3</sup> J kmol<sup>-1</sup>K<sup>-1</sup>,
+so these values are used to calculate pressure altitude.<br />
+<sup>(b)</sup> cf. Moritz, H., 1988: Geodetic Reference System 1980, Bulletin Geodesique,
+Vol. 62 , no. 3, and <a href="http://earth-info.nga.mil/GandG/publications/tr8350.2/wgs84fin.pdf">this link</a>.<br />
+<sup>(c)</sup> Jones, F. E., 1978: J. Res. Natl. Bur. Stand., 83(5), 419, as quoted
+by Lemmon, E. W., R. T. Jacobsen, S. G. Penoncello, and D. G., Friend,
+J. Phys. Chem. Ref. Data, Vol. 29, No. 3, 2000, pp. 331-385. The quoted
+values of mole fraction are from Jones (1978) and the calculation of mean
+molecular weight is shown in the following table
+using values of molecular weights
+taken from the NIST Standard Reference Database 69: NIST Chemistry
+WebBook as of March 2011. With CO<sub>2</sub> about 0.00041 (as in 2020) and others
+decreased proportionately, the mean is 28.9640.
+<table style="width:70%;">
+<caption>
+<span id="tab:unnamed-chunk-20">Table 1.1: </span>Calculation of the mean molecular weight of air
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Gas
+</th>
+<th style="text-align:left;">
+mole fraction x
+</th>
+<th style="text-align:left;">
+molecular weight M
+</th>
+<th style="text-align:left;">
+x*M
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+N<sub>2</sub>
+</td>
+<td style="text-align:left;">
+0.78102
+</td>
+<td style="text-align:left;">
+28.0134
+</td>
+<td style="text-align:left;">
+21.87903
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+O<sub>2</sub>
+</td>
+<td style="text-align:left;">
+0.20946
+</td>
+<td style="text-align:left;">
+31.9988
+</td>
+<td style="text-align:left;">
+6.70247
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ar
+</td>
+<td style="text-align:left;">
+0.00916
+</td>
+<td style="text-align:left;">
+39.948
+</td>
+<td style="text-align:left;">
+0.36592
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CO<sub>2</sub>
+</td>
+<td style="text-align:left;">
+0.00033
+</td>
+<td style="text-align:left;">
+44.0095
+</td>
+<td style="text-align:left;">
+0.01452
+</td>
+</tr>
+</tbody>
+</table>
+<p>          The mean value is 28.9619, but see above for a more modern adjustment.<br><br>
+<sup>(d)</sup> NIST Standard Reference Database 69: NIST Chemistry WebBook as of
+March 2011.<br>
+<sup>(e)</sup> 2006 CODATA<br />
+<sup>(f)</sup> matching the value used by the inertial reference systems, as discussed
+in the “INS” section.<br />
+<sup>(g)</sup> The specific heat of dry air at 1013 hPa and 250–280 K as given
+by Lemmon et al. (2000) is 29.13 J/(mol-K), which translates to <span class="math inline">\(1005.8\pm 0.3\)</span>
+J/(kg-K). However, the uncertainty limit associated with values of
+specific heat is quoted as 1%, and the experimental data cited in
+that paper show scatter that is at least comparable to several tenths
+percent, so the ideal-gas value cited here is well within the range
+of uncertainty. For this reason, and because this value is in widespread
+use, the ideal-gas value is used throughout the algorithms described
+here.</p>
+</blockquote>
+<hr />
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>ADS III is the name given to the full data system, which includes these components: NIDAS (for data acquisition and recording); NIMBUS (for data processing, both in flight and after the flight); AEROS (for data display in flight); and the Mission Coordinator Station and satellite communications system (for transmission of data to and from the aircraft, display of such data for mission decisions, and support for written “chat” communications among project participants both on the aircraft and on the ground).<a href="introduction.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Some that do not follow this convention are ATTACK and SSLIP; see the individual descriptions that follow.<a href="introduction.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>P. J. Mohr, B. N. Taylor, and D. B. Newell, Rev. Mod. Phys 80(2), 633-730(2008); P. J. Mohr, B. N. Taylor, and D. B. Newell, J. Phys. Chem. Ref. Data 37(3), 1187-1284(2008).<a href="introduction.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="general-information-about-data-files.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

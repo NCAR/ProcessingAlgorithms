@@ -1,0 +1,10 @@
+<p class=box>
+ATX = ambient temperature, $^{\circ}\mathrm{C}$  
+$r$ = mixing ratio, dimensionless {[}kg/kg{]} = \{MR\}/(1000 g/kg)  
+$T_{0}=273.15$\,K  
+</p><p class=box2>
+\begin{equation}
+\mathrm{TVIR}=(\mathrm{\{ATX\}}+T_{0})\left(\frac{1+\frac{M_{d}}{M_{w}}r}{1+r}\right)-T_{0}
+(\#eq:TVIR)
+\end{equation}
+</p>  

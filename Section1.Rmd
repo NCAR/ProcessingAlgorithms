@@ -1,0 +1,56 @@
+
+# Introduction
+
+## Background Information
+
+<!-- %<h2 id="background-information">Background Information</h2> -->
+
+This technical report defines the variables used in data sets that are collected by the research aircraft operated by the Research Aviation Facility (RAF) of the National Center for Atmospheric Research. Where appropriate, it also documents the equations that are used by the processing software (currently “nimbus”) to calculate the derived measurements that result from the use of one or more other basic measurements (e.g., potential temperature). Since 1993, data from research flights have been archived in NetCDF format (cf. <a href="http://www.unidata.ucar.edu/software/netcdf/docs/">http://www.unidata.ucar.edu/software/netcdf/docs/</a>), and the NetCDF header for recent projects includes detailed information on the measurements present in the file, how they depend on other measurements, units, etc. The conventions that the RAF uses for NetCDF data files are documented at <a href=" http://www.eol.ucar.edu/raf/Software/netCDF.html "> http://www.eol.ucar.edu/raf/Software/netCDF.html </a>.  
+
+This document should change as changes in processing algorithms are implemented, but the intent is also to provide a history of algorithms that have been used, so there is an effort to document how past archives were processed along with the descriptions of current algorithms. Unlike some technical reports, this document is likely to change over time and should provide a history extending back to <a href="https://opensky.ucar.edu/islandora/object/archives%3A8729">RAF Bulletin 9</a>, which documented the processing algorithms as they existed before about 2003.  
+
+Currently, the data acquisition process on the research aircraft of the Research Aviation Facility, Earth Observing Laboratory, proceeds as follows:  
+<!-- <span id="DataAcquisitionDescription" label="DataAcquisitionDescription">[DataAcquisitionDescription]</span></p> -->
+<!-- <ol class="incremental"> -->
+
+1. Analog or digital outputs from instruments are sampled at regular intervals, typically 50 Hz when possible. Analog outputs are converted to digital values via analog-to-digital converters. The investigator’s handbooks for each aircraft describe this process in detail, including resolution of the sampling and handling of the results. Often, signals from user-supplied instruments are also included in the measured values that are handled by the data system.  
+2. The digital outputs are then recorded by the data system on the aircraft. Currently, this is a task of the ["NIDAS"](http://www.eol.ucar.edu/data/software/nidas) system described below. That system also controls the sampling, time stamps, and other aspects of data recording.  
+3. In flight, the data are processed by the *“nimbus”* data processing program, which makes them available for display via ["aeros"](http://www.eol.ucar.edu/raf/Software/aeros_dnld.html) for real-time monitoring of measurements.  
+4. Following the flight, *nimbus* again processes the data. At this stage, measurements can be re-sampled with averaging and/or interpolation to produce various data rates, usually 1 Hz or 25 Hz, and known lags in measurements can be introduced to adjust measurements to a common time basis. As part of this processing, *nimbus* applies calibration coefficients where appropriate to convert recorded values (e.g., voltage) to engineering units (e.g., $^\circ$C). Determining or checking these calibration coefficients is part of the pre-flight and post-flight procedures for each project.  
+5. The output from *nimbus* is the data file that is the permanent archive from the experiment, often after merging in additional data sets from users that are not recorded in the original data file produced by *NIDAS.* These files, in NetCDF format, have headers that contain metadata on each measurement (such as the calibration coefficients, the instrument that produced the measurement, etc.). Many of the variables in these files are discussed in this technical note, but the files may also include additional project-specific measurements for which the NetCDF header and the project reports will be the only documentation.  
+
+For assistance accessing data from RAF-supported projects, contact the RAF data management group via <a href="mailto:raf-dm%40eol.ucar.edu">this email address</a>.  
+
+```{r include = TRUE, echo = FALSE}
+## construct data.frame for the following table:
+DSYS <- data.frame("Data System" = c('ADS I', 'ADS II', 'ADS III (NIDAS)^[ADS III is the name given to the full data system, which includes these components: NIDAS (for data acquisition and recording); NIMBUS (for data processing, both in flight and after the flight); AEROS (for data display in flight); and the Mission Coordinator Station and satellite communications system (for transmission of data to and from the aircraft, display of such data for mission decisions, and support for written “chat” communications among project participants both on the aircraft and on the ground).]'))
+DSYS$start <- c('1984', '1992', '2005')
+DSYS$end <- c('1992', '2007', ' ')
+DSYS$aircraft <- c('King Air 200T, Sabreliner (1987), Electra (1991)', 'C-130', 'GV, C-130 after 2007')
+```
+The data system has changed several times over the history of RAF. For a discussion of the history of the data systems, see [this note](https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/ADSHistory.pdf) written by Richard Friesen. The versions of data systems that produced most of the data still available were, approximately, as given in the following table: 
+```{r include = TRUE}
+knitr::kable(DSYS, align=c('cccl')) %>% kable_styling(bootstrap_options = 'bordered') %>%
+  scroll_box(width='80%')
+```
+  
+Before 1993, data were processed by a different program, “GENPRO,” and a different output format (also named GENPRO) was used for archived datasets. Appendix E in [RAF Bulletin 9](https://opensky.ucar.edu/islandora/object/archives%3A8729), the previous description of RAF data products that is now superseded by this technical note, describes that format. Some variable names in this document, esp. in section \@ref(obsolete-variables), refer to obsolete variable names, some used with GENPRO and others referring to instruments that are now retired. These names are included here so that this report can be a reference for older archived data as well as for current data files.  
+
+<!-- %<h2 id="alphabetical-list-of-variables">Alphabetical List of Variables </h2> -->
+## Alphabetical List of Variables
+
+At the end of this document, there is a list of all the variable names that appear in standard data files along with links to the primary discussion of those variables. The index to this technical report also includes all variables described here, and also some variables not discussed in detail in this document. Where possible, reference to those variables and information on the project(s) where they were used have been included also. In cases with multiple references, the bold entry is the primary discussion of the variable.  
+
+In some cases redundant measurements are present, often for key measurements like pressure or temperature. When these are used in subsequent calculation of derived variables like potential temperature, some choice is usually made regarding which measurement is considered most reliable for a particular project or flight, and a single derived variable is calculated on the basis of the chosen input variable(s). To record which measurements were so designated, a reference measurement chosen from a group of redundant measurements usually has a variable name ending with the letter(s) X or XC.^[Some that do not follow this convention are ATTACK and SSLIP; see the individual descriptions that follow.] 
+To see the variables in a particular netCDF data file, use the command “ncdump -h file.nc”.  
+
+<!-- % <h2 id="Punch1.1">Constants and Symbols</h2> -->
+
+## Constants and Symbols {#constants-and-symbols}
+
+The following table contains values used for some constants in this document. For reference, the symbols used here and elsewhere in this document are defined in the List of Symbols near the end of the document (cf. page ), and links are provided to where they are used. Where references are to the “NIST Chemistry WebBook”, the associated URL is <a href="http://webbook.nist.gov">http://webbook.nist.gov</a>. References to the CODATA Internationally recommended values of the Fundamental Physical Constants are available at <a href="http://physics.nist.gov/.cuu/.Constants">http://physics.nist.gov/.cuu/.Constants</a>. The optimization involved in adjustment of these coefficients is documented in [Mohr et al., 2008a](https://physics.nist.gov/cuu/pdf/RevModPhys_80_000633acc.pdf) and 2008b, referenced at that URL.^[P. J. Mohr, B. N. Taylor, and D. B. Newell, Rev. Mod. Phys 80(2), 633-730(2008); P. J. Mohr, B. N. Taylor, and D. B. Newell, J. Phys. Chem. Ref. Data 37(3), 1187-1284(2008).] 
+In this technical note, references to these symbols will often have these symbols or definitions marked by the symbol $^\dagger$ to indicate that the values used are the standard ones in the following table.  
+
+```{r child='constants.Rmd'}
+```
+  

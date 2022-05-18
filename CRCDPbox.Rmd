@@ -1,0 +1,37 @@
+
+<p class=box>
+VCRH = frost point inside the cryogenic hygrometer [$^{\circ}$C]    
+CRHP = pressure inside the chamber of the cryogenic hygrometer [hPa]  
+PSXC = reference ambient pressure [hPa]  
+f$_{i}$ = enhancement factor (see Appendix C of Bulletin 9)  
+$F_{1}$($T_{d}$) =Goff-Gratch formula for vapor pressure at dew
+point $T_{d}$  
+$F_{2}(T_{f})$ = Goff-Gratch formula for vapor pressure at frost
+point $T_{f}$   
+$T_{3}$ = temperature at the triple point of water = 273.16 K  
+</p><p class=box2>
+chamber vapor pressure $e_{ic}$ (hPa):  
+\begin{equation}
+e_{ic}=(6.1071\,\mathrm{mb})\times10^{A}  
+(\#eq:DPCRCbox1)
+\end{equation}  
+where 
+\begin{align}  
+A=&-9.09718\left(\frac{T_{3}}{\mathrm{\{VCRH\}}+T_{3}}-1\right) \notag \\
++ & 3.56654\log_{10}\left(\frac{T_{3}}{\mathrm{\{VCRH\}}+T_{3}}\right) \notag \\
++ & 0.876793\left(1-\frac{\mathrm{\{VCRH\}}+T_{3}}{T_{3}}\right)
+(\#eq:DPCRCbox2)
+\end{align}  
+The ambient vapor pressure $e_{a}$ (hPa) then is:  
+\begin{equation}
+e_{a}=e_{ic}\left(\frac{\mathrm{\{PSXC\}}}{\mathrm{\{CRHP\}}}\right)f_{i}
+(\#eq:DPCRCbox3)
+\end{equation}  
+The ambient dew and frost points DPCRC and FPCRC are found iteratively by finding
+the values that lead to $e_a$ in the Goff-Gratch equations:  
+\begin{align}
+e_{a} & = F_{1}\left(\mathrm{\{DPCRC\}}\right)\notag \\
+ & = F_{2}\left(\mathrm{\{FPCRC\}}\right)
+(\#eq:DPXRXbox4)
+\end{align}
+</p>  

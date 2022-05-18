@@ -1,0 +1,17 @@
+
+<p class=box>  
+VEW = IRS-measured east component
+of the aircraft ground speed    
+VNS = IRS-measured north component of the aircraft ground speed  
+GGVEW = GPS-measured east component of the aircraft ground speed  
+GGVNS = GPS-measured north component of the aircraft ground speed  
+$F_{L}()$ = three-pole Butterworth low-pass recursive digital filter  
+</p>
+<p class=box2>
+\begin{align}\begin{split}
+\{\mathrm{VNSC}\} & = F_{L}(\mathrm{\{GGVNS\})}+(1-F_{L})(\{\mathrm{VNS\}})\\
+\{\mathrm{VEWC}\} & = F_{L}(\mathrm{\{GGVEW\})}+(1-F_{L})(\{\mathrm{VEW\}})
+\end{split}(\#eq:VC)
+\end{align}
+</p>
+

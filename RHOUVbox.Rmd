@@ -1,0 +1,22 @@
+
+\newcommand{\pluseq}{\mathrel{+}\mathrel{\mkern-1mu}=}
+<p class=box>
+XUVI = output from the UV Hygrometer, after application of calibration
+coefficients  
+DPXC\index{DPXC} = corrected dewpoint from some preferred source,
+$^{\circ}$C  
+ATX\index{ATX} = preferred temperature, $^{\circ}$C  
+RHODT\index{RHODT} =water vapor density determined by a chilled-mirror
+sensor  
+Tau = time constant for the exponential update (typically 300 s)  
+</p><p class=box2>
+For valid measurements (i.e., when DPXC $<$ ATX and XUVI and RHODT are not missing}:   
+\begin{equation}
+\mathrm{Offset}\pluseq (\mathrm{\{RHODT\}-\{XUVI\}-Offset})/Tau
+(\#eq:RHOUVbox1)
+\end{equation}
+\begin{equation}
+\mathrm{\{RHOUV\} = \{XUVI\} + Offset}
+(\#eq:RHOUBbox2)
+\end{equation}
+</p>  

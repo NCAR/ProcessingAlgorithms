@@ -1,0 +1,20 @@
+```{r child='boxStyles.Rmd'}
+```
+<p class=box>
+PSXC = ambient pressure [hPa]  
+HGME = (radar) altitude above the surface [m]  
+TVIR = virtual temperature [$^{\circ}\mathrm{C}$]  
+PSURF = estimated surface pressure [hPa]  
+$g$ = acceleration of gravity$^{\dagger}$  
+$R_{d}$ = gas constant for dry air$^{\dagger}$  
+$c_{pd}$ = specific heat of dry air at constant pressure$^{\dagger}$  
+</p><p class=box2>
+\begin{equation}
+T_{m}=(\mathrm{\{TVIR\}}+T_{0})+0.5\mathrm{\{HGM\}}\frac{g}{c_{pd}}
+(\#eq:Tm4PSURF)
+\end{equation}
+\begin{equation}
+\mathrm{PSURF}=\mathrm{\{PSXC\}}\,\exp\left\{ \frac{g\,\{\mathrm{HGME}\}}{R_{d}T_{m}}\right\}
+(\#eq:PSURF)
+\end{equation}
+</p>

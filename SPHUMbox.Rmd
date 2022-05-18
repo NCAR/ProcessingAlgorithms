@@ -1,0 +1,14 @@
+
+<p class=box>
+PSXC = ambient total air pressure. hPa   
+EWX = ambient water vapor pressure, hPa  
+$C_{kg2g}=10^{3}\,$g$\,$kg$^{-1}$ (conversion factor to give
+final units of g$\,$kg$^{-1}$)  
+$M_{w}=$molecular weight of water$^{\dagger}$  
+$M_{d}=$molecular weight of dry air$^{\dagger}$  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{SPHUM\}} = C_{kg2g}\frac{M_{w}}{M_{d}}(\mathrm{\frac{\{EWX\}}{\mathrm{\{PSXC\}-(1-\frac{M_{w}}{M_{d}})\{\mathrm{EWX}\}}}})
+(\#eq:SPHUM)
+\end{equation}
+</p>

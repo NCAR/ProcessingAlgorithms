@@ -1,0 +1,10 @@
+<p class=box>
+$q$ = specific humidity (dimensionless) = SPHUM/1000.  
+\ \ \ \ \ \  for SPHUM expressed in g/kg  
+$c=0.000304\,\mathrm{kg\,g^{-1}}=0.304$ (dimensionless)  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{TASHC\}} = \mathrm{\{TASX\}} (1.0 + c\,q)  
+(\#eq:TASHC)
+\end{equation}
+</p>  

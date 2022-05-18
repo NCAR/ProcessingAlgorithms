@@ -1,0 +1,52 @@
+
+<p class=box>
+$T_{p}$ = DPx from instrument x [$^{\circ}$C], or alternately  
+RHO = water vapor density measurement
+[$\mathrm{g\ }\mathrm{m}^{-3}$]; only one is used in any calculation  
+ATX = reference ambient temperature [$^{\circ}C$]    
+$T_{K}$=ATX+$T_{0}$\ $^{\dagger}$ = ambient temperature [K]   
+$p$ = PSXC = reference ambient pressure [hPa]  
+$p_{h}$ = CAVP\_x = pressure in instrument "x" housing [hPa]  
+$e_{t}$ = intermediate vapor pressure used for calculation only  
+$e$ = EWx = water vapor pressure from source x [hPa]  
+$M_{w}$ = molecular weight of water$^{\dagger}$  
+$R_{0}$ = universal gas constant$^{\dagger}$  
+$f(p_{h},T_{p})$ = enhancement factor (cf. \@ref(eq:enhance))      
+$F_{d}(e)$ = interpolation formula giving dew point temperature from water vapor pressure
+</p><p class=box2>
+For dew/frost point hygrometers, producing the measurement DPx:  
+\ \ \ \ if DPx < 0$^\circ$C:  
+\ \ \ \ \ \ \ \ obtain $e_{t}$ from \@ref(eq:MKi) using $T_{FP}$=DPx + $T_{0}$  
+\ \ \ \ else (i.e., DPx $\geq 0^\circ$C):  
+\ \ \ \ \ \ \ \ obtain $e_{t}$ from \@ref(eq:MKw)
+using $T_{DP}=\mathrm{DPx}+T_{0}$  
+\ \ \ \ correct $e_{t}$ for enhancement factor and internal pressure 
+to get ambient vapor pressure $e$:  
+\begin{equation}
+e=f(p_{h},T_{P})\,(\frac{p}{p_{h}})\,e_t
+(\#eq:ebox)
+\end{equation}
+\ \ \ \ obtain DPxC by finding the dew point corresponding to the
+vapor pressure $e$:  
+\begin{equation}
+\mathrm{\{DPxC\}} = F_{d}(e) 
+(\#eq:DPxCbox)
+\end{equation}
+- - - - - - - - - - - - - - - - - - - -    
+For other instruments producing measurements of vapor density (RHO
+[g\ m$^{-3}$]:^(a)^  
+\ \ \ \ find the water vapor pressure in units of hPa:
+\begin{equation}
+e = (\mathrm{\{RHO\}}\,R_{0}\,T_{K}\,/\,M_{w})\times 10^{-5}
+(\#eq:RHObox)
+\end{equation}
+\ \ \ \ find the equivalent dew point:  
+\begin{equation}
+\mathrm{\{DPxC\}} = F_{d}(e)
+(\#eq:DPxC2)
+\end{equation}
+\_\_\_\_\_\_\_\_\_\_  
+^(a)^ prior to 2011 the following formula was used:
+$$Z=\frac{\ln((\mathrm{\{ATX\}}+273.15)\,\mathrm{\{RHO\}}}{1322.3}$$  
+$$\mathrm{\{DPxC\}}=\frac{273.0\,Z}{(22.51-Z)}$$
+</p>

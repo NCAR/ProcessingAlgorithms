@@ -6,28 +6,29 @@
 \origin unavailable
 \textclass article
 \begin_preamble
+% \usepackage{lmodern} %% didn't help
 % macro for italic page numbers in the index
 \newcommand{\IndexDef}[1]{\textit{#1}}
 \newcommand{\IndexPrimary}[1]{\textbf{#1}}
-
 % workaround for a makeindex bug,
 % see sec. "Index Entry Order"
-% only uncomment this when you are using makindex
+% only uncomment this when you are using makeindex
 \let\OrgIndex\index 
 \renewcommand*{\index}[1]{\OrgIndex{#1}}
+%\usepackage{imakeindex}
 \usepackage{splitidx}
 %\indexsetup{noclearpage}
-\marginparsep 0.3 cm
+%\marginparsep 0.3 cm
 \marginparwidth 2 cm 
 \pagenumbering{roman}
 % use this to make target one line higher
 \makeatletter
- \newcommand{\nop}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
-\makeatother
+\newcommand{\nop}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}%\makeatother
 \end_preamble
 \use_default_options true
 \begin_modules
 hanging
+knitr
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -38,7 +39,7 @@ hanging
 \font_sans "helvet" "default"
 \font_typewriter "lmtt" "default"
 \font_math "auto" "auto"
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -50,7 +51,7 @@ hanging
 \default_output_format default
 \output_sync 0
 \bibtex_command default
-\index_command default
+\index_command makeindex
 \paperfontsize 12
 \spacing single
 \use_hyperref true
@@ -137,15 +138,6 @@ hanging
 RAF Technical Note: Processing Algorithms
 \end_layout
 
-\begin_layout Standard
-\align center
-Algorithms Used to Produce Data Products from Research Aircraft;
-\begin_inset Newline newline
-\end_inset
-
-also Definitions of Variables in Archived Data Files
-\end_layout
-
 \begin_layout Date
 \begin_inset ERT
 status open
@@ -173,6 +165,22 @@ status open
 
 \end_layout
 
+\begin_layout Author
+Research Aviation Facility, Earth Observing Laboratory
+\begin_inset Newline newline
+\end_inset
+
+National Center for Atmospheric Research
+\begin_inset Newline newline
+\end_inset
+
+PO Box 3000, Boulder CO 
+\begin_inset space ~
+\end_inset
+
+80307-3000
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -189,20 +197,12 @@ vskip2in
 
 \end_layout
 
-\begin_layout Author
-Research Aviation Facility, Earth Observing Laboratory
+\begin_layout Standard
+Algorithms Used to Produce Data Products from Research Aircraft;
 \begin_inset Newline newline
 \end_inset
 
-National Center for Atmospheric Research
-\begin_inset Newline newline
-\end_inset
-
-PO Box 3000, Boulder CO 
-\begin_inset space ~
-\end_inset
-
-80307-3000
+also Definitions of Variables in Archived Data Files
 \end_layout
 
 \begin_layout Standard
@@ -436,7 +436,7 @@ eject
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section1.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section1.lyx"
 
 \end_inset
 
@@ -446,7 +446,7 @@ filename "Section1.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section3.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section3.lyx"
 
 \end_inset
 
@@ -482,7 +482,7 @@ eject
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section7.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section7.lyx"
 
 \end_inset
 
@@ -492,7 +492,7 @@ filename "Section7.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section9.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section9.lyx"
 
 \end_inset
 
@@ -502,7 +502,7 @@ filename "Section9.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section11.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section11.lyx"
 
 \end_inset
 
@@ -512,7 +512,7 @@ filename "Section11.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section13.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section13.lyx"
 
 \end_inset
 
@@ -522,7 +522,7 @@ filename "Section13.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section12.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section12.lyx"
 
 \end_inset
 
@@ -532,7 +532,7 @@ filename "Section12.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section10.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section10.lyx"
 
 \end_inset
 
@@ -542,7 +542,7 @@ filename "Section10.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section14.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section14.lyx"
 
 \end_inset
 
@@ -552,7 +552,7 @@ filename "Section14.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Section15.lyx"
+filename "/run/media/cooperw/SeagateDesktop/WACspace/OldHome/Research/Instrumentation/ProcessingAlgorithms/Section15.lyx"
 
 \end_inset
 
@@ -656,7 +656,7 @@ addcontentsline{toc}{section}{List of Symbols}
 
 
 \backslash
-printindex[lis]{}
+printindex[lis][List of Symbols, with page references to the PDF version]
 \end_layout
 
 \begin_layout Plain Layout
@@ -684,7 +684,7 @@ addcontentsline{toc}{section}{Variable Names}
 
 
 \backslash
-printindex[var]{}
+printindex[var][Variable Names]
 \end_layout
 
 \begin_layout Plain Layout
@@ -712,7 +712,7 @@ addcontentsline{toc}{section}{Index}
 
 
 \backslash
-printindex[idx]{}
+printindex[idx][Index]
 \end_layout
 
 \begin_layout Plain Layout
@@ -3259,7 +3259,7 @@ d by running LyX.
 \end_layout
 
 \begin_layout Enumerate
-As of Feb 2019, manylinks formerly to google-drive addresses or eol system
+As of Feb 2019, many links formerly to google-drive addresses or eol system
  files have been changed to https://github.com/NCAR/aircraft_ProcessingAlgorithms
  links.
  In that directory there is a file ('links') with a list of all the links

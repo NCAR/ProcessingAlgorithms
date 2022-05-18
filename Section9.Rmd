@@ -1,0 +1,114 @@
+<!-- <h2 id="windsecwind">Wind<span id="sec:WIND" label="sec:WIND">[sec:WIND]</span></h2> -->
+## Wind {#wind}
+<p><a href="https://opensky.ucar.edu/islandora/object/archives%3A8152">RAF Bulletin 23</a> documents the calculation of wind components, both with respect to the earth (UI, VI, WI, WS and WD) and with respect to the aircraft (UX and VY). In data processing, a separate function (GUSTO in GENPRO, gust.c in NIMBUS) is used to derive these wind components. That function uses the measurements from an Inertial Navigation System (INS) as well as aircraft true airspeed, aircraft angle of attack, and aircraft sideslip angle. The wind components calculated in GUSTO/gust.c are used to derive the wind direction (WD) and wind speed (WS). Additional variables UIC, VIC, WSC, WDC, UXC, and VYC are also calculated based on the variables VNSC, VEWC discussed in Section \@ref(combining-irs-and-gps-measurements), which combine INS and GPS information to obtain improved measurements of the aircraft motion. Those are usually the highest-quality measurements of wind because the merged INS/GPS variables combine the high-frequency response of the INS with the long-term accuracy of the GPS.</p>
+<p>There is an extensive discussion of the wind-sensing system and the uncertainties associated with measurements of wind in this <a href="http://dx.doi.org/10.5065/D60G3HJ8">Technical Note</a>. The details contained therein and in Bulletin 23 will not be repeated here, so those documents should be consulted for additional information. There are two exceptions that are discussed in more detail here:</p>
+<ol class="incremental">
+<li><p>The calculation of vertical wind is described in more detail below for the variables WI and WIC.</p></li>
+<li><p>Because measurements obtained by a GPS receiver are often used, the motion of the GPS receiving antenna relative to the IRU must be considered. Standard processing corrects for the motion of the gust system relative to the IRU arising from aircraft rotation, but a similar correction is needed because the GPS antenna is displaced from the IRU. The displacement is almost entirely along the longitudinal axis of the aircraft, so GPS-measured velocities like GGVNS, GGVEW, and GGVSPD (denoted here $v_n$, $v_e$, $v_u$) need correction as follows to give measurements that apply at the location of the IRU. Then these variables can be used in place of or to complement similar measurements from the IRU in the processing algorithms. The equations are:  
+\begin{align}\begin{split}
+\delta v_{u} = & -L_{G}\dot{\theta}\notag \\
+\delta v_{e} = & -L_{G}\dot{\psi}\,{\cos\psi}\notag \\
+\delta v_{n} = &  L_{G}\dot{\psi}\,{\sin\psi}
+\end{split}
+(\#eq:deltav)
+\end{align}  
+where $\theta$ and $\psi$ respectively are the pitch and heading angles and $L_G$ is the distance forward along the longitudinal axis from the IRU to the GPS antenna ($−4.30$ m for the GV and $-9.88$ m for the C-130 during and after 2015).  The negative signs indicate that the GPS antennas are behind the IRUs. The dots over the attitude-angle symbols represent time derivatives, so for example $\dot{\theta}$ is the rate of change of the pitch angle. All angles are expressed in radians. The correction terms should be added to the GPS-measured velocity components so that they represent the motion of the IRU relative to the Earth. This is done for the vertical wind, beginning in 2017, but for horizontal wind the complementary filter (discussed below) removes high-frequency fluctuations from the GPS-derived measurements so incorporation of these changes would have negligible effect. For more information, see <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/Recommendation161107.pdf">this note</a>.</p></li>
+</ol>
+<p>The variables pertaining to the relative wind are described in the next subsection, and the variables characterizing the wind are then described briefly in the last subsection. Some additional detail is included in cases where procedures are not documented in that earlier bulletin.</p>
+<!-- <h3 id="relative-wind">Relative Wind</h3> -->
+
+### Relative Wind
+
+<p>Wind is measured by adding two vectors, the measured air motion relative to the aircraft (called the relative wind) and the motion of the aircraft relative to the Earth. The following are the measurements used to determine the relative wind. The motion of the aircraft relative to the ground was discussed in Section \@ref(inertial-reference-systems), and the combination of these two vectors to measure the wind is described in <a href="https://opensky.ucar.edu/islandora/object/archives%3A8152">RAF Bulletin 23</a>.</p>
+<p>RAF uses the radome<span id="radome gust-sensing system" label="radome gust-sensing system"></span> gust-sensing technique^[Brown, E. N, C. A. Friehe, and D. H. Lenschow, 1983: <em>Journal of Climate and Applied Meteorology,</em> <strong>22,</strong> 171–180]
+to measure incidence angles of the relative wind (i.e., angles of attack and sideslip). The pressure difference between sensing ports above and below the center line of the radome is used, along with the dynamic pressure measured at a pitot tube and referenced to the static pressure source, to determine the angle of attack. The sideslip angle is determined similarly using the pressure ports on the starboard and port sides of the radome. A Rosemount Model 858AJ gust probe has occasionally been used for specialized measurements. The radome measurements are made by differential pressure sensors located in the nose area of the aircraft and connected to the radome by semi-rigid tubing.</p>
+<p><strong>Mach Number (dimensionless):</strong> <strong></strong> <strong><span class="underline">MACHx</span>,</strong> <strong><span class="underline">MACHX</span></strong><br />
+<em>The Mach Number that characterizes the flight speed.</em> The Mach number is defined as the ratio of the flight speed (or the magnitude of the relative wind) to the speed of sound.
+See Eq.\ \@ref(eq:M2) for the equation used. Many relatively old archived data files have instead a variable XMACH2, which is the square of MACHx.</p>
+<p><strong>Aircraft True Airspeed (m/s):</strong> <strong></strong> <strong><span class="underline">TASx</span>,</strong> <strong><span class="underline">TASxD</span></strong><br />
+<em>The flight speed of the aircraft relative to the atmosphere.</em> This derived measurement of the flight speed of the aircraft relative to the atmosphere is based on the Mach number calculated from both the dynamic pressure at location x and the static pressure. See the derivation for ATx . The different variables for TASx (TASF, TASR, etc) use different measurements of QCxC in the calculation of Mach number. The variable TASxD is the result of calculations for which the Mach number, air temperature, and true airspeed are determined for dry instead of humid air. See the discussion of [ATX](#ATX) for an explanation of how humidity is handled in the calculation of true airspeed.<br />
+```{r child='TASbox.Rmd'}
+```
+<strong>Aircraft True Airspeed (Humidity Corrected) (m/s):</strong> <strong></strong> <strong><span class="underline">TASHC</span></strong> – <em>obsolete</em><br />
+This derived measurement of true airspeed accounted for deviations of specific heats of moist air from those of dry air. See List, 1971, pp 295, 331-339, and Khelif, et al., 1999. This variable is no longer used because the standard
+calculation of TASX (documented in the preceding paragraph) now uses moist-air
+values of the specific heats and gas constant. The equation previously used for this variable, given by Khelif et al. 1999,^[Khelif, D., S.P. Burns, and C.A. Friehe, 1999: Improved wind measurements on research aircraft. <em>Journal of Atmospheric and Oceanic Technology,</em> <strong>16,</strong> 860–875.]
+added a moisture correction to the true airspeed derived for dry air, as follows:<br />
+```{r child='TASHCbox.Rmd'}
+```
+<strong>Attack Angle Differential Pressure (mb):</strong> <strong></strong> <strong><span class="underline">ADIFR</span></strong><br />
+<em>The pressure difference between the top and bottom pressure ports of a radome gust-sensing system.</em> This measurement is used to determine the angle of attack; see AKRD below. <strong></strong> Obsolete variable <span class="underline">ADIF</span> is a similar variable used for old gust-boom systems or for Rosemount Model 858AJ flow-angle sensors.</p>
+<p><strong>Sideslip Angle Differential Pressure (mb):</strong> <strong></strong> <strong><span class="underline">BDIFR</span></strong><br />
+<em>The pressure difference between starboard and port pressure inlets of a radome gust-sensing system.</em> This measurement is used to determine the sideslip angle; see SSRD below. Obsolete variable <span class="underline">BDIF</span> is a similar variable used for old gust-boom systems or for Rosemount Model 858AJ flow-angle sensors.</p>
+<p><strong>Attack Angle, Radome (</strong><span class="math inline">º</span><strong>):</strong> <strong></strong> <strong><span class="underline">AKRD</span></strong><br />
+<em>The angle of attack of the aircraft.</em> This derived measurement represents the angle between the longitudinal axis of the aircraft and the component of the relative wind vector in the plane of port-starboard symmetry of the aircraft. The tangent of the angle of attack is the ratio of the vertical to longitudinal component of the relative wind. Positive values indicate flow moving upward (in the aircraft reference frame) relative to the longitudinal axis. The calculation is based on ADIFR and a measurement of dynamic pressure, and so is the measurement produced by a radome gust-sensing system. Empirical sensitivity coefficients for each aircraft, determined from special flight maneuvers, are used; see <a href="https://opensky.ucar.edu/islandora/object/archives%3A8152">RAF Bulletin 23</a> and this <a href="http://dx.doi.org/10.5065/D60G3HJ8">Technical Note</a> for more information. The sensitivity coefficients listed below have changed when the radomes were changed or refurbished, so the project documentation should be consulted for the values used in a particular project. For more information on the latest C-130 calibration, see <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/ARISTO-LAMS.pdf">this note</a>.<br />
+Prior to 2017, the procedure was based on the following algorithm:<br />
+```{r child='AKRDbox.Rmd'}
+```
+<br />
+See also <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/AKRDC130.pdf">this memo</a>.<br />
+<br />
+Beginning in 2017, a different strategy was used, as documented in more detail in <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms/blob/master/www/Recommendation161121.pdf">this memo</a>. Two variables were used to represent the angle of attack, $A$={ADIFR}/{QCF} and $q$={QCF}. However, each was filtered into complementary low-pass and high-pass components, with the cutoff frequency at (1/600) Hz, and the separate components were used to represent the separate components of angle of attack according to the following formula:<br />
+```{r child='newAKRDbox.Rmd'}
+```
+<strong></strong></p>
+<p><strong>Reference Attack Angle (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">ATTACK</span></strong><span id="punch:4-12" label="punch:4-12">[punch:4-12]</span><br />
+<em>The reference angle of attack used to calculate derived variables.</em> This variable is the reference selected from other measurements of angle of attack in the data set. In most projects, it is equal to AKRD. It is used where attack angle is needed for other derived calculations (e.g., wind measurements).</p>
+<p><strong>Sideslip Angle (Differential Pressure) (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">SSRD</span></strong><br />
+<em>The angle of sideslip of the aircraft.</em> This derived measurement represents the angle between the longitudinal axis of the aircraft and the projection of the relative wind onto the plane determined by the longitudinal and lateral axes. Positive values indicate airflow from the starboard side. This variable is derived from BDIFR and a dynamic pressure using a sensitivity function that has been determined empirically for each aircraft.<br /></p>
+```{r child='SSRDbox.Rmd'}
+```
+<p><strong>Reference Sideslip Angle (</strong><span class="math inline">º</span><strong>):</strong> <strong></strong> <strong><span class="underline">SSLIP</span></strong><br />
+<em>The reference sideslip angle used to calculate derived variables</em>. This variable is the reference selected from other measurements of sideslip angle in the data set. In most projects, it is equal to SSRD. It is used where sideslip angle is needed for other derived calculations (e.g., wind measurements).</p>
+  
+<!-- <h3 id="wind-components-and-the-wind-vector">Wind Components and the Wind Vector</h3> -->
+### Wind Components and the Wind Vector
+<p><strong></strong></p>
+<p><strong>Wind Vector East Component (m/s):</strong> <strong></strong> <strong><span class="underline">UI</span></strong></p>
+<p><strong>Wind Vector North Component (m/s):</strong> <strong></strong> <strong><span class="underline">VI</span></strong></p>
+<p><strong>Wind Vector Vertical Component (m/s):</strong> <strong></strong> <strong><span class="underline">WI</span></strong></p>  
+<em>The three-dimensional wind vector with respect to the earth,</em> as determined from the inertial reference systems. UI is the east-west component with positive values <span class="underline">toward</span> the east, VI is the north-south component with positive values <span class="underline">toward</span> the north, and WI is the vertical component with positive values toward the zenith.<br />
+The calculation of WI differs from the description in Bulletin 23 because the output from the inertial reference system is different for the modern units now in use. The vertical wind is the sum of the vertical gust component (represented approximately by TASX sin(ATTACK-PITCH)) and the motion of the aircraft as measured by VSPD (discussed in Section XXX). Bulletin 23 describes the historical calculation of the vertical motion of the aircraft via a barometric-inertial feedback loop, but equivalent calculations (including pressure damping to the pressure altitude) are incorporated into current IRS units so VSPD already is the product of such a calculation. To calculate WI, VSPD is therefore used in place of the obsolete variable WP3 that was discussed in Bulletin 23.
+<br />
+WIC should usually be used instead of WI because VSPD, entering WI, is updated to the pressure altitude and so can have false variations in baroclinic conditions. WIC uses GGVSPD (or in some cases older GPS-based rate-of-climb variables) in place of VSPD and so is more reliable.<br />
+<strong></strong></p>
+<p><strong>Wind Speed (m/s):</strong> <strong></strong> <strong><span class="underline">WS</span></strong></p>
+<p><strong>Wind Direction (</strong><span class="math inline">º</span><strong>):</strong> <strong></strong> <strong><span class="underline">WD</span></strong></p>
+<p>  
+<em>The magnitude and direction of the horizontal wind.</em> These variables are obtained in a straightforward manner from UI and VI. The resulting wind direction is relative to true north and represents the direction <span class="underline">from which</span> the wind blows. That is the reason that 180<span class="math inline"><em></em><sup>∘</sup></span> appears in the following algorithm.<br />
+```{r child='WDWSbox.Rmd'}
+```
+<p><strong>Wind Vector Longitudinal Component (m/s):</strong> <strong></strong> <strong><span class="underline">UX</span></strong></p>
+<p><strong>Wind Vector Lateral Component (m/s):</strong> <strong></strong> <strong><span class="underline">VY</span></strong></p>
+  
+<em>The horizontal wind</em> <em>vector relative to the frame of reference attached to the aircraft.</em> UX is parallel to the longitudinal axis and positive toward the nose. VY is along the lateral axis and normal to the longitudinal axis; positive is toward the port (or left) wing.<br />  
+<p><strong>GPS-Corrected Wind Vector, East Component (m/s):</strong> <strong></strong> <strong><span class="underline">UIC</span></strong></p>
+<p><strong>GPS-Corrected Wind Vector, North Component (m/s):</strong> <strong></strong> <strong><span class="underline">VIC</span></strong></p>
+<em>The horizontal wind components</em> respectively <em><span class="underline">toward</span></em> <em>the east and</em> <em><span class="underline">toward</span></em> <em>the north.</em> They are derived from measurements from an inertial reference unit (IRU) and a Global Positioning System (GPS), as described in the discussion of VEW and VNS above. They are calculated just as for UX and VY except that the GPS-corrected values for the aircraft groundspeed are used in place of the IRU-based values. They are considered “corrected” from the original measurements from the IRU or GPS, as described in Section \@ref(combining-irs-and-gps-measurements).</p><br />
+<strong>Wind Vector, Vertical Component (m/s):</strong> <strong></strong> <strong><span class="underline">WIC</span></strong><br />
+<em>The component of the wind in the vertical direction.</em> This is the standard calculation of vertical wind, obtained from the difference between the measured vertical component of the relative wind and the vertical motion of the aircraft (usually GGVSPD in recent projects).<span id="punch:4-13" label="punch:4-13">[punch:4-13]</span><strong></strong> This should be used in preference to WI if the latter is present; see the discussion of WP3 in Section \@ref(inertial-reference-systems). Positive values are toward the zenith.<br />
+
+<p><strong>GPS-Corrected Wind Direction (</strong><span class="math inline"><em></em><sup>∘</sup></span><strong>):</strong> <strong></strong> <strong><span class="underline">WDC</span></strong></p>
+<p><strong>GPS-Corrected Wind Speed (m/s):</strong> <strong></strong> <strong><span class="underline">WSC</span></strong></p>
+
+<em>The direction and magnitude of the wind vector,</em> obtained by combining measurements from GPS and IRU units. These variables are obtained in a straightforward manner from UIC and VIC, using equations analogous to \@ref(eq:WS) and \@ref(eq:WD) but with UIC and VIC as input measurements. They are expected to be the preferred measurements of wind because they combine the best features of the IRU and GPS measurements.<br />
+<strong></strong></p>
+<p><strong>GPS-Corrected Wind Vector, Longitudinal Component (m/s):</strong> <strong></strong> <strong><span class="underline">UXC</span><span class="underline"></span></strong></p>
+<p><strong>GPS-Corrected Wind Vector, Lateral Component (m/s):</strong> <strong></strong> <strong><span class="underline">VYC</span></strong></p>  
+
+<em>The longitudinal and lateral components of the three-dimensional wind, similar to UX and VY, but corrected by the complementary-filter algorithm that combines IRU and GPS measurements</em>. See the discussion in Section \@ref(combining-irs-and-gps-measurements). The components UXC and VYC are toward the front of the aircraft and toward the port (left) wing, respectively.</p>  
+
+<!-- <h2 id="special-use-remote-sensors">Special-Use Remote Sensors</h2> -->
+## Special-Use Remote Sensors
+
+<p>The above variables are normally included in the archived netCDF files from projects, but there are a few remote sensors that provide additional state-parameter measurements in some projects. These include:<span id="subsec:MTP" label="subsec:MTP"></span></p>
+
+* Microwave Temperature Profiler (http://www.eol.ucar.edu/instruments/microwave-temperature-profiler) {MTP})
+-- remotely sensed temperature profiles  
+* Dropsonde System (https://www.eol.ucar.edu/observing_facilities/avaps-dropsonde-system) {AVAPS})
+-- profiles of temperature, humidity, and wind vs pressure.  
+* GPS-Occultation Sensor (http://www.eol.ucar.edu/instruments/gnss-instrument-system-multi-static-and-occultation-sensing) {GISMOS})
+-- atmospheric soundings of refractivity via GPS occultation.  
+
+<p>The links provided connect to descriptions of these instruments on the EOL web site, and each provides a summary of how data are acquired and processed. These measurements are not normally part of the archived netCDF project files. Those interested in using these measurements should contact EOL data management (<a href="mailto:raf-dm@eol.ucar.edu">mailto:raf-dm@eol.ucar.edu</a>) for access to the measurements and for information on how the measurements are processed.</p>
+

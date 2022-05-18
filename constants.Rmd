@@ -1,0 +1,224 @@
+----
+<blockquote>
+<center> __[Values Used for "Constants"]{#constants-table}__ </center>  
+<br>
+$g$ = \label{-constant-g}\sindex[lis]{g@$g$= acceleration of gravity}acceleration
+of gravity\ \ $^{(a)}$\footnote{ } at latitude $\lambda$ \sindex[lis]{lambda@$\lambda$=latitude} and
+altitude\sindex[lis]{z@$z$ = height} $z$ above the WGS-84 \index{WGS-84 geoid}geoid,\ \ $^{(b)}$\footnote{}  
+\begin{align}
+g(z,\lambda)=g_{e}\left(\frac{1+g_{1}\sin^{2}(\lambda)}{(1-g_{2}\sin^{2}\lambda)^{1/2}}\right)(1-(k_{1}-k_{2}\sin^{2}(\lambda))z+k_{3}z^{2})
+(\#eq:gsublambda)
+\end{align}  
+\ \ \ \ \ \ \ where $g_{e}=9.780327$\ m\ s$^{-2}$, $g_{1}=0.00193185$, $g_{2}=0.00669438$, and  
+\ \ \ \ \ \ \  {$k_{1},k_{2},k_{3}$} = {3.15704$\times 10^{-7}\mathrm{m}^{-1}$,
+2.10269$\times 10^{-9}\mathrm{m}^{-1}$, 7.37452$\times 10^{-14}\mathrm{m}^{-2}$}  
+$T_{0}$ = temperature in kelvin\sindex[lis]{T0@$T_{0}$=273.15\ K, temperature in kelvin corresponding to $0^{\circ}$C} corresponding to $0^{\circ}$C = 273.15\ K  
+$T_{3}$ = temperature\sindex[lis]{T3@$T_{3}$= triple point temperature of water}
+corresponding to the triple point of water\index{triple point of water}
+= 273.16\ K  
+$M_{d}$ = \sindex[lis]{Md@$M_{d}$= molecular weight of dry air}molecular
+weight of dry air$^{(a)}$\index{molecular weight!dry air}, 28.9637
+kg$\,$kmol$^{-1}$\ \ $^{(c)}$  
+$M_{w}$ = \sindex[lis]{Mw@$M_{w}$= molecular weight of water}molecular
+weight of water\index{molecular weight!water}, 18.0153 kg\ kmol$^{-1}$\ \ $^{(d)}$\footnote{}  
+$R_{0}$ = \sindex[lis]{R@$R_{0}$= universal gas constant}universal
+gas constant$^{a}$\index{universal gas constant}\index{gas constant!universal}
+= 8.314472$\times 10^{3}$ J\ kmol$^{-1}$K$^{-1}$\ \    $^{(e)}$\footnote{\label{fn:2006-CODATA}}  
+$N_{A}$ = Avogadro constant = 6.022141$\times 10^{26}$ molecules\ kmol$^{-1}$\index{Avogadro constant}\sindex[lis]{NA@$N_{A}$ = Avogadro constant, molecules per kmol}  
+$k=R_{0}/(\mathrm{N_{A})}=1.38065\times10^{-23}\mathrm{J}\,\mathrm{K}^{-1}$\sindex[lis]{k@$k$=Boltzmann Constant}\index{Boltzmann constant}  
+$R_{d}=(R_{0}/M_{d}$) = \sindex[lis]{Rd@$R_{d}=$gas constant for dry air}gas
+constant for dry air\index{gas constant!dry air}  
+$R_{w}$ = ($R_{0}/M_{w})$ = \sindex[lis]{Rw@$R_{W}$= gas constant for water vapor}gas
+constant for water vapor\index{gas constant!water vapor}  
+$R_{E}$ = \sindex[lis]{Re@$R_{E}$= radius of the Earth}radius of
+the Earth\index{radius of the Earth} = 6.371229$\times 10^{6}$m\ \ $^{(f)}$\footnote{ discussed
+in \prettyref{sec:INS}}  
+$c_{p}$ = \sindex[lis]{cp@$c_{p}$ or $c_{pd}$ = specific heat of dry air at constant pressure}specific
+heat of dry air at constant pressure\index{specific heat!dry air!constant pressure}
+= $\frac{7}{2}R_{d}$ = 1.00473$\times10^{3}$ J\ kg$^{-1}$K$^{-1}$\ \ $^{(g)}$\footnote{}  
+$c_{v}$ = \sindex[lis]{cv@$c_{v}$ or $c_{vd}$ = specific heat of dry air at constant volume}specific
+heat of dry air at constant volume\index{specific heat!dry air!constant volume}
+= $\frac{5}{2}R_{d}$ = 0.71766$\times 10^{3}$ J\ kg$^{-1}$K$^{-1}$  
+\ \ \ \ \ *(specific heat values are at 0$^{\circ}$C; small variations
+with temperature are not included here)*  
+$\gamma$ = \sindex[lis]{gamma or gamma_{d} = ratio of specific heats of air, c_{p}/c_{v}@$\gamma$ or $\gamma_{d}$ = ratio of specific heats of air, $c_{p}/c_{v}$}ratio
+of specific heats\index{specific heat ratio, dry air}, $c_{p}/c_{v}$,
+taken to be 1.4 (dimensionless) for dry air  
+$\Omega$ = \sindex[lis]{Omega= angular rotation rate of the Earth@$\Omega$= angular rotation rate of the Earth}angular
+rotation rate of the Earth\index{Earth, angular rotation rate} =
+7.292115$\times10^{-5}$ radians/s  
+$\Omega_{Sch}$ = \sindex[lis]{Omega_{Sch}= angular frequency of the Schuler oscillation@$\Omega_{Sch}$= angular frequency of the Schuler oscillation}angular
+frequency of the Schuler oscillation\index{Schuler oscillation} =
+$\sqrt{\frac{g}{R_{E}}}$  
+$\sigma$ = \sindex[lis]{sigma= Stephan-Boltzmann constant@$\sigma$= Stephan-Boltzmann constant}Stephan-Boltzmann
+Constant\index{Stephan-Boltzmann Constant} = 5.6704$\times10^{-8}$W\ m$^{-2}$K$^{-4}$\ \ $^{(e)}$  
+```{r include = TRUE, echo = FALSE, eval = FALSE, results = 'asis'}
+cat('$g$ = \\label{-constant-g}\\sindex[lis]{g@$g$= acceleration of gravity}acceleration
+of gravity\ \ $^{(a)}$\\footnote{ } at latitude $\\lambda$ \\sindex[lis]{lambda@$\\lambda$=latitude}and
+altitude\\sindex[lis]{z@$z$ = height} $z$ above the WGS-84 \\index{WGS-84 geoid}geoid,\ \ $^{(b)}$\\footnote{}', '\\',
+'\\begin{align}',
+'g(z,\\lambda)=g_{e}\\left(\\frac{1+g_{1}\\sin^{2}(\\lambda)}{(1-g_{2}\\sin^{2}\\lambda)^{1/2}}\\right)(1-(k_{1}-k_{2}\\sin^{2}(\\lambda))z+k_{3}z^{2})  ',
+'\\ \\ \\ \\ \\ (1.1)  ',
+'\\end{align}',
+'\\ \\ \\ \\ \\ \\ \\ where $g_{e}=9.780327$\ m\ s$^{-2}$, $g_{1}=0.00193185$, $g_{2}=0.00669438$, and<br>
+\\ \\ \\ \\ \\ \\ \\  {$k_{1},k_{2},k_{3}$} = {3.15704$\\times 10^{-7}\\mathrm{m}^{-1}$,
+2.10269$\\times 10^{-9}\\mathrm{m}^{-1}$, 7.37452$\\times 10^{-14}\\mathrm{m}^{-2}$}',
+'<br>$T_{0}$ = temperature in kelvin\\sindex[lis]{T0@$T_{0}$=273.15\ K, temperature in kelvin corresponding to $0^{\\circ}$C} corresponding to $0^{\\circ}$C = 273.15\ K',
+'<br>$T_{3}$ = temperature\\sindex[lis]{T3@$T_{3}$= triple point temperature of water}
+corresponding to the triple point of water\\index{triple point of water}
+= 273.16\ K',
+'<br>',
+'$M_{d}$ = \\sindex[lis]{Md@$M_{d}$= molecular weight of dry air}molecular
+weight of dry air$^{(a)}$\\index{molecular weight!dry air}, 28.9637
+kg\ kmol$^{-1}\ \ $^{(c)}$\\footnote{}<br>',
+'$M_{w}$ = \\sindex[lis]{Mw@$M_{w}$= molecular weight of water}molecular
+weight of water\\index{molecular weight!water}, 18.0153 kg\ kmol$^{-1}$\ \ $^{(d)}$\\footnote{}',
+'<br>$R_{0}$ = \\sindex[lis]{R@$R_{0}$= universal gas constant}universal
+gas constant$^{a}$\\index{universal gas constant}\\index{gas constant!universal}
+= 8.314472$\\times 10^{3}$ J\ kmol$^{-1}$K$^{-1}$\ \ $^{(e)}$\\footnote{\\label{fn:2006-CODATA}}
+<br>$N_{A}$ = Avogadro constant = 6.022141$\\times 10^{26}$ molecules\ kmol$^{-1}$\\index{Avogadro constant}\\sindex[lis]{NA@$N_{A}$ = Avogadro constant, molecules per kmol}<br>',
+'$k=R_{0}/(\\mathrm{N_{A})}=1.38065\\times10^{-23}\\mathrm{J}\\,\\mathrm{K}^{-1}$\\sindex[lis]{k@$k$=Boltzmann Constant}\\index{Boltzmann constant}',
+'<br>$R_{d}=(R_{0}/M_{d}$) = \\sindex[lis]{Rd@$R_{d}=$gas constant for dry air}gas
+constant for dry air\\index{gas constant!dry air}<br>',
+'$R_{w}$ = ($R_{0}/M_{w})$ = \\sindex[lis]{Rw@$R_{W}$= gas constant for water vapor}gas
+constant for water vapor\\index{gas constant!water vapor}<br>',
+'$R_{E}$ = \\sindex[lis]{Re@$R_{E}$= radius of the Earth}radius of
+the Earth\\index{radius of the Earth} = 6.371229$\\times 10^{6}$m\ \ $^{(f)}$\\footnote{ discussed
+in \\prettyref{sec:INS}}<br>',
+'$c_{p}$ = \\sindex[lis]{cp@$c_{p}$ or $c_{pd}$ = specific heat of dry air at constant pressure}specific
+heat of dry air at constant pressure\\index{specific heat!dry air!constant pressure}
+= $\\frac{7}{2}R_{d}$ = 1.00473$\\times10^{3}$ J\ kg$^{-1}$K$^{-1}$\ \ $^{(g)}$\\footnote{}<br>',
+'$c_{v}$ = \\sindex[lis]{cv@$c_{v}$ or $c_{vd}$ = specific heat of dry air at constant volume}specific
+heat of dry air at constant volume\\index{specific heat!dry air!constant volume}
+= $\\frac{5}{2}R_{d}$ = 0.71766$\\times 10^{3}$ J\ kg$^{-1}$K$^{-1}$<br>',
+'\\noindent\\parbox[t]{1\\textwidth}{%
+\\hskip0.6cm(specific heat values are at 0$^{\\circ}$C; small variations
+with temperature are not included here)%
+}<br>',
+'$\\gamma$ = \\sindex[lis]{gamma or gamma_{d} = ratio of specific heats of air, c_{p}/c_{v}@$\\gamma$ or $\\gamma_{d}$ = ratio of specific heats of air, $c_{p}/c_{v}$}ratio
+of specific heats\\index{specific heat ratio, dry air}, $c_{p}/c_{v}$,
+taken to be 1.4 (dimensionless) for dry air<br>',
+'$\\Omega$ = \\sindex[lis]{Omega= angular rotation rate of the Earth@$\\Omega$= angular rotation rate of the Earth}angular
+rotation rate of the Earth\\index{Earth, angular rotation rate} =
+7.292115$\\times10^{-5}$ radians/s<br>
+$\\Omega_{Sch}$ = \\sindex[lis]{Omega_{Sch}= angular frequency of the Schuler oscillation@$\\Omega_{Sch}$= angular frequency of the Schuler oscillation}angular
+frequency of the Schuler oscillation\\index{Schuler oscillation} =
+$\\sqrt{\\frac{g}{R_{E}}}$<br>
+$\\sigma$ = \\sindex[lis]{sigma= Stephan-Boltzmann constant@$\\sigma$= Stephan-Boltzmann constant}Stephan-Boltzmann
+Constant\\index{Stephan-Boltzmann Constant} = 5.6704$\\times10^{-8}$W\ m$^{-2}$K$^{-4}$\ \ $^{(e)}$'
+)
+```
+```{r echo=FALSE}
+## get the values for the table in footnote (c):
+fnc <- matrix(c('N~2~', 0.78102, 28.01340, 21.87903, 'O~2~', 0.20946, 31.99880, 6.70247,
+                'Ar', 0.00916, 39.94800, 0.36592, 'CO~2~', 0.00033, 44.00950, 0.01452))
+dim(fnc) <- c(4,4)
+fnc <- as.data.frame(t(fnc))
+names(fnc) <- c('Gas', 'mole fraction x', 'molecular weight M', 'x*M')
+meanValue <- round(sum(as.numeric(fnc[, 4])), 4)
+```
+\_\_\_\_\_\_\_\_\_\_<br>
+^(a)^ The International Standard Atmosphere specifies $g=9.80665$ m s^-2^,
+$M_{w}$=28.9644 and $R_{0}$ = 8.31432x10^3^ J kmol^-1^K^-1^,
+so these values are used to calculate pressure altitude.  
+^(b)^ cf. Moritz, H., 1988: Geodetic Reference System 1980, Bulletin Geodesique,
+Vol. 62 , no. 3, and [this link](http://earth-info.nga.mil/GandG/publications/tr8350.2/wgs84fin.pdf).    
+^(c)^ Jones, F. E., 1978: J. Res. Natl. Bur. Stand., 83(5), 419, as quoted
+by Lemmon, E. W., R. T. Jacobsen, S. G. Penoncello, and D. G., Friend,
+J. Phys. Chem. Ref. Data, Vol. 29, No. 3, 2000, pp. 331-385. The quoted
+values of mole fraction are from Jones (1978) and the calculation of mean
+molecular weight is shown in the following table
+using values of molecular weights
+taken from the NIST Standard Reference Database 69: NIST Chemistry
+WebBook as of March 2011. With CO~2~ about 0.00041 (as in 2020) and others
+decreased proportionately, the mean is 28.9640.
+```{r include = TRUE, echo = FALSE}
+knitr::kable(fnc, format = 'html', caption = 'Calculation of the mean molecular weight of air',
+             table.attr = "style='width:70%;'")
+```
+\ \ \ \ \ \ \ \ \ \ The mean value is `r meanValue`, but see above for a more modern adjustment.<br><br>
+^(d)^ NIST Standard Reference Database 69: NIST Chemistry WebBook as of
+March 2011.<br>
+^(e)^ 2006 CODATA  
+^(f)^ matching the value used by the inertial reference systems, as discussed 
+in the "INS" section.  
+^(g)^ The specific heat of dry air at 1013 hPa and 250--280 K as given
+by Lemmon et al. (2000) is 29.13 J/(mol-K), which translates to $1005.8\pm 0.3$
+J/(kg-K). However, the uncertainty limit associated with values of
+specific heat is quoted as 1%, and the experimental data cited in
+that paper show scatter that is at least comparable to several tenths
+percent, so the ideal-gas value cited here is well within the range
+of uncertainty. For this reason, and because this value is in widespread
+use, the ideal-gas value is used throughout the algorithms described
+here.
+
+```{r include = FALSE, echo = FALSE, eval = FALSE, results = 'asis'}
+cat(
+
+'\\begin{center}
+\\begin{tabular}{|c|c|c|c|}
+\\hline 
+Gas & mole fraction $x$ & molecular weight $M$ & $x*M$\\tabularnewline
+\\hline 
+\\hline 
+N$_{2}$ & 0.78102 & 28.01340 & 21.87903\\tabularnewline
+\\hline 
+O$_{2}$ & 0.20946 & 31.99880 & 6.70247\\tabularnewline
+\\hline 
+Ar & 0.00916 & 39.94800 & 0.36592\\tabularnewline
+\\hline 
+CO$_{2}$ & 0.00033 & 44.00950 & 0.01452\\tabularnewline
+\\hline 
+Mean: &  &  & 28.96194\\tabularnewline
+\\hline 
+\\end{tabular}
+\\par\\end{center}}<br>
+$M_{w}$ = \\sindex[lis]{Mw@$M_{w}$= molecular weight of water}molecular
+weight of water\\index{molecular weight!water}, 18.0153 kg\\,kmol$^{-1}$~~~\\footnote{NIST Standard Reference Database 69: NIST Chemistry WebBook as of
+March 2011}<br>
+$R_{0}$ = \\sindex[lis]{R@$R_{0}$= universal gas constant}universal
+gas constant$^{a}$\\index{universal gas constant}\\index{gas constant!universal}
+= 8.314472$\\times10^{3}$ J\\,kmol$^{-1}$K$^{-1}$~~~\\footnote{\\label{fn:2006-CODATA}2006 CODATA}<br>
+$N_{A}$ = Avogadro constant = 6.022141$\\times10^{26}$~molecules
+kmol$^{-1}$\\index{Avogadro constant}\\sindex[lis]{NA@$N_{A}$ = Avogadro constant, molecules per kmol}<br>
+$k=R_{0}/(\\mathrm{N_{A})}=1.38065\\times10^{-23}\\mathrm{J}\\,\\mathrm{K}^{-1}$\\sindex[lis]{k@$k$=Boltzmann Constant}\\index{Boltzmann constant}<br>
+$R_{d}=(R_{0}/M_{d}$) = \\sindex[lis]{Rd@$R_{d}=$gas constant for dry air}gas
+constant for dry air\\index{gas constant!dry air}<br>
+$R_{w}$ = ($R_{0}/M_{w})$ = \\sindex[lis]{Rw@$R_{W}$= gas constant for water vapor}gas
+constant for water vapor\\index{gas constant!water vapor}<br>
+$R_{E}$ = \\sindex[lis]{Re@$R_{E}$= radius of the Earth}radius of
+the Earth\\index{radius of the Earth} = 6.371229$\\times$10$^{6}$
+m ~~~\\footnote{matching the value used by the inertial reference systems discussed
+in \\prettyref{sec:INS}} \\\\
+$c_{p}$ = \\sindex[lis]{cp@$c_{p}$ or $c_{pd}$ = specific heat of dry air at constant pressure}specific
+heat of dry air at constant pressure\\index{specific heat!dry air!constant pressure}
+= $\\frac{7}{2}R_{d}=$1.00473$\\times10^{3}$ J$\\,$kg$^{-1}$K$^{-1}$~~~\\footnote{The specific heat of dry air at 1013 hPa and 250--280 K as given
+by Lemmon et al. (2000) is 29.13 J/(mol-K), which translates to 1005.8$\\pm0.3$
+J/(kg-K). However, the uncertainty limit associated with values of
+specific heat is quoted as 1\\%, and the experimental data cited in
+that paper show scatter that is at least comparable to several tenths
+percent, so the ideal-gas value cited here is well within the range
+of uncertainty. For this reason, and because this value is in widespread
+use, the ideal-gas value is used throughout the algorithms described
+here.}\\\\
+$c_{v}$ = \\sindex[lis]{cv@$c_{v}$ or $c_{vd}$ = specific heat of dry air at constant volume}specific
+heat of dry air at constant volume\\index{specific heat!dry air!constant volume}
+= $\\frac{5}{2}R_{d}=$0.71766$\\times10^{3}$ J$\\,$kg$^{-1}$K$^{-1}$\\\\
+\\noindent\\parbox[t]{1\\textwidth}{%
+\\hskip0.6cm(specific heat values are at 0$^{\\circ}$C; small variations
+with temperature are not included here)%
+}\\\\
+$\\gamma$ = \\sindex[lis]{gamma or gamma_{d} = ratio of specific heats of air, c_{p}/c_{v}@$\\gamma$ or $\\gamma_{d}$ = ratio of specific heats of air, $c_{p}/c_{v}$}ratio
+of specific heats\\index{specific heat ratio, dry air}, $c_{p}/c_{v}$,
+taken to be 1.4 (dimensionless) for dry air\\\\
+$\\Omega$ = \\sindex[lis]{Omega= angular rotation rate of the Earth@$\\Omega$= angular rotation rate of the Earth}angular
+rotation rate of the Earth\\index{Earth, angular rotation rate} =
+7.292115$\\times10^{-5}$ radians/s\\\\
+$\\Omega_{Sch}$ = \\sindex[lis]{Omega_{Sch}= angular frequency of the Schuler oscillation@$\\Omega_{Sch}$= angular frequency of the Schuler oscillation}angular
+frequency of the Schuler oscillation\\index{Schuler oscillation} =
+$\\sqrt{\\frac{g}{R_{E}}}$\\\\
+$\\sigma$ = \\sindex[lis]{sigma= Stephan-Boltzmann constant@$\\sigma$= Stephan-Boltzmann constant}Stephan-Boltzmann
+Constant\\index{Stephan-Boltzmann Constant} = 5.6704$\\times10^{-8}$W\\,m$^{-2}\\mathrm{K}^{-4}$~~$^{e}$%')
+```
+</blockquote>
+----

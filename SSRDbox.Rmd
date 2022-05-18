@@ -1,0 +1,20 @@
+<p class=box>
+BDIFR = differential pressure between sideslip pressure ports, radome
+[hPa]  
+QCXC = dynamic pressure [hPa]  
+$s_{0},\,s{}_{1}$ = empirical
+coefficients dependent on the aircraft and radome configuration  
+\ \ \ \ \  = {-0.000983, (1/0.08189) $^\circ$} for the
+C-130  
+\ \ \ \ \  = {-0.0025, (1/0.04727) $^\circ$} for the GV^(a)^  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{SSRD\}} = s_{1}(\frac{\mathrm{\{BDIFR\}}}{\{\mathrm{QCXC}\}}+s_{0})
+(\#eq:SSRD)
+\end{equation}
+\_\_\_\_\_\_\_\_\_\_  
+^(a)^ The [technical note on wind uncertainty](http://dx.doi.org/10.5065/D60G3HJ8)
+recommended using SSRD=$e_{0}+e_{1}$\{BDIFR\}/\{QCF\} with $e_{0}=0.008$
+and $e_{1}=22.302$. This has not yet been used in processing as of
+March 2017.  
+</p>  

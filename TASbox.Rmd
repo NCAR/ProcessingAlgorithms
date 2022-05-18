@@ -1,0 +1,12 @@
+<p class=box>
+(see \@ref(eq:M2) and \@ref(eq:TaEQ) for MACHx and ATX)  
+Note dependence of MACHx on choices for QCXC and PSXC  
+TASx depends on QCXC, PSXC, ATX  
+\ \ \ \ \ where PSXC and ATX are the preferred choices  
+$\gamma^{\prime}$, $R^{\prime}$, and $T_{0}$: See the List of Symbols  
+</p><p class=box2>
+\begin{equation}
+\mathrm{TASx}=\mathrm{\{MACHx\}}\sqrt{\gamma^{\prime}R^{\prime}\mathrm{\,(\{ATX\}}+T_{0})}
+(\#eq:TASx)
+\end{equation}
+</p>  
