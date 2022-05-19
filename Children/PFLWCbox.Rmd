@@ -15,7 +15,7 @@ $T_{0}$ = 273.15\ K
 (\#eq:PFLWCbox1)
 \end{equation}
 \begin{equation}
-\mathrm{\{USFLWC\}}=\mathrm{\{USMPFLW\}}\frac{(\mathrm{\{UPRESS\}}\times 10)} {\mathrm{\{PSXC\}}}\frac{\mathrm{(\{ATX\}}+T_{0})}{T_{blk}}  
+\mathrm{\{USFLWC\}}=\mathrm{\{USMPFLW\}}\frac{(\mathrm{10 \times \{UPRESS\}})} {\mathrm{\{PSXC\}}}\frac{\mathrm{(\{ATX\}}+T_{0})}{T_{blk}}  
 (\#eq:PFLWCbox2)
 \end{equation}
 </p>
