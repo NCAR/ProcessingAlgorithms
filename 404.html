@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Appendix C: Editing The T.N. | RAF Technical Note: Processing Algorithms</title>
-  <meta name="description" content="Appendix C: Editing The T.N. | RAF Technical Note: Processing Algorithms" />
+  <title>Page not found | RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="Page not found | RAF Technical Note: Processing Algorithms" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Appendix C: Editing The T.N. | RAF Technical Note: Processing Algorithms" />
+  <meta property="og:title" content="Page not found | RAF Technical Note: Processing Algorithms" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Appendix C: Editing The T.N. | RAF Technical Note: Processing Algorithms" />
+  <meta name="twitter:title" content="Page not found | RAF Technical Note: Processing Algorithms" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="appendix-b-variable-names.html"/>
-<link rel="next" href="appendix-d-needing-attention.html"/>
+
+
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -69,11 +69,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#document-change-log"><i class="fa fa-check"></i><b>0.1</b> Document Change Log</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#citation-information"><i class="fa fa-check"></i><b>0.2</b> Citation Information</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information</a></li>
@@ -158,154 +154,19 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix-c-editing-the-t.n." class="section level1 unnumbered hasAnchor">
-<h1>Appendix C: Editing The T.N.<a href="appendix-c-editing-the-t.n..html#appendix-c-editing-the-t.n." class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="notes-regarding-the-construction-and-structure-of-this-document" class="section level2 unnumbered hasAnchor">
-<h2>Notes regarding the construction and structure of this document:<a href="appendix-c-editing-the-t.n..html#notes-regarding-the-construction-and-structure-of-this-document" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>The original version is ProcessingAlgorithms.lyx, which needs ’LyX’, a user interface to TeX. It is available on EOL machines like tikal. Start it with “lyx ProcessingAlgorithms.lyx”. This version
-was last updated in Feb 2019. It can be obtained from the <a href="https://github.com/WilliamCooper/ProcessingAlgorithms">GitHub site</a>. Copy this to an RStudio project file to use this version.<br />
-</li>
-<li>A revised version is written in RMarkdown to facilitate editing by others. It provides an HTML version of the document suitable for hosting on web servers. To obtain this version, download <a href="https://github.com/WilliamCooper/ProcessingAlgorithms/tree/Rmd">this repository</a>. This works best
-if output: bookdown::gitbook is selected. Download this branch to an RStudio project directory and use the “knit” button to construct the web site. The output will be html files that can be moved from there to a web server. The directories “assets” and “www” should also be transferred; the former contains CSS files and the latter some memos that are referenced in the document. For example, if the web server delivers files from /var/www/html, make a new
-directory there called “ProcessingAlgorithms” and move all .html files and those two directories to “ProcessingAlgorithms”.
-Then view the document via <a href="http://URL/ProcessingAlgorithms" class="uri">http://URL/ProcessingAlgorithms</a> where URL is the appropriate reference for
-your web files.
-<ul>
-<li>The R Markdown files have a mix of conventions including HTML, LaTeX formulas, and R Markdown
-conventions. At some point, it may be useful to become more consistent, e.g., by
-changine HTML references to R Markdown reference, changing HTML italics to R Markdown italics,
-changing table structures from HTML to R Markdown kable format, etc.<br />
-</li>
-<li>The R Markdown files can produce a PDF file, but many features available in the HTML files will not be available, at least at present. PDF files can always be produced by printing from a web browser.<br />
-</li>
-</ul></li>
-<li>The document is broken into many sections, referenced by the above file, so they must be present also. In the lyx version they have names like Section3.lyx. In the Rmd version, they reside as, e.g., Section3.Rmd in the “Children” directory.<br />
-</li>
-<li>The lyx document generates three indices: a regular index, a list of symbols, and a list of variables. The references for these are embedded in the .lyx files, and they can be modified or more can be added via the “Insert -&gt; Index Entry” controls. These practices are useful when generating index entries:
-<ul>
-<li><p>entries like ’wind!relative’ will generate index entries as subordinate entries with ’relative’ below ’wind’.
-In the Rmd version, the index is not generated automatically but the existing links should
-remain valid as the text is changed. To add a variable, use a subsection or
-subsubsection entry and identify a label by following the heading with {#newlabel}.
-Then follow the pattern in the existing index to add an entry for the new term. Also add
-a similar link to the list of variables in Appendix B.</p></li>
-<li><p>I have tried to emphasize using nouns to start index entries, so for example I would favor “coefficient!calibration” over “calibration coefficient.<br />
-</p></li>
-<li><p>It is sometimes useful to generate “see xxx” entries, which can be done as follows in
-the LyX version: “INS|see {Inertial Navigation System}” where the part in braces is also in LaTeX code, generated by pressing CNTL-L.<br />
-</p></li>
-</ul></li>
-<li>Creating a PDF-format file in LyX usually will generate these lists also.<br />
-</li>
-<li>The LyX files have embedded notes with additional information that should be retained, and exporting to LaTeX will lose this information, so it will be useful to retain the LyX format. The suggested next steps in the table above, for example, almost all have associated notes that will appear in yellow and will help identify where the comment applies.<br />
-</li>
-<li>It is sometimes easiest to edit the PDF file directly. Some of the web references have been changed in this way and can be adjusted as the reference files are moved, e.g., from my Google Drive to the EOL web pages. For this purpose, I found master-pdf-editor useful. This will lose continuity, however, because then the links can’t be re-generated by running LyX.<br />
-</li>
-<li>As of Feb 2019, many links formerly to google-drive addresses or eol system files have been changed to <a href="https://github.com/NCAR/aircraft_ProcessingAlgorithms" class="uri">https://github.com/NCAR/aircraft_ProcessingAlgorithms</a> links. In that directory there is a file (’links’) with a list of all the links in the document. It is worthwhile when updating this document to check that all the links remain current. One way is to use these R statements and then check EURL to see that the links are all found:</li>
-</ul>
-<pre><code>    links &lt;- readlines(’./links’); EURL &lt;- rep(FALSE, length(links));
-    for (i in 1:length(links)) {EURL&lt;- RCurl::url.exists(links[i])}</code></pre>
-<ul>
-<li>For the Rmd version:
-<ul>
-<li>In place of the Table of Symbols, there is Appendix A. It is a .gif copy of the LyX-generated table, and there is no easy way to update it except vis LyX.</li>
-<li>In place of the “Variable Names” index, there is Appendix B that lists the variable names and includes links to appropriate references to variables in the technical note. This is not generated automatically, so when a new variable is added to the document a new entry with appropriate links should be added to Appendix B. Follow the style in “Children/Appendices.Rmd” and add an appropriate target for the link to the new discussion of the variable, which should be a 4th-level or higher heading.</li>
-</ul></li>
-</ul>
-</div>
-<div id="referencing-specific-sections-or-pages-of-this-document-lyx-version" class="section level2 unnumbered hasAnchor">
-<h2>Referencing Specific Sections or Pages of this Document (LyX version):<a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-or-pages-of-this-document-lyx-version" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="variables" class="section level3 unnumbered hasAnchor">
-<h3>Variables<a href="appendix-c-editing-the-t.n..html#variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>
-The document includes named destinations for each variable name, so when used in a URL that destination can be reached. This is done differently in different browsers or PDF viewers:
-</p>
-<ul class="incremental">
-<li>
-<p>
-For a web browser like Chrome or Firefox, use the “nameddest” reference; e.g., for the discussion of variable ATX, use<br />
-<code>firefox <a href="http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf#nameddest=ATX" class="uri">http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf#nameddest=ATX</a></code>
-</p>
-</li>
-<li>
-<p>
-For a pdf viewer like evince, use this syntax:<br />
-<code>evince -n ATX <a href="http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf" class="uri">http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf</a></code>
-</p>
-</li>
-</ul>
-<p>
-Most variable names can be used in these URL modifiers. Here is a list of available targets by section in the report:
-</p>
-<p>
-<u>Section 1:</u> Time
-</p>
-<p>
-<u>Section 2:</u> <span>[</span>none<span>]</span>
-</p>
-<p>
-<u>Section 3:</u> ACINS ALT BLATA BLONA BNORMA BPITCHR BROLLR BYAWR DEI DNI FXAZIM FXDIST GGALT GGLAT GGLON GGNSAT GGOIDHT GGSPD GGSTATUS GGTRK GGVEW GGVNS GGVSPD GGWUAL GMODE GSF HGM HGM232 HGME HI3 LAT LATC LON LONC PALT PITCH ROLL THDG VEW VEWC VNS VNSC VSPD
-</p>
-<p>
-<u>Section 4:</u> ADIFR AKRD AT_ITR ATx ATX ATxD ATxJ BDIFR CAVP_x CONCH_UVH CONCV_VXL DP_CR2C DP_VXL DPx DP_x DPxC DPXC DVALUE EDPC EW_UHV EWx EWX FP_CR2 MACHx MACHX MIRRORT_CR2 MIRRTMP_DPX MR MRCR MRLA MRLH MRVCL OAT PCAB PS_A PSDPx PSFD PSFRD PSURF PSx PSX PSxC PSXC QCx QCX QCxC QCXC RAWCONC_VXL RHOx RHUM RHUMI RTHRx RTx RTX RTxH SPHUM SSLIP TASHC TASx TASX TASxD THETA THETAE THETAP THETAQ THETAV TVIR UI UIC UX UXC VI VIC VY VYC WD WDC WI WIC WS WSC XSIGV_UHV
-</p>
-<p>
-<u>Section 5:</u> A1DC A1DP A200X A200Y A260X ACDP AF300 AFSSP APCAS AS100 AUHSAS C1DC C1DP C200X C200Y C260X CCDP CF300 CFSSP COMCP CONC1DC CONC1DC100 CONC1DC150 CONC1DP CONC3 CONC6 CONCD CONCF CONCU CONCX CONCY CPCAS CS100 CUHSAS DBAR1DC DBAR1DP DBAR3 DBAR6 DBARD DBARF DBARP DBARU DBARX DBARY DBZ DBZ1DC DBZ1DP DISP1DC DISP1DP DISP3 DISP6 DISPD DISPF DISPP DISPU DISPX DISPY DT1DC FRANGE FRNG PLWC1 PLWC1DC PLWC1DP PLWC6 PLWCC PLWCC1 PLWCD PLWCF PLWCG PLWCX PLWCY REFF2DC REFF2DP REFFD REFFF RICE
-</p>
-<p>
-<u>Section 6:</u> CO2_PIC COMR_AL CORAW_AL FO3_ACD FO3_CL O3MR_CL TEO3 TEO3C TEO3P TEP TET XFO3FNO XFO3FS XFO3P XNCLF XNMBT XNO XNOCAL XNOCF XNOSF XNOY XNOYP XNOZA XNSAF XNST XNYCAL XNZAF XO3
-</p>
-<p>
-<u>Section 7:</u> CNTEMP CNTS CONCN CONCP CONCU CONCU100 CONCU500 FCN FCNC PCN PFLW PFLWC TCHTP TCNTL TEMP1 TEMP2 UPRESS USFLWC USMPFLW XICN XICNC
-</p>
-<p>
-<u>Section 8:</u> IRxHT IRxV RSTx SPxPitch SPxRoll TRSTx VISxC VISxHT VISxV
-</p>
-<p>
-<u>Section 9:</u> <span>[</span>none<span>]</span>
-</p>
-<p>
-<u>Section 10:</u> OBSOLETE
-</p>
-</div>
-<div id="page-numbers-lyx-version" class="section level3 unnumbered hasAnchor">
-<h3>Page Numbers (LyX Version)<a href="appendix-c-editing-the-t.n..html#page-numbers-lyx-version" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>
-To reference a specific page in the document, use a web reference like this:<br />
-<code>ProcessingAlgorithms.pdf#page=44</code>
-</p>
-<p>
-In evince, this syntax will work, or the page number can be specified in this way:
-</p>
-<p>
-<code>evince -p 115 ProcessingAlgorithms.pdf</code>
-</p>
-</div>
-<div id="sections-and-subsections" class="section level3 unnumbered hasAnchor">
-<h3>Sections and Subsections<a href="appendix-c-editing-the-t.n..html#sections-and-subsections" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>
-Targets have not been provided for other parts of the document, but the above method of referencing pages can be used to link to specific sections and other components of the document.
-</p>
-</div>
-<div id="adding-new-targets" class="section level3 unnumbered hasAnchor">
-<h3>Adding New Targets<a href="appendix-c-editing-the-t.n..html#adding-new-targets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>
-<p>When a new variable is added, a new anchor point can be added by inserting, in LaTeX mode, “\nop{LAT}” at the appropriate point in the LyX document. (“\nop” has been defined to use \hypertarget but displace the reference upward one line.) In addition, when a new variable is added, entries should be made in the index items and the variable-names list, following the pattern used for existing variables, and if appropriate any new symbols used in discussing the algorithm should be added to the similar symbols list.</p>
-</div>
-</div>
-<div id="referencing-specific-sections-of-this-document-rmarkdown-version" class="section level2 unnumbered hasAnchor">
-<h2>Referencing Specific Sections of this Document (RMarkdown version):<a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-of-this-document-rmarkdown-version" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Most discussions of variables are in subsubsubsections with appropriate labels, and those labels can be referenced as in the model provided by Appendix B.</p>
-</div>
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="appendix-b-variable-names.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="appendix-d-needing-attention.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -331,8 +192,8 @@ gitbook.start({
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "white",
-"family": "sans",
+"theme": "sepia",
+"family": "serif",
 "size": 2
 },
 "edit": {

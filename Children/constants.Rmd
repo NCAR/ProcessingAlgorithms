@@ -3,16 +3,6 @@
 
 <center> __[Values Used for "Constants"]{#constants-table}__ </center>  
 <br>
-$g$ = \label{-constant-g}acceleration
-of gravity\ \ $^{(a)}$\footnote{ } at latitude $\lambda$ and
-altitude $z$ above the WGS-84 \index{WGS-84 geoid}geoid,\ \ $^{(b)}$\footnote{}  
-\begin{align}
-g(z,\lambda)=g_{e}\left(\frac{1+g_{1}\sin^{2}(\lambda)}{(1-g_{2}\sin^{2}\lambda)^{1/2}}\right)(1-(k_{1}-k_{2}\sin^{2}(\lambda))z+k_{3}z^{2})
-(\#eq:gsublambda)
-\end{align}  
-\ \ \ \ \ \ \ where $g_{e}=9.780327$\ m\ s$^{-2}$, $g_{1}=0.00193185$, $g_{2}=0.00669438$, and  
-\ \ \ \ \ \ \  {$k_{1},k_{2},k_{3}$} = {3.15704$\times 10^{-7}\mathrm{m}^{-1}$,
-2.10269$\times 10^{-9}\mathrm{m}^{-1}$, 7.37452$\times 10^{-14}\mathrm{m}^{-2}$}  
 $T_{0}$ = temperature in kelvin corresponding to $0^{\circ}$C = 273.15\ K  
 $T_{3}$ = temperature
 corresponding to the triple point of water\index{triple point of water}
@@ -24,9 +14,9 @@ $M_{w}$ = molecular
 weight of water\index{molecular weight!water}, 18.0153 kg\ kmol$^{-1}$\ \ $^{(d)}$\footnote{}  
 $R_{0}$ = universal
 gas constant$^{a}$\index{universal gas constant}\index{gas constant!universal}
-= 8.314472$\times 10^{3}$ J\ kmol$^{-1}$K$^{-1}$\ \    $^{(e)}$\footnote{\label{fn:2006-CODATA}}  
-$N_{A}$ = Avogadro constant = 6.022141$\times 10^{26}$ molecules\ kmol$^{-1}$\index{Avogadro constant}  
-$k=R_{0}/(\mathrm{N_{A})}=1.38065\times10^{-23}\mathrm{J}\,\mathrm{K}^{-1}$\index{Boltzmann constant}  
+= 8.314462618$\times 10^{3}$ J\ kmol$^{-1}$K$^{-1}$\ \    $^{(e)}$\footnote{\label{fn:2006-CODATA}}  
+$N_{A}$ = Avogadro constant = 6.02214076$\times 10^{26}$ molecules\ kmol$^{-1}$\index{Avogadro constant}  
+$k=R_{0}/(\mathrm{N_{A})}=1.380649\times10^{-23}\mathrm{J}\,\mathrm{K}^{-1}$\index{Boltzmann constant}  
 $R_{d}=(R_{0}/M_{d}$) = gas
 constant for dry air\index{gas constant!dry air}  
 $R_{w}$ = ($R_{0}/M_{w})$ = gas
@@ -51,7 +41,7 @@ $\Omega_{Sch}$ = angular
 frequency of the Schuler oscillation\index{Schuler oscillation} =
 $\sqrt{\frac{g}{R_{E}}}$  
 $\sigma$ = Stephan-Boltzmann
-Constant\index{Stephan-Boltzmann Constant} = 5.6704$\times10^{-8}$W\ m$^{-2}$K$^{-4}$\ \ $^{(e)}$  
+Constant\index{Stephan-Boltzmann Constant} = 5.670374419$\times10^{-8}$W\ m$^{-2}$K$^{-4}$\ \ $^{(e)}$  
 ```{r include = TRUE, echo = FALSE, eval = FALSE, results = 'asis'}
 cat('$g$ = \\label{-constant-g}acceleration
 of gravity\ \ $^{(a)}$\\footnote{ } at latitude $\\lambda$ and
@@ -138,7 +128,7 @@ knitr::kable(fnc, format = 'html', caption = 'Calculation of the mean molecular 
 \ \ \ \ \ \ \ \ \ \ The mean value is `r meanValue`, but see above for a more modern adjustment.<br><br>
 ^(d)^ NIST Standard Reference Database 69: NIST Chemistry WebBook as of
 March 2011.<br>
-^(e)^ 2006 CODATA  
+^(e)^ 2018 CODATA  
 ^(f)^ matching the value used by the inertial reference systems, as discussed 
 in the "INS" section.  
 ^(g)^ The specific heat of dry air at 1013 hPa and 250--280 K as given

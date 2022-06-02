@@ -2,6 +2,7 @@
 ```
 <p class=box>
 $T_{L}$= temperature at the lifted condensation level, K  
+$T_0=273.15\,\mathrm{K}$
 [ATX](#ambient-t) = ambient temperature [$^{\circ}\mathrm{C}$]  
 EDPC = water vapor pressure [hPa] -- now superceded by [EWX](#ewx)  
 [MR](#MR) = mixing ratio [g/kg]  

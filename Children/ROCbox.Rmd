@@ -23,7 +23,17 @@ border-radius: 1px;
 <!-- \fbox{\begin{minipage}[t]{0.95\textwidth}% -->
 
 <p class=box>  
-$g^{\dagger}$ = acceleration of gravity (see Eq. \@ref(eq:gsublambda))  
+$g$ = \label{-constant-g}acceleration
+of gravity\ \ $^{(a)}$\footnote{ } at latitude $\lambda$ and
+altitude $z$ above the WGS-84 \index{WGS-84 geoid}geoid,\ \ $^{(b)}$\footnote{}  
+\begin{align}
+g(z,\lambda)=g_{e}\left(\frac{1+g_{1}\sin^{2}(\lambda)}{(1-g_{2}\sin^{2}\lambda)^{1/2}}\right)(1-(k_{1}-k_{2}\sin^{2}(\lambda))z+k_{3}z^{2})
+(\#eq:gsublambda)
+\end{align}  
+\ \ \ \ \ \ \ where $g_{e}=9.780327$\ m\ s$^{-2}$, $g_{1}=0.00193185$, $g_{2}=0.00669438$, and  
+\ \ \ \ \ \ \  {$k_{1},k_{2},k_{3}$} = {3.15704$\times 10^{-7}\mathrm{m}^{-1}$,
+2.10269$\times 10^{-9}\mathrm{m}^{-1}$, 7.37452$\times 10^{-14}\mathrm{m}^{-2}$}  
+
 $R_{d}{}^{\dagger}$ = gas constant for dry air  
 $T_{K}$ = absolute temperature = (ATX + 273.15)  
 $a$ = [ACINS](#acins) = upward acceleration as measured by the INS [m\ s^-2^]  
