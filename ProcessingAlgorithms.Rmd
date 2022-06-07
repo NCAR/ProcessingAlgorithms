@@ -1,7 +1,7 @@
 ---
 title: 'RAF Technical Note: Processing Algorithms'
-author: "RAF RSIG"
-date: "May 2022"
+author: "Author: NCAR Research Aviation Facility Science and Instrumentation Group"
+date: "Date: June, 2022"
 output:
   bookdown::gitbook:
     config:
