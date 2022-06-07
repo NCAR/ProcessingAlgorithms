@@ -6,7 +6,7 @@ The primary sources of information on the location and motion of the aircraft ar
 
 An Inertial Navigation System (INS) or Inertial Reference Unit (IRU) provides measurements of aircraft position, velocity relative to the Earth, acceleration and attitude or orientation. The IRU provides basic measurements of acceleration and angular rotation rate, while the INS integrates those measurements to track the position, altitude, velocity, and orientation of the aircraft. For the GV, the system is a Honeywell Laseref IV HG2001 GD03 Inertial Reference System; for the C-130, it is a Honeywell Model HG1095-AC03 Laseref V SM Inertial Reference System. These systems are described on the EOL web site, at <a href="http://www.eol.ucar.edu/instruments/inertial-navigation-system-aka-inertial-reference-unit">this URL</a>. Data from the IRS come via a serial digital bit stream (the ARINC digital bus) to the <a name='ads'>ADS</a> (Aircraft Data System). Because there is some delay in transmission and recording of these variables, adjustments for this delay are made when the measurements are merged into the processed data files, as documented in the NetCDF header files and as discussed in Section \@ref(synchronization-of-measurements). Typical delays are about 80 ms for variables including ACINS, PITCH, ROLL, and THDG.  
 
-Some variables are recorded only on the original “raw” data files and are not usually included in final archived data files; these are discussed at the end of this subsection. See also the discussion in Section \@ref(obsolete-variables) for information on results from inertial systems that were used prior to installation of the present Honeywell systems.<span id="punch3.1" label="punch3.1">[punch3.1]</span>  
+Some variables are recorded only on the original “raw” data files and are not usually included in final archived data files; these are discussed at the end of this subsection. See also the discussion in Section \@ref(obsolete-variables) for information on results from inertial systems that were used prior to installation of the present Honeywell systems.
 
 An Inertial Navigation System “aligns” while the aircraft is stationary by measurement of the variations in its reference frame caused by the rotation of the Earth. Small inaccuracy in that alignment leads to a “Schuler oscillation” that produces oscillatory errors in position and other measurements, with a period $\tau_{Sch}$ of about 84 minutes ($\tau_{Sch}=2\pi\sqrt{R_{E}/g}$). Position errors of less than $1.0\,$n mi/h are within normal operating specifications. See Section \@ref(combining-irs-and-gps-measurements) for discussion of additional variables, similar to the following, for which corrections are made for these errors via reference to data from a Global Positioning System.  
 
@@ -32,7 +32,7 @@ after 6 h of flight. Values are provided by the INS at a frequency of 10 Hz.
 
 *The azimuthal angle between the center-line of the aircraft (pointing ahead, toward the nose) and a line of meridian.* This azimuthal angle is measured in a polar coordinate system oriented relative to the Earth with polar axis upward and azimuthal angle measured relative to true north. The heading thus indicates the orientation of the aircraft, not necessarily the direction in which the aircraft is traveling. The resolution is 0.00017$^{\circ}$
 and the uncertainty is quoted by the manufacturer as 0.2$^{\circ}$
-after 6 h of flight. Values are provided by the INS at a frequency of 25 Hz. “True” distinguishes the heading from the magnetic heading, the heading that would be measured by a magnetic compass. For more information on the coordinate system used, see <a href="https://opensky.ucar.edu/islandora/object/archives%3A8152">RAF Bulletin 23</a>.<span id="punch3.2" label="punch3.2">[punch3.2]</span>  
+after 6 h of flight. Values are provided by the INS at a frequency of 25 Hz. “True” distinguishes the heading from the magnetic heading, the heading that would be measured by a magnetic compass. For more information on the coordinate system used, see <a href="https://opensky.ucar.edu/islandora/object/archives%3A8152">RAF Bulletin 23</a>.
 
 #### Aircraft Pitch Attitude Angle ($^{\circ}$): PITCH {#pitch .unnumbered}
 
@@ -70,7 +70,7 @@ Positive values are upward. The sample rate is 50 Hz and the resolution is 0.002
 
 #### Inertial Altitude (m): ALT {#alt .unnumbered}
 
-*The altitude of the aircraft as provided by an INS*, with pressure damping applied within the INS to the integrated aircraft vertical velocity to avoid the accumulation of errors. The value therefore is updated to the pressure altitude, not the geometric altitude, and should be regarded as a measurement of pressure altitude that has short-term variations as provided by the INS. The sample rate is 25 Hz with a resolution of 0.038 m. In some projects ALT also referred to the altitude from the avionics GPS system; the preferred and current variable name for that is ALT_G.<span id="punch3.10" label="punch3.10">[punch3.10]</span>  
+*The altitude of the aircraft as provided by an INS*, with pressure damping applied within the INS to the integrated aircraft vertical velocity to avoid the accumulation of errors. The value therefore is updated to the pressure altitude, not the geometric altitude, and should be regarded as a measurement of pressure altitude that has short-term variations as provided by the INS. The sample rate is 25 Hz with a resolution of 0.038 m. In some projects ALT also referred to the altitude from the avionics GPS system; the preferred and current variable name for that is ALT_G.
 
 #### Aircraft Ground Speed (m/s): GSPD {-#gsf}
 
@@ -86,7 +86,7 @@ Positive values are upward. The sample rate is 50 Hz and the resolution is 0.002
 
 #### Distance East/North of a Reference (km): DEI, DNI {#dei-dni .unnumbered}
 
-*Distance east or north of a project-dependent reference point.* These are derived outputs obtained by subtracting a fixed reference position from the current position. The values are determined from measurements of latitude and longitude and converted from degrees to distance in a rectilinear coordinate system. The reference position can be either the starting location of the flight or a user-defined reference point (e.g., the location of a project radar). The accuracy of these values is dependent on the accuracy of the source of latitude and longitude measurements (see LAT and LON), and the calculations are only appropriate for short distances because they do not take into account the spherical geometry of the Earth.<span id="punch:3.11" label="punch:3.11">[punch:3.11]</span><br />  
+*Distance east or north of a project-dependent reference point.* These are derived outputs obtained by subtracting a fixed reference position from the current position. The values are determined from measurements of latitude and longitude and converted from degrees to distance in a rectilinear coordinate system. The reference position can be either the starting location of the flight or a user-defined reference point (e.g., the location of a project radar). The accuracy of these values is dependent on the accuracy of the source of latitude and longitude measurements (see LAT and LON), and the calculations are only appropriate for short distances because they do not take into account the spherical geometry of the Earth.<br />  
 ```{r child='DNSbox.Rmd'}
 ```
 
@@ -129,7 +129,7 @@ The uncertainty of the horizontal position measurements for the Novatel OEM628 r
 
 Prior to January 2014, latitude and longitude were recorded from the NMEA GPGGA log with a resolution of 0.0001 arcminutes (1.6^-6 degrees),while altitude was recorded with 0.01 m resolution. Speed-over-ground was recorded from the NMEA GPRMC log with resolution of 0.001 knots (5x10^-4 m/s). Starting in January 2014 new output logs (named BESTPOS and BESTVEL) have also been recorded to preserve more significant digits in the measurements. The BESTPOS log has a horizontal position resolution of 10^−11 degrees and altitude resolution of 10^-4 m, while in the BESTVEL log the horizontal speed-over-ground is recorded with 1x10^-4 m/s resolution. The BESTVEL log also reports the aircraft vertical speed with 1x10^-4 m/s resolution.In addition, the BESTPOS log also reports the estimated uncertainty (in meters) of the horizontal position and altitude. 
 
-Some of the following variables are also available from alternate Garmin GPS16 receivers, for which the variable name is qualified by the name of that unit; e.g., GGLAT_GMN for GGLAT as measured by a Garmin GPS unit. In addition, some of the measurements from the GPS units that are part of the aircraft avionics systems are recorded; these are denoted by a suffix “_G” or “_A”. Measurements from before about 2000 used Trimble TANS-III receivers, <span id="punch3.3" label="punch3.3">[punch3.3]</span>with the ability to track up to 6 satellites at a time but needing only 4 to provide 3-dimensional position and velocity data (3 satellites for 2-dimensions). The accuracy of the position measurements for that unit was stated to be 25 meters (horizontal) and 35 meters (vertical) under “steady-state conditions.”^[The GPS signals at one time suffered from “selective availability,” a US DOD term for a perturbed signal that degraded GPS absolute accuracy to 100 meters. This was especially noticeable in the altitude measurement, so GALT normally was not useful. As of 1 May 2000, selective availability was deactivated to allow everyone to obtain better position measurements. See the Interagency GPS Executive Board web site for more information on selective availability and GPS measurements prior to 2000.]
+Some of the following variables are also available from alternate Garmin GPS16 receivers, for which the variable name is qualified by the name of that unit; e.g., GGLAT_GMN for GGLAT as measured by a Garmin GPS unit. In addition, some of the measurements from the GPS units that are part of the aircraft avionics systems are recorded; these are denoted by a suffix “_G” or “_A”. Measurements from before about 2000 used Trimble TANS-III receivers, with the ability to track up to 6 satellites at a time but needing only 4 to provide 3-dimensional position and velocity data (3 satellites for 2-dimensions). The accuracy of the position measurements for that unit was stated to be 25 meters (horizontal) and 35 meters (vertical) under “steady-state conditions.”^[The GPS signals at one time suffered from “selective availability,” a US DOD term for a perturbed signal that degraded GPS absolute accuracy to 100 meters. This was especially noticeable in the altitude measurement, so GALT normally was not useful. As of 1 May 2000, selective availability was deactivated to allow everyone to obtain better position measurements. See the Interagency GPS Executive Board web site for more information on selective availability and GPS measurements prior to 2000.]
 Likewise, velocity measurements are within 0.2 m/s for all axes. Measurement resolution is that of 4-byte IEEE format (about 6 significant digits). All variables were provided by the Trimble receivers at 1 Hz.  
 
 A special correction is needed for variables GGVEW, GGVNS, and GGVSPD, which measure the motion *at the GPS antenna* relative to the Earth. The conventional wind calculation addresses the difference between the motion at the radome (where the relative wind is measured) and the INS (where variables VEW, VNS, VSPD are measured) arising from rotation of the aircraft. However, if GGVSPD is used instead of VSPD for vertical wind or GGVEW and GGVNS are used (perhaps via the complementary filter) for the horizontal wind, an additional correction is needed for the displacement between the GPS antenna and the INS receiver. On the GV, this distance is -4.30 m. A correction for aircraft rotation is therefore applied to GGVSPD, as described below.   
@@ -140,7 +140,7 @@ A special correction is needed for variables GGVEW, GGVNS, and GGVSPD, which mea
 
 #### GPS Longitude (<span class="math inline">º</span>): GGLON, LON_G; also formerly GLON {#gglon .unnumbered}
 
-*The aircraft longitude measured by a global positioning system.* Positive values are east of the prime meridian; negative are west. GGLON is provided by the (or a) data-system GPS; LON_G and LONF_G are from the avionics system GPS. LONF_G is a fine-resolution measurement that requires special processing. <span id="punch:3-12" label="punch:3-12">[punch:3-12]</span>  
+*The aircraft longitude measured by a global positioning system.* Positive values are east of the prime meridian; negative are west. GGLON is provided by the (or a) data-system GPS; LON_G and LONF_G are from the avionics system GPS. LONF_G is a fine-resolution measurement that requires special processing.
 
 #### GPS Ground Speed (m/s): GGSPD, GSPD_G {#ggspd .unnumbered}
 
@@ -166,7 +166,7 @@ where GGVNSA is the corrected value used in the wind calculation, $\psi$ and $\p
 
 #### GPS-Measured Aircraft Vertical Velocity (m/s): GGVSPD; also (obsolete) VSPD_G and GVZI {#ggvspd .unnumbered}
 
-*The aircraft vertical velocity provided by a GPS unit.* Positive values are upward.<span id="punch3.9" label="punch3.9">[punch3.9]</span> When GGVSPD is used in the calculation of vertical wind, the following correction (omitted before 2017) is applied:<span id="punch:3-13" label="punch:3-13">[punch:3-13]</span>
+*The aircraft vertical velocity provided by a GPS unit.* Positive values are upward. When GGVSPD is used in the calculation of vertical wind, the following correction (omitted before 2017) is applied:
 \begin{equation}
 \mathrm{\{GGVSPDA\}} = \mathrm{\{GGVSPD\}}-L_{G}\dot{\theta}
 (\#eq:GGVSPDA)
@@ -189,7 +189,7 @@ where <span class="math inline">*L*<sub>*G*</sub> =  − 4.30</span> m 
 
 #### GPS Height of the Geoid (m): GGEOIDHT {#ggeoidht .unnumbered}
 
-*Height of geoid, approximating mean sea level, above the WGS-84 ellipsoid. Also commonly called the  geoid undulation* The height above mean sea level is found by subtracting this value from the height above the WGS-84 reference ellipse as provided by GPS-based measurements.The NovAtel OEM628 receivers use the EGM96 model which provides geoid height on a 0.5° x 0.5° grid and 0.1 m height resolution. <span id="punch3.4" label="punch3.4">[punch3.4]</span>  
+*Height of geoid, approximating mean sea level, above the WGS-84 ellipsoid. Also commonly called the  geoid undulation* The height above mean sea level is found by subtracting this value from the height above the WGS-84 reference ellipse as provided by GPS-based measurements.The NovAtel OEM628 receivers use the EGM96 model which provides geoid height on a 0.5° x 0.5° grid and 0.1 m height resolution. 
 
 #### GPS Satellites Tracked: GGNSAT {#ggnsat .unnumbered}
 
@@ -203,7 +203,7 @@ where <span class="math inline">*L*<sub>*G*</sub> =  − 4.30</span> m 
 
 #### GPS Mode: GMODE (obsolete) {#gmode .unnumbered}
 
-This is the former output from the Trimble GPS indicating the mode of operation. The normal value is 4, indicating automatic (not manual) mode and that the receiver is operating in 4-satellite (as opposed to fewer) mode.<span id="punch3.5" label="punch3.5">[punch3.5]</span>  
+This is the former output from the Trimble GPS indicating the mode of operation. The normal value is 4, indicating automatic (not manual) mode and that the receiver is operating in 4-satellite (as opposed to fewer) mode.
 
 #### GPS Status: GGSTATUS, GSTAT_G, GSTAT {#ggstatus .unnumbered}
 
@@ -220,8 +220,6 @@ The time since the last OmniSTAR/TerraStar corrections data was received. The co
 #### Horizontal Dilution of Precision: GGHDOP
 
 A measure of the impact the spatial geometry of the observed satellites has on the calculated horizontal position uncertainty. Values less then 2 are considered good. This is superceded by the reported measurement standard deviation recorded in the GGALTSD, GGLATSD, and GGLONSD variables.
-
-<span id="punch:3-14" label="punch:3-14">[punch:3-14]</span>
 
 <!-- <h2 id="other-measurements-of-aircraft-altitude">Other Measurements of Aircraft Altitude</h2> -->
 
@@ -264,7 +262,7 @@ A note at <a href="www/PressureAltitude.pdf">this link</a> describes the pressur
 
 #### Altitude, Reference (m MSL): ALTX (Obsolete), GGALTC (Obsolete) {#altx .unnumbered}
 
-<span id="punch3.6" label="punch3.6">[punch3.6]</span> *Derived altitude above the geopotential surface,* obtained by combining information from a GPS receiver and an inertial reference system. This variable was intended to compensate for times when GPS reception was lost by incorporating information from the IRS measurement of altitude. GPS status measurements were used to detect signal loss, although sometimes this signal was delayed for a few seconds after the signal was lost. A 10-second running average was calculated of the difference between the GPS altitude and the reference altitude. When the sample-to-sample altitude difference changed more than 50 meters or when the GPS status detected a degraded signal, the derived variable (ALTX or GGALTC) became the alternate reference altitude adjusted by the latest running-average difference between that reference altitude and GGALT. When reception was recovered, to avoid a sudden discontinuity in altitude, the derived variable was adjusted back to the GPS altitude gradually over the next 10 seconds.<br />
+*Derived altitude above the geopotential surface,* obtained by combining information from a GPS receiver and an inertial reference system. This variable was intended to compensate for times when GPS reception was lost by incorporating information from the IRS measurement of altitude. GPS status measurements were used to detect signal loss, although sometimes this signal was delayed for a few seconds after the signal was lost. A 10-second running average was calculated of the difference between the GPS altitude and the reference altitude. When the sample-to-sample altitude difference changed more than 50 meters or when the GPS status detected a degraded signal, the derived variable (ALTX or GGALTC) became the alternate reference altitude adjusted by the latest running-average difference between that reference altitude and GGALT. When reception was recovered, to avoid a sudden discontinuity in altitude, the derived variable was adjusted back to the GPS altitude gradually over the next 10 seconds.<br />
 <br />
 This obsolete variable should be used with caution because the reference altitude used in past calculations was the IRS altitude updated to the pressure altitude of the aircraft. To account for the difference between pressure and geometric altitude, a regression equation was used, normally <span class="math inline">*z* = *a*<sub>0</sub> + *a*<sub>1</sub> * *PALT*</span> where <span class="math inline">*a*<sub>0</sub> =  − 46.3</span> m and <span class="math inline">*a*<sub>1</sub> = 0.97866</span> but often adjusted dependent on project conditions. This introduced problems in early applications with the GV because it did not account for the pressure-altitude transition at the ISA tropopause. Use of a pressure altitude as reference introduces additional errors in altitude in regions that are not barotropic.<br />  
 
@@ -274,7 +272,7 @@ This obsolete variable should be used with caution because the reference altitud
 
 Measurements from the global positioning and inertial navigation systems are combined to produce new variables that take advantage of the strengths of each, so that the resulting variables have the long-term stability of the GPS and the short-term resolution of the INS. This section describes some variables that result from this blending of variables. These corrected variables are usually the best available when the GPS and IRS are both functioning.  
 
-One can determine if the GPS is functioning by examining the GPS status variables described in the previous section or by looking for spikes or “flat-lines” in the data. If the GPS data are missing for a short time (a few seconds to a minute), accuracy is not affected. However, longer dropouts will result in uncertainties degrading toward those of the INS. Without the GPS or another ground reference, the IRS error cannot be determined empirically, and one should assume that it is within the manufacturer’s specification (1 nautical mile of error per hour of flight, 90% CEP). When the GPS is active, RAF estimates that the correction algorithm produces a position with an error less than 1.5 m. <span id="punch3.7" label="punch3.7">[punch3.7]</span>Due to the nature of the algorithm, the error will increase from about 1.5 meters to the INS specification in about one-half hour after GPS information is lost.  
+One can determine if the GPS is functioning by examining the GPS status variables described in the previous section or by looking for spikes or “flat-lines” in the data. If the GPS data are missing for a short time (a few seconds to a minute), accuracy is not affected. However, longer dropouts will result in uncertainties degrading toward those of the INS. Without the GPS or another ground reference, the IRS error cannot be determined empirically, and one should assume that it is within the manufacturer’s specification (1 nautical mile of error per hour of flight, 90% CEP). When the GPS is active, RAF estimates that the correction algorithm produces a position with an error less than 1.5 m. Due to the nature of the algorithm, the error will increase from about 1.5 meters to the INS specification in about one-half hour after GPS information is lost.  
 
 #### GPS-Corrected Inertial Ground Speed Vector (m/s):  VEWC, VNSC {#vewc-vnsc .unnumbered}
 
@@ -290,7 +288,6 @@ The net result then is the sum of these two filtered signals, calculated as desc
 ```
   
 This result is used as long as the GPS signals are continuous and flagged as being valid. When that is not the case, some means is needed to avoid sudden discontinuities in velocity (and hence wind speed), which would introduce spurious effects into variance spectra and other properties dependent on a continuously valid measurement of wind. To extrapolate measurements through periods when the GPS signals are lost (as sometimes occurs, for example, in turns) a fit is determined to the difference between the best-estimate variables {VNSC,VEWC} and the IRS variables {VNS,VEW} for the period before GPS reception was lost, and that fit is used to extrapolate through periods when GPS reception is not available. The procedure is as described below.<br />
-<span id="punch:3-15" label="punch:3-15">[punch:3-15]</span>  
 
 <p class=box>
 \ 1. If GPS reception has never been valid earlier in the flight, use the INS values without correction.<br>  
@@ -302,7 +299,7 @@ $dvy^\prime=\eta\ dvy+(1-\eta)\Delta$ where $dvy^\prime$ is the sequentially adj
 
 #### GPS-Corrected Inertial Latitude and Longitude (<span class="math inline">º</span>): LATC, LONC {#latc-lonc .unnumbered}
 
-*Combined GPS and IRS output of latitude and longitude.* Positive values are north and east, respectively.<span id="punch:3-16" label="punch:3-16">[punch:3-16]</span> These variables are the best estimate of position, obtained by the following approach:<br />  
+*Combined GPS and IRS output of latitude and longitude.* Positive values are north and east, respectively.These variables are the best estimate of position, obtained by the following approach:<br />  
 ```{r child='LATLONbox.Rmd'}
 ```
 

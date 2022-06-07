@@ -13,7 +13,7 @@ library(kableExtra)
 #### Power, PMS/CSIRO (King) Liquid Water Content (W): PLWC, PLWC1 {-#plwc}
 
 *The power dissipated by the sensor of a PMS/CSIRO (King) liquid water probe (in watts).* PLWC is the power required to maintain constant temperature in a heated element as that element is cooled by convection and evaporation of impinging liquid water. The convective heat losses are determined by calibration in dry air over a range of airspeeds and temperatures, so that the remaining power can be related to the liquid water content. The instrument is described in <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> and at <a href="http://www.eol.ucar.edu/instruments/king-csiro-liquid-water-sensor">this URL</a>. See the following
-description for the algorithm used to obtain liquid water content from this measurement of power.<br /><span id="punch:5-3" label="punch:5-3">[punch:5-3]</span>
+description for the algorithm used to obtain liquid water content from this measurement of power.<br />
 
 #### PMS/CSIRO (King) Liquid Water Content (g/m<span class="math inline"><sup>3</sup></span>): PLWCC, PLWCC1 {-#plwcc}
 
@@ -27,7 +27,7 @@ In addition, a processing step is used to remove drift by calculating the offset
 
 #### PVM-100 Liquid Water Content (g/m^3^): PLWCG {-#plwcg}
 
-*Cloud liquid water content for cloud droplets in the approximate size range from 3–50 <span class="math inline">*μ*</span>m.* The PVM produces a measure of the liquid water content directly, but a baseline value is sometimes subtracted by reference to another cloud droplet instrument such as an FSSP or CDP, such that when the other instrument measures a very low droplet concentration the baseline value for the PVM-100 is updated at the corresponding time and that average is then subtracted from the measurements directly produced by the PVM-100.<span id="punch:5-1" label="punch:5-1">[punch:5-1]</span></p>
+*Cloud liquid water content for cloud droplets in the approximate size range from 3–50 <span class="math inline">*μ*</span>m.* The PVM produces a measure of the liquid water content directly, but a baseline value is sometimes subtracted by reference to another cloud droplet instrument such as an FSSP or CDP, such that when the other instrument measures a very low droplet concentration the baseline value for the PVM-100 is updated at the corresponding time and that average is then subtracted from the measurements directly produced by the PVM-100.</p>
 
 #### Rosemount Icing Detector Signal (V): RICE {-#rice}
 
@@ -36,7 +36,7 @@ In addition, a processing step is used to remove drift by calculating the offset
 
 ## Sensors Detecting Individual Hydrometeors (1-D Probes) {#sensors-1-D-probes}
 
-The RAF operates a set of hydrometeor detectors that provide single-dimension measurements (i.e., not images) of individual particle sizes. <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> contains extensive information on the operating principles and characteristics of some of the older instruments. Here the focus will be on the meanings of the variables in the archived data files.<span id="punch:5-2" label="punch:5-2">[punch:5-2]</span>  
+The RAF operates a set of hydrometeor detectors that provide single-dimension measurements (i.e., not images) of individual particle sizes. <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> contains extensive information on the operating principles and characteristics of some of the older instruments. Here the focus will be on the meanings of the variables in the archived data files. 
 
 <span id="VariableNames1DProbes" label="VariableNames1DProbes"></span>Four- and five-character variable names shown in this section are generic. The actual names appearing in NIMBUS-generated production output data sets have appended to them an underscore (_) and three or four more characters that indicate a probe’s specific aircraft mounting location. For example, AFSSP_RPI refers to a variable from an FSSP-100 probe mounted on the inboard, right-side pod. The codes presently in use are given in the following table. For the GV, there are 12 locations available, characterized by three letters. The first is the wing ({L,R} for {port,starboard}), the second is the pylon ({I,M,O} for inboard, middle, outboard}), the third is which of the two possible canister locations at the pylon is used ({I,O} for {inboard, outboard}).  
 
@@ -303,7 +303,7 @@ Some of the probes discussed in this section are primarily aerosol spectrometers
 ### Count Rate Per Channel: ACDP, AFSSP, AS100, AF300, AS200, APCAS, A200X, A260X, A200Y, AUHSAS {#CRPC .unnumbered}
 
 *The size distribution of the number of particles detected by a 1D hydrometeor probe per unit time.* These measurements have “vector” character in the NetCDF output files, with dimension equal to the number of channels in the table above and with one entry per channel. The first element in the vector is a historical remnant from a time when housekeeping information was stored here and should be ignored. For the size limits of the channels, see the netCDF attributes of the following variables for “Size Distribution”.</p>
-<strong><span class="underline"><span id="punch:5-4" label="punch:5-4">[punch:5-4]</span><span id="punch:5-7" label="punch:5-7">[punch:5-7]</span></span><span class="underline"></span></strong><br />
+<strong><span class="underline"><span class="underline"></span></strong><br />
 <p><strong></strong></p>
 
 ### Size Distribution: {#size-distribution .unnumbered}
@@ -342,8 +342,6 @@ Some of the probes discussed in this section are primarily aerosol spectrometers
 *The radar reflectivity factor* *calculated from the measured size distribution from a hydrometeor probe.* This is calculated from the measured concentration and the sixth moment of the size distribution, with the assumption that the particles are water drops. An equivalent radar reflectivity factor can be calculated from the hydrometeor size distribution if another assumption is made about composition of the particles, but this variable is not part of normal data files. The radar reflectivity factor is a characteristic only of the hydrometeor size distribution; it is *not* a measure of radar reflectivity, because the latter also depends on wavelength, dielectric constant, and other characteristics of the hydrometeors. The normally used radar reflectivity factor is measured on a logarithmic scale that depends on a particular choice of units, so (although it is not conventional) an appropriate scale factor <span class="math inline">*Z*<sub>*r*</sub></span> is included in the following equation to satisfy the convention that arguments of logarithms should be dimensionless.<br />  
 ```{r child='DBZbox.Rmd'}
 ```
-
-<p><span id="punch:5-5" label="punch:5-5">[punch:5-5]</span></p>
 
 ### Effective Radius (<span class="math inline">*μ*</span>m): REFFD, REFFF {#effective-radius .unnumbered}
 
@@ -434,7 +432,7 @@ In recent NETCDF data files, the actual bin boundaries used for processing are r
 
 #### 2D Effective Radius (<span class="math inline">*μ*</span>m): REFF2DC, REFF2DP {-#reff2d}
 
-*One-half the ratio of the third moment of the particle diameter to the second moment.* The formula used is given by \@ref(eq:REFFbox).<span id="punch:5-6" label="punch:5-6">[punch:5-6]</span><br />
+*One-half the ratio of the third moment of the particle diameter to the second moment.* The formula used is given by \@ref(eq:REFFbox).<br />
 </p>
 
 

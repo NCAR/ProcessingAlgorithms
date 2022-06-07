@@ -22,7 +22,7 @@ When concentrations are recorded with units of “ppmv”, “ppbv” or “pptv
 5. The unit “hertz” (abbreviation Hz) is the proper unit for a periodic sampling frequency and will be used here in place of the more awkward “samples per second.”
 6. In some cases, particularly for older data files, speed has been recorded in units of knots (= 0.514444 m/s) and distance in nautical miles <span class="math inline">≡</span> 1852 m).  
 
-In Appendix A there is a list of symbols.^[Some symbols used only once and defined where they are used are omitted from this list] The next table defines some abbreviations and additional symbols used for units in this report, in addition to the standard abbreviations for the mks system of units:<span id="punch1.2" label="punch1.2">[punch1.2]</span>
+In Appendix A there is a list of symbols.^[Some symbols used only once and defined where they are used are omitted from this list] The next table defines some abbreviations and additional symbols used for units in this report, in addition to the standard abbreviations for the mks system of units:
 <!-- It would be useful to translate the following table from html to Rmd: -->
 ```{r tos, include=FALSE, echo=FALSE}
 SymbolTable <- data.frame("abbreviation-or-symbol"=c('º', 'ft', 'mb', 'ppmv', 'ppbv', 'pptv', 'n mi', 'kt'),
@@ -123,8 +123,6 @@ There are time shifts inherent in many of the measurements, and in some cases (e
 
 <span id="elecFilter" label="elecFilter">Where data rates for particular measurements do not match the basic 50 Hz sampling rate, linear interpolation is used to obtain higher-rate values. For 1 Hz data files, measurements are then averaged within each second. For 25 Hz files, 50 Hz measurements are digitally filtered using a finite impulse response (FIR) filter, while data acquired at less than 25 Hz are linearly interpolated to 25 Hz and then FIR-filtered for smoothing.</span>  
 
-<p><span id="punch1.3" label="punch1.3">[punch1.3]</span></p>
-
 ## Other Comments on Terminology
 
 ### Variable Names in Equations
@@ -134,7 +132,7 @@ This report often uses variable names in equations, and sometimes there is poten
 ### Distinction Between Original Measurements and Derived Variables
   
 Many of the variables in the data files and in this report are derived from combinations of measurements. The terms “raw” or “original” measurement are sometimes used for a minimally processed output received directly from a sensor or instrument. Such measurements may be converted to engineering units via calibration coefficients, but otherwise they are a direct representation of the output from a sensor.^[Calibration coefficients, e.g. those used to convert from voltage output from an analog sensor to a measured quantity with physical units like <span class="math inline">º</span>C, are not included or discussed in this report. They are normally included in project reports and, in recent years, many are included in the header of the NETCDF file.]
-In contrast, derived variables (e.g., potential temperature) depend on one or more “raw” measurements and are not direct results of output from an instrument. For most derived measurements, a box that follows an introductory comment is used in this report to document the processing algorithm. The box has two parts; in the top are definitions used and explanations regarding variables that enter the calculation, while the bottom portion contains the equation, algorithm, or code segment that documents how the variable is calculated.<span id="punch1.4" label="punch1.4">[punch1.4]</span>  
+In contrast, derived variables (e.g., potential temperature) depend on one or more “raw” measurements and are not direct results of output from an instrument. For most derived measurements, a box that follows an introductory comment is used in this report to document the processing algorithm. The box has two parts; in the top are definitions used and explanations regarding variables that enter the calculation, while the bottom portion contains the equation, algorithm, or code segment that documents how the variable is calculated.
 
 ### Dimensions in Equations
 

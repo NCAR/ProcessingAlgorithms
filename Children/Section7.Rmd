@@ -32,7 +32,7 @@ In the 3786, flows are determined in volumetric cm<span class="math inline">$^{3
 
 #### CN Counter Output (counts per sample interval): CNTS {-#cnts}
 
-<em>The raw output count from the condensation nucleus counter.</em> For the 3760A condensation nucleus counter, the project-dependent sample rate may be chosen in the range from 1–50 Hz but it is typically 10 Hz. In some unusual cases the counts are divided by a selected power of two to keep the counter from overflowing; see project documentation. The 3786 WCN may be programmed to report data at intervals from 0.1–3600 s.<span id="punch:7-1" label="punch:7-1">[punch:7-1]</span></p>
+<em>The raw output count from the condensation nucleus counter.</em> For the 3760A condensation nucleus counter, the project-dependent sample rate may be chosen in the range from 1–50 Hz but it is typically 10 Hz. In some unusual cases the counts are divided by a selected power of two to keep the counter from overflowing; see project documentation. The 3786 WCN may be programmed to report data at intervals from 0.1–3600 s.</p>
 
 #### Condensation Nucleus (CN) Concentration (cm^-3^): CONCN {-#concn}
 
@@ -56,7 +56,7 @@ In the following formulae, the corrected flow FCNC in VLPM is explicitly convert
 
 #### UHSAS Absolute Pressure in Optics Block (kPa): UPRESS {-#upress}
 
-The pressure internal to the UHSAS instrument. This is an analog measurement with calibration coefficients as recorded in the attributes for the variable.<span id="punch:7-2" label="punch:7-2">[punch:7-2]</span></p>
+The pressure internal to the UHSAS instrument. This is an analog measurement with calibration coefficients as recorded in the attributes for the variable.</p>
 
 #### Raw and Corrected Sample Flow Rate (cm^3^s^-1^): USMPFLW or PFLW; USFLWC or PFLWC {-#pflw}
 

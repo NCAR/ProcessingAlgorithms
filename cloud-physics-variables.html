@@ -166,7 +166,7 @@
 <div id="plwc" class="section level4 unnumbered hasAnchor">
 <h4>Power, PMS/CSIRO (King) Liquid Water Content (W): PLWC, PLWC1<a href="cloud-physics-variables.html#plwc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><em>The power dissipated by the sensor of a PMS/CSIRO (King) liquid water probe (in watts).</em> PLWC is the power required to maintain constant temperature in a heated element as that element is cooled by convection and evaporation of impinging liquid water. The convective heat losses are determined by calibration in dry air over a range of airspeeds and temperatures, so that the remaining power can be related to the liquid water content. The instrument is described in <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> and at <a href="http://www.eol.ucar.edu/instruments/king-csiro-liquid-water-sensor">this URL</a>. See the following
-description for the algorithm used to obtain liquid water content from this measurement of power.<br /><span id="punch:5-3" label="punch:5-3">[punch:5-3]</span></p>
+description for the algorithm used to obtain liquid water content from this measurement of power.<br /></p>
 </div>
 <div id="plwcc" class="section level4 unnumbered hasAnchor">
 <h4>PMS/CSIRO (King) Liquid Water Content (g/m<span class="math inline"><sup>3</sup></span>): PLWCC, PLWCC1<a href="cloud-physics-variables.html#plwcc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -278,7 +278,7 @@ In addition, a processing step is used to remove drift by calculating the offset
 </div>
 <div id="plwcg" class="section level4 unnumbered hasAnchor">
 <h4>PVM-100 Liquid Water Content (g/m<sup>3</sup>): PLWCG<a href="cloud-physics-variables.html#plwcg" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<em>Cloud liquid water content for cloud droplets in the approximate size range from 3–50 <span class="math inline"><em>μ</em></span>m.</em> The PVM produces a measure of the liquid water content directly, but a baseline value is sometimes subtracted by reference to another cloud droplet instrument such as an FSSP or CDP, such that when the other instrument measures a very low droplet concentration the baseline value for the PVM-100 is updated at the corresponding time and that average is then subtracted from the measurements directly produced by the PVM-100.<span id="punch:5-1" label="punch:5-1">[punch:5-1]</span>
+<em>Cloud liquid water content for cloud droplets in the approximate size range from 3–50 <span class="math inline"><em>μ</em></span>m.</em> The PVM produces a measure of the liquid water content directly, but a baseline value is sometimes subtracted by reference to another cloud droplet instrument such as an FSSP or CDP, such that when the other instrument measures a very low droplet concentration the baseline value for the PVM-100 is updated at the corresponding time and that average is then subtracted from the measurements directly produced by the PVM-100.
 </p>
 </div>
 <div id="rice" class="section level4 unnumbered hasAnchor">
@@ -290,7 +290,7 @@ In addition, a processing step is used to remove drift by calculating the offset
 </div>
 <div id="sensors-1-D-probes" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Sensors Detecting Individual Hydrometeors (1-D Probes)<a href="cloud-physics-variables.html#sensors-1-D-probes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The RAF operates a set of hydrometeor detectors that provide single-dimension measurements (i.e., not images) of individual particle sizes. <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> contains extensive information on the operating principles and characteristics of some of the older instruments. Here the focus will be on the meanings of the variables in the archived data files.<span id="punch:5-2" label="punch:5-2">[punch:5-2]</span></p>
+<p>The RAF operates a set of hydrometeor detectors that provide single-dimension measurements (i.e., not images) of individual particle sizes. <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> contains extensive information on the operating principles and characteristics of some of the older instruments. Here the focus will be on the meanings of the variables in the archived data files.</p>
 <p><span id="VariableNames1DProbes" label="VariableNames1DProbes"></span>Four- and five-character variable names shown in this section are generic. The actual names appearing in NIMBUS-generated production output data sets have appended to them an underscore (_) and three or four more characters that indicate a probe’s specific aircraft mounting location. For example, AFSSP_RPI refers to a variable from an FSSP-100 probe mounted on the inboard, right-side pod. The codes presently in use are given in the following table. For the GV, there are 12 locations available, characterized by three letters. The first is the wing ({L,R} for {port,starboard}), the second is the pylon ({I,M,O} for inboard, middle, outboard}), the third is which of the two possible canister locations at the pylon is used ({I,O} for {inboard, outboard}).</p>
 <!-- The following HTML table is now converted to R Markdown: -->
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:80%; ">
@@ -950,7 +950,7 @@ OAP-260X
 <h3>Count Rate Per Channel: ACDP, AFSSP, AS100, AF300, AS200, APCAS, A200X, A260X, A200Y, AUHSAS<a href="cloud-physics-variables.html#CRPC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <em>The size distribution of the number of particles detected by a 1D hydrometeor probe per unit time.</em> These measurements have “vector” character in the NetCDF output files, with dimension equal to the number of channels in the table above and with one entry per channel. The first element in the vector is a historical remnant from a time when housekeeping information was stored here and should be ignored. For the size limits of the channels, see the netCDF attributes of the following variables for “Size Distribution”.
 </p>
-<strong><u><span id="punch:5-4" label="punch:5-4">[punch:5-4]</span><span id="punch:5-7" label="punch:5-7">[punch:5-7]</span></u></strong><br />
+<strong><span class="underline"><u></u></strong><br />
 <p>
 <strong></strong>
 </p>
@@ -1041,9 +1041,6 @@ is in units of g<span class="math inline">\(\,\)</span>m<span class="math inline
 \mathrm{\{DBZx\}}=10\log_{10}\left({\textstyle \frac{1}{Z_{r}}\sum_{i=i1}^{i2}}{\displaystyle {\displaystyle \left\{ \mathrm{Cy}_{i}\right\} d_{i}^{6}}}\right)
 \tag{5.8}
 \end{equation}\]</span>
-</p>
-<p>
-<span id="punch:5-5" label="punch:5-5">[punch:5-5]</span>
 </p>
 </div>
 <div id="effective-radius" class="section level3 unnumbered hasAnchor">
@@ -1188,7 +1185,7 @@ For the images from the 2D probes, separate data files need to be used. RAF prov
 </div>
 <div id="reff2d" class="section level4 unnumbered hasAnchor">
 <h4>2D Effective Radius (<span class="math inline"><em>μ</em></span>m): REFF2DC, REFF2DP<a href="cloud-physics-variables.html#reff2d" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<em>One-half the ratio of the third moment of the particle diameter to the second moment.</em> The formula used is given by <a href="cloud-physics-variables.html#eq:REFFbox">(5.9)</a>.<span id="punch:5-6" label="punch:5-6">[punch:5-6]</span><br />
+<em>One-half the ratio of the third moment of the particle diameter to the second moment.</em> The formula used is given by <a href="cloud-physics-variables.html#eq:REFFbox">(5.9)</a>.<br />
 </p>
 </div>
 </div>
