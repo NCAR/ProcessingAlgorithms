@@ -179,8 +179,9 @@ Because the values used in processing have varied, the project reports should be
 \alpha_r^{[u]}=0.9959+0.0283(\log_{10}M)+0.0374(\log_{10}M)^2+0.0762(\log_{10}M)^3
 (\#eq:alphau)
 \end{equation}  
-See the following manuscript, <a href="www/TatChangesAndRecovFactor_report20220603.pdf">NCAR GV Aircraft TAT Sensor Update: Signal Path Changes and Recovery Factor Modeling</a> prepared by Josh Carnes. <br />
-Some studies of the recovery factor are discussed further in <a href="www/RecoveryFactorStudy.pdf">this memo</a>.<br />
+
+Some studies of the recovery factor are discussed further in <a href="www/RecoveryFactorStudy.pdf">this memo</a> and this <a href="www/TatChangesAndRecovFactor_report20220603.pdf">technical report.</a><br />
+
 <br />
 The true airspeed $U_a$ is used in \@ref(eq:Tair) to calculate the ambient temperature $T_a$. However, the ambient temperature is also needed to calculate the true airspeed. Therefore the constraints imposed on ambient temperature and true airspeed by the measurements of recovery temperature, total pressure (the pressure measured by a pitot tube pointed into the airstream and assumed to be that obtained when the incoming air is brought to rest relative to the aircraft), and ambient pressure must be used to solve simultaneously for the two unknowns, temperature and airspeed.<br />
 <br />

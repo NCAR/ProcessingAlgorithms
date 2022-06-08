@@ -435,10 +435,9 @@ Because the values used in processing have varied, the project reports should be
 <span class="math display" id="eq:alphau">\[\begin{equation}
 \alpha_r^{[u]}=0.9959+0.0283(\log_{10}M)+0.0374(\log_{10}M)^2+0.0762(\log_{10}M)^3
 \tag{4.14}
-\end{equation}\]</span><br />
-See the following manuscript, <a href="www/TatChangesAndRecovFactor_report20220603.pdf">NCAR GV Aircraft TAT Sensor Update: Signal Path Changes and Recovery Factor Modeling</a> prepared by Josh Carnes. <br />
-Some studies of the recovery factor are discussed further in <a href="www/RecoveryFactorStudy.pdf">this memo</a>.<br />
-<br />
+\end{equation}\]</span></p>
+<p>Some studies of the recovery factor are discussed further in <a href="www/RecoveryFactorStudy.pdf">this memo</a> and this <a href="www/TatChangesAndRecovFactor_report20220603.pdf">technical report.</a><br /></p>
+<p><br />
 The true airspeed <span class="math inline">\(U_a\)</span> is used in <a href="the-state-of-the-atmosphere.html#eq:Tair">(4.12)</a> to calculate the ambient temperature <span class="math inline">\(T_a\)</span>. However, the ambient temperature is also needed to calculate the true airspeed. Therefore the constraints imposed on ambient temperature and true airspeed by the measurements of recovery temperature, total pressure (the pressure measured by a pitot tube pointed into the airstream and assumed to be that obtained when the incoming air is brought to rest relative to the aircraft), and ambient pressure must be used to solve simultaneously for the two unknowns, temperature and airspeed.<br />
 <br />
 The relationship is conveniently derived by first calculating the dimensionless Mach number <span class="math inline">\(M\)</span>, which is the ratio of the <a name=airspeed3>airspeed</a> to the speed of sound <span class="math inline">\(U_{s}=\sqrt{\gamma^{\prime}R^{\prime}T_{a}}\)</span>, where <span class="math inline">\(\gamma^\prime\)</span> is the ratio of specific heats of (moist) air, <span class="math inline">\(c_p^\prime /c_v^\prime\)</span> and <span class="math inline">\(R^\prime\)</span> is the gas constant for moist air. The Mach number is a function of air temperature only and can be determined as follows:</p>
