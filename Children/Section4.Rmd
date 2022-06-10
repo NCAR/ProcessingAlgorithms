@@ -402,9 +402,6 @@ To follow normal conventions, the change in equilibrium vapor pressure that aris
 ```{r child='RHObox.Rmd'}
 ```
 For instruments measuring the vapor pressure density (including the Lyman-alpha probes and the newer version called the UV hygrometer), the basic measurement from the instrument is the water vapor density, **<span class="underline">RHOUV</span>** or **** **<span class="underline">RHOLA</span>**, determined by applying calibration coefficients to the measured signals (XUVI or VLA). In addition, a slow update to a dew-point measurement is used to compensate for drift in the calibration. The processing used for early projects with the Lyman-alpha instruments is similar but more involved and won’t be documented here because the instruments are obsolete. See <a href="https://opensky.ucar.edu/islandora/object/archives%3A8729">RAF Bulletin 9</a> for the processing previously used for archived measurements from the Lyman-alpha hygrometers.<br />  
-<p class=box>  
-This algorithm for RHOUV is missing.
-</p><p class=box2><p>
 
 #### Specific Humidity (g/kg): SPHUM {-#sphum}
 

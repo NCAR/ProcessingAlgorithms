@@ -68,9 +68,8 @@ library(magrittr)
 This site serves as the RAF Technical Note on processing algorithms that are used for processing data collected on the RAF research aircraft. The variables that appear in archived data are defined here, and the algorithms used in their calculation are described. This document does not describe the instrumentation used, but there are many links to such descriptions. The goal of this document is to describe both current and past algorithms, so it is expected that this document will be modified often so that it can remain current.
 ```{r include = TRUE, echo = FALSE}
 ## construct data.frame for the following table:
-CHANGELOG <- data.frame("Revision" = c('June, 2022 (Current)', 'June, 2019', 'February, 2019'))
+CHANGELOG <- data.frame("Revision" = c('June, 2022 (Draft)', 'June, 2019', 'February, 2019'))
 CHANGELOG$GitHub_Tag <- c('Release V2022.0', 'Release V2019.1', 'Release V2019.0')
-CHANGELOG$PDF <- c('V2022.0 PDF', 'V2019.1 PDF', 'V2019.0 PDF')
 CHANGELOG$Summary <- c('Updates to constants based on CODATA published values (2018) (SB). Numerous updates to 3. The State of the Aircraft and 4. The State of the Atmosphere (SB, CW). Link to manuscript on Total Air Temperature (TAT) data quality analysis below Eq. 4.14 (JC). Correction to Eq. 7.9 to have UPRESS multiplied by 10 (MR). Other cosmetic changes have been made to the PDF-format version of June 2019, which was generated using the program LyX (WC).', 'License has been changed from GPL to BSD-3.', 'Original release.')
 ```
 ## Document Change Log
@@ -78,6 +77,8 @@ CHANGELOG$Summary <- c('Updates to constants based on CODATA published values (2
 knitr::kable(CHANGELOG, align=c('cccl')) %>% kable_styling(bootstrap_options = 'bordered') %>%
   scroll_box(width='80%')
 ```
+<p><br>Link to PDF of V2019.0: [ProcessingAlgorithms_022019.pdf](www/ProcessingAlgorithms_022019.pdf)</br></p>
+
 ## Citation Information
 When referencing this RAF Technical Note on processing algorithms, please use the DOI 10.26023/zc3gpm25 - for example as a citation: UCAR/NCAR - Earth Observing Laboratory (2022) RAF Technical Note: Processing Algorithms. UCAR/NCAR - Earth Observing Laboratory. https://doi.org/10.26023/zc3gpm25 V2022.0 Retrieved enter date here.
 
