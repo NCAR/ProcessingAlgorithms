@@ -22,4 +22,4 @@ A list of all versions is available here: https://github.com/NCAR/aircraft_Proce
 
 Instructions for updating this document are at the end of the PDF.
 
-Each time this document is updated, a new release needs to be created. Then the DOI needs to be updated to point to the PDF in the new release. Contact data-help@eol.ucar.edu to have the DOI metadata updated.
+Each time this document is updated, a new release needs to be created. Then the DOI needs to be updated to reflect the new release. Contact data-help@eol.ucar.edu to have the DOI metadata updated.
