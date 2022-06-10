@@ -215,7 +215,6 @@ This measurement of aircraft heading was derived from the angle between the hori
 <div id="gsf-obsolete" class="section level4 unnumbered hasAnchor">
 <h4>Aircraft Ground Speed and East/North Components (m/s): GSF, VEW, VNS<a href="obsolete-variables.html#gsf-obsolete" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 These variables have the same names as the modern variables for ground speed. (Cf. Section <a href="the-state-of-the-aircraft.html#the-state-of-the-aircraft">3</a>.) GSF is the magnitude of the ground speed determined by the INS, as derived from XVI and YVI:<br />
-
 <p class="box2">
 <span class="math display" id="eq:GSF">\[\begin{equation}
 \mathrm{GSF=\sqrt{\{XVI\}^{2}+\{YVI\}^{2}}}
@@ -374,7 +373,7 @@ The ambient dew and frost points DPCRC and FPCRC are found iteratively by findin
 the values that lead to <span class="math inline">\(e_a\)</span> in the Goff-Gratch equations:<br />
 <span class="math display" id="eq:DPXRXbox4">\[\begin{align}
 e_{a} &amp; = F_{1}\left(\mathrm{\{DPCRC\}}\right)\notag \\
- &amp; = F_{2}\left(\mathrm{\{FPCRC\}}\right)
+&amp; = F_{2}\left(\mathrm{\{FPCRC\}}\right)
 \tag{10.9}
 \end{align}\]</span>
 </p>
@@ -523,7 +522,6 @@ probe in the time interval <span class="math inline">\(\Delta t\)</span> [g]<br 
 <div id="AACT" class="section level4 unnumbered hasAnchor">
 <h4>PCAS Raw Activity (dimensionless): PACT, AACT<a href="obsolete-variables.html#AACT" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 The PCAS probe provides this measure of dead time, the time that the probe is unable to sample particles because the electronics are occupied with processing particles. The manufacturer suggests that the actual dead time (<span class="math inline">\(f_{PCAS}\)</span>) is given by the following formula, which should be used when determining concentrations for the PCAS:<br />
-
 <p class="box">
 <span class="math display">\[F_{PCAS} = 1024\,\mathrm{s}^{-1}\]</span>
 </p>

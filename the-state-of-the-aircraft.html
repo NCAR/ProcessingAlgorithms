@@ -234,16 +234,14 @@ border-radius: 1px;
 </style>
 <!-- \fbox{\begin{minipage}[t]{0.95\textwidth}% -->
 <p class="box">
-<p><span class="math inline">\(g\)</span> = acceleration
-of gravity  <span class="math inline">\(^{(a)}\)</span> at latitude <span class="math inline">\(\lambda\)</span> and
-altitude <span class="math inline">\(z\)</span> above the WGS-84 geoid,  <span class="math inline">\(^{(b)}\)</span><br />
 <span class="math display" id="eq:gsublambda">\[\begin{align}
 g(z,\lambda)=g_{e}\left(\frac{1+g_{1}\sin^{2}(\lambda)}{(1-g_{2}\sin^{2}\lambda)^{1/2}}\right)(1-(k_{1}-k_{2}\sin^{2}(\lambda))z+k_{3}z^{2})
 \tag{3.1}
 \end{align}\]</span><br />
        where <span class="math inline">\(g_{e}=9.780327\)</span> m s<span class="math inline">\(^{-2}\)</span>, <span class="math inline">\(g_{1}=0.00193185\)</span>, <span class="math inline">\(g_{2}=0.00669438\)</span>, and<br />
         {<span class="math inline">\(k_{1},k_{2},k_{3}\)</span>} = {3.15704<span class="math inline">\(\times 10^{-7}\mathrm{m}^{-1}\)</span>,
-2.10269<span class="math inline">\(\times 10^{-9}\mathrm{m}^{-1}\)</span>, 7.37452<span class="math inline">\(\times 10^{-14}\mathrm{m}^{-2}\)</span>}</p>
+2.10269<span class="math inline">\(\times 10^{-9}\mathrm{m}^{-1}\)</span>, 7.37452<span class="math inline">\(\times 10^{-14}\mathrm{m}^{-2}\)</span>}<br />
+<span class="math inline">\(g\)</span> = acceleration of gravity  <span class="math inline">\(^{(a)}\)</span> at latitude <span class="math inline">\(\lambda\)</span> and altitude <span class="math inline">\(z\)</span> above the WGS-84 geoid<br />
 <span class="math inline">\(R_{d}{}^{\dagger}\)</span> = gas constant for dry air<br />
 <span class="math inline">\(T_{K}\)</span> = absolute temperature = (ATX + 273.15)<br />
 <span class="math inline">\(a\)</span> = <a href="#acins">ACINS</a> = upward acceleration as measured by the INS [m s<sup>-2</sup>]<br />
@@ -358,7 +356,7 @@ result.
 <p class="box2">
 <span class="math display" id="eq:DNSEW">\[\begin{equation}
 \begin{split}
-\mathrm{DEI} = &amp; \mathrm{C_{deg2km}}(\mathrm{\{LON\}}-\{\mathrm{LON}_{ref}\})\cos(\mathrm{\{LAT\}}) \notag \\ 
+\mathrm{DEI} = &amp; \mathrm{C_{deg2km}}(\mathrm{\{LON\}}-\{\mathrm{LON}_{ref}\})\cos(\mathrm{\{LAT\}}) \notag \\
 \mathrm{DNI} = &amp; \mathrm{C_{deg2km}}(\mathrm{\{LAT\}}-\{\mathrm{LAT}_{ref}\})  
 \end{split}
 \tag{3.8}

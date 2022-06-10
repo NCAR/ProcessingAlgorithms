@@ -15,10 +15,9 @@ output:
     lib_dir: assets
     toc_depth: 2
     keep_tex: yes
-  bookdown::pdf_book:
-    lib_dir: assets
-    toc_depth: 2
-    keep_tex: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     df_print: paged
     keep_tex: yes
@@ -26,9 +25,10 @@ output:
     toc: yes
     toc_depth: 2
     toc_float: yes
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
+  bookdown::pdf_book:
+    lib_dir: assets
+    toc_depth: 2
+    keep_tex: yes
   bookdown::pdf_document2:
     toc: yes
     toc_depth: 2
