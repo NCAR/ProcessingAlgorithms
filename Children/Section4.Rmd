@@ -252,7 +252,7 @@ From \@ref(eq:TaEQ),
 
 *The radiometric ambient air temperature measured by the In-cloud Air Temperature Radiometer,* which measures the radiometric temperature in the 4.3 <span class="math inline">*μ*</span>m CO<span class="math inline"><sub>2</sub></span> band.<span id="AT_ITR" label="AT_ITR">[AT_ITR]</span> Its primary use is in water cloud when the standard thermometers are affected by wetting. In clear air the temperature is an average over an integrating range of up to 100s of meters away from the aircraft, whereas in clouds the integrating range is as little as 10 meters because of water droplets. The calibration is by a polynomial fit of the internal reference temperature and measured radiance to the ATX temperature outside of clouds.></p>
 
-#### Ophir Air Temperature (<span class="math inline"><sup>∘</sup></span>C): OAT {-#OAT} *(obsolete)*
+#### Ophir Air Temperature (<span class="math inline"><sup>∘</sup></span>C): OAT *(obsolete)*
 
 *The radiometric temperature reported by the Ophir III radiometer,* which operates on the same principles as the ITR,<span id="OAT" label="OAT">[OAT]</span> with the same limitations. The in-cloud air temperature radiometer is a later, improved version. The Ophir III has been retired.</p>
 <!-- <h2 id="humidity">Humidity</h2> -->
@@ -357,7 +357,7 @@ is used for {RHO}. DP_VXL is given by DPxC on the last line of that algorithm bo
 
 *Water vapor number density (or concentration of molecules) measured by the UV Hygrometer.* This is the direct measurement from the instrument. Its calculation relies on a bench calibration that fits the water vapor number density to the Beers-Lambert absorption law and corrects for output offsets and the effect of UV absorption by atmospheric constituents other than water vapor. See also the discussion of EW_UVH in the paragraph that immediately follows.</p>
 
-#### Water Vapor Pressure (hPa): EWx, EWX, EW_VXL, EW_UVH, EW_VXL, EDPC (obsolete) {-#ewx}
+#### Water Vapor Pressure (hPa): EWx, EWX, EW_VXL, EW_UVH, EDPC *(obsolete)* {-#ewx}
 
 *The ambient vapor pressure of water,* also used in the calculation of several derived variables. It is often obtained from an instrument measuring dew point or water vapor density. In the case where it is derived from a measurement of dew point (DPx), a correction is applied for the enhancement factor that influences dew point or frost point measurements.^[prior to 2011, this variable was calculated using the Goff-Gratch formula. See the discussion of DPXC for more information on previous calculations.]
 The formula for obtaining the ambient water vapor pressure as a function of dew point is given in the discussion of DPxC above, Eqs.\ \@ref(eq:MKw) and \@ref(eq:enhance), where the calculation of the variables EWx and EWX are also discussed. EWX (or previously EDPC) is the preferred variable that is selected from among the possibilities {EWx} for subsequent calculation of derived variables.<br />
