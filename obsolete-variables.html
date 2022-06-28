@@ -163,6 +163,11 @@
 <p>
 RAF retired the “GENPRO” processor, the software program previously used to produce data sets, in 1993, but data files produced by that processor are still retained and available for use. Also, there are some instruments that are now retired but provided measurements in some archived data files. Obsolete variable names that are associated only with GENPRO or a retired instrument are discussed below, for reference and to facilitate use of old data files.
 </p>
+<div id="ophir-air-temperature-c-oat" class="section level4 hasAnchor" number="10.0.0.1">
+<h4><span class="header-section-number">10.0.0.1</span> Ophir Air Temperature (<span class="math inline"><sup>∘</sup></span>C): OAT<a href="obsolete-variables.html#ophir-air-temperature-c-oat" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<em>The radiometric temperature reported by the Ophir III radiometer,</em> which operates on the same principles as the ITR,<span id="OAT" label="OAT">[OAT]</span> with the same limitations. The in-cloud air temperature radiometer is a later, improved version. The Ophir III has been retired.
+</p>
+</div>
 <div id="tptime" class="section level4 unnumbered hasAnchor">
 <h4>Unaltered Tape Time (s): TPTIME<a href="obsolete-variables.html#tptime" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 This variable is derived by converting the HOUR, MINUTE and SECOND to elapsed seconds after midnight of the current day. If time increments to the next day, its value is not reset to zero, but 86400 seconds are added to produce ever-increasing values for the data set.
@@ -208,7 +213,7 @@ These variables from the Litton LTN-51 Inertial Navigation System (INS) are anal
 <p>This is an integrated output from an up/down binary counter connected to the INS vertical accelerometer. Resolution is 0.012 m/s. Due to changes in local gravity and accumulated errors, this often develops a significant offset during flight.</p>
 </div>
 <div id="thf" class="section level4 unnumbered hasAnchor">
-<h4>Aircraft True Heading (</strong><span class="math inline">º</span><strong>): THF<a href="obsolete-variables.html#thf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Aircraft True Heading (</strong><span class="math inline">º</span></strong>): THF<a href="obsolete-variables.html#thf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 This measurement of aircraft heading was derived from the angle between the horizontal projection of the aircraft center and true north: THF = PHDG + ALPHA. Resolution is 0.0028<span class="math inline">º</span>.
 </p>
 </div>
@@ -240,7 +245,7 @@ These variables are calculated from UI and VI, the east and north components of 
 <p>AFIXx and BFIXx are amplified outputs from strain-gauges on fixed-vane sensors mounted at the end of a gust boom in the horizontal or vertical planes, respectively of the aircraft . The “force” on the vanes (calibrated in “equivalent grams” at Jefferson County Airport gravity) varies as a function of the aircraft attack or sideslip angles and dynamic pressure. Here x refers to left or right for AFIXx or top or bottom for BFIXx.</p>
 </div>
 <div id="akfxx" class="section level4 unnumbered hasAnchor">
-<h4>Attack Angle or Sideslip Angle (Fixed Vanes) (</strong><span class="math inline">º</span><strong>): AKFXx, SSFXx<a href="obsolete-variables.html#akfxx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Attack Angle or Sideslip Angle (Fixed Vanes) (</strong><span class="math inline">º</span></strong>): AKFXx, SSFXx<a href="obsolete-variables.html#akfxx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>AKFXx and SSFXx are the respective angles of attack and sideslip computed from AFIXx or BFIXx and QCx (either boom or gust dynamic pressure). An empirically derived function, HSSATK, is used to determine the attack pr sideslip angle based on wind tunnel test data.</p>
 </div>
 <div id="qcb" class="section level4 unnumbered hasAnchor">
