@@ -225,10 +225,6 @@ A measure of the impact the spatial geometry of the observed satellites has on t
 
 ## Other Measurements of Aircraft Altitude {#other-measurements-of-aircraft-altitude}
 
-#### Geometric Radio Altitude (m): HGM - (obsolete) {#hgm .unnumbered}
-
-*The distance to the surface below the aircraft,* measured by a radar altimeter. The maximum range is 762m (2,500 ft). The instrument changes in accuracy at an altitude of 152 m: The estimated error from 152 m to 762 m is 7%, while the estimated error for altitudes below 152 m is 1.5 m or 5%, whichever is greater.  
-
 #### Geometric Radar Altitude (Extended Range) APN-159 (APN-159) (m): HGME {#hgme-159 .unnumbered}
 
 *The distance to the surface below the aircraft, measured by a radar altimeter.* There are two outputs from an APN-159 radar altimeter, one with coarse resolution (CHGME) and one with fine resolution (HGME). Both raw outputs cycle through the range 0-360 degrees, where one cycle corresponds to 4,000 feet for HGME and to 100,000 feet for CHGME. To resolve the ambiguity arising from these cycles, 4,000-foot increments are added to HGME to maintain agreement with CHGME. This preserves the fine resolution of HGME (1.86 m) throughout the altitude range of the APN-159.  
