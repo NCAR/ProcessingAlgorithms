@@ -168,7 +168,7 @@ where <span class="math inline"><em>L</em><sub><em>G</em></sub> =  − 4
 This is the former output from the Trimble GPS indicating the mode of operation. The normal value is 4, indicating automatic (not manual) mode and that the receiver is operating in 4-satellite (as opposed to fewer) mode.<span id="punch3.5" label="punch3.5">[punch3.5]</span>  
 
 <strong>GPS Status:</strong> <strong></strong> <strong><span class="underline">GGSTATUS</span></strong>, <strong><span class="underline">GSTAT_G</span><span class="underline"></span></strong>, <strong><span class="underline">GSTAT</span></strong> (obsolete)<br />
-The status of the GPS receiver. A value of 1 indicates that the receiver is operating normally; a value of 0 indicates a warning regarding data quality. GGSTATUS indicates the status of the data-system GPS; GSTAT_G indicates the status of the avionics-system GPS. The obsolete variable GSTAT, formerly used for the same purpose, has the reverse meaning: A value of 0 indicates normal operation and any other code indicates a malfunction or warning regarding poor data accuracy.  
+*The status of the GPS receiver.* A value of 1 indicates that the receiver is operating normally; a value of 0 indicates a warning regarding data quality. GGSTATUS indicates the status of the data-system GPS; GSTAT_G indicates the status of the avionics-system GPS. The obsolete variable GSTAT, formerly used for the same purpose, has the reverse meaning: A value of 0 indicates normal operation and any other code indicates a malfunction or warning regarding poor data accuracy. 
 
 <span id="punch:3-14" label="punch:3-14">[punch:3-14]</span>
 
