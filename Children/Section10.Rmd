@@ -10,6 +10,10 @@
 
 This variable is derived by converting the HOUR, MINUTE and SECOND to elapsed seconds after midnight of the current day. If time increments to the next day, its value is not reset to zero, but 86400 seconds are added to produce ever-increasing values for the data set.</p>
 
+#### Geometric Radio Altitude (m): HGM {#hgm .unnumbered}
+
+*The distance to the surface below the aircraft,* measured by a radar altimeter. The maximum range is 762m (2,500 ft). The instrument changes in accuracy at an altitude of 152 m: The estimated error from 152 m to 762 m is 7%, while the estimated error for altitudes below 152 m is 1.5 m or 5%, whichever is greater.  
+
 #### Processor Time (s): PTIME {-#ptime}
 
 This is an internal time variable created by the GENPRO processor. It represents elapsed seconds after midnight. It differs from TPTIME in that, after it has been set at the beginning of the data set, it is incremented internally for each second of data processed. If duplicate or missing raw data records exist, it can differ from TPTIME. It is guaranteed to be a monotonically increasing and continuous series of values.</p>
