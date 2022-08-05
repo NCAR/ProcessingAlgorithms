@@ -6,7 +6,7 @@ The primary sources of information on the location and motion of the aircraft ar
 
 An Inertial Navigation System (INS) or Inertial Reference Unit (IRU) provides measurements of aircraft position, velocity relative to the Earth, acceleration and attitude or orientation. The IRU provides basic measurements of acceleration and angular rotation rate, while the INS integrates those measurements to track the position, altitude, velocity, and orientation of the aircraft. For the GV, the system is a Honeywell Laseref IV HG2001 GD03 Inertial Reference System; for the C-130, it is a Honeywell Model HG1095-AC03 Laseref V SM Inertial Reference System. These systems are described on the EOL web site, at <a href="http://www.eol.ucar.edu/instruments/inertial-navigation-system-aka-inertial-reference-unit">this URL</a>. Data from the IRS come via a serial digital bit stream (the ARINC digital bus) to the <a name='ads'>ADS</a> (Aircraft Data System). Because there is some delay in transmission and recording of these variables, adjustments for this delay are made when the measurements are merged into the processed data files, as documented in the NetCDF header files and as discussed in Section \@ref(synchronization-of-measurements). Typical delays are about 80 ms for variables including ACINS, PITCH, ROLL, and THDG.  
 
-Some variables are recorded only on the original “raw” data files and are not usually included in final archived data files; these are discussed at the end of this subsection. See also the discussion in Section \@ref(obsolete-variables) for information on results from inertial systems that were used prior to installation of the present Honeywell systems.
+Some variables are recorded only in the original “raw” data files and are not usually included in final archived data files; these are discussed at the end of this subsection. See also the discussion in Section \@ref(obsolete-variables) for information on results from inertial systems that were used prior to installation of the present Honeywell systems.
 
 An Inertial Navigation System “aligns” while the aircraft is stationary by measurement of the variations in its reference frame caused by the rotation of the Earth. Small inaccuracy in that alignment leads to a “Schuler oscillation” that produces oscillatory errors in position and other measurements, with a period $\tau_{Sch}$ of about 84 minutes ($\tau_{Sch}=2\pi\sqrt{R_{E}/g}$). Position errors of less than $1.0\,$n mi/h are within normal operating specifications. See Section \@ref(combining-irs-and-gps-measurements) for discussion of additional variables, similar to the following, for which corrections are made for these errors via reference to data from a Global Positioning System.  
 
@@ -28,7 +28,7 @@ after 6 h of flight. Values are provided by the INS at a frequency of 10 Hz.
 and the accuracy is reported by the manufacturer to be 0.164$^{\circ}$
 after 6 h of flight. Values are provided by the INS at a frequency of 10 Hz.  
 
-#### Aircraft True Heading ($^{\circ}$: THDG {#thdg .unnumbered}
+#### Aircraft True Heading ($^{\circ}$: THDG {#thdg .unnumbered})
 
 *The azimuthal angle between the center-line of the aircraft (pointing ahead, toward the nose) and a line of meridian.* This azimuthal angle is measured in a polar coordinate system oriented relative to the Earth with polar axis upward and azimuthal angle measured relative to true north. The heading thus indicates the orientation of the aircraft, not necessarily the direction in which the aircraft is traveling. The resolution is 0.00017$^{\circ}$
 and the uncertainty is quoted by the manufacturer as 0.2$^{\circ}$
@@ -42,7 +42,7 @@ after 6 h of flight. Values are provided by the INS at a frequency of 50 Hz.
 
 #### Aircraft Roll Attitude Angle ($^{\circ}$): ROLL {#roll .unnumbered}
 
-*The angle of rotation about the longitudinal axis of the aircraft required to bring the lateral axis (along the wings) to the horizontal plane.* Positive angles indicate that the starboard (right) wing is down ((i.e., a clockwise rotation has occurred from level when facing forward in the aircraft). The resolution is 0.00017$^{\circ}$
+*The angle of rotation about the longitudinal axis of the aircraft required to bring the lateral axis (along the wings) to the horizontal plane.* Positive angles indicate that the starboard (right) wing is down (i.e., a clockwise rotation has occurred from level when facing forward in the aircraft). The resolution is 0.00017$^{\circ}$
 and the uncertainty is quoted by the manufacturer as 0.05$^{\circ}$
 after 6 h of flight. Values are provided by the INS at a frequency of 50 Hz.  
 
