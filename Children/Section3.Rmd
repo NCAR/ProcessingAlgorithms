@@ -202,17 +202,17 @@ The number of satellites tracked by a GPS receiver. The receiver may not use all
 
 The status of the GPS receiver. A value of 1 indicates that the receiver is operating normally; a value of 0 indicates a warning regarding data quality. GGSTATUS indicates the status of the data-system GPS; GSTAT_G indicates the status of the avionics-system GPS. The obsolete variable GSTAT, formerly used for the same purpose, has the reverse meaning: A value of 0 indicates normal operation and any other code indicates a malfunction or warning regarding poor data accuracy.  
 
-#### Altitude, Latitude, and Longitude Standard Deviation (m): GGALTSD, GGLATSD, GGLONSD
+#### Altitude, Latitude, and Longitude Standard Deviation (m): GGALTSD, GGLATSD, GGLONSD {#ggaltsd .unnumbered}
 
-The estimated standard deviation in meters (1-sigma) of the altitude, latitude, and longitude measurements. These values are reported by the BESTPOS log in use since 2014.
+*The estimated standard deviation in meters (1-sigma) of the altitude, latitude, and longitude measurements.* These values are reported by the BESTPOS log in use since 2014.
 
-#### Differential Age (s): GGDAGE
+#### Differential Age (s): GGDAGE {#ggdage .unnumbered}
 
-The time since the last OmniSTAR/TerraStar corrections data was received. The corrections data typically update approximately every 15 seconds, and the estimated position uncertainty increases during the time between updates. Once the age exceeds the timeout (300 s by default) the receiver will exit OmniSTAR/TerraStar mode.
+*The time since the last OmniSTAR/TerraStar corrections data was received.* The corrections data typically update approximately every 15 seconds, and the estimated position uncertainty increases during the time between updates. Once the age exceeds the timeout (300 s by default) the receiver will exit OmniSTAR/TerraStar mode.
 
-#### Horizontal Dilution of Precision: GGHDOP
+#### Horizontal Dilution of Precision: GGHDOP {#gghdop .unnumbered}
 
-A measure of the impact the spatial geometry of the observed satellites has on the calculated horizontal position uncertainty. Values less then 2 are considered good. This is superceded by the reported measurement standard deviation recorded in the GGALTSD, GGLATSD, and GGLONSD variables.
+*A measure of the impact the spatial geometry of the observed satellites has on the calculated horizontal position uncertainty.* Values less then 2 are considered good. This is superceded by the reported measurement standard deviation recorded in the GGALTSD, GGLATSD, and GGLONSD variables.
 
 <!-- <h2 id="other-measurements-of-aircraft-altitude">Other Measurements of Aircraft Altitude</h2> -->
 
