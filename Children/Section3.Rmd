@@ -197,7 +197,7 @@ where <span class="math inline">*L*<sub>*G*</sub> =  − 4.30</span> m 
 
 #### GPS Satellites Tracked: GGNSAT {#ggnsat .unnumbered}
 
-*The number of satellites tracked by a GPS receiver. The receiver may not use all tracked satellites when calculating the position and velocities.*  
+The number of satellites tracked by a GPS receiver. The receiver may not use all tracked satellites when calculating the position and velocities. 
 
 #### GPS Quality Flag: GGQUAL {#ggqual .unnumbered} 
 
