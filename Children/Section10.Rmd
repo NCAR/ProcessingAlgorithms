@@ -72,6 +72,10 @@ These variables are calculated from UI and VI, the east and north components of 
 \end{align}
 </p>
 
+#### GPS Mode: GMODE {#gmode .unnumbered}
+
+*This is the former output from the Trimble GPS indicating the mode of operation.* The normal value is 4, indicating automatic (not manual) mode and that the receiver is operating in 4-satellite (as opposed to fewer) mode.
+
 #### Raw Attack and Sideslip Force (Fixed Vane) (g): AFIXx, BFIXx {-#vanes}
 
 AFIXx and BFIXx are amplified outputs from strain-gauges on fixed-vane sensors mounted at the end of a gust boom in the horizontal or vertical planes, respectively of the aircraft . The “force” on the vanes (calibrated in “equivalent grams” at Jefferson County Airport gravity) varies as a function of the aircraft attack or sideslip angles and dynamic pressure. Here x refers to left or right for AFIXx or top or bottom for BFIXx.
