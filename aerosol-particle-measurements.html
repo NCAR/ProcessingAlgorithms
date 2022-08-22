@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Aerosol Particle Measurements | RAF Technical Note: Processing Algorithms</title>
   <meta name="description" content="7 Aerosol Particle Measurements | RAF Technical Note: Processing Algorithms" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Aerosol Particle Measurements | RAF Technical Note: Processing Algorithms" />
   <meta property="og:type" content="book" />
@@ -277,7 +277,7 @@ In the 3786, flows are determined in volumetric cm<span class="math inline"><spa
 </div>
 <div id="concn" class="section level4 unnumbered hasAnchor">
 <h4>Condensation Nucleus (CN) Concentration (cm<sup>-3</sup>): CONCN<a href="aerosol-particle-measurements.html#concn" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<em>The number concentration of condensation nuclei</em> in units of particles per cm<span class="math inline"><em></em><sup>3</sup></span> <em>in the ambient air</em> at flight level. <em></em> The calculation leading to CONCN includes two corrections. The first accounts for coincidence of particles in the viewing volume at high concentrations and is handled differently in the two types of CN counter. For the 3760A, a statistical adjustment is made based on the average time of a particle in the viewing volume. This correction increases from about 1% at a total concentration of 10<span class="math inline"><em></em><sup>3</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span> to nearly 11% at 10<span class="math inline"><em></em><sup>4</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span>, but for concentrations above about 2 x 10<span class="math inline"><em></em><sup>4</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span> significant uncertainty remains. The 3786 instead measures the time each detected particle occupies the viewing volume, and this <em></em> accumulated “dead time” in each sampling interval is subtracted from the elapsed time yielding a “live time” for the determination of sample volume. With this correction an accuracy of 12%, not including statistical counting error, is specified by the manufacturer at concentrations up to 10<span class="math inline"><em></em><sup>5</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span>. The second correction, applied to all CN counters, is a conversion from instrument to ambient conditions.<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>
+<em>The number concentration of condensation nuclei</em> in units of particles per cm<span class="math inline"><em></em><sup>3</sup></span> <em>in the ambient air</em> at flight level. <em></em> The calculation leading to CONCN includes two corrections. The first accounts for coincidence of particles in the viewing volume at high concentrations and is handled differently in the two types of CN counter. For the 3760A, a statistical adjustment is made based on the average time of a particle in the viewing volume. This correction increases from about 1% at a total concentration of 10<span class="math inline"><em></em><sup>3</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span> to nearly 11% at 10<span class="math inline"><em></em><sup>4</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span>, but for concentrations above about 2 x 10<span class="math inline"><em></em><sup>4</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span> significant uncertainty remains. The 3786 instead measures the time each detected particle occupies the viewing volume, and this <em></em> accumulated “dead time” in each sampling interval is subtracted from the elapsed time yielding a “live time” for the determination of sample volume. With this correction an accuracy of 12%, not including statistical counting error, is specified by the manufacturer at concentrations up to 10<span class="math inline"><em></em><sup>5</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span>. The second correction, applied to all CN counters, is a conversion from instrument to ambient conditions.<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>
 In the following formulae, the corrected flow FCNC in VLPM is explicitly converted to cm<span class="math inline"><em></em><sup>3</sup></span>s<span class="math inline"><em></em><sup> − 1</sup></span> by the factor (1000/60).<em></em><br />
 <em></em><br />
 </p>
@@ -451,8 +451,8 @@ interval [s]<br />
 </div>
 <div class="footnotes">
 <hr />
-<ol start="48">
-<li id="fn48"><p>Prior to Dec. 2007 the conversion to ambient concentration was not made and concentration was reported for instrument conditions.<a href="aerosol-particle-measurements.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<ol start="46">
+<li id="fn46"><p>Prior to Dec. 2007 the conversion to ambient concentration was not made and concentration was reported for instrument conditions.<a href="aerosol-particle-measurements.html#fnref46" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -518,7 +518,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -2,6 +2,10 @@
 
 <p>RAF retired the “GENPRO” processor, the software program previously used to produce data sets, in 1993, but data files produced by that processor are still retained and available for use. Also, there are some instruments that are now retired but provided measurements in some archived data files. Obsolete variable names that are associated only with GENPRO or a retired instrument are discussed below, for reference and to facilitate use of old data files.</p>
 
+#### Pressure-Damped Inertial Altitude (m): HI3 {#hi3 .unnumbered}
+
+*The aircraft altitude obtained from the twice-integrated IRU acceleration (ACINS), pressure-adjusted to obtain long-term agreement with PALT.* Note that this variable has mixed character, producing short-term variations that accurately track the inertial system changes but with adjustment to the pressure altitude, which is not a true altitude. The variable is not appropriate for estimates of true altitude, but proves useful in the updating algorithm used with the LTN-51 INS for vertical wind. See the discussion of WP3.
+
 #### Ophir Air Temperature (<span class="math inline"><sup>∘</sup></span>C): OAT
 
 *The radiometric temperature reported by the Ophir III radiometer,* which operates on the same principles as the ITR,<span id="OAT" label="OAT">[OAT]</span> with the same limitations. The in-cloud air temperature radiometer is a later, improved version. The Ophir III has been retired.</p>

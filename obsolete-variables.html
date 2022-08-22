@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Obsolete Variables | RAF Technical Note: Processing Algorithms</title>
   <meta name="description" content="10 Obsolete Variables | RAF Technical Note: Processing Algorithms" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Obsolete Variables | RAF Technical Note: Processing Algorithms" />
   <meta property="og:type" content="book" />
@@ -163,6 +163,10 @@
 <p>
 RAF retired the “GENPRO” processor, the software program previously used to produce data sets, in 1993, but data files produced by that processor are still retained and available for use. Also, there are some instruments that are now retired but provided measurements in some archived data files. Obsolete variable names that are associated only with GENPRO or a retired instrument are discussed below, for reference and to facilitate use of old data files.
 </p>
+<div id="hi3" class="section level4 unnumbered hasAnchor">
+<h4>Pressure-Damped Inertial Altitude (m): HI3<a href="obsolete-variables.html#hi3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>The aircraft altitude obtained from the twice-integrated IRU acceleration (ACINS), pressure-adjusted to obtain long-term agreement with PALT.</em> Note that this variable has mixed character, producing short-term variations that accurately track the inertial system changes but with adjustment to the pressure altitude, which is not a true altitude. The variable is not appropriate for estimates of true altitude, but proves useful in the updating algorithm used with the LTN-51 INS for vertical wind. See the discussion of WP3.</p>
+</div>
 <div id="ophir-air-temperature-c-oat" class="section level4 hasAnchor" number="10.0.0.1">
 <h4><span class="header-section-number">10.0.0.1</span> Ophir Air Temperature (<span class="math inline"><sup>∘</sup></span>C): OAT<a href="obsolete-variables.html#ophir-air-temperature-c-oat" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <em>The radiometric temperature reported by the Ophir III radiometer,</em> which operates on the same principles as the ITR,<span id="OAT" label="OAT">[OAT]</span> with the same limitations. The in-cloud air temperature radiometer is a later, improved version. The Ophir III has been retired.
@@ -172,6 +176,16 @@ RAF retired the “GENPRO” processor, the software program previously used to 
 <h4>Unaltered Tape Time (s): TPTIME<a href="obsolete-variables.html#tptime" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 This variable is derived by converting the HOUR, MINUTE and SECOND to elapsed seconds after midnight of the current day. If time increments to the next day, its value is not reset to zero, but 86400 seconds are added to produce ever-increasing values for the data set.
 </p>
+</div>
+<div id="hgm" class="section level4 unnumbered hasAnchor">
+<h4>Geometric Radio Altitude (m): HGM<a href="obsolete-variables.html#hgm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>The distance to the surface below the aircraft,</em> measured by a radar altimeter. The maximum range is 762m (2,500 ft). The instrument changes in accuracy at an altitude of 152 m: The estimated error from 152 m to 762 m is 7%, while the estimated error for altitudes below 152 m is 1.5 m or 5%, whichever is greater.</p>
+</div>
+<div id="altx" class="section level4 unnumbered hasAnchor">
+<h4>Altitude, Reference (m MSL): ALTX (Obsolete), GGALTC (Obsolete)<a href="obsolete-variables.html#altx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>Derived altitude above the geopotential surface,</em> obtained by combining information from a GPS receiver and an inertial reference system. This variable was intended to compensate for times when GPS reception was lost by incorporating information from the IRS measurement of altitude. GPS status measurements were used to detect signal loss, although sometimes this signal was delayed for a few seconds after the signal was lost. A 10-second running average was calculated of the difference between the GPS altitude and the reference altitude. When the sample-to-sample altitude difference changed more than 50 meters or when the GPS status detected a degraded signal, the derived variable (ALTX or GGALTC) became the alternate reference altitude adjusted by the latest running-average difference between that reference altitude and GGALT. When reception was recovered, to avoid a sudden discontinuity in altitude, the derived variable was adjusted back to the GPS altitude gradually over the next 10 seconds.<br />
+<br />
+This obsolete variable should be used with caution because the reference altitude used in past calculations was the IRS altitude updated to the pressure altitude of the aircraft. To account for the difference between pressure and geometric altitude, a regression equation was used, normally <span class="math inline"><em>z</em> = <em>a</em><sub>0</sub> + <em>a</em><sub>1</sub> <em> </em>PALT*</span> where <span class="math inline"><em>a</em><sub>0</sub> =  − 46.3</span> m and <span class="math inline"><em>a</em><sub>1</sub> = 0.97866</span> but often adjusted dependent on project conditions. This introduced problems in early applications with the GV because it did not account for the pressure-altitude transition at the ISA tropopause. Use of a pressure altitude as reference introduces additional errors in altitude in regions that are not barotropic.<br /></p>
 </div>
 <div id="ptime" class="section level4 unnumbered hasAnchor">
 <h4>Processor Time (s): PTIME<a href="obsolete-variables.html#ptime" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -193,6 +207,63 @@ TMLAG is the amount of time between the reference time of a Litton LTN-5l Inerti
 <strong>Fractional Time (s): CFSEC</strong>
 </p>
 <p>Before the advent of GPS, NCAR/RAF operated a LORAN-C receiver that provided information on the position and groundspeed of the aircraft. The measurements of latitude and longitude from this system are CLAT and CLON, measured at 1 Hz and with positive values of longitude to the east and positive values of latitude to the north. and CCEP provides an estimate of the uncertainty in those measurements (in units of nautical miles). A status word, CSTAT, was used to record a value of 15 when the system was operational. The ground speed and reference times were also recorded in the above corresponding variables. The sum of CSEC and CFSEC represented the time of the measurement, which was not always the time in the data file when the measurements were recorded.</p>
+</div>
+<div id="wp3" class="section level4 unnumbered hasAnchor">
+<h4>Pressure-Damped Aircraft Vertical Velocity (m/s): WP3<a href="obsolete-variables.html#wp3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span id="WP3 algorithm" label="WP3 algorithm"></span>This was a derived variable incorporating a third-order damping feedback loop to remove the drift from the inertial system’s vertical accelerometer (ACINS or VZI) using pressure altitude (PALT) as a long-term, stable reference. Positive values are up. The Honeywell INS now in use provides its own version of this measurement, VSPD, and WP3 is now considered obsolete (and in any case should not be calculated from ACINS as provided by the Honeywell Laseref IRS because that ACINS already incorporates pressure damping). Documentation is included here because many old data files include this variable. Note that “pressure altitude” is not a true altitude but an altitude equivalent to the ambient pressure in a standard atmosphere, so updating a variable integrated from inertial measurements to this value can introduce errors vs. the true altitude. WP3 was calculated by the data-processing software as follows (with coefficients in historical use and not updated to the recommendations elsewhere in this technical note):<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>
+<br /></p>
+<!-- \fbox{\begin{minipage}[t]{0.95\textwidth}% -->
+<p class="box">
+<span class="math inline">\(g_{1}\)</span> = 9.780356 m s<sup>-2</sup><br />
+<span class="math inline">\(a_{1}\)</span> = 0.31391116<span class="math inline">\(\times 10\)</span><sup>-6</sup>m<sup>-1</sup><br />
+<span class="math inline">\(a_{2}\)</span> = .0052885 (dimensionless)<br />
+<a href="the-state-of-the-aircraft.html#vew">VEW</a> (<a href="the-state-of-the-aircraft.html#vns">VNS</a>) = eastward (northward) groundspeed of the aircraft (see
+below)<br />
+<a href="the-state-of-the-aircraft.html#latitude">LAT</a> = latitude measured by the IRS [º]<br />
+<span class="math inline">\(C_{dr}=\pi/180^{\circ}\)</span> = conversion factor, degrees to radians<br />
+<a href="the-state-of-the-aircraft.html#palt">PALT</a> = pressure altitude of the aircraft<br />
+<span class="math inline">\(\Omega\)</span> = angular rotation of the earth<span class="math inline">\(^{\dagger}\)</span> = 7.292116<span class="math inline">\(\times10^{6}\)</span>
+radians/s<br />
+<span class="math inline">\(R_{E}\)</span> = radius of the Earth<span class="math inline">\(^{\dagger}\)</span> = 6.371229<span class="math inline">\(\times10^{6}\)</span>
+m<br />
+<span class="math inline">\(g_{f}\)</span> = local gravity corrected for latitude and altitude<br />
+<span class="math inline">\(V_{c}\)</span> = correction to gravity for the motion of the aircraft<br />
+<span class="math inline">\(G_{L}\)</span> = local gravity at the location of INS alignment, corrected
+to zero altitude<br />
+<span class="math inline">\(\{C[0],C[1],C[2]\}\)</span> = feedback coefficients, {0.15, 0.0075, 0.000125}
+for 125-s response
+</p>
+<p class="box2">
+ 1. From the pressure altitude PALT (in m) and the latitude LAT, estimate
+the acceleration of gravity:<br />
+<span class="math display" id="eq:gf">\[\begin{equation}
+g_{f}=g_{1}\left(1+a_{2}\sin^{2}(\mathrm{C_{dr}\{LAT\})}+a_{1}\mathrm{\{PALT\}}\right)
+\tag{10.1}
+\end{equation}\]</span>
+ 2. Determine corrections for Coriolis acceleration
+and centrifugal acceleration:<br />
+<span class="math display" id="eq:ac">\[\begin{equation}
+a_{c}=2\Omega\mathrm{\{VEW\}}\cos(C_{r}\mathrm{\{LAT\}})+\frac{\mathrm{\{VEW\}}^{2}+\mathrm{\{VNS\}}^{2}}{R_{E}}
+\tag{10.2}
+\end{equation}\]</span>
+   Estimate the acceleration <span class="math inline">\(a_{z}\)</span> (code variable ‘acz’) experienced
+by the aircraft as follows:<br />
+<span class="math display" id="eq:acz">\[\begin{equation}
+\mathrm{\{acz\}}=a_{z}=\mathrm{\{ACINS\}}+G_{L}-g_{f}+a_{c}
+\tag{10.3}
+\end{equation}\]</span>
+   Use a feedback loop to update the integrated value of the acceleration.<br />
+   The following code segment uses <em>acz</em> to represent acceleration <span class="math inline">\(a_{z}\)</span>,<br />
+   “deltaT” to represent the time between updates, and “hx” and “hxx”
+to store the feedback terms:<br />
+     wp3[FeedBack] += (acz - C[1] * hx[FeedBack] – C[2] * hxx[FeedBack]) * deltaT[FeedBack]<br />
+ 3. Update the feedback terms (using “hi3” for storage):<br />
+     hi3[FeedBack] = hi3[FeedBack] + (wp3[FeedBack] – C[0] * hx[FeedBack]) * deltaT[FeedBack];<br />
+     hx[FeedBack] = hi3[FeedBack] - palt;<br />
+     hxx[FeedBack] = hxx[FeedBack] + hx[FeedBack] * deltaT[FeedBack];<br />
+ 4. Set WP3 to the average of the last wp3 result and the current wp3
+result.
+</p>
 </div>
 <div id="ltn51" class="section level4 unnumbered hasAnchor">
 <h4>LTN-51 Variables:<a href="obsolete-variables.html#ltn51" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -220,10 +291,11 @@ This measurement of aircraft heading was derived from the angle between the hori
 <div id="gsf-obsolete" class="section level4 unnumbered hasAnchor">
 <h4>Aircraft Ground Speed and East/North Components (m/s): GSF, VEW, VNS<a href="obsolete-variables.html#gsf-obsolete" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 These variables have the same names as the modern variables for ground speed. (Cf. Section <a href="the-state-of-the-aircraft.html#the-state-of-the-aircraft">3</a>.) GSF is the magnitude of the ground speed determined by the INS, as derived from XVI and YVI:<br />
+
 <p class="box2">
 <span class="math display" id="eq:GSF">\[\begin{equation}
 \mathrm{GSF=\sqrt{\{XVI\}^{2}+\{YVI\}^{2}}}
-\tag{10.1}
+\tag{10.4}
 \end{equation}\]</span>
 </p>
 <p>VEW and VNS are the east and north projections of this ground speed, derived using THF for the aircraft heading.</p>
@@ -234,11 +306,15 @@ These variables are calculated from UI and VI, the east and north components of 
 </p>
 <p class="box2">
 <span class="math display" id="eq:WDobs" id="eq:WSobs">\[\begin{align}
-\mathrm{WS} = &amp; \sqrt{\mathrm{\{UI\}^{2}+\{VI\}^{2}}} \tag{10.2}\\
+\mathrm{WS} = &amp; \sqrt{\mathrm{\{UI\}^{2}+\{VI\}^{2}}} \tag{10.5}\\
 \mathrm{WD} = &amp; \mathrm{\frac{180^{\circ}}{\pi}atan2(-\{UI\},}-\{VI\})+180^{\circ}
-\tag{10.3}
+\tag{10.6}
 \end{align}\]</span>
 </p>
+</div>
+<div id="gmode" class="section level4 unnumbered hasAnchor">
+<h4>GPS Mode: GMODE<a href="obsolete-variables.html#gmode" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>This is the former output from the Trimble GPS indicating the mode of operation.</em> The normal value is 4, indicating automatic (not manual) mode and that the receiver is operating in 4-satellite (as opposed to fewer) mode.</p>
 </div>
 <div id="vanes" class="section level4 unnumbered hasAnchor">
 <h4>Raw Attack and Sideslip Force (Fixed Vane) (g): AFIXx, BFIXx<a href="obsolete-variables.html#vanes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -325,14 +401,14 @@ For air temperature <span class="math inline">\(T &lt; -50^\circ\)</span>C:<br /
 <span class="math display" id="eq:EDPC1">\[\begin{align}
 \mathrm{\{EDPC\}} &amp;= 4.4685 + T(0.27347 + T (6.83811\times 10^{-3}\notag \\
 &amp;+ T(8.7094x10^{-5} + T(5.63513x10^{-7} + 1.47796 × 10^{-9}T)))
-\tag{10.4}
+\tag{10.7}
 \end{align}\]</span>
 For air temperature <span class="math inline">\(T \ge -50^\circ\)</span>C:<br />
 <span class="math display" id="eq:EDPC2">\[\begin{align}
 \mathrm{\{EDPC\}} &amp;= 6.107799961 + T(0.4436518521 + T(0.01428945805\notag \\
 &amp;+ T(2.650648471 × 10^{-4} + T(3.031240396 × 10^{-6}\notag \\
 &amp;+ T (2.034080948 × 10^{-8} + 6.136820929 × 10^{-11}T)))))
-\tag{10.5}
+\tag{10.8}
 \end{align}\]</span>
 </p>
 </div>
@@ -343,7 +419,7 @@ For air temperature <span class="math inline">\(T \ge -50^\circ\)</span>C:<br />
 <strong>Corrected Frost Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): FPCRC</strong><br />
 <strong>Corrected Dew Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): DPCRC</strong><br /></p>
 <p>The first two of these measurements were made directly in the chamber of the cryogenic hygrometer, a now obsolete cabin-mounted instrument connected to outside air by an inlet line. VCRH was determined from a third-order calibration equation applied to the voltage measured by the instrument.
-The corrected frost point and dew point temperatures are those determined after corrections are applied to the direct measurements from a cryogenic hygrometer. These measurements were from a now obsolete instrument but the variables are included here because they appear in some old data files. To obtain estimates of the ambient frost point and dew point, the measurements made inside the chamber of the cryogenic hygrometer (CVRH and CRHP) must be corrected for the difference in water vapor pressure between that chamber and ambient conditions. The ratio of the chamber pressure to the ambient pressure is assumed to be the same as the ratio of the chamber vapor pressure to the ambient vapor pressure. The vapor pressure in the chamber was determined from the Goff-Gratch (1946) equation<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>
+The corrected frost point and dew point temperatures are those determined after corrections are applied to the direct measurements from a cryogenic hygrometer. These measurements were from a now obsolete instrument but the variables are included here because they appear in some old data files. To obtain estimates of the ambient frost point and dew point, the measurements made inside the chamber of the cryogenic hygrometer (CVRH and CRHP) must be corrected for the difference in water vapor pressure between that chamber and ambient conditions. The ratio of the chamber pressure to the ambient pressure is assumed to be the same as the ratio of the chamber vapor pressure to the ambient vapor pressure. The vapor pressure in the chamber was determined from the Goff-Gratch (1946) equation<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>
 for saturation vapor pressure with respect to a plane ice surface. This vapor pressure was then used with CRHP and a measure of the ambient pressure (PSXC) to determine the vapor pressure in the outside air, and this was converted to an equivalent dew-point. The instrument was only used for measurements of frost point less than -15<span class="math inline"><em></em><sup>∘</sup></span>C because it did not function well above that frost point. The steps are documented below:</p>
 <p class="box">
 <a href="obsolete-variables.html#cryo-hygro">VCRH</a> = frost point inside the cryogenic hygrometer [<span class="math inline">\(^{\circ}\)</span>C]<br />
@@ -360,26 +436,26 @@ point <span class="math inline">\(T_{f}\)</span><br />
 chamber vapor pressure <span class="math inline">\(e_{ic}\)</span> (hPa):<br />
 <span class="math display" id="eq:DPCRCbox1">\[\begin{equation}
 e_{ic}=(6.1071\,\mathrm{mb})\times10^{A}  
-\tag{10.6}
+\tag{10.9}
 \end{equation}\]</span><br />
 where
 <span class="math display" id="eq:DPCRCbox2">\[\begin{align}  
 A=&amp;-9.09718\left(\frac{T_{3}}{\mathrm{\{VCRH\}}+T_{3}}-1\right) \notag \\
 + &amp; 3.56654\log_{10}\left(\frac{T_{3}}{\mathrm{\{VCRH\}}+T_{3}}\right) \notag \\
 + &amp; 0.876793\left(1-\frac{\mathrm{\{VCRH\}}+T_{3}}{T_{3}}\right)
-\tag{10.7}
+\tag{10.10}
 \end{align}\]</span><br />
 The ambient vapor pressure <span class="math inline">\(e_{a}\)</span> (hPa) then is:<br />
 <span class="math display" id="eq:DPCRCbox3">\[\begin{equation}
 e_{a}=e_{ic}\left(\frac{\mathrm{\{PSXC\}}}{\mathrm{\{CRHP\}}}\right)f_{i}
-\tag{10.8}
+\tag{10.11}
 \end{equation}\]</span><br />
 The ambient dew and frost points DPCRC and FPCRC are found iteratively by finding
 the values that lead to <span class="math inline">\(e_a\)</span> in the Goff-Gratch equations:<br />
 <span class="math display" id="eq:DPXRXbox4">\[\begin{align}
 e_{a} &amp; = F_{1}\left(\mathrm{\{DPCRC\}}\right)\notag \\
 &amp; = F_{2}\left(\mathrm{\{FPCRC\}}\right)
-\tag{10.9}
+\tag{10.12}
 \end{align}\]</span>
 </p>
 </div>
@@ -405,11 +481,11 @@ Tau = time constant for the exponential update (typically 300 s)
 For valid measurements (i.e., when DPXC <span class="math inline">\(&lt;\)</span> ATX and XUVI and RHODT are not missing}:<br />
 <span class="math display" id="eq:RHOUVbox1">\[\begin{equation}
 \mathrm{Offset}\mathrel{+}\mathrel{\mkern-1mu}=(\mathrm{\{RHODT\}-\{XUVI\}-Offset})/Tau
-\tag{10.10}
+\tag{10.13}
 \end{equation}\]</span>
 <span class="math display" id="eq:RHOUBbox2">\[\begin{equation}
 \mathrm{\{RHOUV\} = \{XUVI\} + Offset}
-\tag{10.11}
+\tag{10.14}
 \end{equation}\]</span>
 </p>
 </div>
@@ -430,7 +506,7 @@ Because the pyrgeometer measures net radiation, IRx must be corrected for emissi
 <p class="box2">
 <span class="math display" id="eq:IRxTbox">\[\begin{equation}
 \mathrm{\{IRxC\}}=\mathrm{\{IRx\}}-\beta\sigma(T_{D}^{4}-T_{S}^{4})+\epsilon\sigma T_{S}^{4}
-\tag{10.12}
+\tag{10.15}
 \end{equation}\]</span>
 </p>
 </div>
@@ -480,7 +556,7 @@ probe in the time interval <span class="math inline">\(\Delta t\)</span> [g]<br 
 <p class="box2">
 <span class="math display" id="eq:SCLWCbox">\[\begin{equation}
 \mathrm{\{SCLWC\}}=A\,U_{a}\frac{\Delta m}{\Delta t}
-\tag{10.13}
+\tag{10.16}
 \end{equation}\]</span>
 </p>
 </div>
@@ -503,7 +579,7 @@ probe in the time interval <span class="math inline">\(\Delta t\)</span> [g]<br 
 <p class="box2">
 <span class="math display" id="eq:FBMFRbox">\[\begin{equation}
 \mathrm{\{FBMFR\}=\{AFSSP\}/\{FSTROB\}}
-\tag{10.14}
+\tag{10.17}
 \end{equation}\]</span>
 </p>
 </div>
@@ -520,20 +596,21 @@ probe in the time interval <span class="math inline">\(\Delta t\)</span> [g]<br 
 <p class="box2">
 <span class="math display" id="eq:FACTbox">\[\begin{equation}
 \mathrm{\{FACT\}=\{FSTROB\}}\times t_{1}+\mathrm{\{FRESET\}}\times t_{2}
-\tag{10.15}
+\tag{10.18}
 \end{equation}\]</span>
 </p>
 </div>
 <div id="AACT" class="section level4 unnumbered hasAnchor">
 <h4>PCAS Raw Activity (dimensionless): PACT, AACT<a href="obsolete-variables.html#AACT" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 The PCAS probe provides this measure of dead time, the time that the probe is unable to sample particles because the electronics are occupied with processing particles. The manufacturer suggests that the actual dead time (<span class="math inline">\(f_{PCAS}\)</span>) is given by the following formula, which should be used when determining concentrations for the PCAS:<br />
+
 <p class="box">
 <span class="math display">\[F_{PCAS} = 1024\,\mathrm{s}^{-1}\]</span>
 </p>
 <p class="box2">
 <span class="math display" id="eq:fPCAS">\[\begin{equation}
 f_{PCAS} = 0.52\frac{\mathrm{\{PACT\}}}{F_{PCAS}}
-\tag{10.16}
+\tag{10.19}
 \end{equation}\]</span>
 </p>
 However, PACT (or AACT) is the variable archived in the data files.<br />
@@ -545,8 +622,9 @@ However, PACT (or AACT) is the variable archived in the data files.<br />
 
 <div class="footnotes">
 <hr />
-<ol start="54">
-<li id="fn54"><p>Goff, J. A., and S. Gratch (1946) Low-pressure properties of water from 160 to 212 °F, referenced and used in the Smithsonian Tables (List, 1980).<a href="obsolete-variables.html#fnref54" class="footnote-back">↩︎</a></p></li>
+<ol start="52">
+<li id="fn52"><p>Regarding signs, note that ACINS is a number near zero, not near g, and so already has the estimated acceleration of gravity removed. The assumption made in the following is that the INS will report values adjusted for the gravitational acceleration <em>at the point of alignment</em>, which would be <span class="math inline"><em>G</em><sub><em>L</em></sub></span>. If <span class="math inline"><em>g</em><sub><em>F</em></sub></span>, the estimate for gravity at the flight altitude (palt) and latitude (lat), is <em>smaller</em> than <span class="math inline"><em>G</em><sub><em>L</em></sub></span> then the difference (<span class="math inline"><em>G</em><sub><em>L</em></sub> − <em>g</em><sub><em>f</em></sub></span>) will be positive; this will correct for the reference value for ACINS being the gravity measured at alignment (<span class="math inline"><em>G</em><sub><em>L</em></sub></span>) when it should actually be the sensed gravity (<span class="math inline"><em>g</em><sub><em>f</em></sub></span>) at the measurement point, so to obtain (sensed acceleration - <span class="math inline"><em>g</em><sub><em>f</em></sub></span>) it is necessary to add (<span class="math inline"><em>G</em><sub><em>L</em></sub> − <em>g</em><sub><em>f</em></sub></span>) to ACINS, <em>increasing</em> “acz” in this case. However, the situation with “vcorac” is reversed: “vcorac” is a positive term for all eastward flight, for example, but in that case the motion of the aircraft makes objects seem lighter (i.e., they experience less acceleration of gravity) than without such flight. ACINS is positive upward so it represents a net acceleration of the aircraft upward (as imposed by the combination of gravity and the lift force of the aircraft). To accomplish level flight in these circumstances, the aircraft must actually accelerate downward so the accelerometer will experience a negative excursion relative to slower flight. To compensate, “vcorac” must make a positive contribution to remove that negative excursion from “acz”. In the conceptual extreme that the aircraft flies fast enough for the interior to appear weightless, ACINS would reduce to -1<span>*</span><span class="math inline"><em>G</em><sub><em>L</em></sub></span> and vcorac would increase to +<span class="math inline"><em>G</em><sub><em>L</em></sub></span>, leaving acz near zero as required if the aircraft were to remain in level flight in the rotating frame.<a href="obsolete-variables.html#fnref52" class="footnote-back">↩︎</a></p></li>
+<li id="fn53"><p>Goff, J. A., and S. Gratch (1946) Low-pressure properties of water from 160 to 212 °F, referenced and used in the Smithsonian Tables (List, 1980).<a href="obsolete-variables.html#fnref53" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -612,7 +690,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

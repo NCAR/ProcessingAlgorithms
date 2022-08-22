@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Radiation Variables | RAF Technical Note: Processing Algorithms</title>
   <meta name="description" content="8 Radiation Variables | RAF Technical Note: Processing Algorithms" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Radiation Variables | RAF Technical Note: Processing Algorithms" />
   <meta property="og:type" content="book" />
@@ -191,12 +191,12 @@ border-radius: 1px;
 <div id="measurements-of-irradiance-and-radiometric-temperature" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Measurements of Irradiance and Radiometric Temperature<a href="radiation-variables.html#measurements-of-irradiance-and-radiometric-temperature" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>
-The following references, although in part obsolete now, have additional information on radiation measurements from NCAR aircraft: <a href="https://opensky.ucar.edu/islandora/object/archives%3A8153">RAF Bulletin 25</a>, <a href="http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-175.pdf">Bannehr and Glover, 1991, NCAR Technical Note NCAR/TN-364+STR</a>, and <a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0450%281977%29016%3C0190%3APFIPP%3E2.0.CO%3B2">Albrecht and Cox, 1977</a>.<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>
+The following references, although in part obsolete now, have additional information on radiation measurements from NCAR aircraft: <a href="https://opensky.ucar.edu/islandora/object/archives%3A8153">RAF Bulletin 25</a>, <a href="http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-175.pdf">Bannehr and Glover, 1991, NCAR Technical Note NCAR/TN-364+STR</a>, and <a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0450%281977%29016%3C0190%3APFIPP%3E2.0.CO%3B2">Albrecht and Cox, 1977</a>.<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>
 The instruments are described in the “Radiation” section on <a href="https://www.eol.ucar.edu/aircraft-instrumentation">the EOL web site</a>. Some other radiometric measurements appear in Section <a href="the-state-of-the-atmosphere.html#the-state-of-the-atmosphere">4</a> because the measurements fit better there with measurements of state variables for the atmosphere; these include two measurements of air temperature by radiometric thermometers, <a href="the-state-of-the-atmosphere.html#AT_ITR">AT_ITR</a> and <a href="obsolete-variables.html#OAT">OAT</a>, and the Microwave Temperature Profiler <a href="http://www.eol.ucar.edu/instruments/microwave-temperature-profiler">MTP</a> that measures temperature profiles above and below the aircraft by radiometric measurements.<br />
 </p>
 <div id="rstx" class="section level4 unnumbered hasAnchor">
 <h4>Radiometric (Surface or Sky/Cloud-Base) Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): RSTx<a href="radiation-variables.html#rstx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><em>The equivalent black body temperature measured by an infrared radiometer.</em> The radiometers used on the GV and C-130 are Heimann Model KT-19.85 precision radiation thermometers. The KT19.85 spectral band extends from 9.6 to 11.5 m, and it has a 2̊ field of view. The x in the variable name denotes the instrument location on either the bottom (B) or top (T) of the aircraft. The KT-19.85 instruments are calibrated using a black-body source manufactured by Eppley.<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a></p>
+<p><em>The equivalent black body temperature measured by an infrared radiometer.</em> The radiometers used on the GV and C-130 are Heimann Model KT-19.85 precision radiation thermometers. The KT19.85 spectral band extends from 9.6 to 11.5 m, and it has a 2̊ field of view. The x in the variable name denotes the instrument location on either the bottom (B) or top (T) of the aircraft. The KT-19.85 instruments are calibrated using a black-body source manufactured by Eppley.<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a></p>
 </div>
 <div id="trstx" class="section level4 unnumbered hasAnchor">
 <h4>Radiometer Sensor Head Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): TRSTx<a href="radiation-variables.html#trstx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -204,7 +204,7 @@ The instruments are described in the “Radiation” section on <a href="https:/
 </div>
 <div id="irxv" class="section level4 unnumbered hasAnchor">
 <h4>Pyrgeometer Output (V): IRxV<a href="radiation-variables.html#irxv" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><em>The voltage representing long-wave irradiance,</em> from a pyrgeometer manufactured by Kipp &amp; Zonen. The CGR4 model used on the GV and C-130 includes a meniscus dome that provides a 180º field of view with negligible directional response error over the spectral range of 4.2 to 45 m. The thermal stability of the dome construction and coupling to the instrument body eliminates the need for dome temperature measurements or dome shading. It is calibrated at the Naval Research Lab over a range of temperatures encountered during flight according to procedures specified by Bucholtz et al. (2008).<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>
+<p><em>The voltage representing long-wave irradiance,</em> from a pyrgeometer manufactured by Kipp &amp; Zonen. The CGR4 model used on the GV and C-130 includes a meniscus dome that provides a 180º field of view with negligible directional response error over the spectral range of 4.2 to 45 m. The thermal stability of the dome construction and coupling to the instrument body eliminates the need for dome temperature measurements or dome shading. It is calibrated at the Naval Research Lab over a range of temperatures encountered during flight according to procedures specified by Bucholtz et al. (2008).<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>
 The pyrgeometers are usually flown in pairs, one looking upward and one looking downward. The letter ’x’ denotes location on either bottom (B) or top (T) of the aircraft. The primary derived variable from this instrument is IRxC, below.</p>
 </div>
 <div id="irxht" class="section level4 unnumbered hasAnchor">
@@ -213,7 +213,7 @@ The pyrgeometers are usually flown in pairs, one looking upward and one looking 
 </div>
 <div id="irxc" class="section level4 unnumbered hasAnchor">
 <h4>Calibrated Infrared Irradiance (W m<sup>-2</sup>): IRxC<a href="radiation-variables.html#irxc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><em>The infrared irradiance measured by a Kipp &amp; Zonen CGR4 instrument,</em><a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>
+<p><em>The infrared irradiance measured by a Kipp &amp; Zonen CGR4 instrument,</em><a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>
 <em></em> after application of a calibration function. The relationship between IRxV (V) and IRxC (W m<span class="math inline"><em></em><sup> − 2</sup></span>) is determined by a calibration in which the CGR4 views a NIST-referenced source over a range of sensor temperatures controlled by a cold bath. The processing algorithm is described in the following box:<br /></p>
 <p class="box">
 <a href="radiation-variables.html#irxht">IRxHTV</a> = voltage from a platinum resistance thermometer attached to the housing
@@ -265,7 +265,7 @@ The HIAPER Atmospheric Radiation Package (HARP) includes separate components tha
 </div>
 <div id="solar-angles" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Solar Angles<a href="radiation-variables.html#solar-angles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The calculations described in this group are used primarily when interpreting the calibrated visible irradiance (VISxC) but can be used by themselves or in conjunction with other measurements that need them. For additional documentation see <a href="http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-175.pdf">Bannehr and Glover, 1991, NCAR Technical Note NCAR/TN-364+STR</a> and <a href="http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html">this NOAA web site</a>.<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>
+<p>The calculations described in this group are used primarily when interpreting the calibrated visible irradiance (VISxC) but can be used by themselves or in conjunction with other measurements that need them. For additional documentation see <a href="http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-175.pdf">Bannehr and Glover, 1991, NCAR Technical Note NCAR/TN-364+STR</a> and <a href="http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html">this NOAA web site</a>.<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>
 The calculator at <a href="http://www.esrl.noaa.gov/gmd/grad/solcalc/">this link</a> can also be used to find these angles from the position and time in data files.</p>
 <div id="solde" class="section level4 unnumbered hasAnchor">
 <h4>Solar Declination Angle (radians): SOLDE<a href="radiation-variables.html#solde" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -424,12 +424,12 @@ If sin({SOLAZ}) &lt; sin({SOLDE})/sin(<span class="math inline">\(\phi):\)</s
 </div>
 <div class="footnotes">
 <hr />
-<ol start="49">
-<li id="fn49"><p>Albrecht, B. and Cox, S.K.: 1977, Procedure for Improving Pyrgeometer Performance, J<em>. Appl. Meteorol.</em>, <strong>16,</strong> 188–197.<a href="radiation-variables.html#fnref49" class="footnote-back">↩︎</a></p></li>
-<li id="fn50"><p>Some archived projects used this variable name for measurements from a narrow bandwidth, narrow field-of-view (2<span class="math inline">º</span>) Barnes Engineering Model PRT-5 precision radiation thermometer. This instrument is now retired. The spectral bandwidth available was either 8 to 14 <span class="math inline"><em>μ</em><em>m</em></span> or 9.5 to 11.5 <span class="math inline"><em>μ</em><em>m</em></span>. Its cavity temperature was monitored and recorded as either TCAVB or TCAVT.<a href="radiation-variables.html#fnref50" class="footnote-back">↩︎</a></p></li>
-<li id="fn51"><p>Bucholtz , Anthony, Robert T. Bluth , Ben Kelly, Scott Taylor, Keir Batson, Anthony W. Sarto , Tim P. Tooman , Robert F. McCoy, 2008: The Stabilized Radiometer Platform (STRAP) — An Actively Stabilized Horizontally Level Platform for Improved Aircraft Irradiance Measurements. <em>J. Atmos. Oceanic Technol.</em> , <strong>25,</strong> 2161 – 2175.<a href="radiation-variables.html#fnref51" class="footnote-back">↩︎</a></p></li>
-<li id="fn52"><p>Prior to 2009, IRx and IRxC were used to denote measurements from Eppley pyrgeometers. Processing methods for these obsolete variables are described in Section <a href="obsolete-variables.html#obsolete-variables">10</a>.<a href="radiation-variables.html#fnref52" class="footnote-back">↩︎</a></p></li>
-<li id="fn53"><p>The descriptions of SOLZE, SOLEL, and SOLAZ in Bulletin 9 were incorrect, but the code in use has been consistent and correct and continues to be used unchanged. For reference, that code is contained in the nimbus subroutine ’solang.c’.<a href="radiation-variables.html#fnref53" class="footnote-back">↩︎</a></p></li>
+<ol start="47">
+<li id="fn47"><p>Albrecht, B. and Cox, S.K.: 1977, Procedure for Improving Pyrgeometer Performance, J<em>. Appl. Meteorol.</em>, <strong>16,</strong> 188–197.<a href="radiation-variables.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p>Some archived projects used this variable name for measurements from a narrow bandwidth, narrow field-of-view (2<span class="math inline">º</span>) Barnes Engineering Model PRT-5 precision radiation thermometer. This instrument is now retired. The spectral bandwidth available was either 8 to 14 <span class="math inline"><em>μ</em><em>m</em></span> or 9.5 to 11.5 <span class="math inline"><em>μ</em><em>m</em></span>. Its cavity temperature was monitored and recorded as either TCAVB or TCAVT.<a href="radiation-variables.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p>Bucholtz , Anthony, Robert T. Bluth , Ben Kelly, Scott Taylor, Keir Batson, Anthony W. Sarto , Tim P. Tooman , Robert F. McCoy, 2008: The Stabilized Radiometer Platform (STRAP) — An Actively Stabilized Horizontally Level Platform for Improved Aircraft Irradiance Measurements. <em>J. Atmos. Oceanic Technol.</em> , <strong>25,</strong> 2161 – 2175.<a href="radiation-variables.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p>Prior to 2009, IRx and IRxC were used to denote measurements from Eppley pyrgeometers. Processing methods for these obsolete variables are described in Section <a href="obsolete-variables.html#obsolete-variables">10</a>.<a href="radiation-variables.html#fnref50" class="footnote-back">↩︎</a></p></li>
+<li id="fn51"><p>The descriptions of SOLZE, SOLEL, and SOLAZ in Bulletin 9 were incorrect, but the code in use has been consistent and correct and continues to be used unchanged. For reference, that code is contained in the nimbus subroutine ’solang.c’.<a href="radiation-variables.html#fnref51" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -495,7 +495,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

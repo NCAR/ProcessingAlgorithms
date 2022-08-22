@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Cloud Physics Variables | RAF Technical Note: Processing Algorithms</title>
   <meta name="description" content="5 Cloud Physics Variables | RAF Technical Note: Processing Algorithms" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Cloud Physics Variables | RAF Technical Note: Processing Algorithms" />
   <meta property="og:type" content="book" />
@@ -170,7 +170,7 @@ description for the algorithm used to obtain liquid water content from this meas
 </div>
 <div id="plwcc" class="section level4 unnumbered hasAnchor">
 <h4>PMS/CSIRO (King) Liquid Water Content (g/m<span class="math inline"><sup>3</sup></span>): PLWCC, PLWCC1<a href="cloud-physics-variables.html#plwcc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<em>The liquid water content</em> <em>measured by a King probe.</em> This is calculated by relating the power consumption required to maintain a constant temperature to the liquid water content, taking into account the effect of convective heat losses. The instrument and processing are described by King et al. (1978)<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>
+<em>The liquid water content</em> <em>measured by a King probe.</em> This is calculated by relating the power consumption required to maintain a constant temperature to the liquid water content, taking into account the effect of convective heat losses. The instrument and processing are described by King et al. (1978)<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>
 and in a note available at <a href="www/PLWCCrev140214.pdf">this URL</a>. Because the temperature of the sensing wire is typically well above the boiling point of water, the assumption made in processing is that the water collected on the sensing wire is vaporized at the boiling point <span class="math inline"><em>T</em><sub><em>b</em></sub></span>. The boiling point is represented as a function of pressure as described below.<br />
 </p>
 <style>
@@ -610,13 +610,13 @@ The archived data files sometimes have “housekeeping” variables included tha
 <th style="text-align: center;">
 </th>
 <th style="text-align: center;">
-<strong>Probe</strong><a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>
+<strong>Probe</strong><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>
 </th>
 <th style="text-align: center;">
 <strong>Channels</strong>
 </th>
 <th style="text-align: center;">
-<strong>Usable</strong><a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>
+<strong>Usable</strong><a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>
 </th>
 <th style="text-align: center;">
 <strong>Diameter Range</strong>
@@ -635,7 +635,7 @@ The archived data files sometimes have “housekeeping” variables included tha
 <span>F</span>
 </td>
 <td style="text-align: center;">
-<span>FSSP-100</span><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>
+<span>FSSP-100</span><a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>
 </td>
 <td style="text-align: center;">
 <span>0–15</span>
@@ -854,12 +854,12 @@ OAP-260X
 </tr>
 <tr class="odd">
 <td style="text-align: center;">
-1DC<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>
+1DC<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>
 </td>
 <td style="text-align: center;">
 </td>
 <td style="text-align: center;">
-2DC<span class="math inline"><sup><em>b</em>,</sup></span><a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>
+2DC<span class="math inline"><sup><em>b</em>,</sup></span><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>
 (old)
 </td>
 <td style="text-align: center;">
@@ -910,7 +910,7 @@ OAP-260X
 0-63
 </td>
 <td style="text-align: center;">
-1-62<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>
+1-62<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>
 </td>
 <td style="text-align: center;">
 25–1600 <span class="math inline"><em>μ</em></span>m
@@ -1154,7 +1154,7 @@ For the images from the 2D probes, separate data files need to be used. RAF prov
 </div>
 <div id="c1dc-c1dp" class="section level4 unnumbered hasAnchor">
 <h4>2D Size Distribution (L<span class="math inline"><sup> − 1</sup></span>channel<span class="math inline"><sup> − 1</sup></span>): C1DC, C1DP<a href="cloud-physics-variables.html#c1dc-c1dp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><em>The concentration of particles measured by a 2D probe in each of 62 bins in a specified time interval, usually 1 s.</em> These are calculated from A1DC by application of an assumed size-dependent sample volume based on probe characteristics and the flight speed. These are provided in a 64-element array for historical convention; the first element should be ignored if data predates TI3GER (2022), and the technique requires that the end elements be unshadowed and so precludes any measurement with width of 63 bins, so the 64-element vector has valid information only in bins 1–63. The cell boundaries are specified in the netCDF header as an attribute of C1DC or C1DP, and they specify the end points of the bin; e.g,, in the 64-element array of provided cell boundaries, the first element is the lower size limit of the first data cell which is the second element in C1DC. For a typical 2DC with 25-<span class="math inline"><em>μ</em></span>m size resolution, the cell sizes increase by 25 <span class="math inline"><em>μ</em></span>m per bin for each of the C1DC bins. Also included as attributes with the netCDF variable C1DC or C1DP are the size-dependent depth of field (mm) and effective sample area<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>
+<p><em>The concentration of particles measured by a 2D probe in each of 62 bins in a specified time interval, usually 1 s.</em> These are calculated from A1DC by application of an assumed size-dependent sample volume based on probe characteristics and the flight speed. These are provided in a 64-element array for historical convention; the first element should be ignored if data predates TI3GER (2022), and the technique requires that the end elements be unshadowed and so precludes any measurement with width of 63 bins, so the 64-element vector has valid information only in bins 1–63. The cell boundaries are specified in the netCDF header as an attribute of C1DC or C1DP, and they specify the end points of the bin; e.g,, in the 64-element array of provided cell boundaries, the first element is the lower size limit of the first data cell which is the second element in C1DC. For a typical 2DC with 25-<span class="math inline"><em>μ</em></span>m size resolution, the cell sizes increase by 25 <span class="math inline"><em>μ</em></span>m per bin for each of the C1DC bins. Also included as attributes with the netCDF variable C1DC or C1DP are the size-dependent depth of field (mm) and effective sample area<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>
 (mm), the latter having values of zero for the first and last elements in the 64-value vector.<br /></p>
 </div>
 <div id="conc2d" class="section level4 unnumbered hasAnchor">
@@ -1190,15 +1190,15 @@ For the images from the 2D probes, separate data files need to be used. RAF prov
 </div>
 <div class="footnotes">
 <hr />
-<ol start="36">
-<li id="fn36"><p>King, W. D., D. A. Parkin and R. J. Handsworth, 1978: A hot-wire liquid water device having fully calculable response characteristics. J. Appl. Meteorol., 17, 1809–1813. See also Bradley, S. G., and W. D. King, 1979 Frequency response of the CSIRO Liquid Water Probe. J. Appl. Meteorol., 18, 361–366.<a href="cloud-physics-variables.html#fnref36" class="footnote-back">↩︎</a></p></li>
-<li id="fn37"><p>Probes without links are described at <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">this URL</a>.<a href="cloud-physics-variables.html#fnref37" class="footnote-back">↩︎</a></p></li>
-<li id="fn38"><p>Channels may be unusable because the first channel is a historical carry-over and should be ignored if data predates TI3GER (2022), or because in the case of 2D probes the entire-in sizing technique reduces the number of bins where particles can be sized. Also, when some channels have been considered unreliable the netCDF header may specify that the usable bins are smaller than indicated here.<a href="cloud-physics-variables.html#fnref38" class="footnote-back">↩︎</a></p></li>
-<li id="fn39"><p>Now obsolete but present in many archived data sets.<a href="cloud-physics-variables.html#fnref39" class="footnote-back">↩︎</a></p></li>
-<li id="fn40"><p>See <a href="cloud-physics-variables.html#special-1d-nomenclature">here</a> for an explanation of this name convention.<a href="cloud-physics-variables.html#fnref40" class="footnote-back">↩︎</a></p></li>
-<li id="fn41"><p>Measurements from this and the next three 2D probes are discussed in Section <a href="cloud-physics-variables.html#hydrometeor-imaging-probes">5.3</a>.<a href="cloud-physics-variables.html#fnref41" class="footnote-back">↩︎</a></p></li>
-<li id="fn42"><p>Some of the lowest channels are often considered unreliable and excluded in processing.<a href="cloud-physics-variables.html#fnref42" class="footnote-back">↩︎</a></p></li>
-<li id="fn43"><p>commonly called “EffectiveAreaWidth” in the netCDF files<a href="cloud-physics-variables.html#fnref43" class="footnote-back">↩︎</a></p></li>
+<ol start="34">
+<li id="fn34"><p>King, W. D., D. A. Parkin and R. J. Handsworth, 1978: A hot-wire liquid water device having fully calculable response characteristics. J. Appl. Meteorol., 17, 1809–1813. See also Bradley, S. G., and W. D. King, 1979 Frequency response of the CSIRO Liquid Water Probe. J. Appl. Meteorol., 18, 361–366.<a href="cloud-physics-variables.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>Probes without links are described at <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">this URL</a>.<a href="cloud-physics-variables.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>Channels may be unusable because the first channel is a historical carry-over and should be ignored if data predates TI3GER (2022), or because in the case of 2D probes the entire-in sizing technique reduces the number of bins where particles can be sized. Also, when some channels have been considered unreliable the netCDF header may specify that the usable bins are smaller than indicated here.<a href="cloud-physics-variables.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>Now obsolete but present in many archived data sets.<a href="cloud-physics-variables.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>See <a href="cloud-physics-variables.html#special-1d-nomenclature">here</a> for an explanation of this name convention.<a href="cloud-physics-variables.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn39"><p>Measurements from this and the next three 2D probes are discussed in Section <a href="cloud-physics-variables.html#hydrometeor-imaging-probes">5.3</a>.<a href="cloud-physics-variables.html#fnref39" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>Some of the lowest channels are often considered unreliable and excluded in processing.<a href="cloud-physics-variables.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>commonly called “EffectiveAreaWidth” in the netCDF files<a href="cloud-physics-variables.html#fnref41" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -1264,7 +1264,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

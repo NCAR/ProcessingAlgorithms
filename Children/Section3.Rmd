@@ -28,7 +28,7 @@ after 6 h of flight. Values are provided by the INS at a frequency of 10 Hz.
 and the accuracy is reported by the manufacturer to be 0.164$^{\circ}$
 after 6 h of flight. Values are provided by the INS at a frequency of 10 Hz.  
 
-#### Aircraft True Heading ($^{\circ}$: THDG {#thdg .unnumbered})
+#### Aircraft True Heading ($^{\circ}$): THDG {#thdg .unnumbered}
 
 *The azimuthal angle between the center-line of the aircraft (pointing ahead, toward the nose) and a line of meridian.* This azimuthal angle is measured in a polar coordinate system oriented relative to the Earth with polar axis upward and azimuthal angle measured relative to true north. The heading thus indicates the orientation of the aircraft, not necessarily the direction in which the aircraft is traveling. The resolution is 0.00017$^{\circ}$
 and the uncertainty is quoted by the manufacturer as 0.2$^{\circ}$
@@ -233,10 +233,6 @@ The status of the GPS receiver. A value of 1 indicates that the receiver is oper
 #### Height of the Earth’s Surface (m MSL): SFC {#sfc .unnumbered}
 
 *The altitude of the Earth’s surface* at a location directly below the aircraft. The data source is the Shuttle Radar Topography Mission of 2000. The height estimate is described in <a href="www/HeightOfTerrain.pdf">this memo</a>.  
-
-#### Pressure-Damped Inertial Altitude (m): HI3 (obsolete) {#hi3 .unnumbered}
-
-*The aircraft altitude obtained from the twice-integrated IRU acceleration (ACINS), pressure-adjusted to obtain long-term agreement with PALT.* Note that this variable has mixed character, producing short-term variations that accurately track the inertial system changes but with adjustment to the pressure altitude, which is not a true altitude. The variable is not appropriate for estimates of true altitude, but proves useful in the updating algorithm used with the LTN-51 INS for vertical wind. See the discussion of WP3. This variable is now obsolete.  
 
 #### ISA Pressure Altitude (m): PALT {#palt .unnumbered}
 

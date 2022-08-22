@@ -1,7 +1,7 @@
 ---
 title: 'RAF Technical Note: Processing Algorithms'
 author: "Author: NCAR Research Aviation Facility Science and Instrumentation Group"
-date: "Date: June, 2022"
+date: "Date: August, 2022"
 output:
   bookdown::gitbook:
     config:
@@ -68,7 +68,7 @@ library(magrittr)
 This site serves as the RAF Technical Note on processing algorithms that are used for processing data collected on the RAF research aircraft. The variables that appear in archived data are defined here, and the algorithms used in their calculation are described. This document does not describe the instrumentation used, but there are many links to such descriptions. The goal of this document is to describe both current and past algorithms, so it is expected that this document will be modified often so that it can remain current.
 ```{r include = TRUE, echo = FALSE}
 ## construct data.frame for the following table:
-CHANGELOG <- data.frame("Revision" = c('June, 2022 (Draft)', 'June, 2019', 'February, 2019'))
+CHANGELOG <- data.frame("Revision" = c('August, 2022', 'June, 2019', 'February, 2019'))
 CHANGELOG$GitHub_Tag <- c('Release V2022.0', 'Release V2019.1', 'Release V2019.0')
 CHANGELOG$Summary <- c('Updates to constants based on CODATA published values (2018) (SB). Numerous updates to 3. The State of the Aircraft and 4. The State of the Atmosphere (SB, CW). Link to manuscript on Total Air Temperature (TAT) data quality analysis below Eq. 4.14 (JC). Correction to Eq. 7.9 to have UPRESS multiplied by 10 (MR). Other cosmetic changes have been made to the PDF-format version of June 2019, which was generated using the program LyX (WC).', 'License has been changed from GPL to BSD-3.', 'Original release.')
 ```

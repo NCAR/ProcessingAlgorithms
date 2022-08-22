@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="8 Radiation Variables | RAF Technical Note: Processing Algorithms" />
+<meta property="og:type" content="book" />
+
+
+
+
+<meta name="author" content="Author: NCAR Research Aviation Facility Science and Instrumentation Group" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="8 Radiation Variables | RAF Technical Note: Processing Algorithms">
+
+<title>8 Radiation Variables | RAF Technical Note: Processing Algorithms</title>
+
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="assets/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="assets/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="assets/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="assets/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="assets/navigation-1.1/tabsets.js"></script>
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if boostrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#index" id="toc-index">Preface</a>
+<ul>
+<li><a href="index.html#document-change-log" id="toc-document-change-log"><span class="toc-section-number">0.1</span> Document Change Log</a></li>
+<li><a href="index.html#citation-information" id="toc-citation-information"><span class="toc-section-number">0.2</span> Citation Information</a></li>
+</ul></li>
+<li class="has-sub"><a href="1-introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a>
+<ul>
+<li><a href="1-introduction.html#background-information" id="toc-background-information"><span class="toc-section-number">1.1</span> Background Information</a></li>
+<li><a href="1-introduction.html#alphabetical-list-of-variables" id="toc-alphabetical-list-of-variables"><span class="toc-section-number">1.2</span> Alphabetical List of Variables</a></li>
+<li><a href="1-introduction.html#constants-and-symbols" id="toc-constants-and-symbols"><span class="toc-section-number">1.3</span> Constants and Symbols</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-general-information-about-data-files.html#general-information-about-data-files" id="toc-general-information-about-data-files"><span class="toc-section-number">2</span> General Information About Data Files</a>
+<ul>
+<li><a href="2-general-information-about-data-files.html#units-and-abbreviations" id="toc-units-and-abbreviations"><span class="toc-section-number">2.1</span> Units and Abbreviations</a></li>
+<li><a href="2-general-information-about-data-files.html#variables-used-to-denote-time" id="toc-variables-used-to-denote-time"><span class="toc-section-number">2.2</span> Variables Used to Denote Time</a></li>
+<li><a href="2-general-information-about-data-files.html#synchronization-of-measurements" id="toc-synchronization-of-measurements"><span class="toc-section-number">2.3</span> Synchronization of Measurements</a></li>
+<li><a href="2-general-information-about-data-files.html#other-comments-on-terminology" id="toc-other-comments-on-terminology"><span class="toc-section-number">2.4</span> Other Comments on Terminology</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-the-state-of-the-aircraft.html#the-state-of-the-aircraft" id="toc-the-state-of-the-aircraft"><span class="toc-section-number">3</span> The State of the Aircraft</a>
+<ul>
+<li><a href="3-the-state-of-the-aircraft.html#inertial-reference-systems" id="toc-inertial-reference-systems"><span class="toc-section-number">3.1</span> Inertial Reference Systems</a></li>
+<li><a href="3-the-state-of-the-aircraft.html#global-positioning-systems" id="toc-global-positioning-systems"><span class="toc-section-number">3.2</span> Global Positioning Systems</a></li>
+<li><a href="3-the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude" id="toc-other-measurements-of-aircraft-altitude"><span class="toc-section-number">3.3</span> Other Measurements of Aircraft Altitude</a></li>
+<li><a href="3-the-state-of-the-aircraft.html#combining-irs-and-gps-measurements" id="toc-combining-irs-and-gps-measurements"><span class="toc-section-number">3.4</span> Combining IRS and GPS Measurements</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-the-state-of-the-atmosphere.html#the-state-of-the-atmosphere" id="toc-the-state-of-the-atmosphere"><span class="toc-section-number">4</span> The State of the Atmosphere</a>
+<ul>
+<li><a href="4-the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations" id="toc-information-on-instruments-and-calibrations"><span class="toc-section-number">4.1</span> Information on Instruments and Calibrations</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#variable-names" id="toc-variable-names"><span class="toc-section-number">4.2</span> Variable Names</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#pressure" id="toc-pressure"><span class="toc-section-number">4.3</span> Pressure</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#temperature-section" id="toc-temperature-section"><span class="toc-section-number">4.4</span> Temperature</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#humidity" id="toc-humidity"><span class="toc-section-number">4.5</span> Humidity</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#derived-thermodynamic-variables" id="toc-derived-thermodynamic-variables"><span class="toc-section-number">4.6</span> Derived Thermodynamic Variables</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#wind" id="toc-wind"><span class="toc-section-number">4.7</span> Wind</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#special-use-remote" id="toc-special-use-remote"><span class="toc-section-number">4.8</span> Special-Use Remote Sensors</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-cloud-physics-variables.html#cloud-physics-variables" id="toc-cloud-physics-variables"><span class="toc-section-number">5</span> Cloud Physics Variables</a>
+<ul>
+<li><a href="5-cloud-physics-variables.html#LWC" id="toc-LWC"><span class="toc-section-number">5.1</span> Measurements of Liquid Water Content</a></li>
+<li><a href="5-cloud-physics-variables.html#sensors-1-D-probes" id="toc-sensors-1-D-probes"><span class="toc-section-number">5.2</span> Sensors Detecting Individual Hydrometeors (1-D Probes)</a></li>
+<li><a href="5-cloud-physics-variables.html#hydrometeor-imaging-probes" id="toc-hydrometeor-imaging-probes"><span class="toc-section-number">5.3</span> Hydrometeor Imaging Probes</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-air-chemistry-measurements.html#air-chemistry-measurements" id="toc-air-chemistry-measurements"><span class="toc-section-number">6</span> Air Chemistry Measurements</a>
+<ul>
+<li><a href="6-air-chemistry-measurements.html#variables-in-standard-data-files" id="toc-variables-in-standard-data-files"><span class="toc-section-number">6.1</span> Variables in Standard Data Files</a></li>
+<li><a href="6-air-chemistry-measurements.html#awas-cims-qcls-toga" id="toc-awas-cims-qcls-toga"><span class="toc-section-number">6.2</span> Variables in Special Data Sets</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-aerosol-particle-measurements.html#aerosol-particle-measurements" id="toc-aerosol-particle-measurements"><span class="toc-section-number">7</span> Aerosol Particle Measurements</a>
+<ul>
+<li><a href="7-aerosol-particle-measurements.html#condensation-nucleus-counter" id="toc-condensation-nucleus-counter"><span class="toc-section-number">7.1</span> Condensation Nucleus Counter</a></li>
+<li><a href="7-aerosol-particle-measurements.html#aerosol-spec" id="toc-aerosol-spec"><span class="toc-section-number">7.2</span> Aerosol Spectrometers</a></li>
+<li><a href="7-aerosol-particle-measurements.html#special-aerosol" id="toc-special-aerosol"><span class="toc-section-number">7.3</span> Special Aerosol Measurements</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-radiation-variables.html#radiation-variables" id="toc-radiation-variables"><span class="toc-section-number">8</span> Radiation Variables</a>
+<ul>
+<li><a href="8-radiation-variables.html#measurements-of-irradiance-and-radiometric-temperature" id="toc-measurements-of-irradiance-and-radiometric-temperature"><span class="toc-section-number">8.1</span> Measurements of Irradiance and Radiometric Temperature</a></li>
+<li><a href="8-radiation-variables.html#harp" id="toc-harp"><span class="toc-section-number">8.2</span> Spectral Irradiance and Actinic Flux</a></li>
+<li><a href="8-radiation-variables.html#solar-angles" id="toc-solar-angles"><span class="toc-section-number">8.3</span> Solar Angles</a></li>
+</ul></li>
+<li><a href="9-experimental-variables.html#experimental-variables" id="toc-experimental-variables"><span class="toc-section-number">9</span> Experimental Variables</a></li>
+<li><a href="10-obsolete-variables.html#obsolete-variables" id="toc-obsolete-variables"><span class="toc-section-number">10</span> Obsolete Variables</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li><a href="appendix-a-list-of-symbols.html#appendix-a-list-of-symbols" id="toc-appendix-a-list-of-symbols">Appendix A: List of Symbols</a></li>
+<li><a href="appendix-b-variable-names.html#appendix-b-variable-names" id="toc-appendix-b-variable-names">Appendix B: Variable Names</a></li>
+<li class="has-sub"><a href="appendix-c-editing-the-t.n..html#appendix-c-editing-the-t.n." id="toc-appendix-c-editing-the-t.n.">Appendix C: Editing The T.N.</a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#notes-regarding-the-construction-and-structure-of-this-document" id="toc-notes-regarding-the-construction-and-structure-of-this-document">Notes regarding the construction and structure of this document:</a></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-or-pages-of-this-document-lyx-version" id="toc-referencing-specific-sections-or-pages-of-this-document-lyx-version">Referencing Specific Sections or Pages of this Document (LyX version):</a></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-of-this-document-rmarkdown-version" id="toc-referencing-specific-sections-of-this-document-rmarkdown-version">Referencing Specific Sections of this Document (RMarkdown version):</a></li>
+</ul></li>
+<li><a href="appendix-d-needing-attention.html#appendix-d-needing-attention" id="toc-appendix-d-needing-attention">Appendix D: Needing Attention</a></li>
+<li><a href="A-index-1.html#index-1" id="toc-index-1"><span class="toc-section-number">A</span> Index</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="radiation-variables" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Radiation Variables</h1>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<!-- <h2 id="measurements-of-irradiance-and-radiometric-temperature">Measurements of Irradiance and Radiometric Temperature</h2> -->
+<div id="measurements-of-irradiance-and-radiometric-temperature" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Measurements of Irradiance and Radiometric Temperature</h2>
+<p>
+The following references, although in part obsolete now, have additional information on radiation measurements from NCAR aircraft: <a href="https://opensky.ucar.edu/islandora/object/archives%3A8153">RAF Bulletin 25</a>, <a href="http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-175.pdf">Bannehr and Glover, 1991, NCAR Technical Note NCAR/TN-364+STR</a>, and <a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0450%281977%29016%3C0190%3APFIPP%3E2.0.CO%3B2">Albrecht and Cox, 1977</a>.<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>
+The instruments are described in the “Radiation” section on <a href="https://www.eol.ucar.edu/aircraft-instrumentation">the EOL web site</a>. Some other radiometric measurements appear in Section <a href="4-the-state-of-the-atmosphere.html#the-state-of-the-atmosphere">4</a> because the measurements fit better there with measurements of state variables for the atmosphere; these include two measurements of air temperature by radiometric thermometers, <a href="4-the-state-of-the-atmosphere.html#AT_ITR">AT_ITR</a> and <a href="10-obsolete-variables.html#OAT">OAT</a>, and the Microwave Temperature Profiler <a href="http://www.eol.ucar.edu/instruments/microwave-temperature-profiler">MTP</a> that measures temperature profiles above and below the aircraft by radiometric measurements.<br />
+</p>
+<div id="rstx" class="section level4 unnumbered">
+<h4>Radiometric (Surface or Sky/Cloud-Base) Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): RSTx</h4>
+<p><em>The equivalent black body temperature measured by an infrared radiometer.</em> The radiometers used on the GV and C-130 are Heimann Model KT-19.85 precision radiation thermometers. The KT19.85 spectral band extends from 9.6 to 11.5 m, and it has a 2̊ field of view. The x in the variable name denotes the instrument location on either the bottom (B) or top (T) of the aircraft. The KT-19.85 instruments are calibrated using a black-body source manufactured by Eppley.<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a></p>
+</div>
+<div id="trstx" class="section level4 unnumbered">
+<h4>Radiometer Sensor Head Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): TRSTx</h4>
+<p><em>The temperature of the sensing head of the KT19.85 radiometer sensing head</em>, usually applying to RSTB, the primary down-looking instrument. The down-looking instrument is normally heated to maintain a sensor-head temperature near the scene temperature. Consult the archived netCDF files or project reports for the calibration coefficients used, which often varied among projects.</p>
+</div>
+<div id="irxv" class="section level4 unnumbered">
+<h4>Pyrgeometer Output (V): IRxV</h4>
+<p><em>The voltage representing long-wave irradiance,</em> from a pyrgeometer manufactured by Kipp &amp; Zonen. The CGR4 model used on the GV and C-130 includes a meniscus dome that provides a 180º field of view with negligible directional response error over the spectral range of 4.2 to 45 m. The thermal stability of the dome construction and coupling to the instrument body eliminates the need for dome temperature measurements or dome shading. It is calibrated at the Naval Research Lab over a range of temperatures encountered during flight according to procedures specified by Bucholtz et al. (2008).<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>
+The pyrgeometers are usually flown in pairs, one looking upward and one looking downward. The letter ’x’ denotes location on either bottom (B) or top (T) of the aircraft. The primary derived variable from this instrument is IRxC, below.</p>
+</div>
+<div id="irxht" class="section level4 unnumbered">
+<h4>Pyrgeometer Housing Temperature (<span class="math inline"><em></em><sup>∘</sup></span>C): IRxHT</h4>
+<p><em>The temperature of the modified pyrgeometer housing,</em> measured by a platinum resistance temperature sensor. The calibrated temperature (IRxHT) is derived from the raw signal (IRxHTV) as described below:<br /></p>
+</div>
+<div id="irxc" class="section level4 unnumbered">
+<h4>Calibrated Infrared Irradiance (W m<sup>-2</sup>): IRxC</h4>
+<p><em>The infrared irradiance measured by a Kipp &amp; Zonen CGR4 instrument,</em><a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>
+<em></em> after application of a calibration function. The relationship between IRxV (V) and IRxC (W m<span class="math inline"><em></em><sup> − 2</sup></span>) is determined by a calibration in which the CGR4 views a NIST-referenced source over a range of sensor temperatures controlled by a cold bath. The processing algorithm is described in the following box:<br /></p>
+<p class="box">
+<a href="8-radiation-variables.html#irxht">IRxHTV</a> = voltage from a platinum resistance thermometer attached to the housing
+of the pyrgeometer [V]<br />
+{<span class="math inline">\(a_4,\,a_5\)</span>} = calibration coefficients [<span class="math inline">\(^\circ\)</span>C]<br />
+<span class="math inline">\(V_1\)</span> = 1 V (for consistency of units)
+</p>
+<p class="box2">
+<span class="math display" id="eq:IRxHTbox">\[\begin{equation}
+\mathrm{\{IRxHT\}} = a_4 + a_5\,\log_{10}(\mathrm{\{IRxHTV\}}\,/\,V_1)
+\tag{8.1}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="visxv" class="section level4 unnumbered">
+<h4>Pyranometer Output (V): VISxV</h4>
+<p><em>The voltage from a pyranometer,</em> representing visible irradiance. On the GV and C-130, Kipp &amp; Zonen CMP22 pyranometers measure visible irradiance. A high-quality quartz dome allows for a wide spectral range, improved directional response, and reduced thermal offsets. The spectral range is 0.32 to 3.6 m. The pyranometers are usually flown in pairs, one looking upward and one downward. On the C-130, these sensors are mounted on stabilized platforms that remain level during aircraft pitch and roll variations. They are calibrated pre- and post-project at the Naval Research Lab (Bucholtz et al, 2008; see footnote <a href="#fn:Bucholtz-2008" data-reference-type="ref" data-reference="fn:Bucholtz-2008">[fn:Bucholtz-2008]</a> on page ) using a sun-tracking shadow device and diffuse sunlight as a source. The letter ’x’ denotes either bottom (B, nadir-viewing) or top (T, zenith-viewing). The primary derived variable from this instrument is VISxC, below.</p>
+</div>
+<div id="visxht" class="section level4 unnumbered">
+<h4>Pyranometer Housing Temperature (<span class="math inline"><em></em><sup>∘</sup></span>C): VISxHT</h4>
+<p><em>The temperature of the modified housing unit of a pyranometer,</em> measured by a platinum resistance temperature sensor. A calibrated temperature (VISxHT) is derived from the raw signal, VISxHTV, which is normally not included in archive netCDF files. The equation used for the calibration is VISxHT = <span class="math inline"><em>a</em><sub>1</sub> + <em>a</em><sub>2</sub>log<sub>10</sub></span>({VISxHTV}/<span class="math inline"><em>V</em><sub>1</sub></span>) where <span class="math inline"><em>V</em><sub>1</sub></span>is 1 V and <span class="math inline">{<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>}</span> are calibration coefficients having dimensions of <span>[</span><span class="math inline"><em></em><sup>∘</sup></span>C<span>]</span>.<br /></p>
+</div>
+<div id="visxc" class="section level4 unnumbered">
+<h4>Calibrated Visible Irradiance (W m<sup>-2</sup>): VISxC</h4>
+<p><em>The visible irradiance measured by a Kipp &amp; Zonen CMP22 pyranometer.</em> The relationship between VISxV (V) and VISxC (W m<span class="math inline"><em></em><sup> − 2</sup></span>) is determined by calibration procedures in which the CMP22 views a clear sky source while a sun-tracking device blocks direct solar radiation. The normal processing algorithm is to apply a simple linear calibration, as follows:<br /></p>
+<p class="box">
+<a href="8-radiation-variables.html#visxv">VISxV</a> = voltage output by a pyranometer [V]<br />
+<span class="math inline">\(a_{1}\)</span> = linear calibration coefficient [W m<span class="math inline">\(^{-2}\)</span> V<span class="math inline">\(^{-1}\)</span>]
+</p>
+<p class="box2">
+<span class="math display" id="eq:VISxC">\[\begin{equation}
+\mathrm{\{VISxC\}}=a_{1}\mathrm{\{VISxV\}}
+\tag{8.2}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="stabilized-platform-angles-spxpitch-spxroll--spx" class="section level4" number="8.1.0.1">
+<h4><span class="header-section-number">8.1.0.1</span> Stabilized Platform Angles (<span class="math inline"><em></em><sup>∘</sup></span>): SPxPitch, SPxRoll {-spx}</h4>
+<p><em>The pitch and roll angles of the stabilized platforms, relative to the aircraft reference frame.</em> Upward- and downward-looking pyrgeometers and pyranometers on the C-130 are mounted on stabilized platforms that compensate for aircraft pitch and roll. These variables record the movement of the top (x=T) and bottom (x=B) platforms in response to aircraft pitch and roll changes. The platforms are mounted with 2.85<span class="math inline"><em></em><sup>∘</sup></span> downward pitch angle to compensate for the normal upward pitch of the aircraft. The range of motion is <span class="math inline"> ± 5<sup>∘</sup></span> in pitch and <span class="math inline"> ± 10<sup>∘</sup></span> in roll. The sign convention is that of the aircraft, for which nose-upward pitch and right-wing-down roll are positive.</p>
+<!-- <h2 id="spectral-irradiance-and-actinic-flux">Spectral Irradiance and Actinic Flux</h2> -->
+</div>
+</div>
+<div id="harp" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Spectral Irradiance and Actinic Flux</h2>
+<p>
+The HIAPER Atmospheric Radiation Package (HARP) includes separate components that measure spectral irradiance (both upwelling and downwelling) and actinic flux. The instrument is described at <a href="http://www.eol.ucar.edu/instruments/hiaper-airborne-radiation-package">this URL</a>. Data are recorded on dedicated disk drives associated with the instrument, not in the standard aircraft data-system files. This is an ancillary data set, for which special Matlab and IDL analysis routines have been developed, but the measurements are not merged into the netCDF archives produced by EOL. For data access and assistance with analysis routines, contact EOL/RAF data managers at <a href="mailto:raf-dm@eol.ucar.edu">mailto:raf-dm@eol.ucar.edu</a>.
+</p>
+<!-- <h2 id="solar-angles">Solar Angles</h2> -->
+</div>
+<div id="solar-angles" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Solar Angles</h2>
+<p>The calculations described in this group are used primarily when interpreting the calibrated visible irradiance (VISxC) but can be used by themselves or in conjunction with other measurements that need them. For additional documentation see <a href="http://nldr.library.ucar.edu/repository/assets/technotes/TECH-NOTE-000-000-000-175.pdf">Bannehr and Glover, 1991, NCAR Technical Note NCAR/TN-364+STR</a> and <a href="http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html">this NOAA web site</a>.<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>
+The calculator at <a href="http://www.esrl.noaa.gov/gmd/grad/solcalc/">this link</a> can also be used to find these angles from the position and time in data files.</p>
+<div id="solde" class="section level4 unnumbered">
+<h4>Solar Declination Angle (radians): SOLDE</h4>
+<p><em>The solar declination angle, the angular distance of the sun north of the earth’s equator.</em> (Negative values are south.) To obtain this, the solar hour angle is calculated (taking leap years into account).</p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<p class="box">
+<span class="math inline">\(N\)</span> = day number<br />
+    = number of days (corrected for leap years) since 1 January 1980<br />
+       (including fractional day from UTC time)<br />
+   = (year-1980)<em>365+(int)(year-1980)/4+day<br />
+      + (hour+min/60.+sec/3600.)/24.+<span class="math inline">\(M\)</span><br />
+   where <span class="math inline">\(M\)</span>=(int)(k+(int)((month-i)</em>30.6+b)<br />
+      with {i,b,k}={1,0.5,0} for month &lt;= 2<br />
+      and otherwise {3, 59.5, (1 for leap years, else 0)}<br />
+<span class="math inline">\(\Theta_h\)</span>: UTC time expressed as radians after solar noon<br />
+<span class="math inline">\(f,\ \alpha.\ \epsilon\)</span>: internal-calculation variables defined below<br />
+{SOLDE}: solar declination angle
+</p>
+<p class="box2">
+<span class="math display" id="eq:SOLDEbox1">\[\begin{equation}
+\theta_{h}=2\pi\frac{N}{365.25}
+\tag{8.3}
+\end{equation}\]</span>
+<span class="math display" id="eq:SOLDEbox2">\[\begin{equation}
+f=-0.031271-4.53963\times10^{-7}N+\theta_{h}
+\tag{8.4}
+\end{equation}\]</span>
+<span class="math display" id="eq:SOLDEalpha">\[\begin{align}
+\alpha  &amp;=  \theta_{h}+4.900968+0.000349\,\sin(2f)+3.67474\times10^{-7}N\notag \\
+        &amp;+(0.033434-2.3\times10^{-9}N)\,\sin(f)
+\tag{8.5}
+\end{align}\]</span>
+<span class="math display" id="eq:SOLDEeps">\[\begin{equation}
+\epsilon=0.409140-6.2149\times10^{-9}N
+\tag{8.6}
+\end{equation}\]</span>
+<span class="math display" id="eq:SOLDEbox">\[\begin{equation}
+\mathrm{{\{SOLDE\}}=}\arcsin(\sin\alpha\sin\epsilon)
+\tag{8.7}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="solel" class="section level4 unnumbered">
+<h4>Solar Elevation Angle (radians):SOLEL</h4>
+<p><em>The solar elevation angle, describing how high the sun appears in the sky.</em> The angle is measured between a line from the observer to the sun and the horizontal plane on which the observer is standing. The elevation angle is negative when the sun drops below the horizon, and the sum of the elevation angle and the zenith angle is <span class="math inline"><em>π</em>/2.</span></p>
+<p class="box">
+<span class="math inline">\(\theta_{G}\)</span> = Greenwich hour angle
+[radians]<br />
+<span class="math inline">\(\theta_{L}\)</span> = local hour angle
+[radians]<br />
+<span class="math inline">\(N\)</span> = day number [see SOLDE box above]<br />
+<span class="math inline">\(Y\)</span> = year (format as in 1980)
+<span class="math inline">\(\lambda\)</span> = latitude [radians]<br />
+<span class="math inline">\(\psi\)</span> = longitude [radians]
+<span class="math inline">\(h\)</span> = fractional hour = (hour + minute/60. + second/3600.)<br />
+<span class="math inline">\(\alpha\)</span>      see <a href="8-radiation-variables.html#eq:SOLDEalpha">(8.5)</a> in the SOLDE box above<br />
+<span class="math inline">\(\epsilon\)</span>      see <a href="8-radiation-variables.html#eq:SOLDEeps">(8.6)</a> in the SOLDE box<br />
+{SOLDE} = solar declination angle (radians) described above; cf. <a href="8-radiation-variables.html#eq:SOLDEbox">(8.7)</a>.
+</p>
+<p class="box2">
+<span class="math display" id="eq:SOLELbox1">\[\begin{equation}
+\theta_{G}=\arctan(\frac{\sin\alpha\cos\epsilon}{\cos\alpha})
+\tag{8.8}
+\end{equation}\]</span>
+<span class="math display" id="eq:SOLELbox2">\[\begin{align}
+\theta_{L} = &amp; \theta_{G}+\psi-2\pi\frac{h}{24}-1.759335\notag \\
+- &amp;2\pi(\frac{N}{365}-Y+1980)-3.694\times10^{-7}N
+\tag{8.9}
+\end{align}\]</span>
+<span class="math display" id="eq:SOLELbox3">\[\begin{equation}
+\mathrm{\mathrm{\{SOLEL\}}=\arcsin\left(\sin\lambda\sin\mathrm{\{SOLDE\}+\cos\lambda}\cos\mathrm{\{SOLDE\}}\cos\theta_{L}\right)}
+\tag{8.10}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="solze" class="section level4 unnumbered">
+<h4>Solar Zenith Angle (radians): SOLZE</h4>
+<em>The angle of the sun from the zenith, or the solar zenith angle.</em> Cf. also the discussion of the solar elevation angle, SOLEL. <span class="math inline">{<em>S</em><em>O</em><em>L</em><em>Z</em><em>E</em>} = (<em>π</em>/2) − {<em>S</em><em>O</em><em>L</em><em>E</em><em>L</em>}</span> with {SOLEL} given by <a href="8-radiation-variables.html#eq:SOLELbox3">(8.10)</a> above.
+</p>
+</div>
+<div id="solaz" class="section level4 unnumbered">
+<h4>Solar Azimuth Angle (radians): SOLAZ</h4>
+<p><em>The solar azimuth angle, the angular distance between due south and the projection of the line of sight to the sun on the ground.</em> A positive solar azimuth angle indicates a position east of south (i.e., morning).</p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<p class="box">
+<span class="math inline">\(\theta_{L}\)</span> = local hour angle (radians): see <a href="8-radiation-variables.html#eq:SOLELbox2">(8.9)</a><br />
+{SOLDE} = solar declination angle (radians): see <a href="8-radiation-variables.html#eq:SOLDEbox">(8.7)</a><br />
+{SOLEL} = solar elevation angle (radians): see <a href="8-radiation-variables.html#eq:SOLELbox3">(8.10)</a><br />
+{SOLAZ} = solar azimuth angle [radians]
+</p>
+<p class="box2">
+<span class="math display" id="eq:SOLAZbox1">\[\begin{equation}
+\mathrm{\{SOLAZ\}=\arcsin\left(\frac{\cos\mathrm{\{SOLDE\}\sin\theta_{L}}}{\cos\mathrm{\{SOLEL\}}}\right)}
+\tag{8.11}
+\end{equation}\]</span>
+If sin({SOLAZ}) &lt; sin({SOLDE})/sin(<span class="math inline">\(\phi):\)</span><br />
+<span class="math display" id="eq:SOLAZbox2">\[\begin{equation}
+\mathrm{\{SOLAZ\}} = \pi/2-\mathrm{\{SOLAZ\}}
+\tag{8.12}
+\end{equation}\]</span>
+</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="48">
+<li id="fn48"><p>Albrecht, B. and Cox, S.K.: 1977, Procedure for Improving Pyrgeometer Performance, J<em>. Appl. Meteorol.</em>, <strong>16,</strong> 188–197.<a href="8-radiation-variables.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p>Some archived projects used this variable name for measurements from a narrow bandwidth, narrow field-of-view (2<span class="math inline">º</span>) Barnes Engineering Model PRT-5 precision radiation thermometer. This instrument is now retired. The spectral bandwidth available was either 8 to 14 <span class="math inline"><em>μ</em><em>m</em></span> or 9.5 to 11.5 <span class="math inline"><em>μ</em><em>m</em></span>. Its cavity temperature was monitored and recorded as either TCAVB or TCAVT.<a href="8-radiation-variables.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p>Bucholtz , Anthony, Robert T. Bluth , Ben Kelly, Scott Taylor, Keir Batson, Anthony W. Sarto , Tim P. Tooman , Robert F. McCoy, 2008: The Stabilized Radiometer Platform (STRAP) — An Actively Stabilized Horizontally Level Platform for Improved Aircraft Irradiance Measurements. <em>J. Atmos. Oceanic Technol.</em> , <strong>25,</strong> 2161 – 2175.<a href="8-radiation-variables.html#fnref50" class="footnote-back">↩︎</a></p></li>
+<li id="fn51"><p>Prior to 2009, IRx and IRxC were used to denote measurements from Eppley pyrgeometers. Processing methods for these obsolete variables are described in Section <a href="10-obsolete-variables.html#obsolete-variables">10</a>.<a href="8-radiation-variables.html#fnref51" class="footnote-back">↩︎</a></p></li>
+<li id="fn52"><p>The descriptions of SOLZE, SOLEL, and SOLAZ in Bulletin 9 were incorrect, but the code in use has been consistent and correct and continues to be used unchanged. For reference, that code is contained in the nimbus subroutine ’solang.c’.<a href="8-radiation-variables.html#fnref52" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<p style="text-align: center;">
+<a href="7-aerosol-particle-measurements.html"><button class="btn btn-default">Previous</button></a>
+<a href="9-experimental-variables.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
