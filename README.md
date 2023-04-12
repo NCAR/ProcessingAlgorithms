@@ -16,10 +16,8 @@ When referencing this RAF Technical Note on processing algorithms, please use th
 
 > UCAR/NCAR - Earth Observing Laboratory (2019) RAF Technical Note: Processing Algorithms. UCAR/NCAR - Earth Observing Laboratory. https://doi.org/10.26023/zc3gpm25  V2019.1 Retrieved *enter date here*
 
-A list of all versions is available here: https://github.com/NCAR/aircraft_ProcessingAlgorithms/releases . Please update the version number to reflect the version you wish to reference.
-
 ### Notes to maintainers
 
-Instructions for updating this document are at the end of the PDF.
+The Rmd branch of this repository is used to generate the content at https://ncar.github.io/aircraft_ProcessingAlgorithms/index.html
 
-Each time this document is updated, a new release needs to be created. Then the DOI needs to be updated to reflect the new release. Contact data-help@eol.ucar.edu to have the DOI metadata updated.
+Each time this document is updated, the change log on the within the Preface should be updated with a description of the change. A static PDF should be generated to capture the previous version (before the change) so that citations can reference the version of the document that was used. 
