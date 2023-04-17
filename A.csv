@@ -1,0 +1,18 @@
+Code,Location,Aircraft
+OBL,Outboard Left,C-130Q
+IBL,Inboard Left,C-130Q
+OBR,Outboard Right,C-130Q
+IBR,Inboard Right,C-130Q
+LPO,Left Pod Outboard,C-130Q
+LPI,Left Pod Inboard,C-130Q
+LPC,Left Pod Center,C-130Q
+RPO,Right Pod Outboard,C-130Q
+RPI,Right Pod Inboard,C-130Q
+RPC,Right Pod Center,C-130Q
+OBL,Left Wing,Electra
+IBL,Left Pylon,Electra
+WDL,Window Left,Electra
+OBR,Right Wing,Electra
+IBR,Right Pylon,Electra
+WDR,Window Right,Electra
+"{L,R}W{I,M,O}{I,O}",see discussion above,GV

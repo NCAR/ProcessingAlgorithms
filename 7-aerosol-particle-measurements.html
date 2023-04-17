@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="7 Aerosol Particle Measurements | RAF Technical Note: Processing Algorithms" />
+<meta property="og:type" content="book" />
+
+
+
+
+<meta name="author" content="Author: NCAR Research Aviation Facility Science and Instrumentation Group" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="7 Aerosol Particle Measurements | RAF Technical Note: Processing Algorithms">
+
+<title>7 Aerosol Particle Measurements | RAF Technical Note: Processing Algorithms</title>
+
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="assets/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="assets/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="assets/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="assets/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="assets/navigation-1.1/tabsets.js"></script>
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if boostrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#index" id="toc-index">Preface</a>
+<ul>
+<li><a href="index.html#document-change-log" id="toc-document-change-log"><span class="toc-section-number">0.1</span> Document Change Log</a></li>
+<li><a href="index.html#citation-information" id="toc-citation-information"><span class="toc-section-number">0.2</span> Citation Information</a></li>
+</ul></li>
+<li class="has-sub"><a href="1-introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a>
+<ul>
+<li><a href="1-introduction.html#background-information" id="toc-background-information"><span class="toc-section-number">1.1</span> Background Information</a></li>
+<li><a href="1-introduction.html#alphabetical-list-of-variables" id="toc-alphabetical-list-of-variables"><span class="toc-section-number">1.2</span> Alphabetical List of Variables</a></li>
+<li><a href="1-introduction.html#constants-and-symbols" id="toc-constants-and-symbols"><span class="toc-section-number">1.3</span> Constants and Symbols</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-general-information-about-data-files.html#general-information-about-data-files" id="toc-general-information-about-data-files"><span class="toc-section-number">2</span> General Information About Data Files</a>
+<ul>
+<li><a href="2-general-information-about-data-files.html#units-and-abbreviations" id="toc-units-and-abbreviations"><span class="toc-section-number">2.1</span> Units and Abbreviations</a></li>
+<li><a href="2-general-information-about-data-files.html#variables-used-to-denote-time" id="toc-variables-used-to-denote-time"><span class="toc-section-number">2.2</span> Variables Used to Denote Time</a></li>
+<li><a href="2-general-information-about-data-files.html#synchronization-of-measurements" id="toc-synchronization-of-measurements"><span class="toc-section-number">2.3</span> Synchronization of Measurements</a></li>
+<li><a href="2-general-information-about-data-files.html#other-comments-on-terminology" id="toc-other-comments-on-terminology"><span class="toc-section-number">2.4</span> Other Comments on Terminology</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-the-state-of-the-aircraft.html#the-state-of-the-aircraft" id="toc-the-state-of-the-aircraft"><span class="toc-section-number">3</span> The State of the Aircraft</a>
+<ul>
+<li><a href="3-the-state-of-the-aircraft.html#inertial-reference-systems" id="toc-inertial-reference-systems"><span class="toc-section-number">3.1</span> Inertial Reference Systems</a></li>
+<li><a href="3-the-state-of-the-aircraft.html#global-positioning-systems" id="toc-global-positioning-systems"><span class="toc-section-number">3.2</span> Global Positioning Systems</a></li>
+<li><a href="3-the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude" id="toc-other-measurements-of-aircraft-altitude"><span class="toc-section-number">3.3</span> Other Measurements of Aircraft Altitude</a></li>
+<li><a href="3-the-state-of-the-aircraft.html#combining-irs-and-gps-measurements" id="toc-combining-irs-and-gps-measurements"><span class="toc-section-number">3.4</span> Combining IRS and GPS Measurements</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-the-state-of-the-atmosphere.html#the-state-of-the-atmosphere" id="toc-the-state-of-the-atmosphere"><span class="toc-section-number">4</span> The State of the Atmosphere</a>
+<ul>
+<li><a href="4-the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations" id="toc-information-on-instruments-and-calibrations"><span class="toc-section-number">4.1</span> Information on Instruments and Calibrations</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#variable-names" id="toc-variable-names"><span class="toc-section-number">4.2</span> Variable Names</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#pressure" id="toc-pressure"><span class="toc-section-number">4.3</span> Pressure</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#temperature-section" id="toc-temperature-section"><span class="toc-section-number">4.4</span> Temperature</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#humidity" id="toc-humidity"><span class="toc-section-number">4.5</span> Humidity</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#derived-thermodynamic-variables" id="toc-derived-thermodynamic-variables"><span class="toc-section-number">4.6</span> Derived Thermodynamic Variables</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#wind" id="toc-wind"><span class="toc-section-number">4.7</span> Wind</a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#special-use-remote" id="toc-special-use-remote"><span class="toc-section-number">4.8</span> Special-Use Remote Sensors</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-cloud-physics-variables.html#cloud-physics-variables" id="toc-cloud-physics-variables"><span class="toc-section-number">5</span> Cloud Physics Variables</a>
+<ul>
+<li><a href="5-cloud-physics-variables.html#LWC" id="toc-LWC"><span class="toc-section-number">5.1</span> Measurements of Liquid Water Content</a></li>
+<li><a href="5-cloud-physics-variables.html#sensors-1-D-probes" id="toc-sensors-1-D-probes"><span class="toc-section-number">5.2</span> Sensors Detecting Individual Hydrometeors (1-D Probes)</a></li>
+<li><a href="5-cloud-physics-variables.html#hydrometeor-imaging-probes" id="toc-hydrometeor-imaging-probes"><span class="toc-section-number">5.3</span> Hydrometeor Imaging Probes</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-air-chemistry-measurements.html#air-chemistry-measurements" id="toc-air-chemistry-measurements"><span class="toc-section-number">6</span> Air Chemistry Measurements</a>
+<ul>
+<li><a href="6-air-chemistry-measurements.html#variables-in-standard-data-files" id="toc-variables-in-standard-data-files"><span class="toc-section-number">6.1</span> Variables in Standard Data Files</a></li>
+<li><a href="6-air-chemistry-measurements.html#awas-cims-qcls-toga" id="toc-awas-cims-qcls-toga"><span class="toc-section-number">6.2</span> Variables in Special Data Sets</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-aerosol-particle-measurements.html#aerosol-particle-measurements" id="toc-aerosol-particle-measurements"><span class="toc-section-number">7</span> Aerosol Particle Measurements</a>
+<ul>
+<li><a href="7-aerosol-particle-measurements.html#condensation-nucleus-counter" id="toc-condensation-nucleus-counter"><span class="toc-section-number">7.1</span> Condensation Nucleus Counter</a></li>
+<li><a href="7-aerosol-particle-measurements.html#aerosol-spec" id="toc-aerosol-spec"><span class="toc-section-number">7.2</span> Aerosol Spectrometers</a></li>
+<li><a href="7-aerosol-particle-measurements.html#special-aerosol" id="toc-special-aerosol"><span class="toc-section-number">7.3</span> Special Aerosol Measurements</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-radiation-variables.html#radiation-variables" id="toc-radiation-variables"><span class="toc-section-number">8</span> Radiation Variables</a>
+<ul>
+<li><a href="8-radiation-variables.html#measurements-of-irradiance-and-radiometric-temperature" id="toc-measurements-of-irradiance-and-radiometric-temperature"><span class="toc-section-number">8.1</span> Measurements of Irradiance and Radiometric Temperature</a></li>
+<li><a href="8-radiation-variables.html#harp" id="toc-harp"><span class="toc-section-number">8.2</span> Spectral Irradiance and Actinic Flux</a></li>
+<li><a href="8-radiation-variables.html#solar-angles" id="toc-solar-angles"><span class="toc-section-number">8.3</span> Solar Angles</a></li>
+</ul></li>
+<li><a href="9-experimental-variables.html#experimental-variables" id="toc-experimental-variables"><span class="toc-section-number">9</span> Experimental Variables</a></li>
+<li><a href="10-obsolete-variables.html#obsolete-variables" id="toc-obsolete-variables"><span class="toc-section-number">10</span> Obsolete Variables</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li><a href="appendix-a-list-of-symbols.html#appendix-a-list-of-symbols" id="toc-appendix-a-list-of-symbols">Appendix A: List of Symbols</a></li>
+<li><a href="appendix-b-variable-names.html#appendix-b-variable-names" id="toc-appendix-b-variable-names">Appendix B: Variable Names</a></li>
+<li class="has-sub"><a href="appendix-c-editing-the-t.n..html#appendix-c-editing-the-t.n." id="toc-appendix-c-editing-the-t.n.">Appendix C: Editing The T.N.</a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#notes-regarding-the-construction-and-structure-of-this-document" id="toc-notes-regarding-the-construction-and-structure-of-this-document">Notes regarding the construction and structure of this document:</a></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-or-pages-of-this-document-lyx-version" id="toc-referencing-specific-sections-or-pages-of-this-document-lyx-version">Referencing Specific Sections or Pages of this Document (LyX version):</a></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-of-this-document-rmarkdown-version" id="toc-referencing-specific-sections-of-this-document-rmarkdown-version">Referencing Specific Sections of this Document (RMarkdown version):</a></li>
+</ul></li>
+<li><a href="appendix-d-needing-attention.html#appendix-d-needing-attention" id="toc-appendix-d-needing-attention">Appendix D: Needing Attention</a></li>
+<li><a href="A-index-1.html#index-1" id="toc-index-1"><span class="toc-section-number">A</span> Index</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="aerosol-particle-measurements" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Aerosol Particle Measurements</h1>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<!-- <h2 id="condensation-nucleus-counters">Condensation Nucleus Counters</h2> -->
+<div id="condensation-nucleus-counter" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Condensation Nucleus Counter</h2>
+<p>
+RAF uses two modified TSI, Inc. <a href="http://www.eol.ucar.edu/instruments/condensation-nucleus-counter-water-or-butanol">condensation nucleus counters</a> to measure the total concentration of ultrafine particles in the atmosphere, a 3760A using n-butyl alcohol and a water-based 3786 WCN (water condensation nucleus) counter. Both are sensitive to particles in the approximate diameter range from 0.010–3 <span lang="el">m</span>m.<br />
+</p>
+<div id="pcn" class="section level4 unnumbered">
+<h4>CN Counter Inlet Pressure (hPa): PCN</h4>
+<em>The absolute pressure inside the inlet tube of the instrument.</em> It as measured by a Heise Model 623 pressure sensor for the 3760A, and internally by the 3786 WCN.. The measurement is used to convert the measured mass flow (FCN or XICN) to volumetric flow and to convert measured particle concentration to equivalent ambient concentration.
+</p>
+</div>
+<div id="cntemp" class="section level4 unnumbered">
+<h4>CN Counter Inlet Temperature (<span class="math inline"><em></em><sup>∘</sup></span>C): CNTEMP, TEMP1, TEMP2</h4>
+<em>The sample air temperature measured at the intake of the 3760A or within the 3786.</em> The value is used to convert the measured mass flow (FCN or XICN) to true volumetric flow and to convert measured particle concentration to equivalent ambient concentration.
+</p>
+</div>
+<div id="fcnc" class="section level4 unnumbered">
+<h4>Raw and Corrected CN Counter Sample Flow Rate (SLPM, VLPM): FCN, FCNC</h4>
+<p><em>The raw and corrected sample flows in the CN counters</em> are treated differently for the two models of CN counter. In the 3760A, FCN is measured in standard liters per minute (SLPM) with a mass flow meter. The flow meter gives the volumetric flow rate that would apply under standard conditions of 1013.25 hPa and 21<span class="math inline"><em></em><sup>∘</sup></span>C. FCNC is the corrected sample flow rate in volumetric liters per minute (VLPM) <em>at instrument pressure and temperature</em>. For the 3760A:<br /></p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<p class="box">
+<a href="7-aerosol-particle-measurements.html#pcn">PCN</a> = pressure at the inlet to the CN counter [hPa]<br />
+<a href="7-aerosol-particle-measurements.html#cntemp">CNTEMP</a> = temperature at the inlet of the sample tube [<span class="math inline">\(^{\circ}\)</span>C]<br />
+<span class="math inline">\(p_{std}\)</span> = standard
+reference pressure, 1013.25 hPa<br />
+<span class="math inline">\(T_{std}\)</span> = standard
+reference temperature, 294.15 K<br />
+<span class="math inline">\(T_{0}\)</span> = 273.15 K
+</p>
+<p class="box2">
+<span class="math display" id="eq:FCNCbox">\[\begin{equation}
+\mathrm{\{FCNC\} = \{FCN\}}\frac{p_{std}}{\mathrm{\{PCN\}}}\frac{(\{\mathrm{CNTEMP\}}+T_{0})}{T_{std}}
+\tag{7.1}
+\end{equation}\]</span>
+</p>
+In the 3786, flows are determined in volumetric cm<span class="math inline"><span class="math inline">\(^{3}\thinspace\mathrm{min}^{-1}\)</span></span> from the pressure drop across an orifice. The 3786 firmware makes density corrections internally, so its reported sample flow is brought directly into the variable FCNC in units of VLPM.<br />
+</p>
+</div>
+<div id="xicnc" class="section level4 unnumbered">
+<h4>Raw and Corrected CN Isokinetic Side Flow Rate (SLPM, VLPM): XICN, XICNC</h4>
+<p><em>XICN is the raw isokinetic side flow rate in standard liters per minute (SLPM) measured with a mass flow meter, and XICNC is that flow corrected for pressure and temperature to be the true volumetric flow.</em> The side flow is adjusted for isokinetic sampling at the inlet, but it is not used further in processing.<br /></p>
+<p class="box">
+<a href="7-aerosol-particle-measurements.html#xicnc">XICN</a> = side-flow rate [SLPM]<br />
+<a href="7-aerosol-particle-measurements.html#pcn">PCN</a> = pressure at the inlet to the CN counter [hPa]<br />
+<a href="7-aerosol-particle-measurements.html#cntemp">CNTEMP</a> = temperature at the inlet of the sample tube [<span class="math inline">\(^{\circ}\)</span>C]<br />
+<span class="math inline">\(p_{std}\)</span> = standard reference pressure, 1013.25 mb<br />
+<span class="math inline">\(T_{std}\)</span>
+= 294.15 K<br />
+<span class="math inline">\(T_{0}\)</span> = 273.15 K
+</p>
+<p class="box2">
+<span class="math display" id="eq:XICNCbox">\[\begin{equation}
+\mathrm{\{XICNC\} = \{XICN\}}\frac{p_{std}}{\mathrm{\{PCN\}}}\frac{(\{\mathrm{CNTEMP\}}+T_{0})}{T_{std}}
+\tag{7.2}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="cnts" class="section level4 unnumbered">
+<h4>CN Counter Output (counts per sample interval): CNTS</h4>
+<em>The raw output count from the condensation nucleus counter.</em> For the 3760A condensation nucleus counter, the project-dependent sample rate may be chosen in the range from 1–50 Hz but it is typically 10 Hz. In some unusual cases the counts are divided by a selected power of two to keep the counter from overflowing; see project documentation. The 3786 WCN may be programmed to report data at intervals from 0.1–3600 s.
+</p>
+</div>
+<div id="concn" class="section level4 unnumbered">
+<h4>Condensation Nucleus (CN) Concentration (cm<sup>-3</sup>): CONCN</h4>
+<em>The number concentration of condensation nuclei</em> in units of particles per cm<span class="math inline"><em></em><sup>3</sup></span> <em>in the ambient air</em> at flight level. <em></em> The calculation leading to CONCN includes two corrections. The first accounts for coincidence of particles in the viewing volume at high concentrations and is handled differently in the two types of CN counter. For the 3760A, a statistical adjustment is made based on the average time of a particle in the viewing volume. This correction increases from about 1% at a total concentration of 10<span class="math inline"><em></em><sup>3</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span> to nearly 11% at 10<span class="math inline"><em></em><sup>4</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span>, but for concentrations above about 2 x 10<span class="math inline"><em></em><sup>4</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span> significant uncertainty remains. The 3786 instead measures the time each detected particle occupies the viewing volume, and this <em></em> accumulated “dead time” in each sampling interval is subtracted from the elapsed time yielding a “live time” for the determination of sample volume. With this correction an accuracy of 12%, not including statistical counting error, is specified by the manufacturer at concentrations up to 10<span class="math inline"><em></em><sup>5</sup></span> cm<span class="math inline"><em></em><sup> − 3</sup></span>. The second correction, applied to all CN counters, is a conversion from instrument to ambient conditions.<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>
+In the following formulae, the corrected flow FCNC in VLPM is explicitly converted to cm<span class="math inline"><em></em><sup>3</sup></span>s<span class="math inline"><em></em><sup> − 1</sup></span> by the factor (1000/60).<em></em><br />
+<em></em><br />
+</p>
+<p>
+<p><strong>For the 3760A:</strong><br /></p>
+<p class="box">
+CNTS = particle counts per sample interval from the CN counter<br />
+<span class="math inline">\(\Delta t\)</span> = interval
+between recorded samples [s]<br />
+<span class="math inline">\(D\)</span> = scale factor (legacy; normally 1)<br />
+<span class="math inline">\(C_{flow}\)</span> = conversion
+factor, (1000/60) cm<span class="math inline">\(^{3}\)</span>L<span class="math inline">\(^{-1}\)</span>min s<span class="math inline">\(^{-1}\)</span><br />
+FCNC = corrected sample flow rate (VLPM) for instrument conditions<br />
+<span class="math inline">\(t_{vv}\)</span> = average time a particle is in the view volume<br />
+       = 0.4<span class="math inline">\(\times10^{-6}\)</span> s<br />
+PCN = pressure at the inlet to the CN counter [hPa]<br />
+CNTEMP = temperature at the inlet of the sample tube [<span class="math inline">\(^{\circ}\)</span>C]<br />
+PSXC = corrected ambient pressure [hPa]<br />
+ATX = ambient temperature [<span class="math inline">\(^{\circ}\)</span>C]<br />
+<span class="math inline">\(T_{0}\)</span> = 273.15 K
+</p>
+<p class="box2">
+<span class="math display" id="eq:CONCNbox1">\[\begin{equation}
+\mathrm{A=\frac{\{CNTS\}}{\mathrm{(\{FCNC\}\times C_{flow})}\Delta t}\,D}
+\tag{7.3}
+\end{equation}\]</span>
+The flow under instrument conditions, corrected for coincidence, is
+then<br />
+<span class="math display" id="eq:CONCNbox2">\[\begin{equation}
+B\mathrm{=A}\,e^{At_{vv}(\mathrm{\{FCNC\}\times C_{flow})}}
+\tag{7.4}
+\end{equation}\]</span>
+and the concentration under ambient conditions is<br />
+<span class="math display" id="eq:CONCNbox3">\[\begin{equation}
+\mathrm{\{CONCN\}}=B\frac{\mathrm{\{PSXC\}}}{\mathrm{\{PCN\}}}\frac{\mathrm{(\{CNTEMP\}}+T_{0})}{(\mathrm{\{ATX\}}+T_{0})}
+\tag{7.5}
+\end{equation}\]</span>
+</p>
+<p>
+<p><strong>For the 3786 WCN:</strong><br /></p>
+<p class="box">
+<a href="7-aerosol-particle-measurements.html#cnts">CNTS</a> = particle counts per sample interval from the CN counter<br />
+<span class="math inline">\(\Delta t\)</span> = interval
+between recorded samples [s]<br />
+<span class="math inline">\(t_{d}\)</span> = cumulative dead time during the sampling interval [s]<br />
+<span class="math inline">\(C_{flow}\)</span> (see preceding box)<br />
+<a href="7-aerosol-particle-measurements.html#fcnc">FCNC</a> = corrected sample flow rate (VLPM) for instrument conditions<br />
+<a href="7-aerosol-particle-measurements.html#pcn">PCN</a> = internal pressure of the CN counter [hPa]<br />
+<a href="7-aerosol-particle-measurements.html#cntemp">CNTEMP</a> = temperature of the optics block [<span class="math inline">\(^{\circ}\)</span>C]<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSXC</a> = corrected ambient pressure [hPa]<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">ATX</a> = ambient temperature [<span class="math inline">\(^{\circ}\)</span>C]<br />
+<span class="math inline">\(T_{0}\)</span> = 273.15 K
+</p>
+<p class="box2">
+<span class="math display" id="eq:CONCN2box1">\[\begin{equation}
+\mathrm{A=\frac{\{CNTS\}}{\mathrm{(\{FCNC\}\times C_{flow})}(\Delta t-t_{d})}}
+\tag{7.6}
+\end{equation}\]</span>
+<span class="math display" id="eq:cwCONCN2box2">\[\begin{equation}
+\mathrm{\{CONCN\}}=A\frac{\mathrm{\{PSXC\}}}{\mathrm{\{PCN\}}}\frac{\mathrm{(\{CNTEMP\}}+T_{0})}{(\mathrm{\{ATX\}}+T_{0})}
+\tag{7.7}
+\end{equation}\]</span>
+</p>
+</p>
+<!-- <h2 id="aerosol-spectrometers">Aerosol Spectrometers</h2> -->
+</div>
+</div>
+<div id="aerosol-spec" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Aerosol Spectrometers</h2>
+<p>
+For size-resolved measurements of the concentration of aerosol particles, RAF deploys two instruments. The <a href="https://www.eol.ucar.edu/instruments/ultra-high-sensitivity-aerosol-spectrometer">Ultra High Sensitivity Aerosol Spectrometer</a> (UHSAS) sizes particles in 99 bins from 0.06 to 1.0 <span lang="el">μ</span>m diameter, and the <a href="http://www.eol.ucar.edu/instruments/passive-cavity-aerosol-spectrometer-probe">Passive Cavity Aerosol Spectrometer Probe</a> (PCASP) has 30 channels covering the diameter range 0.1 to 3 <span lang="el">μ</span>m. Flow and total concentration variables for these instruments are described in this section, while additional variables are covered along with other 1-D probes in Sect. <a href="5-cloud-physics-variables.html#sensors-1-D-probes">5.2</a>, “Sensors Detecting Individual Hydrometeors (1-D Probes).”
+</p>
+<div id="upress" class="section level4 unnumbered">
+<h4>UHSAS Absolute Pressure in Optics Block (kPa): UPRESS</h4>
+The pressure internal to the UHSAS instrument. This is an analog measurement with calibration coefficients as recorded in the attributes for the variable.
+</p>
+</div>
+<div id="pflw" class="section level4 unnumbered">
+<h4>Raw and Corrected Sample Flow Rate (cm<sup>3</sup>s<sup>-1</sup>): USMPFLW or PFLW; USFLWC or PFLWC</h4>
+<p>Unlike the other 1-d probes, both UHSAS and PCASP have internal pumps so their sample volumes are determined from the measured flows and do not depend on true air speed. The UHSAS measures volumetric flow directly, and it is adjusted to ambient conditions for the calculation of ambient concentration. The PCASP returns a mass flow referenced to standard conditions, and this also is converted to equivalent ambient volumetric flow.<br /></p>
+<p class="box">
+<a href="7-aerosol-particle-measurements.html#upress">UPRESS</a> = internal UHSAS pressure [kPa]<br />
+<a href="7-aerosol-particle-measurements.html#pflw">USMPFLW</a> = measured volumetric sample flow [cm<span class="math inline">\(^{3}\)</span>s<span class="math inline">\(^{-1}\)</span>]<br />
+<a href="7-aerosol-particle-measurements.html#pflw">PFLW</a> = sample mass flow referenced to standard conditions [cm<span class="math inline">\(^{3}\)</span>s<span class="math inline">\(^{-1}\)</span>]<br />
+<span class="math inline">\(T_{blk}\)</span> = UHSAS optical block temperature, 305 K<br />
+<span class="math inline">\(p_{std}\)</span> = standard pressure, 1013.25 hPa<br />
+<span class="math inline">\(T_{std}\)</span> = standard temperature, 298.15 K<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSXC</a> = corrected ambient pressure [hPa]<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">ATX</a> = ambient temperature [<span class="math inline">\(^{\circ}\)</span>C]<br />
+<span class="math inline">\(T_{0}\)</span> = 273.15 K
+</p>
+<p class="box2">
+<span class="math display" id="eq:PFLWCbox1">\[\begin{equation}
+\mathrm{\{PFLWC\}}=\mathrm{\{PFLW\}}\frac{p_{std}}{\mathrm{\{PSXC\}}}\frac{(\mathrm{\{ATX\}}+T_{0})}{T_{std}}  
+\tag{7.8}
+\end{equation}\]</span>
+<span class="math display" id="eq:PFLWCbox2">\[\begin{equation}
+\mathrm{\{USFLWC\}}=\mathrm{\{USMPFLW\}}\frac{(\mathrm{\{UPRESS\}}\times 10)} {\mathrm{\{PSXC\}}}\frac{\mathrm{(\{ATX\}}+T_{0})}{T_{blk}}  
+\tag{7.9}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="tcntu-tcntp" class="section level4 unnumbered">
+<h4>Total particle counts per sample interval, UHSAS or PCASP: TCNTU, TCNTP</h4>
+<p>The total particle counts in each sample interval for, respectively, the UHSAS and PCASP instruments. These values are the sum of counts in all cells of the spectrometers, as represented in the vector variables AUHSAS or AS200. See the discussion of these variables in Sect. <a href="5-cloud-physics-variables.html#sensors-1-D-probes">5.2</a>.</p>
+</div>
+<div id="concu-concp" class="section level4 unnumbered">
+<h4>Concentration, sum over all channels (cm<sup>-3</sup>s<sup>-1</sup>): CONCU, CONCP, CONCU100, CONCU500</h4>
+<p><em>The particle concentrations summed over all or a subset of channels.</em> CONCU and CONCP are summed over all channels in the UHSAS and PCASP, respectively, and are calculated as in the following boxed equations. CONCU100 and CONCU500 are concentrations summed over channels in the UHSAS giving particle concentrations for diameters greater than or equal to 100 nm and 500 nm, respectively, and are calculated as for CONCU except with TCNTU replaced by the sum over the appropriate channels.<br /></p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<p class="box">
+<a href="7-aerosol-particle-measurements.html#tcntu-tcntp">TCNTU</a> = total particle counts per sample interval, UHSAS<br />
+<a href="7-aerosol-particle-measurements.html#tcntu-tcntp">TCNTP</a> = total particle counts per sample interval, PCASP<br />
+<span class="math inline">\(\Delta t\)</span> = sample
+interval [s]<br />
+<a href="7-aerosol-particle-measurements.html#pflw">USFLWC</a> = corrected sample flow rate, UHSAS [cm<span class="math inline">\(^{3}\)</span>s<span class="math inline">\(^{-1}\)</span>]<br />
+<a href="7-aerosol-particle-measurements.html#pflw">PFLWC</a> = corrected sample flow rate, PCASP [cm<span class="math inline">\(^{3}\)</span>s<span class="math inline">\(^{-1}\)</span>]
+</p>
+<p class="box2">
+<span class="math display" id="eq:CONCUbox1">\[\begin{equation}
+\mathrm{\{CONCU\}}=\frac{\mathrm{\{TCNTU\}}}{\mathrm{\{USFLWC\}}\Delta t}
+\tag{7.10}
+\end{equation}\]</span>
+<span class="math display" id="eq:CONCUbox2">\[\begin{equation}
+\mathrm{\{CONCP\}}=\frac{\mathrm{\{TCNTP\}}}{\mathrm{\{PFLWC\}}\Delta t}
+\tag{7.11}
+\end{equation}\]</span>
+</p>
+<!-- <h2 id="special-aerosol-measurements">Special Aerosol Measurements</h2> -->
+</div>
+</div>
+<div id="special-aerosol" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Special Aerosol Measurements</h2>
+<p>
+<p>Data from an aerosol mass spectrometer, a scanning mobility particle spectrometer, and a giant nucleus impactor are recorded by these instruments in separate data files and are not recorded by the aircraft data system. The <a name=anc_data>ancillary data sets</a> are not merged into the netCDF archives produced by EOL, so the special data files must be used for these measurements. The data formats are described with the instruments at the references given below:<br />
+<br /></p>
+<ul>
+<li><strong>Aerosol Mass Spectrometer (AMS) data files</strong> contain size-segregated chemical composition of non-refractory, submicron aerosol particles. The instrument is described here: <a href="https://www.eol.ucar.edu/instruments/time-flight-aerosol-mass-spectrometer">AMS</a>.<br />
+</li>
+<li><strong>Scanning Mobility Particle Spectrometer (SMPS) files</strong> contain fine particle differential size distributions. The number of channels and covered size range are variable. Diameter ranges from about 7.5 nm up to about 500 nm (pressure-dependent), and 15 size bins are typical. The instrument is described here: <a href="https://www.eol.ucar.edu/instruments/scanning-mobility-particle-spectrometer">SMPS</a>.<br />
+</li>
+<li><strong>Auto-GNI, GNI Giant Nuclei Impactor (GNI) files</strong> contain dry differential particle size distributions. The instrument is described here: <a href="https://www.eol.ucar.edu/instruments/automatic-giant-nuclei-impactor">GNI</a>.</li>
+</ul>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="47">
+<li id="fn47"><p>Prior to Dec. 2007 the conversion to ambient concentration was not made and concentration was reported for instrument conditions.<a href="7-aerosol-particle-measurements.html#fnref47" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<p style="text-align: center;">
+<a href="6-air-chemistry-measurements.html"><button class="btn btn-default">Previous</button></a>
+<a href="8-radiation-variables.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

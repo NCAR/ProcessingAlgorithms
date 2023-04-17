@@ -1,0 +1,18 @@
+<p class=box>
+[ADIFR](#adifr) = attack differential pressure, radome [hPa]  
+[QCF](#qcx) = uncorrected dynamic pressure [hPa]  
+[MACH](#mach-number) = uncorrected Mach number based on QCF and PSF
+without humidity correction  
+$e_{0},\,e{}_{1},\,e_{2}$ = sensitivity
+coefficients determined empirically; typically:  
+\ \ \ \ \ {4.7532, 9.7908, 6.0781} for the C-130^(a)^  
+\ \ \ \ \ {4.605$\,[^{\circ}]$, $18.44\,[^{\circ}]$, $6.75\,[^{\circ}]$}
+for the GV  
+\_\_\_\_\_\_\_\_\_\_  
+^(a)^ Prior to Jan 2012, when the GV radome was changed: {5.516, 19.07, 2.08}  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{AKRD\}}=e_{0}+\frac{\{\mathrm{ADIFR}\}}{\{\mathrm{QCF}\}}\left(e_{1}+e{}_{2}\mathrm{\{MACH\}}\right)
+(\#eq:AKRD)
+\end{equation}
+</p>  

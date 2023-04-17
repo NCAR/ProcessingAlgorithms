@@ -1,0 +1,26 @@
+```{r child='boxStyles.Rmd'}
+```
+
+<p class=box>
+[CO$_{2}$]$_{wet}$ = carbon dioxide mixing ratio as measured
+in the sensing cell (with water)  
+[CO$_{2}$]$_{dry}$ = carbon dioxide mixing ratio in dry air,
+corrected for the effects of water vapor  
+[CH$_{4}$]$_{wet}$ = methane mixing ratio as measured in the
+sensing cell (with water)  
+[CH$_{4}$]$_{dry}$ = methane mixing ratio in dry air, corrected
+for the effects of water vapor  
+$W$ = water vapor mixing ratio measured in the instrument cell [percent
+by volume]  
+{$c_{0}$, $c_{1}$} = {$-0.01200,\,-2.674\times10^{-4}$} [dimensionless]  
+{$d_{0}$, $d_{1}$} = {$-0.00982,\ -2.393\times10^{-4}$} [dimensionless]  
+</p><p class=box2>
+\begin{equation}
+\{\mathrm{CO2\_PICX\}}=[\mathrm{CO_{2}]_{dry}=}\frac{[\mathrm{CO_{2}]_{wet}}}{1+c_{0}W+c_{1}W^{2}}
+(\#eq:CO2PICbox1)
+\end{equation}
+\begin{equation}
+\{\mathrm{CH4\_PICX\}}=[\mathrm{CH_{4}]_{dry}=}\frac{[\mathrm{CH_{4}]_{wet}}}{1+d_{0}W+d_{1}W^{2}}
+(\#eq:CO2PICbox2)
+\end{equation}
+</p>

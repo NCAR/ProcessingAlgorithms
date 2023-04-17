@@ -1,0 +1,23 @@
+<p class=box>
+CPS\index{CPS=counts per second} = counts per second from the instrument  
+[O$_{3}$]$_{wet}$ = ozone mixing ratio as measured in the sensing
+cell (with water)  
+[O$_{3}$]$_{dry}$ = ozone mixing ratio in dry air, corrected
+for the effects of water vapor  
+$S(t)$ = sensitivity at time t = (CPS when exposed to cal gas)
+/ concentration of cal gas  
+$Z(t)$ = background at time t = CPS when exposed to zero-ozone
+air  
+$r_v$ = water vapor mixing ratio by volume\sindex[lis]{rv@$r_{v}$=water vapor mixing ratio by volume}
+[expressed as a fraction; dimensionless]  
+$\kappa$ = correction factor for water vapor = 4.3 [dimensionless]  
+</p><p class=box2>
+\begin{equation}
+[\mathrm{O}_{3}]_{wet}=\frac{\mathrm{\{CPS\}}-Z(t)}{S(t)}
+(\#eq:O3box1)
+\end{equation}
+\begin{equation}
+\mathrm{\{F03\_ACD\}}=[\mathrm{O_{3}}]_{dry} = \mathrm{[O_{3}]_{wet}}\times(1+\kappa r_{v})
+(\#eq:O3box2)
+\end{equation}
+</p>

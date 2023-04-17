@@ -1,0 +1,38 @@
+```{r child='boxStyles.Rmd'}
+```
+
+<p class=box>
+$N$ = day number  
+\ \ \ \ = number of days (corrected for leap years) since 1 January 1980  
+\ \ \ \ \ \ \ (including fractional day from UTC time)  
+\ \ \ = (year-1980)*365+(int)(year-1980)/4+day  
+\ \ \ \ \ \ + (hour+min/60.+sec/3600.)/24.+$M$  
+\ \ \ where $M$=(int)(k+(int)((month-i)*30.6+b)  
+\ \ \ \ \ \ with {i,b,k}={1,0.5,0} for month <= 2  
+\ \ \ \ \ \ and otherwise {3, 59.5, (1 for leap years, else 0)}  
+$\Theta_h$: UTC time expressed as radians after solar noon  
+$f,\ \alpha.\ \epsilon$: internal-calculation variables defined below  
+{SOLDE}: solar declination angle  
+</p><p class=box2>
+\begin{equation}
+\theta_{h}=2\pi\frac{N}{365.25}
+(\#eq:SOLDEbox1)
+\end{equation}
+\begin{equation}
+f=-0.031271-4.53963\times10^{-7}N+\theta_{h}
+(\#eq:SOLDEbox2)
+\end{equation}
+\begin{align}
+\alpha	&=	\theta_{h}+4.900968+0.000349\,\sin(2f)+3.67474\times10^{-7}N\notag \\
+		&+(0.033434-2.3\times10^{-9}N)\,\sin(f)
+(\#eq:SOLDEalpha)
+\end{align}
+\begin{equation}
+\epsilon=0.409140-6.2149\times10^{-9}N
+(\#eq:SOLDEeps)
+\end{equation}
+\begin{equation}
+\mathrm{{\{SOLDE\}}=}\arcsin(\sin\alpha\sin\epsilon)
+(\#eq:SOLDEbox)
+\end{equation}
+</p>

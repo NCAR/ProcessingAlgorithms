@@ -1,0 +1,23 @@
+
+<p class=box>
+**CONSTANTS** (dependent on time constant $\tau$):^(a)^   
+\footnote{}  
+$a=\frac{2\pi}{\tau}$, 
+$a_{2}$=$a\ e^{-a/2}(\cos(a\sqrt{\frac{3}{2}})+\sqrt{\frac{1}{3}}\sin(a\sqrt{\frac{3}{2}}))$,
+$a_{3}$=2$e^{-a/2}$$\cos(a\sqrt{\frac{3}{2}})$, $a_{4}$=$e^{-a}$  
+\_\_\_\_\_\_\_\_\_\_  
+^(a)^ For processing prior to the 2014, the factor $\sqrt{\frac{3}{2}}$
+was erroneously $\frac{\sqrt{3}}{2}$.  
+</p>
+```
+// input x = unfiltered signal  
+// output returned is low-pass-filtered input  
+// tau determines the cutoff  
+// zf[] saves values for recursion  
+zf[2] = -a * x + a2 * zf[5] + a3 * zf[3] - a4 * zf[4];  
+zf[1] = a{*}x + a4{*}zf[1];     
+zf[4] = zf[3];  
+zf[3] = zf[2];  
+zf[5] = x;  
+return(zf[1] + zf[2]); 
+```

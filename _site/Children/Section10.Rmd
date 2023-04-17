@@ -1,0 +1,227 @@
+# Obsolete Variables {#obsolete-variables}
+
+<p>RAF retired the “GENPRO” processor, the software program previously used to produce data sets, in 1993, but data files produced by that processor are still retained and available for use. Also, there are some instruments that are now retired but provided measurements in some archived data files. Obsolete variable names that are associated only with GENPRO or a retired instrument are discussed below, for reference and to facilitate use of old data files.</p>
+
+#### Unaltered Tape Time (s): TPTIME {-#tptime}
+
+This variable is derived by converting the HOUR, MINUTE and SECOND to elapsed seconds after midnight of the current day. If time increments to the next day, its value is not reset to zero, but 86400 seconds are added to produce ever-increasing values for the data set.</p>
+
+#### Processor Time (s): PTIME {-#ptime}
+
+This is an internal time variable created by the GENPRO processor. It represents elapsed seconds after midnight. It differs from TPTIME in that, after it has been set at the beginning of the data set, it is incremented internally for each second of data processed. If duplicate or missing raw data records exist, it can differ from TPTIME. It is guaranteed to be a monotonically increasing and continuous series of values.</p>
+
+#### INS: Data System Time Lag (s): TMLAG {-#tmlag}
+
+TMLAG is the amount of time between the reference time of a Litton LTN-5l Inertial Navigation System (INS) and the data system clock, in seconds. TMLAG will always be greater than zero and less than 2.</p>
+ 
+#### LORAN-C Variables: {-#loranc}
+
+<strong> Latitude and Longitude (</strong><span class="math inline">º</span><strong>): CLAT, CLON</strong><br />
+<strong>Circular Error of Probability (n mi): CCEP</strong><br />
+<strong>Ground Speed (m/s): CGS</strong><br />
+<strong>Status: CSTAT</strong><br />
+<strong>Time (s): CSEC</strong><br />
+<strong>Fractional Time (s): CFSEC</strong></p>
+
+Before the advent of GPS, NCAR/RAF operated a LORAN-C receiver that provided information on the position and groundspeed of the aircraft. The measurements of latitude and longitude from this system are CLAT and CLON, measured at 1 Hz and with positive values of longitude to the east and positive values of latitude to the north. and CCEP provides an estimate of the uncertainty in those measurements (in units of nautical miles). A status word, CSTAT, was used to record a value of 15 when the system was operational. The ground speed and reference times were also recorded in the above corresponding variables. The sum of CSEC and CFSEC represented the time of the measurement, which was not always the time in the data file when the measurements were recorded.
+
+#### LTN-51 Variables: {-#ltn51}
+
+<p><strong>INS Latitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">ALAT</span></strong><br />
+<strong>INS Longitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">ALON</span></strong><br />
+<strong>Raw INS Ground Speed X Component (m/s):</strong> <strong><span class="underline">XVI</span></strong><br />
+<strong>Raw INS Ground Speed Y Component (m/s):</strong> <strong><span class="underline">YVI</span></strong><br />
+<strong>Raw INS True Heading (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">THI</span></strong><br />
+<strong>INS Wander Angle (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">ALPHA</span></strong><br />
+<strong>INS Platform Heading (</strong><span class="math inline">º</span><strong>):</strong> <strong><span class="underline">PHDG</span></strong></p>
+
+These variables from the Litton LTN-51 Inertial Navigation System (INS) are analogous to the modern variables discussed in Section\ \@ref(inertial-reference-systems) The measurements of latitude and longitude were provided with 1-Hz frequency and had a resolution of 0.0014<span class="math inline">º</span>, while the ground speed components were provided at 10 Hz and had resolution equal to 0.012 m/s. The X component of the ground speed was along the longitudinal axis of the aircraft <em>at the time of alignment,</em> and the Y axis was in the starboard direction at the time of alignment. PHDG recorded the orientation of the platform relative to true north, with resolution 0.0028<span class="math inline">º</span>. THI was the true heading of the aircraft, produced at 5 Hz with resolution of 0.0014<span class="math inline">º</span>. The “wander angle” is an INS-only variable that recorded the angle of the INS platform x-axis relative to its original orientation; it “wandered” in response to east-west motion of the aircraft on a spherical Earth.</p>
+
+#### Raw Aircraft Vertical Velocity (m/s): VZI {-#vzi}
+
+This is an integrated output from an up/down binary counter connected to the INS vertical accelerometer. Resolution is 0.012 m/s. Due to changes in local gravity and accumulated errors, this often develops a significant offset during flight.
+
+#### Aircraft True Heading (</strong><span class="math inline">º</span><strong>): THF {-#thf}
+
+This measurement of aircraft heading was derived from the angle between the horizontal projection of the aircraft center and true north: THF = PHDG + ALPHA. Resolution is 0.0028<span class="math inline">º</span>.</p>
+
+#### Aircraft Ground Speed and East/North Components (m/s): GSF, VEW, VNS {-#gsf-obsolete}
+
+These variables have the same names as the modern variables for ground speed. (Cf.\ Section\ \@ref(the-state-of-the-aircraft).) GSF is the magnitude of the ground speed determined by the INS, as derived from XVI and YVI:  
+<p class=box2>
+\begin{equation}
+\mathrm{GSF=\sqrt{\{XVI\}^{2}+\{YVI\}^{2}}}
+(\#eq:GSF)
+\end{equation}
+</p>
+
+VEW and VNS are the east and north projections of this ground speed, derived using THF for the aircraft heading.
+
+#### Wind Speed and Direction (m/s, <span class="math inline">º</span>): WSPD, WDRCTN {-#wspd}
+
+These variables are calculated from UI and VI, the east and north components of the wind determined as described in RAF Bulletin No. 23 and summarized in Section\ \@ref(wind):<span id="punch:10-1" label="punch:10-1">[punch:10-1]</span></p>
+<p class=box2>
+\begin{align}
+\mathrm{WS} = & \sqrt{\mathrm{\{UI\}^{2}+\{VI\}^{2}}} (\#eq:WSobs)\\
+\mathrm{WD} = & \mathrm{\frac{180^{\circ}}{\pi}atan2(-\{UI\},}-\{VI\})+180^{\circ}
+(\#eq:WDobs)
+\end{align}
+</p>
+
+#### Raw Attack and Sideslip Force (Fixed Vane) (g): AFIXx, BFIXx {-#vanes}
+
+AFIXx and BFIXx are amplified outputs from strain-gauges on fixed-vane sensors mounted at the end of a gust boom in the horizontal or vertical planes, respectively of the aircraft . The “force” on the vanes (calibrated in “equivalent grams” at Jefferson County Airport gravity) varies as a function of the aircraft attack or sideslip angles and dynamic pressure. Here x refers to left or right for AFIXx or top or bottom for BFIXx.
+ 
+#### Attack Angle or Sideslip Angle (Fixed Vanes) (</strong><span class="math inline">º</span><strong>): AKFXx, SSFXx {-#akfxx}
+
+AKFXx and SSFXx are the respective angles of attack and sideslip computed from AFIXx or BFIXx and QCx (either boom or gust dynamic pressure). An empirically derived function, HSSATK, is used to determine the attack pr sideslip angle based on wind tunnel test data.
+ 
+#### Dynamic Pressure (Boom or Gust Probe) (mb): QCB or QCBC; QCG or QCGC {-#qcb}
+
+These variables, measured by a differential pressure gauge, record the difference between a pitot (total) pressure and a static pressure. The QCBC and QCGC values are corrected for local flow-field distortion. The boom and gust probe measurements referred to the same aircraft structure. The different designations used for those measurements specified the transducer used and its location. In the gust probe dynamic pressure measurement (QCG), a Rosemount Model 1332 differential pressure transducer was located closer to the sensor in the gust probe itself, whereas in the boom measurement (QCB), a Rosemount Model 1221 pressure transducer was typically located in the aircraft nose.
+
+#### Ambient Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): ATC {-#atc}
+
+A variable obtained by combining the avionics temperature on the GV, AT_A, with a Rosemount temperature, so that the absolute value tracked AT_A but faster response was provided by the Rosemount temperature. This was used in some early GV projects because there were unresolved problems with the data-system temperature sensors and it was thought that AT_A provided a more accurate result, but AT_A was filtered to have slow response to it was combined with the faster-response signal from the Rosemount sensor.
+
+#### Total Temperature (<span class="math inline"><em></em><sup>∘</sup></span>C): TTx {-#ttx}
+
+This variable was used before 2014 for measurements of the recovery temperature, for which the variable is now <strong>RTx</strong>. Because the quantity measured is not the total temperature, the variables TTx were replaced by RTx, but the meaning historically was the same as that now described for <strong>RTX</strong>, apart from how humidity is now handled.
+
+#### Total Temperature, Reverse Flow (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): TTRF {-#ttrf}
+
+TTRF is the recovery temperature from a calibrated NCAR reverse-flow temperature sensor, for which the housing was designed to separate water droplets and protect the element from wetting in cloud.
+
+#### Total Temperature (Fast Response) (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): TTKP {-#ttkp}
+
+This is the output of recovery temperature from the NCAR fast-response temperature probe, originally designed by Karl Danninger. (See the discussion of total temperature in Section\ \@ref(temperature-section).)
+
+#### Ambient Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): ATRF {-#atrf}
+
+The ambient temperature computed using the NCAR reverse-flow temperature sensor. (See the discussion in Section\ \@ref(temperature-section).)
+
+#### Ambient Temperature (Fast Response) (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): ATKP {-#atkp}
+
+The ambient temperature computed using the fast-response temperature probe. (See the discussion of ambient temperature in Section\ \@ref(temperature-section).)
+
+#### Raw Cloud Technology (Johnson-Williams) Liquid Water Content (<span class="math inline"><em>g</em>/<em>m</em><sup>3</sup></span>): LWC {-#jwlwc}
+
+This is the raw output of a Johnson-Williams liquid water content sensor converted to units of grams per cubic meter. The Johnson-Williams indicator measures the evaporative cooling caused by the latent heat of vaporization of droplets contacting the heated sensing element by sensing changes in its resistance as it cools. Through calibration this resistance is converted to a liquid water content. A “compensation” wire is also mounted in the J-W sensor, parallel to the droplet stream, to compensate for cooling effects of the airstream. Typically the instrument is set for a true airspeed of 200 knots. The instrument must be zeroed in “cloud-free air.” The Johnson-Williams liquid water content sensor is designed for the cloud droplet spectrum. There is some evidence to indicate that droplets larger than 30 <span class="math inline"><em>μ</em><em>m</em></span> are shed before completely vaporizing on the sensor element. This tends to underestimate the liquid water content.
+
+#### Corrected Cloud Technology (Johnson-Williams) Liquid Water Content (g/m^3^): LWCC {-#jwlw-corrected}
+
+This is the corrected liquid water content obtained by using the aircraft’s true airspeed after removing the zero offset: LWCC=LWC<span class="math inline"><em>U</em><sub><em>a</em></sub>/<em>U</em><sub><em>r</em><em>e</em><em>f</em></sub></span> where <span class="math inline"><em>U</em><sub><em>a</em></sub></span> is the true airspeed of the aircraft and <span class="math inline"><em>U</em><sub><em>r</em><em>e</em><em>f</em></sub></span> is the true airspeed set on the dial of the instrument. <span class="math inline"><em>U</em><sub><em>r</em><em>e</em><em>f</em></sub></span> was normally 200 kts = 102.88889 m/s.</p>
+
+#### Indicated Airspeed (knots): IAS {-#ias}
+
+In some old data files, a variable representing the indicated airspeed was included because this was used for some derived variables. The indicated airspeed is the airspeed that would produce the observed difference between dynamic and static pressure under standard conditions of 1013.25 mb and <span class="math inline">15<sup>∘</sup></span>C.</p>
+
+#### Water Vapor Pressure (mb): EDPC {-#edpc}
+
+This is a derived intermediate variable used in the calculation of several derived thermodynamic variables. The vapor pressure over a plane water surface is obtained by the method of Paul R. Lowe (1977), a derived, sixth-order, Chebyshev polynomial fit to the Goff-Gratch Formulation (1946) as a function of temperature expressed in <span class="math inline"><em></em><sup>∘</sup><em>C</em></span>. The error is much less than 1% over the range -50<span class="math inline">º</span>C to +50<span class="math inline">º</span>C. EDPC was calculated using this method for most RAF research projects between 1993 and 1996. This variable did not have the enhancement factor applied that was discussed in Appendix C of Bulletin 9. A variable of the same name but calculated differently replaced this in 1996, and with changes described in Section\ \@ref(humidity) continues in use, recently replaced by EWx.<span id="punch:10-2" label="punch:10-2">[punch:10-2]</span>  
+```{r child='boxStyles.Rmd'}
+```
+
+```{r child='EDPCbox.Rmd'}
+```
+
+#### Cryogenic Hygrometer Variables: {-#cryo-hygro}
+
+**Inlet Pressure (hPa): CRHP**<br />
+**Frost Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): VCRH**<br />
+**Corrected Frost Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): FPCRC**<br />
+**Corrected Dew Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): DPCRC**<br />
+
+The first two of these measurements were made directly in the chamber of the cryogenic hygrometer, a now obsolete cabin-mounted instrument connected to outside air by an inlet line. VCRH was determined from a third-order calibration equation applied to the voltage measured by the instrument. <span id="punch:10-3" label="punch:10-3">[punch:10-3]</span>
+The corrected frost point and dew point temperatures are those determined after corrections are applied to the direct measurements from a cryogenic hygrometer. These measurements were from a now obsolete instrument but the variables are included here because they appear in some old data files. To obtain estimates of the ambient frost point and dew point, the measurements made inside the chamber of the cryogenic hygrometer (CVRH and CRHP) must be corrected for the difference in water vapor pressure between that chamber and ambient conditions. The ratio of the chamber pressure to the ambient pressure is assumed to be the same as the ratio of the chamber vapor pressure to the ambient vapor pressure. The vapor pressure in the chamber was determined from the Goff-Gratch (1946) equation^[Goff, J. A., and S. Gratch (1946) Low-pressure properties of water from 160 to 212 °F, referenced and used in the Smithsonian Tables (List, 1980).] 
+for saturation vapor pressure with respect to a plane ice surface. This vapor pressure was then used with CRHP and a measure of the ambient pressure (PSXC) to determine the vapor pressure in the outside air, and this was converted to an equivalent dew-point. The instrument was only used for measurements of frost point less than -15<span class="math inline"><em></em><sup>∘</sup></span>C because it did not function well above that frost point. <span id="punch:10-4" label="punch:10-4">[punch:10-4]</span>The steps are documented below:  
+```{r child='CRCDPbox.Rmd'}
+```
+
+#### Voltage Output From the Lyman-alpha Sensor (V): VLA {-#vla}
+
+<em>The voltage output from the Lyman-alpha absorption hygrometer</em>. This instrument provided fast-response, high-resolution measurements of water vapor density. (If a second sensor was used, a 1 was added to the variable name associated with the second sensor.) The sensors are now obsolete.</p>
+
+#### Voltage Output from the UV Hygrometer (V): XUVI {-#xuvi}
+
+<em>The voltage from a modern (as of 2009) version of the Lyman-alpha hygrometer, which provides a signal that represents water vapor density.</em> The instrument also provides measurements of pressure and temperature inside the sensing cavity; they are, respectively, <strong><span class="underline">XUVP</span></strong> and <strong><span class="underline">XUVT</span></strong>. These variables and the processing algorithm below have now been replaced by XSIGV_UVH and the algorithm discussed with the variable EW_UVH.  
+```{r child='RHOUVbox.Rmd'}
+```
+
+#### Raw Pyrgeometer Output (W m^-2^): IRx {-#irx}
+
+<span id="EppleyReference" label="EppleyReference">[EppleyReference]</span>A pyrgeometer manufactured by Eppley Laboratory, Inc. measures long-wave irradiance using a calibrated thermopile. It has a coated glass hemisphere that transmits radiation in a bandwidth between 3.5 <span class="math inline"><em>μ</em><em>m</em></span> and 50 <span class="math inline"><em>μ</em><em>m</em></span>. It is calibrated at RAF according to procedures specified by Albrecht and Cox (1977). (See the reference in the next paragraph.) The pyrgeometers are usually flown in pairs, one up-looking and one down-looking. The letter ’x’ denotes either bottom (B) or top (T).<br />
+<strong>Corrected Infrared Irradiance (W m<span class="math inline"><em></em><sup> − 2</sup></span>):</strong> <strong><span class="underline">IRxC</span></strong><br />
+Because the pyrgeometer measures net radiation, IRx must be corrected for emission from the dome covering the sensor and for emission from the thermopile itself. IRxC is the corrected infrared irradiance, determined following procedures of <a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0450%281977%29016%3C0190%3APFIPP%3E2.0.CO%3B2">Albrecht and Cox, 1977</a>.  
+```{r child='IRxCbox.Rmd'}
+```
+
+#### Shortwave Irradiance (W/m^2^): SWx {-#swx}
+
+An Eppley Laboratory, Inc., pyranometer measures short-wave irradiance. The dome normally used is UG295 glass, which gives wide coverage of the solar spectrum (from 0.285 <span class="math inline"><em>μ</em><em>m</em></span> to 2.8 <span class="math inline"><em>μ</em><em>m</em></span>). Different bandwidths can be obtained by use of different glass domes, available from RAF upon request. (See Bulletin No. 25.) The pyranometers are usually flown in pairs, one up-looking and one down-looking. They are calibrated periodically at the NOAA Solar Radiation Facility in Boulder, Colorado. The letter ’x’ denotes either bottom (B) or top (T).</p>
+
+#### Corrected Incoming Shortwave Irradiance (W/m^2^): SWTC {-#swtc}
+
+The down-welling shortwave irradiance measured by the difference between SWT and SWB) is corrected to take into account the sun angle and small variations in the aircraft attitude angles (pitch and roll). The correction is limited to <span class="math inline"> ± 6<sup>∘</sup></span> in either angle, so these measurements should be considered invalid beyond these limits. This is the derived output of incoming (down-welling) shortwave irradiance, taking into account both solar position (sun angle) and modest variations in aircraft attitude (at present, restricted to less than 6<span class="math inline">º</span> in pitch and/or roll). (For more information, refer to <a href="https://opensky.ucar.edu/islandora/object/archives%3A6963">RAF Bulletin 25</a>.)<span id="punch:10-5" label="punch:10-5">[punch:10-5]</span>
+
+#### Ultraviolet Irradiance (W/m^2^): UVx {-#uvx}
+
+A pair of UV radiometer/photometers measure either down-welling (x=T) or up-welling (x=B) irradiance in the ultraviolet, approximately from 0.295 <span class="math inline"><em>μ</em><em>m</em></span> to 0.385 <span class="math inline"><em>μ</em><em>m</em></span>. These units are periodically returned to the Eppley Laboratories for recalibration.
+
+#### Raw Carbon Monoxide Concentration (ppb): CO {-#co}
+
+CO is the uncorrected output of the TECO model 48 CO analyzer. <span id="punch:10-6" label="punch:10-6">[punch:10-6]</span>This instrument measures the concentration of CO by gas filter correlation. The optics of the version operated by the RAF have been modified to increase the light through the absorption cell, and a zero trap has been added that periodically removes CO from the sample air stream to obtain an accurate zero. This permits correction for the significant temperature-dependent drift of the zero level of the measurement.</p>
+ 
+#### Carbon Monoxide Analyzer Variables: {-#co-vars}
+
+**Status (V): CMODE**<br />
+**Baseline Zero Signal (V): COZRO**<br />
+**Raw Carbon Monoxide Signal, Baseline Corrected (V): COCOR*</span></strong></p>**<br />
+**Corrected Carbon Monoxide Concentration (ppmv): COCAL**<br />
+
+CMODE records if the CO analyzer is supplied with air from which CO has been removed and so is recording its zero level. When CMODE is less than 0.2 V, the instrument is in the normal operational mode, and when CMODE is greater than 8.0 V the instrument is in the “zero” mode. When measurements are processed, the zero-mode signals are represented by a cubic spline to obtain a reference baseline for the signal (COZRO), and this baseline is subtracted from the measured value (CO) to obtain COCOR. This variable still jumps to zero periodically and does not include the calibration that enters the corrected variable, COCAL, which is the calibrated signal from the CO instrument after correction for drift of the baseline and after application of the appropriate calibration coefficients to produce units of ppmv. The quality of the baseline fit can be judged by examining the offset at the zero points. If there are relatively small changes in the baseline, the zero offset will be only a few ppbv. If there have been rapid changes in the baseline, the zero offset can be up to 50 ppbv. The magnitude of the offset at the zero values gives a good measure of uncertainty in the data set. The detection limit is 10 ppbv, with an uncertainty of <span class="math inline"> ± 15%</span>. At 1 Hz, data will have considerable variability, so 10-s averaging is often useful when the measurements are used for analysis.
+
+#### Raw Chemiluminescent Ozone Signal (V): O3FS {-#o3fs}
+
+<em>Voltage output from the chemiluminescence ozone instrument,</em> which operates on the basis of reacting nitric oxide with ozone and detecting the resulting chemiluminescence.
+
+#### Derived Supercooled Liquid Water Content (g/m^3^): SCLWC {-#SCLWC}
+
+This variable is the supercooled liquid water content obtained from the change in accreted mass on the Rosemount 871F ice-accretion probe over one second. The output is not valid during the probe deicing cycle. This cycle is apparent in the RICE output (a peak followed by a decrease to near zero). Supercooled liquid water content is determined by first calculating a water drop impingement rate which is a function of the effective surface area, the collection efficiency, the true airspeed, and the supercooled liquid water content. The impingement rate obtained is equated to the accreted mass of ice collected by the probe in one second (empirical voltage/mass relationship). The resulting equation is solved for supercooled water content. This calculation is not included in normal processing or special processing, but some users of the instrument use an approach like the following to calculate supercooled liquid water:<span id="punch:10-8" label="punch:10-8">[punch:10-8]</span>  
+```{r child='SCLWCbox.Rmd'}
+```
+
+#### FSSP-100 Fast Resets</strong> (number per sample interval):  FRST, FRESET {-#freset}
+
+<em>The rate at which fast resets occur in an FSSP-100 probe.</em> The FSSP-100 records events called “fast resets” that occur when a particle traverses the beam outside the depth-of-field and therefore is not accepted for sizing. To avoid the processing time associated with sizing, the probe resets quickly in this case, but there is still some dead time when the probe cannot record another event. Fast resets consume a time determined by circuit characteristics, and that time has been determined in laboratory tests of the FSSP circuitry. This variable is needed in addition to the “Total Stobes” to determine what fraction of the time the probe is unable to accept another particle, and this “dead time” enters calculation of the concentration for the original (old) FSSP.
+
+#### FSSP-100 Total Strobes (number per sample interval): FSTB, FSTROB {-#fstrob}
+
+<em>The rate at which strobes are generated in an FSSP-100 probe.</em> A “strobe” is generated in the FSSP-100 whenever a particle is detected within its depth-of-field. Not all such particles are accepted for inclusion in the size distribution, however, because some pass through the outer regions of the illuminating laser beam and therefore produce shorter and smaller-amplitude pulses than those passing through the center of the beam. The probe maintains a running estimate of the average transit time and rejects particles with transit times shorter than this average. The total number of strobes recorded is therefore more than the number of sized particles, and the ratio of strobes to accepted particles can indicate quality of operation of the probe. Also, the strobes require processing and so contribute to the dead time of the probe, affecting the concentration unless a correction is made. See <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> for more discussion on the operation of the “old” FSSP.
+
+#### FSSP-100 Beam Fraction (dimensionless):  FBMFR {-#fbmfr}
+
+<em>The ratio of the number of velocity-accepted particles (particles that pass through the effective beam diameter) to the total number of particles detected in the depth-of-field of the beam (the total strobes).</em> See the discussion of Total Strobes for more information.  
+```{r child='FBMFRbox.Rmd'}
+```
+
+#### FSSP-100 Calculated Activity Fraction (dimensionless):  FACT {-#fact}
+
+This variable represents the fraction of the time that the FSSP is unable to count and size particles (its “dead time”). The activity fraction is not measured directly but is estimated from fast resets and total strobes along with measurements of the dead times associated with each (as determined in laboratory tests). The characteristic times are in the NetCDF header (for recent projects).  
+```{r child='FACTbox.Rmd'}
+```
+
+#### PCAS Raw Activity (dimensionless): PACT, AACT {-#AACT}
+
+The PCAS probe provides this measure of dead time, the time that the probe is unable to sample particles because the electronics are occupied with processing particles. The manufacturer suggests that the actual dead time ($f_{PCAS}$) is given by the following formula, which should be used when determining concentrations for the PCAS:  
+<p class=box>
+$$F_{PCAS} = 1024\,\mathrm{s}^{-1}$$
+</p><p class=box2>
+\begin{equation}
+f_{PCAS} = 0.52\frac{\mathrm{\{PACT\}}}{F_{PCAS}}
+(\#eq:fPCAS)
+\end{equation}
+</p>
+
+However, PACT (or AACT) is the variable archived in the data files.<br />
+</p>

@@ -1,0 +1,9 @@
+<p class=box>
+$d_{i}$ = diameter for channel $i$ of probe x  
+\{Cy$_{i}$\}, i1, and i2 as for mean diameter above  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{REFFx\}}=\frac{1}{2}\frac{\sum{\displaystyle {\displaystyle \left\{ \mathrm{Cy}_{i}\right\} d_{i}^{3}}}}{\sum{\displaystyle {\displaystyle \left\{ \mathrm{Cy}_{i}\right\} d_{i}^{2}}}}
+(\#eq:REFFbox)
+\end{equation}
+</p>  

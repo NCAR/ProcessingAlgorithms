@@ -1,0 +1,14 @@
+
+<p class=box>
+CPS\index{CPS=counts per second} = counts per second from the instrument  
+S(t) = sensitivity\sindex[lis]{S(t)=sensitivity function, calibration}
+at time t  
+\ \ \ \ \ \ \ = (CPS when exposed to cal gas) / concentration of cal gas  
+Z(t) = zero\sindex[lis]{Z(t)=zero function, calibration} at time t  
+\ \ \ \ \ \ \ = CPS when exposed to air passing through the catalyst trap  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{COMR\_AL\}} = (\mathrm{\{CPS\}}-Z(t))/S(t)
+(\#eq:COMRbox)
+\end{equation}
+</p>  

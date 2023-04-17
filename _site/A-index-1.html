@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Index | RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="A Index | RAF Technical Note: Processing Algorithms" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Index | RAF Technical Note: Processing Algorithms" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Index | RAF Technical Note: Processing Algorithms" />
+  
+  
+  
+
+<meta name="author" content="RAF RSIG" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="appendix-d-needing-attention.html"/>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="site_libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="site_libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="site_libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#index">Preface<span></span></a></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#alphabetical-list-of-variables"><i class="fa fa-check"></i><b>1.2</b> Alphabetical List of Variables<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#constants-and-symbols"><i class="fa fa-check"></i><b>1.3</b> Constants and Symbols<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html"><i class="fa fa-check"></i><b>2</b> General Information About Data Files<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#units-and-abbreviations"><i class="fa fa-check"></i><b>2.1</b> Units and Abbreviations<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#variables-used-to-denote-time"><i class="fa fa-check"></i><b>2.2</b> Variables Used to Denote Time<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#synchronization-of-measurements"><i class="fa fa-check"></i><b>2.3</b> Synchronization of Measurements<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#other-comments-on-terminology"><i class="fa fa-check"></i><b>2.4</b> Other Comments on Terminology<span></span></a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#variable-names-in-equations"><i class="fa fa-check"></i><b>2.4.1</b> Variable Names in Equations<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#distinction-between-original-measurements-and-derived-variables"><i class="fa fa-check"></i><b>2.4.2</b> Distinction Between Original Measurements and Derived Variables<span></span></a></li>
+<li class="chapter" data-level="2.4.3" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#dimensions-in-equations"><i class="fa fa-check"></i><b>2.4.3</b> Dimensions in Equations<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html"><i class="fa fa-check"></i><b>3</b> The State of the Aircraft<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#inertial-reference-systems"><i class="fa fa-check"></i><b>3.1</b> Inertial Reference Systems<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#standard-variables"><i class="fa fa-check"></i><b>3.1.1</b> Standard Variables<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#special-use-irs"><i class="fa fa-check"></i><b>3.1.2</b> Additional Special-Use Variables<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#global-positioning-systems"><i class="fa fa-check"></i><b>3.2</b> Global Positioning Systems<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude"><i class="fa fa-check"></i><b>3.3</b> Other Measurements of Aircraft Altitude<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#combining-irs-and-gps-measurements"><i class="fa fa-check"></i><b>3.4</b> Combining IRS and GPS Measurements<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html"><i class="fa fa-check"></i><b>4</b> The State of the Atmosphere<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations"><i class="fa fa-check"></i><b>4.1</b> Information on Instruments and Calibrations<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#variable-names"><i class="fa fa-check"></i><b>4.2</b> Variable Names<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#pressure"><i class="fa fa-check"></i><b>4.3</b> Pressure<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#standard-pressure-measurements"><i class="fa fa-check"></i><b>4.3.1</b> Standard Pressure Measurements<span></span></a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#p-special">Special Pressure Measurements (hPa): PSDPx, CAVP, PCAB, PSURF<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#temperature-section"><i class="fa fa-check"></i><b>4.4</b> Temperature<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#humidity"><i class="fa fa-check"></i><b>4.5</b> Humidity<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#derived-thermodynamic-variables"><i class="fa fa-check"></i><b>4.6</b> Derived Thermodynamic Variables<span></span></a>
+<ul>
+<li><a href="4-the-state-of-the-atmosphere.html#thetav">Virtual Potential Temperature (K): THETAV<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#wind"><i class="fa fa-check"></i><b>4.7</b> Wind<span></span></a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#relative-wind"><i class="fa fa-check"></i><b>4.7.1</b> Relative Wind<span></span></a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#akrd">Attack Angle, Radome (<span class="math inline">º</span>): AKRD<span></span></a></li>
+<li class="chapter" data-level="4.7.2" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector"><i class="fa fa-check"></i><b>4.7.2</b> Wind Components and the Wind Vector<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#special-use-remote"><i class="fa fa-check"></i><b>4.8</b> Special-Use Remote Sensors<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html"><i class="fa fa-check"></i><b>5</b> Cloud Physics Variables<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#LWC"><i class="fa fa-check"></i><b>5.1</b> Measurements of Liquid Water Content<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#sensors-1-D-probes"><i class="fa fa-check"></i><b>5.2</b> Sensors Detecting Individual Hydrometeors (1-D Probes)<span></span></a>
+<ul>
+<li><a href="5-cloud-physics-variables.html#CRPC">Count Rate Per Channel: ACDP, AFSSP, AS100, AF300, AS200, APCAS, A200X, A260X, A200Y, AUHSAS<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#size-distribution">Size Distribution:<span></span></a></li>
+<li class="chapter" data-level="5.2.1" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#concentration-cm-3-concd-concf-conc3-concp-concu"><i class="fa fa-check"></i><b>5.2.1</b> Concentration (cm<span class="math inline"><sup> − 3</sup></span>): CONCD, CONCF, CONC3, CONCP, CONCU;<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#mean-diameter">Mean Diameter (<span class="math inline"><em>μ</em></span>m): DBARD, DBARF, DBAR3, DBAR6, DBARP, DBARX, DBARY, DBARU<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#dispersion">Dispersion (dimensionless): DISPD, DISPF, DISP3, DISP6, DISPP, DISPX, DISPY, DISPU<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#PSD-LWC">Liquid Water Content (g m<strong><span class="math inline"><sup> − 3</sup></span></strong>): PLWCD, PLWCF, PLWCX, PLWC6, PLWCY<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#DBZ">Radar Reflectivity Factor (dbZ): DBZF, DBZX, DBZ6, DBZY, DBZD<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#effective-radius">Effective Radius (<span class="math inline"><em>μ</em></span>m): REFFD, REFFF<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#fssp-range">FSSP-100 Range (dimensionless): FRNG, FRANGE<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#hydrometeor-imaging-probes"><i class="fa fa-check"></i><b>5.3</b> Hydrometeor Imaging Probes<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html"><i class="fa fa-check"></i><b>6</b> Air Chemistry Measurements<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html#variables-in-standard-data-files"><i class="fa fa-check"></i><b>6.1</b> Variables in Standard Data Files<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html#awas-cims-qcls-toga"><i class="fa fa-check"></i><b>6.2</b> Variables in Special Data Sets<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html"><i class="fa fa-check"></i><b>7</b> Aerosol Particle Measurements<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#condensation-nucleus-counter"><i class="fa fa-check"></i><b>7.1</b> Condensation Nucleus Counter<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#aerosol-spec"><i class="fa fa-check"></i><b>7.2</b> Aerosol Spectrometers<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#special-aerosol"><i class="fa fa-check"></i><b>7.3</b> Special Aerosol Measurements<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html"><i class="fa fa-check"></i><b>8</b> Radiation Variables<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#measurements-of-irradiance-and-radiometric-temperature"><i class="fa fa-check"></i><b>8.1</b> Measurements of Irradiance and Radiometric Temperature<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#harp"><i class="fa fa-check"></i><b>8.2</b> Spectral Irradiance and Actinic Flux<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#solar-angles"><i class="fa fa-check"></i><b>8.3</b> Solar Angles<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-experimental-variables.html"><a href="9-experimental-variables.html"><i class="fa fa-check"></i><b>9</b> Experimental Variables<span></span></a></li>
+<li class="chapter" data-level="10" data-path="10-obsolete-variables.html"><a href="10-obsolete-variables.html"><i class="fa fa-check"></i><b>10</b> Obsolete Variables<span></span></a></li>
+<li class="appendix"><span><b>Appendices<span></span></b></span></li>
+<li><a href="appendix-a-list-of-symbols.html#appendix-a-list-of-symbols">Appendix A: List of Symbols<span></span></a></li>
+<li><a href="appendix-b-variable-names.html#appendix-b-variable-names">Appendix B: Variable Names<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#appendix-c-editing-the-t.n.">Appendix C: Editing The T.N.<span></span></a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#notes-regarding-the-construction-and-structure-of-this-document">Notes regarding the construction and structure of this document:<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-or-pages-of-this-document-lyx-version">Referencing Specific Sections or Pages of this Document (LyX version):<span></span></a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#variables">Variables<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#page-numbers-lyx-version">Page Numbers (LyX Version)<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#sections-and-subsections">Sections and Subsections<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#adding-new-targets">Adding New Targets<span></span></a></li>
+</ul></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-of-this-document-rmarkdown-version">Referencing Specific Sections of this Document (RMarkdown version):<span></span></a></li>
+</ul></li>
+<li><a href="appendix-d-needing-attention.html#appendix-d-needing-attention">Appendix D: Needing Attention<span></span></a></li>
+<li class="chapter" data-level="A" data-path="A-index-1.html"><a href="A-index-1.html"><i class="fa fa-check"></i><b>A</b> Index<span></span></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RAF Technical Note: Processing Algorithms</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="index-1" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">A</span> Index<a href="A-index-1.html#index-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+Page numbers refer to the PDF-format version. Links are to the appropriate
+location in this html-format document, usually to the appropriate section
+containing the referenced term. When viewed in a browser, use the browser
+search function to find the exact location of the referenced term.
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+<div class="col3">
+<p><a href="./5-cloud-physics-variables.html#a1dc-a1dp">A1DC</a>, 66<br />
+<a href="./5-cloud-physics-variables.html#a1dc-a1dp">A1DP</a>, 66<br />
+<a href="./5-cloud-physics-variables.html#CRPC">A200X</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#CRPC">A200Y</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#CRPC">A260X</a>, 62<br />
+<a href="./10-obsolete-variables.html#AACT">AACT</a>, 94<br />
+abbreviations<br />
+  <a href="./2-general-information-about-data-files.html#units-and-abbreviations">non-standard</a>, 6<br />
+acceleration<br />
+  <a href="./3-the-state-of-the-aircraft.html#ACINS">vertical</a>, 11<br />
+<a href="./5-cloud-physics-variables.html#CRPC">ACDP</a>, 62<br />
+<a href="./3-the-state-of-the-aircraft.html#ACINS">ACINS</a>, 11<br />
+<a href="./4-the-state-of-the-atmosphere.html#ad_comp">adiabatic compression</a>, 36<br />
+<a href="./4-the-state-of-the-atmosphere.html#adifr">ADIF</a>, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#adifr">ADIFR</a>, 53, 54<br />
+<a href="./3-the-state-of-the-aircraft.html#ads">ADS</a>=aircraft data system, 10<br />
+<a href="./1-introduction.html#aeros">aeros</a>, 1<br />
+aerosol<br />
+  <a href="./7-aerosol-particle-measurements.html#anc_data">ancillary datasets</a>, 77<br />
+  <a href="./7-aerosol-particle-measurements.html#aerosol-spec">spectrometer</a>, 76<br />
+<a href="./5-cloud-physics-variables.html#CRPC">AF300</a>, 62<br />
+<a href="./10-obsolete-variables.html#vanes">AFIXx</a>, 87<br />
+<a href="./5-cloud-physics-variables.html#CRPC">AFSSP</a>, 62<br />
+airspeed, <a href="./4-the-state-of-the-atmosphere.html#airspeed1">31</a>, <a href="./4-the-state-of-the-atmosphere.html#airspeed2">32</a>, <a href="./4-the-state-of-the-atmosphere.html#airspeed3">34</a>, <a href="./4-the-state-of-the-atmosphere.html#airspeed4">36</a>, <a href="./4-the-state-of-the-atmosphere.html#airspeed5">53</a><br />
+  <a href="./10-obsolete-variables.html#ias">indicated</a>, 88<br />
+<a href="./10-obsolete-variables.html#vanes">AKFXx</a>, 87<br />
+<a href="./4-the-state-of-the-atmosphere.html#akrd">AKRD</a>, 53, 54<br />
+<a href="./10-obsolete-variables.html#ltn51">ALAT</a>, 85<br />
+<a href="./10-obsolete-variables.html#ltn51">ALON</a>, 85<br />
+<a href="./10-obsolete-variables.html#ltn51">ALPHA</a>, 85<br />
+<a href="./3-the-state-of-the-aircraft.html#alt">ALT</a>, 15<br />
+<a href="./3-the-state-of-the-aircraft.html#altg">ALTG</a>, 21<br />
+altimeter<br />
+  <a href="./3-the-state-of-the-aircraft.html#hgme-159">radar</a>, 21<br />
+altitude<br />
+  aircraft<br />
+    <a href="./3-the-state-of-the-aircraft.html#ggalt">GPS</a>, 19<br />
+    <a href="./3-the-state-of-the-aircraft.html#global-positioning-systems">geometric</a>, 16<br />
+    <a href="./3-the-state-of-the-aircraft.html#geoph">geopotential</a>, 16, 32<br />
+    <a href="./3-the-state-of-the-aircraft.html#alt">inertial</a>, 15<br />
+    <a href="./3-the-state-of-the-aircraft.html#palt">pressure</a>, 13, 16, 22, 32<br />
+<a href="/3-the-state-of-the-aircraft.html#altx">ALTX</a>, 23<br />
+angle<br />
+  <a href="./8-radiation-variables.html#solaz">solar azimuth</a>, 82<br />
+  <a href="./8-radiation-variables.html#solde">solar declination</a>, 81<br />
+  <a href="./8-radiation-variables.html#wolel">solar elevation</a>, 81<br />
+  <a href="./8-radiation-variables.html#solze">solar zenith</a>, 82<br />
+angles<br />
+  <a href="./8-radiation-variables.html#solar-angles">solar</a>, 81<br />
+<a href="./5-cloud-physics-variables.html#CRPC">APCAS</a>, 62<br />
+<a href="./3-the-state-of-the-aircraft.html#hgme-159">APN-159</a>, 21<br />
+<a href="./5-cloud-physics-variables.html#CRPC">AS100</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#CRPC">AS200</a>, 62<br />
+<a href="./4-the-state-of-the-atmosphere.html#AT=ITR">AT_ITR</a>, 37<br />
+<a href="./10-obsolete-variables.html#atc">ATC</a>, 87<br />
+<a href="./10-obsolete-variables.html#atkp">ATKP</a>, 88<br />
+<a href="./10-obsolete-variables.html#atrf">ATRF</a>, 88<br />
+<a href="./4-the-state-of-the-atmosphere.html#attack">ATTACK</a>, 54<br />
+<a href="./4-the-state-of-the-atmosphere.html#attack">attack, angle of</a>, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">ATX</a>, 33, 41, 44–46, 48, 50, 53, 75, 91<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">ATx</a>, 33, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">ATxD</a>, 33<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">ATxH</a>, 33<br />
+<a href="./5-cloud-physics-variables.html#CRPC">AUHSAS</a>, 62<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">avionics</a>, 29<br />
+<a href="./1-introduction.html#constants-and-symbols">Avogadro constant</a>, 4, 42<br />
+<a href="./6-air-chemistry-measurements.html#awas-cims-qcls-toga">AWAS</a>, 72<br />
+<a href="./3-the-state-of-the-aircraft.html#wp3">baro-inertial loop: see</a>, 12<br />
+<a href="./3-the-state-of-the-aircraft.html#wp3">baro-loop: see</a>, 12<br />
+<a href="./2-general-information-about-data-files.html#base-time">base time</a>, 7<br />
+<a href="./4-the-state-of-the-atmosphere.html#bdifr">BDIF</a>, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#bdifr">BDIFR</a>, 53, 55<br />
+<a href="./10-obsolete-variables.html#vanes">BFIXx</a>, 87<br />
+<a href="./3-the-state-of-the-aircraft.html#blata">BLATA</a>, 16<br />
+<a href="./3-the-state-of-the-aircraft.html#blona">BLONA</a>, 16<br />
+<a href="./3-the-state-of-the-aircraft.html#bnorma">BNORMA</a>, 16<br />
+<a href="./3-the-state-of-the-aircraft.html#thetae">Bolton</a>, 47<br />
+Boltzmann constant, see<br />
+  <a href="./1-introduction.html#constants-and-symbols">Constants and Symbols</a>, 4<br />
+<a href="./3-the-state-of-the-aircraft.html#bpitchr">BPITCHR</a>, 16<br />
+<a href="./3-the-state-of-the-aircraft.html#brollr">BROLLR</a>, 16<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">Bulletin 21</a>, 31<br />
+<a href="./4-the-state-of-the-atmosphere.html#wind">Bulletin 23</a>, 53<br />
+<a href="./5-cloud-physics-variables.html#plwc">Bulletin 24</a>, 93<br />
+<a href="./10-obsolete-variables.html#swtc">Bulletin 25</a>, 92<br />
+<a href="./4-the-state-of-the-atmosphere.html#humidity">Bulletin 9</a>, 2<br />
+<a href="./3-the-state-of-the-aircraft.html#byawr">BYAWR</a>, 16<br />
+<a href="./5-cloud-physics-variables.html#c1dc-c1dp">C1DC</a>, 66
+<a href="./5-cloud-physics-variables.html#c1dc-c1dp">C1DP</a>, 66<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">C200X</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">C200Y</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">C260X</a>, 62<br />
+calibration, numerous references throughout, 29<br />
+  <a href="./1-general-information-about-data-files.html#background-information">coefficients</a>, 9<br />
+  <a href="./6-air-chemistry-measurements.html#comr-al">gas</a>, 68<br />
+<a href="./4-the-state-of-the-atmosphere.html#p-special">CAVP_x</a>, 32<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">CCDP</a>, 62<br />
+<a href="./10-obsolete-variables.html#loranc">CCEP</a>, 85<br />
+<a href="./3-the-state-of-the-aircraft.html#wp3">centrifugal acceleration</a>, 14<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">CF300</a>, 62<br />
+<a href="./10-obsolete-variables.html#loranc">CFSEC</a>, 85<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">CFSSP</a>, 62<br />
+<a href="./10-obsolete-variables.html#loranc">CGS</a>, 85<br />
+<a href="./6-air-chemistry-measurements.html#co2-pic">CH4_PICx</a>, 68<br />
+<a href="./4-the-state-of-the-atmosphere.html#dew-point">chilled-mirror</a>, 44<br />
+<a href="./6-air-chemistry-measurements.html#awas-cims-qcls-toga">CIMS</a>, 72<br />
+<a href="./10-obsolete-variables.html#loranc%7C">CLAT</a>, 85<br />
+<a href="./10-obsolete-variables.html#loranc">CLON</a>, 85<br />
+<a href="./10-obsolete-variables.html#co-vars">CMODE</a>, 92<br />
+<a href="./7-aerosol-particle-measurements.html#condensation-nucleus-counter">CN counter</a>, 73<br />
+  3760A, 73<br />
+  3786, 73<br />
+  <a href="./7-aerosol-particle-measurements.html#concn">coincidence in</a>, 74<br />
+  <a href="./7-aerosol-particle-measurements.html#concn">dead time</a>, 74<br />
+  <a href="./7-aerosol-particle-measurements.html#fcnc">flow rate</a>, 73<br />
+  <a href="./7-aerosol-particle-measurements.html#xicnc">side flow</a>, 74<br />
+<a href="./7-aerosol-particle-measurements.html#cntemp">CNTEMP</a>, 75<br />
+<a href="./7-aerosol-particle-measurements.html#cnts">CNTS</a>, 75<br />
+<a href="./6-air-chemistry-measurements.html#comr-al">CO</a>, 92
+<a href="./6-air-chemistry-measurements.html#co2-pic">CO2_PICx</a>, 68<br />
+<a href="./10-obsolete-variables.html#co-vars">COCAL</a>, 92<br />
+<a href="./10-obsolete-variables.html#co-vars">COCOR</a>, 92<br />
+coefficients<br />
+  <a href="./1-general-information-about-data-files.html#background-information">calibration</a>, 29<br />
+  <a href="./4-the-state-of-the-atmosphere.html#akrd">sensitivity</a>, 30<br />
+compression<br />
+  <a href="./4-the-state-of-the-atmosphere.html#recovery-t">adiabatic</a>, 33<br />
+<a href="./6-air-chemistry-measurements.html#comr-al">COMR_AL</a>, 68
+<a href="./5-cloud-physics-variables.html#conc2d">CONC1DC</a>, 66<br />
+<a href="./5-cloud-physics-variables.html#conc2d">CONC1DP</a>, 66<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONC3</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONC6</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONCD</a>, 63<br />
+concentration<br />
+  <a href="./5-cloud-physics-variables.html#conc2d">2D</a>, 66<br />
+  <a href="./7-aerosol-particle-measurements.html#concu-concp">aerosol</a>, 73<br />
+  <a href="./7-aerosol-particle-measurements.html#concn">ambient</a>, 73<br />
+  <a href="./6-air-chemistry-measurements.html#comr-al">calibration gas</a>, 68<br />
+  <a href="./2-general-information-about-data-files.html#units-and-abbreviations">chemical species</a>, 5, 6<br />
+  <a href="./7-aerosol-particle-measurements.html#concn">CN</a>, 74<br />
+  <a href="./5-cloud-physics-variables.html#concentration">droplet</a>, 5<br />
+  <a href="./5-cloud-physics-variables.html#concentration">FSSP</a>, 63<br />
+  <a href="./5-cloud-physics-variables.html#concentration">hydrometeor</a>, 62<br />
+  hydrometeor, <a href="./5-cloud-physics-variables.html#size-distribution">size distribution</a>, 62<br />
+  <a href="./5-cloud-physics-variables.html#size-distribution">particle</a>, 77<br />
+  <a href="./7-aerosol-particle-measurements.html#concu-concp">PCAS</a>, 94<br />
+  <a href="./7-aerosol-particle-measurements.html#condensation-nucleus-counter">ultrafine particles</a>, 73<br />
+  <a href="./4-the-state-of-the-atmosphere.html#vxcel-corr">water vapor</a>, 42<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONCF</a>, 63<br />
+<a href="./4-the-state-of-the-atmosphere.html#uvh-n">CONCH_UVH</a>, 43<br />
+<a href="./7-aerosol-particle-measurements.html#concn">CONCN</a>, 75<br />
+<a href="./7-aerosol-particle-measurements.html#concu-concp">CONCP</a>, 76<br />
+<a href="./7-aerosol-particle-measurements.html#concu-concp">CONCU</a>, 76<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONCU100</a>, 76<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONCU500</a>, 76<br />
+<a href="./4-the-state-of-the-atmosphere.html#vcsel-corr">CONCV_VXL</a>, 42<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONCX</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#concentration">CONCY</a>, 63<br />
+<a href="./7-aerosol-particle-measurements.html#condensation-nucleus-counter">condensation nucleus counter</a>, see CN counter<br />
+conductivity<br />
+  <a href="./5-cloud-physics-variables.html#plwcc">thermal</a>, 59<br />
+<a href="./4-the-state-of-the-atmosphere.html#ATX">conservation of energy</a>, 34<br />
+constants, see symbols<br />
+  <a href="./1-introduction.html#constants-and-symbols">table</a>, 4<br />
+<a href="./6-air-chemistry-measurements.html#coraw-al">CORAW_AL</a>, 68<br />
+<a href="./3-the-state-of-the-aircraft.html#wp3">Coriolis acceleration</a>, 14<br />
+correction<br />
+  <a href="./4-the-state-of-the-atmosphere.html#qcx">dynamic pressure</a>, 31<br />
+  <a href="./4-the-state-of-the-atmosphere.html#ambient-t">moist air</a>, 33<br />
+  <a href="./4-the-state-of-the-atmosphere.html#psx">pressure</a>, 30<br />
+  vertical wind<br />
+    <a href="./4-the-state-of-the-atmosphere.html#wind">rotation in pitch</a>, 19<br />
+count rate<br />
+  <a href="./5-cloud-physics-variables.html#a1dc-a1dp">2D</a>, 66<br />
+<a href="./10-obsolete-variables.html#co-vars">COZRO</a>, 92<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">CPCAS</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#a1dc-a1dp">CPS</a>=counts per second, 68, 70<br />
+<a href="./10-obsolete-variables.html#cryo-hygro">CRHP</a>, 89<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">CS100</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">CS200</a>, 62<br />
+<a href="./10-obsolete-variables.html#loranc">CSEC</a>, 85<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">CUHSAS</a>, 62<br />
+<a href="./4-the-state-of-the-atmosphere.html#dvalue">d-value</a>, 32<br />
+data<br />
+  <a href="./1-introduction.html">acquisition</a>, 1<br />
+  <a href="./1-introduction.html">display</a>, 1<br />
+  <a href="./1-introduction.html">processing</a>, 1<br />
+  <a href="./1-introduction.html">sample rate</a>, 1<br />
+<a href="./1-introduction.html">data rates</a>, 8<br />
+<a href="./4-the-state-of-the-atmosphere.html#thetae">Davies-Jones</a>, 46<br />
+<a href="./2-general-information-about-data-files.html#mdy%7C">DAY</a>, 7<br />
+<a href="./5-cloud-physics-variables.html#dbar2d">DBAR1DC</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#dbar2d">DBAR1DP</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBAR3</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBAR6</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBARD</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBARF</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBARP</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBARU</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBARX</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#mean-diameter">DBARY</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#DBZ">dBz</a>, 64<br />
+<a href="./5-cloud-physics-variables.html#dbz2d">DBZ1DC</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#dbz2d">DBZ1DP</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#DBZ">DBZ6</a>, 64<br />
+<a href="./5-cloud-physics-variables.html#DBZ">DBZD</a>, 64<br />
+<a href="./5-cloud-physics-variables.html#DBZ">DBZF</a>, 64<br />
+<a href="./5-cloud-physics-variables.html#DBZ">DBZX</a>, 64<br />
+<a href="./5-cloud-physics-variables.html#DBZ">DBZY</a>, 64<br />
+<a href="./7-aerosol-particle-measurements.html#concn">dead time</a>, 66<br />
+  <a href="./10-obsolete-variables.html#fstrob">FSSP</a>, 94<br />
+defect<br />
+  <a href="4-the-state-of-the-atmosphere.html$psx">static</a>, 30<br />
+<a href="./3-the-state-of-the-aircraft.html#dei-dni">DEI</a>, 15<br />
+density<br />
+  <a href="4-the-state-of-the-atmosphere.html$rho">water vapor</a>, 44<br />
+<a href="4-the-state-of-the-atmosphere.html$derived-thermodynamic-variables">derived variables</a>, 46<br />
+dew point, 38<br />
+  <a href="./4-the-state-of-the-atmosphere.html#dewpt-corrected">corrected</a>, 38, 40<br />
+diameter<br />
+  <a href="./5-cloud-physics-variables.html#effective-radius">effective</a>, 64<br />
+  <a href="./5-cloud-physics-variables.html#PSD-LWC">equivalent</a>, 64<br />
+  <a href="./5-cloud-physics-variables.html#mean-diameter">mean, 1D probes</a>, 63<br />
+  <a href="./5-cloud-physics-variables.html#dbar2d">mean, 2D probes</a>, 67<br />
+<a href="./2-general-information-about-data-files.html#dimensions-in-equations">dimensions in equations</a>, 64<br />
+<a href="./5-cloud-physics-variables.html#disp2d">DISP1DC</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#disp2d">DISP1DP</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISP3</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISP6</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISPD</a>, 63<br />
+dispersion, 67<br />
+  <a href="./5-cloud-physics-variables.html#dispersion">1D probes</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISPF</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISPP</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISPU</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISPX</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#dispersion">DISPY</a>, 63<br />
+<a href="./3-the-state-of-the-aircraft.html#dei-dni">DNI</a>, 15<br />
+<a href="./4-the-state-of-the-atmosphere.html#dp-cr2">DP_CR2C</a>, 42<br />
+<a href="./4-the-state-of-the-atmosphere.html#vcsel-dp">DP_VXL</a>, 41<br />
+<a href="./4-the-state-of-the-atmosphere.html#dew-point">DP_x</a>, 38<br />
+<a href="./10-obsolete-variables.html#cryo-hygro">DPCRC</a>, 89<br />
+<a href="./4-the-state-of-the-atmosphere.html#dew-point">DPx</a>, 41<br />
+<a href="./4-the-state-of-the-atmosphere.html#dewpt-corrected">DPXC</a>, 91<br />
+<a href="./4-the-state-of-the-atmosphere.html#dewpt-corrected">DPxC</a>, 40<br />
+<a href="./4-the-state-of-the-atmosphere.html#special-use-remote">dropsonde</a>, 57<br />
+<a href="./5-cloud-physics-variables.html#dt1dc">DT1DC</a>, 66<br />
+<a href="./4-the-state-of-the-atmosphere.html#dvalue">DVALUE</a>, 32<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">dynamic pressure</a>, 52<br />
+<a href="./10-obsolete-variables.html#edpc">EDPC</a>, 88<br />
+<a href="./4-the-state-of-the-atmosphere.html#humidity">enhancement factor</a>, 44<br />
+equation<br />
+  <a href="./4-the-state-of-the-atmosphere.html#p-special">thickness</a>, 32<br />
+equations<br />
+  <a href="./2-general-information-about-data-files.html#dimensions-in-equations">dimensionless</a>, 9<br />
+  <a href="./2-general-information-about-data-files.html#dimensions-in-equations">scale factors</a>, 9<br />
+<a href="./4-the-state-of-the-atmosphere.html#ewx">EW_UVH</a>, 43<br />
+<a href="./4-the-state-of-the-atmosphere.html#ewx">EWX</a>, 43–46<br />
+<a href="./4-the-state-of-the-atmosphere.html#ewx">EWx</a>, 43<br />
+<a href="./10-obsolete-variables.html#fact">FACT</a>, 94<br />
+<a href="./10-obsolete-variables.html#fbmfr">FBMFR</a>, 94<br />
+<a href="./7-aerosol-particle-measurements.html#fcnc">FCN</a>, 73<br />
+<a href="./7-aerosol-particle-measurements.html#fcnc">FCN</a>, 73<br />
+<a href="./7-aerosol-particle-measurements.html#fcnc">FCNC</a>, 75<br />
+filter<br />
+<!-- \ \ <a href='./3-the-state-of-the-aircraft.html#vewc-vnsc'>Butterworth</a>, 25   -->
+  <a href="./3-the-state-of-the-aircraft.html#vewc-vnsc">Butterworth</a>, 25<br />
+  <a href="./3-the-state-of-the-aircraft.html#compFilter">complementary</a> (for wind), 24<br />
+  <a href="./2-general-information-about-data-files.html#elecFilter">electronic</a>, 8<br />
+<!-- \ \ <a href='./2-general-information-about-data-files.html#elecFilter'>electronic</a>, 8   -->
+  <a href="./2-general-information-about-data-files.html#elecFilter">FIR</a>, 8<br />
+<a href="./3-the-state-of-the-aircraft.html#vewc-vnsc">fit matrix</a>, 27<br />
+<a href="./4-the-state-of-the-atmosphere.html#true-airspeed">flight speed</a>, see true airspeed<br />
+flow<br />
+  <a href="./2-general-information-about-data-files.html#units-and-abbreviations">conversions</a>, 5<br />
+  <a href="./7-aerosol-particle-measurements.html#pflw">PCASP</a>, 76<br />
+  <a href="./2-general-information-about-data-files.html#units-and-abbreviations">SLPM</a>, 5<br />
+  <a href="./2-general-information-about-data-files.html#units-and-abbreviations">volumetric</a>, 5<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">flow distortion</a>, 29<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">flow rates</a>, 5<br />
+flux<br />
+  <a href="8-radiation-variables.html#harp">actinic</a>, 80<br />
+<a href="./6-air-chemistry-measurements.html#fo3-acd">FO3_ACD</a>, 69<br />
+<a href="./6-air-chemistry-measurements.html#fo3-acd">FO3_CL</a>, 69<br />
+<a href="./6-air-chemistry-measurements.html#fo3-acd">FO3_x</a>, 69<br />
+<a href="./2-general-information-about-data-files.html#bpitchr">foot</a>, 6<br />
+<a href="./4-the-state-of-the-atmosphere.html#mirror-cr2">FP_CR2</a>, 42<br />
+<a href="./10-obsolete-variables.html#cryo-hygro">FPCRC</a>, 89<br />
+<a href="./5-cloud-physics-variables.html#fssp-range">FRANGE</a>, 65<br />
+<a href="./10-obsolete-variables.html#freset">FRESET</a>, 93<br />
+<a href="./5-cloud-physics-variables.html#fssp-range">FRNG</a>, 65<br />
+<a href="./3-the-state-of-the-aircraft.html#humidity">frost point</a>, 89<br />
+<a href="./10-obsolete-variables.html#freset">FRST</a>, 93<br />
+<a href="./5-cloud-physics-variables.html#VariableNames1DProbes">FSSP-100</a><br />
+  <a href="./10-obsolete-variables.html#fact">activity</a>, 94<br />
+  <a href="./10-obsolete-variables.html#fbmfr">beam fraction</a>, 94<br />
+  <a href="./5-cloud-physics-variables.html#concentration">concentration</a>, 63<br />
+  <a href="./10-obsolete-variables.html#fstrob">dead time</a>, 93, 94<br />
+  <a href="./5-cloud-physics-variables.html#dispersion">dispersion</a>, 63<br />
+  <a href="./10-obsolete-variables.html#freset">fast resets</a>, 93<br />
+  <a href="./5-cloud-physics-variables.html#PSD-LWC">liquid water content</a>, 63<br />
+  <a href="./5-cloud-physics-variables.html#mean-diameter">mean diameter</a>, 63<br />
+  <a href="./5-cloud-physics-variables.html#fssp-range">range</a> 65<br />
+  <a href="./5-cloud-physics-variables.html#size-distribution">size distribution</a>, 62<br />
+  <a href="./10-obsolete-variables.html#fstrob">total strobes</a>, 93<br />
+<a href="./5-cloud-physics-variables.html#VariableNames1DProbes">FSSP-300</a>, 63<br />
+<a href="./10-obsolete-variables.html#fstrob">FSTB</a>, 93<br />
+<a href="./10-obsolete-variables.html#fstrob">FSTROB</a>, 93<br />
+<a href="./3-the-state-of-the-aircraft.html#fxazim">FXAZIM</a>, 15<br />
+<a href="./3-the-state-of-the-aircraft.html#fxazim">FXDIST</a>, 15<br />
+<a href="./3-the-state-of-the-aircraft.html#ggalt">GALT_A</a>, 19<br />
+<a href="./1-introduction.html#constants-and-symbols">gas constant</a>, 4<br />
+  <a href="./4-the-state-of-the-atmosphere.html#moist-air">dry air</a>, 4, 46<br />
+  <a href="./4-the-state-of-the-atmosphere.html#moist-air">moist air</a>, 33, 34<br />
+  <a href="./1-introduction.html#constants-and-symbols">universal</a>, 4<br />
+  <a href="./1-introduction.html#constants-and-symbols">water vapor</a>, 4<br />
+<a href="./1-introduction#background-information">GENPRO</a>, 2<br />
+<a href="./3-the-state-of-the-aircraft.html#geopth">GEOPHT</a>, 19<br />
+<a href="./3-the-state-of-the-aircraft.html#ggalt">GGALT</a>, 19<br />
+<a href="./3-the-state-of-the-aircraft.html#altx">GGALTC</a>, 23<br />
+<a href="./3-the-state-of-the-aircraft.html#ggeoidht">GGEOIDHT</a>, 20<br />
+<a href="./3-the-state-of-the-aircraft.html#gghwgs">GGHWGS</a>, 19<br />
+<a href="./3-the-state-of-the-aircraft.html#gglat">GGLAT</a>, 28<br />
+<a href="./3-the-state-of-the-aircraft.html#gglon">GGLON</a>, 28<br />
+<a href="./3-the-state-of-the-aircraft.html#ggnsat">GGNSAT</a>, 20<br />
+<a href="./3-the-state-of-the-aircraft.html#ggqual">GGQUAL</a>, 20<br />
+<a href="./3-the-state-of-the-aircraft.html#ggspd">GGSPD</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#ggstatus%7C">GGSTATUS</a>, 20<br />
+<a href="./3-the-state-of-the-aircraft.html#ggtrk">GGTRK</a>, 20<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvew">GGVEW</a>, 26<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvns">GGVNS</a>, 26<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvspd">GGVSPD</a>, 19<br />
+<a href="./3-the-state-of-the-aircraft.html#special-use-remote">GISMOS</a>, 57<br />
+<a href="./3-the-state-of-the-aircraft.html#gglat">GLAT</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#global-positioning-systems">global positioning system</a>, see GPS<br />
+<a href="./3-the-state-of-the-aircraft.html#gglon">GLON</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#gglon">GLON</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#gmode">GMODE</a>, 20<br />
+<a href="./7-aerosol-particle-measurements.html#special-aerosol">GNI</a>, 77<br />
+<a href="./3-the-state-of-the-aircraft.html#global-positioning-systems">GPS</a>, 27<br />
+  <a href="./3-the-state-of-the-aircraft.html#gglat">aircraft avionics unit</a>, 17<br />
+  <a href="./3-the-state-of-the-aircraft.html#gglat">Garmin</a>, 17<br />
+  <a href="./3-the-state-of-the-aircraft.html#gglat">NovAtel</a>, 16<br />
+  <a href="./3-the-state-of-the-aircraft.html#gglat">Trimble TANS-III</a>, 17<br />
+<a href="./3-the-state-of-the-aircraft.html#global-positioning-systems">GPS receivers</a>, 16<br />
+gravity, see Eqn. (<a href="./1-introduction.html#eq:gsublambda">1.1</a>)<br />
+  <a href="./3-the-state-of-the-aircraft.html#palt">standard</a>, 16<br />
+<a href="./3-the-state-of-the-aircraft.html#ggspd">ground speed</a>, 15<br />
+<a href="./3-the-state-of-the-aircraft.html#gsf">GSF</a>, 86<br />
+<a href="./3-the-state-of-the-aircraft.html#ggspd">GSF_G</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#ggstatus%7C">GSTAT</a>, 20<br />
+<a href="./3-the-state-of-the-aircraft.html#ggstatus">GSTAT</a>, 20<br />
+<a href="./3-the-state-of-the-aircraft.html#ggstatus%7C">GSTAT_G</a>, 20<br />
+<a href="./4-the-state-of-the-atmosphere.html#variable-names">gust probe</a>
+  <a href="./4-the-state-of-the-atmosphere.html#relative-wind">858AJ</a>, 52<br />
+  <a href="./4-the-state-of-the-atmosphere.html#relative-wind">radome</a>, 52, 53<br />
+  <a href="./4-the-state-of-the-atmosphere.html#relative-wind">Rosemount 858AJ</a>, 53<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvspd">GVZI</a>, 19<br />
+<a href="./8-radiation-variables.html#harp">HARP</a>,see HIAPER Atmospheric Radiation Package<br />
+heading<br />
+  <a href="./3-the-state-of-the-aircraft.html#thdg">magnetic</a>, 11<br />
+  <a href="./3-the-state-of-the-aircraft.html#thdg">true</a>, 11<br />
+<a href="./8-radiation-variables.html#rstx">Heimann radiometer</a>, 78<br />
+<a href="./3-the-state-of-the-aircraft.html#hgm">HGM</a>, 21<br />
+<a href="./3-the-state-of-the-aircraft.html#hgme-159">HGM</a>, 21<br />
+<a href="./3-the-state-of-the-aircraft.html#hgm-232">HGM232</a>, 21<br />
+<a href="./3-the-state-of-the-aircraft.html#hgme-159">HGME</a>, 32<br />
+<a href="./3-the-state-of-the-aircraft.html#hi3">HI3</a>, 21<br />
+<a href="./7-aerosol-particle-measurements.html#harp">HIAPER Atmospheric Radiation Package</a>, 80<br />
+<a href="./2-general-information-about-data-files.html#hms%7C">HOUR</a>, 7<br />
+<a href="./5-cloud-physics-variables.html#sensors-1-D-probes">housekeeping variables</a>, 61<br />
+<a href="./4-the-state-of-the-atmosphere.html#humidity">humidity</a>, 38<br />
+  <a href="./4-the-state-of-the-atmosphere.html#rho">absolute</a>, 44<br />
+  <a href="./4-the-state-of-the-atmosphere.html#rhumw">relative</a>, 44<br />
+  <a href="./4-the-state-of-the-atmosphere.html#rhumi">relative to ice</a>, 44<br />
+  <a href="./4-the-state-of-the-atmosphere.html#sphum">specific</a>, 45, 53<br />
+<a href="./5-cloud-physics-variables.html#VariableNames1DProbes">hydrometeor detector</a>, 60<br />
+hydrometeor probes<br />
+  <a href="./5-cloud-physics-variables.html#VariableNames1DProbes">table of</a>, 62<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">hydrometeor spectrometer</a>, 63<br />
+<a href="./4-the-state-of-the-atmosphere.html#dew-point">hygrometer</a>, 38<br />
+  <a href="./4-the-state-of-the-atmosphere.html#dew-point">chilled-mirror</a>, 44<br />
+  <a href="./4-the-state-of-the-atmosphere.html#mirror-cr2">CR2</a>, 42<br />
+  <a href="10-obsolete-variables.html#cryo-hygro">cryogenic</a>, 45, 89<br />
+  <a href="./4-the-state-of-the-atmosphere.html#dew-point">dew point</a>, 38, 45<br />
+  <a href="./4-the-state-of-the-atmosphere.html#dew-point">housing</a>, 38<br />
+  <a href="10-obsolete-variables.html#vla">Lyman-alpha</a>, 45, 90<br />
+  <a href="./4-the-state-of-the-atmosphere.html#MR">tunable diode laser</a>, 40, 45<br />
+  <a href="./4-the-state-of-the-atmosphere.html#uvh-n">UV</a>, 42, 45, 90<br />
+  <a href="./4-the-state-of-the-atmosphere.html#vcsel-dp">VCSEL</a>, 37, 40, 41, 45<br />
+<a href="./5-cloud-physics-variables.html#PSD-LWC">ice water content</a>, 64<br />
+impactor<br />
+  <a href="./7-aerosol-particle-measurements.html#special-aerosol">giant nucleus</a>, 77<br />
+<a href="./10-obsolete-variables#ias">indicated airspeed</a>, 88<br />
+<a href="./3-the-state-of-the-aircraft.html#inertial-reference-systems">inertial navigation system</a>, see INS<br />
+<a href="./10-obsolete-variables.html#mdy">inertial reference unit</a>, see IRU<br />
+<a href="./3-the-state-of-the-aircraft.html#inertial-reference-systems">INS</a>, 10<br />
+  alignment, 10<br />
+  C-MIGITS, 10<br />
+  C130, 10<br />
+  GV, 10<br />
+  Honeywell, 13<br />
+  Honeywell Laseref, 10<br />
+  Litton LTN-51, 12<br />
+  measurements not in normal data files, 16<br />
+  specifications, 11<br />
+instrument descriptions<br />
+  <a href="https://www.eol.ucar.edu/aircraft-instrumentation">EOL web site</a>, 29<br />
+instruments<br />
+  <a href="./8-radiation-variables.html">radiation</a>, 78<br />
+  <a href="./6-air-chemistry-measurements.html#awas-cims-qcls-toga">user</a>, 1, 71<br />
+<a href="./3-the-state-of-the-aircraft.html#palt">International Standard Atmosphere</a>, 22<br />
+  <a href="./3-the-state-of-the-aircraft.html#palt">lapse rate</a>, 23<br />
+  <a href="./3-the-state-of-the-aircraft.html#palt">tropopause</a>, 23<br />
+<a href="./2-general-information-about-data-files.html#synchronization-of-measurements">interpolation</a>, 8<br />
+<a href="./8-radiation-measurements.html#measurements-of-irradiance-and-radiometric-temperature">irradiance</a>, 78<br />
+  long-wave, 79<br />
+  visible, 80<br />
+<a href="./3-the-state-of-the-aircraft.html#inertial-reference-systems">IRU</a>, 11<br />
+  <a href="./10-obsolete-variables.html#ltn51">Litton LTN-51</a>, 86<br />
+  <a href="./3-the-state-of-the-aircraft#special-use-irs">raw variables</a>, 16<br />
+<a href="./10-obsolete-variables.html#irx">IRx</a>, 91<br />
+<a href="./8-radiation-variables.html#irxc">IRxC</a>, 91<br />
+<a href="./8-radiation-variables.html#irxht">IRxHT</a>, 79<br />
+<a href="./7-aerosol-particle-measurements.html#trstx">IRxV</a>, 79<br />
+<a href="./3-the-state-of-the-aircraft.html#palt">ISA</a>, see International Standard Atmosphere<br />
+<a href="./10-obsolete-variables.html#jwlwc">Johnson-Williams sensor</a>, 88<br />
+<a href="./5-cloud-physics-variables#plwcc">King probe</a>, 58<br />
+  element dimensions, 59<br />
+  power dissipated, 59<br />
+  sensor temperature, 59<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">knot</a>, 6<br />
+<a href="./2-general-information-about-data-files#synchronization-of-measurements">lags in sampling</a><br />
+  static, 8<br />
+  dynamic, 8
+<a href="./4-the-state-of-the-atmosphere#psx">LAMS</a>, 31
+<a href="./3-the-state-of-the-aircraft.html#latitude">LAT</a>, 28<br />
+<a href="./3-the-state-of-the-aircraft.html#gglat">LAT_G</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#latc-lonc">LATC</a>, 27<br />
+<a href="./3-the-state-of-the-aircraft.html#thetae">latent heat of vaporization</a>, 59<br />
+<a href="./3-the-state-of-the-aircraft.html#latitude">latitude</a>, 27<br />
+<a href="./3-the-state-of-the-aircraft.html#thetae">lifted condensation level</a>, 47<br />
+<a href="./4-the-state-of-the-atmosphere.html#atx">linkage. temperature and airspeed</a>, 33<br />
+<a href="./5-cloud-physics-variables.html#plwcc">liquid water content</a>, 67<br />
+  <a href="./5-cloud-physics-variables.html#PSD-LWC">1D probes</a>, 63<br />
+  <a href="./5-cloud-physics-variables.html#PSD-LWC">FSSP-100</a>, 63<br />
+  <a href="./5-cloud-physics-variables.html#plwcc">King probe</a>, 58<br />
+  <a href="./5-cloud-physics-variables.html#rice">supercooled</a>, 60<br />
+<a href="./3-the-state-of-the-aircraft.html#longitude">LON</a>, 28
+<a href="./3-the-state-of-the-aircraft.html#gglon">LON_G</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#latc-lonc">LONC</a>, 27<br />
+<a href="./3-the-state-of-the-aircraft.html#longitude">longitude</a>, 27<br />
+<a href="./5-cloud-physics-variables.html#plwcc">LWC</a>, 88<br />
+<a href="./10-obsolete-variables.html#jwlw-corrected%7C">LWCC</a>, 88<br />
+<a href="./4-the-state-of-the-atmosphere.html#humidity">Lyman-alpha hygrometer</a>, 40<br />
+<a href="./3-the-state-of-the-aircraft.html#psx">Mach number</a>, 36<br />
+  uncorrected, 31<br />
+<a href="./4-the-state-of-the-atmosphere.html#mach-number">MACHX</a>, 54<br />
+<a href="./4-the-state-of-the-atmosphere.html#mach-number">MACHx</a>, 53<br />
+<a href="./2-general-information-about-data-files#distinction-between-original-measurements%20and-derived-variables">measurement</a><br />
+  derived, 8<br />
+  original, 8<br />
+  <a href="./4-the-state-of-the-atmosphere.html#variable-names">preferred</a>, 29<br />
+  raw, 8, 33<br />
+meter<br />
+  <a href="2-general-information-about-data-files.html#units-and-abbreviations">mass flow</a>, 5<br />
+<a href="2-general-information-about-data-files.html#units-and-abbreviations">millibar</a>, 5<br />
+<a href="./2-general-information-about-data-files.html#hms%7C">MINUTE</a>, 7<br />
+<a href="./4-the-state-of-the-atmosphere.html#mirror-cr2">MIRRORT_CR2</a>, 42<br />
+<a href="./3-the-state-of-the-aircraft.html#humidity">MIRRTMP_DPx</a>, 38<br />
+<a href="./4-the-state-of-the-atmosphere.html#MR">mixing ratio</a>, 50<br />
+  <a href="2-general-information-about-data-files.html#units-and-abbreviations">conversion</a>, 6<br />
+<a href="./4-the-state-of-the-atmosphere.html#moist-air">moist-air properties</a>, 34<br />
+molecular weight<br />
+  <a href="./1-introduction.html#constants-and-symbols">dry air</a>, 4<br />
+  <a href="./1-introduction.html#constants-and-symbols">water</a>, 4<br />
+<a href="./2-general-information-about-data-files.html#mdy%7C">MONTH</a>, 7<br />
+motion<br />
+  <a href="./4-the-state-of-the-atmosphere.html#wind">GPS antenna</a>, 51<br />
+<a href="./4-the-state-of-the-atmosphere.html#MR">MR</a>, 50<br />
+<a href="./4-the-state-of-the-atmosphere.html#MR">MRCR</a>, 45<br />
+<a href="./4-the-state-of-the-atmosphere.html#MR">MRLA</a>, 45<br />
+<a href="./4-the-state-of-the-atmosphere.html#MR">MRLH</a>, 45<br />
+<a href="./4-the-state-of-the-atmosphere.html#MR">MRVXL</a>, 45<br />
+<a href="./4-the-state-of-the-atmosphere.html#special-use-remote">MTP</a>, 57<br />
+<a href="./4-the-state-of-the-atmosphere.html#humidity">Murphy and Koop</a>, 39<br />
+<a href="./4-the-state-of-the-atmosphere.html#variable-names">names</a><br />
+  variable, 29<br />
+    location in, 29<br />
+    suffixes, 29<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">nautical mile</a>, 6<br />
+NetCDF<br />
+  <a href="./introduction.html">format</a>, 1<br />
+  <a href="./introduction.html">header</a>, 1, 10<br />
+  <a href="./5-cloud-physics-variables.html#CRPC">vector</a>, 62<br />
+<a href="./1-introduction.html">NIDAS</a>, 7<br />
+<a href="./1-introduction.html">nimbus</a>, 1<br />
+nomenclature<br />
+  <a href="./2-general-information-about-data-files.html#variable-names-in-equations">code</a>, 8<br />
+  <a href="./2-general-information-about-data-files.html#dimensions-in-equations">dimensionless equations</a>, 8, 9<br />
+<a href="./10-obsolete-variables.html#o3fs">O3FS</a>, 92<br />
+<a href="./6-air-chemistry-measurements.html#f03-acd%7C">O3MR_CL</a>, 69<br />
+<a href="./4-the-state-of-the-atmosphere.html#oat%7C">OAT</a>, 37<br />
+<a href="./2-general-information-about-data-files.html#synchronization-of-measurements">sample time</a>, 7<br />
+<a href="./2-general-information-about-data-files.html#bpitchr">oscillation</a>, 10<br />
+<a href="./10-obsolete-variables.html#AACT">PACT</a>, 94<br />
+<a href="./3-the-state-of-the-aircraft.html#palt">PALT</a>, 21<br />
+particles<br />
+  <a href="./7-aerosol-particle-measurements.html#condensation-nucleus-counter">ultrafine</a>, 73<br />
+<a href="./4-the-state-of-the-atmosphere.html#p-special">PCAB</a>, 32<br />
+<a href="./7-aerosol-particle-measurements.html#aerosol-spec">PCASP</a>, 77<br />
+<a href="./7-aerosol-particle-measurements.html#pcn">PCN</a>, 75<br />
+PCORS, see pressure corrections<br />
+<a href="./3-the-state-of-the-aircraft.html#ATX">perfect gas</a>, 33<br />
+<a href="./7-aerosol-particle-measurements.html#pflw">PFLW</a>, 76<br />
+<a href="./7-aerosol-particle-measurements.html#pflw">PFLWC</a>, 76<br />
+<a href="./10-obsolete-variables.html#ltn51">PHDG</a>, 85<br />
+<a href="./3-the-state-of-the-aircraft.html#pitch">PITCH</a>, 11<br />
+<a href="./3-the-state-of-the-aircraft.html#pitch">pitch</a>, 11<br />
+platform<br />
+  <a href="./8-radiation-variables.html#spx">stabilized</a>, 79, 80<br />
+<a href="./5-cloud-physics-variables.html#plwc">PLWC</a>, 58<br />
+<a href="./5-cloud-physics-variables.html#plwc">PLWC1</a>, 58<br />
+<a href="./5-cloud-physics-variables.html#lwc2d">PLWC1DC</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#PSD-LWC">PLWC6</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#plwcc">PLWCC</a>, 58<br />
+<a href="./5-cloud-physics-variables.html#plwcc">PLWCC1</a>, 58<br />
+<a href="./5-cloud-physics-variables.html#PSD-LWC">PLWCD</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#PSD-LWC">PLWCF</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#plwcg">PLWCG</a>, 60<br />
+<a href="./5-cloud-physics-variables.html#PSD-LWC">PLWCX</a>, 63<br />
+<a href="./5-cloud-physics-variables.html#PSD-LWC">PLWCY</a>, 63<br />
+<a href="./4-the-state-of-the-atmosphere.html#thetae">potential temperature</a>, 46<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">ppbv</a>, 6<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">ppmv</a>, 6<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">pptv</a>, 5, 6<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">pressure</a>, 29<br />
+  <a href="./4-the-state-of-the-atmosphere.html#psx">ambient</a>, 29, 31, 33, 36, 52<br />
+  <a href="./4-the-state-of-the-atmosphere.html#p-special">cabin</a>, 32<br />
+  <a href="./4-the-state-of-the-atmosphere.html#psx">corrections</a>, 30<br />
+  <a href="./4-the-state-of-the-atmosphere.html#dew-point">dew point housing</a>, 38<br />
+  <a href="./4-the-state-of-the-atmosphere.html#p-special">dew-point cavity</a>, 32<br />
+  <a href="./4-the-state-of-the-atmosphere.html#qcx">dynamic</a>, 30, 31, 33, 55<br />
+    <a href="./4-the-state-of-the-atmosphere.html#qcx">corrected</a>, 31<br />
+  <a href="./7-aerosol-particle-measurements.html#pcn">inlet</a>, 73<br />
+  <a href="./4-the-state-of-the-atmosphere.html#dewpt-corrected">partial, water vapor</a>, 38<br />
+  pitot, see pressure, total<br />
+  static, see pressure ambient<br />
+  <a href="./4-the-state-of-the-atmosphere.html#p-special">surface</a>, 32<br />
+  <a href="./4-the-state-of-the-atmosphere.html#qcx">total</a>, 31, 35, 36<br />
+  transducer,<br />
+    <a href="./4-the-state-of-the-atmosphere.html#psx">ambient pressure</a>, 30<br />
+    <a href="./4-the-state-of-the-atmosphere.html#qcx">dynamic pressure</a>, 31
+  <a href="./4-the-state-of-the-atmosphere.html#ewx">water vapor</a>, 43<br />
+    <a href="./4-the-state-of-the-atmosphere.html#dewpt-corrected">equilibrium</a>, 38, 39, 44<br />
+pressure damping<br />
+  <a href="./3-the-state-of-the-aircraft.html#acins">ACINS</a>, 11<br />
+  <a href="./3-the-state-of-the-aircraft.html#vspd">VSPD</a>, 12<br />
+  <a href="./3-the-state-of-the-aircraft.html#wp3">WP3</a>, 12<br />
+<a href="./4-the-state-of-the-atmosphere.html#moist-air">properties of moist air</a>, 34<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PS_A</a>, 29<br />
+<a href="./4-the-state-of-the-atmosphere.html#p-special">PSDPx</a>, 32<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSFD</a>, 29<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSFRD</a>, 29<br />
+<a href="./4-the-state-of-the-atmosphere.html#p-special">PSURF</a>, 32<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSX</a>, 33<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSx</a>, 29<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSxC</a>, 29<br />
+<a href="./10-obsolete-variables.html#ptime%7C">PTIME</a>, 85<br />
+<a href="./8-radiation-variables.html#visxv">pyranometer</a>, 79, 91<br />
+  <a href="./8-radiation-variables.html#visxv">calibration</a>, 79<br />
+<a href="./8-radiation-variables.html#irxv">pyrgeometer</a>, 78, 91<br />
+  <a href="./8-radiation-variables.html#irxv">calibration</a>, 78<br />
+<a href="./10-obsolete-variables.html#qcb">QCB</a>, 87<br />
+<a href="./10-obsolete-variables.html#qcb">QCBC</a>, 87<br />
+<a href="./3-the-state-of-the-aircraft.html#psx">QCF</a>, 54<br />
+<a href="./10-obsolete-variables.html#qcb">QCG</a>, 87<br />
+<a href="./10-obsolete-variables.html#qcb">QCG</a>, 87<br />
+<a href="./10-obsolete-variables.html#qcb">QCGC</a>, 87<br />
+<a href="./6-air-chemistry-measurements.html#awas-cims-qcls-toga">QCLS</a>, 72<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">QCR</a>, 31<br />
+  <a href="./4-the-state-of-the-atmosphere.html#qcx">correction</a>, 31<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">QCRC</a>, 31<br />
+  <a href="./4-the-state-of-the-atmosphere.html#qcx">flow-angle correction</a>, 31<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">QCX</a>, 33<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">QCx</a>, 31<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">QCXC</a>, 36<br />
+<a href="./4-the-state-of-the-atmosphere.html#qcx">QCxC</a>, 36<br />
+radar reflectivity factor<br />
+  <a href="./5-cloud-physics-variables.html#DBZ">1D probes</a>, 64<br />
+  <a href="./5-cloud-physics-variables.html#dbz2d">2D probes</a>, 67<br />
+<a href="./8-radiation-variables.html">radiation</a>, 78<br />
+  <a href="./8-radiation-variables.html#irxv">long-wave</a>, 91<br />
+  <a href="./8-radiation-variables.html#visxv">short wave</a>, 91<br />
+radiometer<br />
+  <a href="./8-radiation-variables.html#rstx">Heimann</a>, 78<br />
+  <a href="./8-radiation-variables.html#irxc">Kipp &amp; Zonen IR</a>, 79<br />
+  <a href="./8-radiation-variables.html#visxc">Kipp &amp; Zonen visible</a>, 79<br />
+radius<br />
+  <a href="./1-introduction.html#constants-and-symbols">of the Earth</a>, 4<br />
+  <a href="./5-cloud-physics-variables.html#effective-radius">effective</a>, 67<br />
+<a href="./4-the-state-of-the-atmosphere.html#relative-wind">radome gust probe</a>, 52, 53<br />
+range<br />
+  <a href="./5-cloud-physics-variables.html#fssp-range">FSSP</a>, 65<br />
+<a href="./3-the-state-of-the-aircraft.html#roc">rate of climb</a>, 12<br />
+<a href="./4-the-state-of-the-atmosphere.html#vcsel-uncor">RAWCONC_VXL</a>, 42<br />
+<a href="./4-the-state-of-the-atmosphere.html#ATX">recovery factor</a>, 35<br />
+  Rosemount sensors, 35<br />
+<a href="./5-cloud-physics-variables.html#reff2d">REFF2DC</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#reff2d">REFF2DP</a>, 67<br />
+<a href="./5-cloud-physics-variables.html#effective-radius">REFFD</a>, 64<br />
+<a href="./5-cloud-physics-variables.html#effective-radius">REFFF</a>, 64<br />
+reflectivity factor, 64<br />
+  <a href="./5-cloud-physics-variables.html#DBZ">1D probes</a>, 64<br />
+  <a href="./5-cloud-physics-variables.html#dbz2d">2D probes</a>, 67
+<a href="./4-the-state-of-the-atmosphere.html#rhumw">relative humidity</a>, 44
+relative humidity wrt ice, see humidity, relative to ice<br />
+resets<br />
+  <a href="./10-obsolete-variables.html#freset">FSSP-100</a>, 93<br />
+<a href="./10-obsolete-variables.html#ttrf">reverse-flow temperature sensor</a>, 88<br />
+<a href="./4-the-state-of-the-atmosphere.html#rho">RHOLA</a>, 45<br />
+<a href="./4-the-state-of-the-atmosphere.html#rho">RHOUV</a>, 45<br />
+<a href="./4-the-state-of-the-atmosphere.html#rho">RHOx</a>, 44<br />
+<a href="./4-the-state-of-the-atmosphere.html#rhumw">RHUM</a>, 44<br />
+<a href="./4-the-state-of-the-atmosphere.html#rhumi">RHUMI</a>, 44<br />
+<a href="./5-cloud-physics-variables.html#rice">RICE</a>, 60<br />
+<a href="./3-the-state-of-the-aircraft.html#roll">ROLL</a>, 11<br />
+<a href="./3-the-state-of-the-aircraft.html#roll">roll</a>, 11<br />
+<a href="./5-cloud-physics-variables.html#rice">Rosemount 871F icing probe</a>, 60<br />
+<a href="./8-radiation-variables.html#rstx">RSTx</a>, 78<br />
+<a href="./4-the-state-of-the-atmosphere.html#recovery-t">RTHRx</a>, 32<br />
+<a href="./4-the-state-of-the-atmosphere.html#recovery-t">RTX</a>, 37<br />
+<a href="./4-the-state-of-the-atmosphere.html#recovery-t%7C">RTx</a>, 33<br />
+<a href="./4-the-state-of-the-atmosphere.html#recovery-t">RTxH</a>, 32<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">samples per second</a>, 6<br />
+<a href="./2-general-information-about-data-files.html#synchronization-of-measurements">sampling rates</a>, 7<br />
+<a href="./3-the-state-of-the-aircraft.html#inertial-reference-systems">Schuler oscillation</a>, 27<br />
+<a href="./10-obsolete-variables.html#sclwc">SCLWC</a>, 93<br />
+<a href="./2-general-information-about-data-files.html#hms%7C">SECOND</a>, 7<br />
+sensitivity coefficient<br />
+  <a href="./4-the-state-of-the-atmosphere.html#akrd">AKRD</a>, 53<br />
+  <a href="./4-the-state-of-the-atmosphere.html#ssrd">SSRD</a>, 54<br />
+sensor<br />
+  <a href="./4-the-state-of-the-atmosphere.html#recovery-t">temperature</a><br />
+    anti-iced, 33<br />
+    heated, 33<br />
+    K-probe, 33<br />
+<a href="./3-the-state-of-the-aircraft.html#sfc">SFC</a>, 21<br />
+<a href="./4-the-state-of-the-atmosphere.html#ssrd">sideslip</a>, 55<br />
+size distribution<br />
+  <a href="./5-cloud-physics-variables.html#size-distribution">1D probes</a><br />
+  <a href="./5-cloud-physics-variables.html#a1dc-a1dp">2D probes</a>, 66<br />
+<a href="./7-aerosol-particle-measurements.html#special-aerosol">SMPS</a>, 77<br />
+<a href="./8-radiation-variables.html#solaz%7C">SOLAZ</a>, 82<br />
+<a href="./8-radiation-variables.html#solde">SOLDE</a>, 81<br />
+<a href="./8-radiation-variables.html#solel">SOLEL</a>, 81<br />
+<a href="./8-radiation-variables.html#solze">SOLZE</a>, 82<br />
+<a href="./3-the-state-of-the-aircraft.html#ATX">specific heat</a>, 34<br />
+  <a href="./1-introduction.html#constants-and-symbols">dry air</a><br />
+    constant pressure, 4<br />
+    constant volume, 4<br />
+    ratio, dry air, 4<br />
+  <a href="./4-the-state-of-the-atmosphere.html#moist-air">moist air</a>, 33, 34<br />
+spectrometer<br />
+  <a href="./7-aerosol-particle-measurements.html#special-aerosol">aerosol mass</a>, 77<br />
+  <a href="./5-cloud-physics-variables.html#size-distribution">hydrometeor</a>, 63<br />
+speed<br />
+  <a href="./3-the-state-of-the-aircraft.html#ggspd">ground</a>, 15<br />
+  airspeed<br />
+    <a href="./10-obsolete-variables.html#ias">indicated</a>, 88<br />
+    <a href="./4-the-state-of-the-atmosphere.html#true-airspeed">true</a>, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#ATX">speed of sound</a>, 35<br />
+<a href="./4-the-state-of-the-atmosphere.html#sphum">SPHUM</a>, 53<br />
+<a href="./8-radiation-variables.html#spx">SPxPitch</a>, 80<br />
+<a href="./8-radiation-variables.html#spx">SPxRoll</a>, 80<br />
+<a href="./10-obsolete-variables.html#akfxx">SSFXx</a>, 87<br />
+<a href="./4-the-state-of-the-atmosphere.html#sslip">SSLIP</a>, 55<br />
+<a href="./4-the-state-of-the-atmosphere.html#ssrd">SSRD</a>, 55<br />
+Stephan-Boltzmann Constant, , see<br />
+  <a href="./1-introduction.html#constants-and-symbols">Constants and Symbols</a>, 4<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">STP (standard conditions)</a>, 5<br />
+strobes<br />
+  <a href="./10-obsolete-variables.html#fstrob">FSSP</a>, 93<br />
+<a href="./10-obsolete-variables.html#swtc">SWTC</a>, 92<br />
+<a href="./10-obsolete-variables.html#swx">SWx</a>, 91<br />
+<a href="./2-general-information-about-data-files.html#synchronization-of-measurements">synchronization</a>, 7<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">system of units</a>, 5<br />
+<a href="./4-the-state-of-the-atmosphere.html#tashc">TASHC</a>, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#true-airspeed%7C">TASx</a>, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#true-airspeed">TASx</a>, 53<br />
+<a href="./4-the-state-of-the-atmosphere.html#true-airspeed">TASxD</a>, 52<br />
+<a href="./8-radiation-variables.html#rstx">TCAVB</a>, 78<br />
+<a href="./8-radiation-variables.html#rstx">TCAVT</a>, 78<br />
+<a href="./7-aerosol-particle-measurements.html#tcntu-tcntp">TCNTP</a>, 76<br />
+<a href="./7-aerosol-particle-measurements.html#tcntu-tcntp">TCNTU</a>, 76<br />
+<a href="./7-aerosol-particle-measurements.html#cntemp">TEMP1</a>, 73<br />
+<a href="./7-aerosol-particle-measurements.html#cntemp">TEMP2</a>, 73<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">temperature</a>, 32<br />
+  ambient, 32, 33, 41<br />
+  calculation, 33<br />
+  <a href="./4-the-state-of-the-atmosphere.html#thetae">equivalent potential</a>, 47<br />
+  <a href="./4-the-state-of-the-atmosphere.html#AT-ITR">in-cloud</a>, 37<br />
+  <a href="./7-aerosol-particle-measurements.html#cntemp">inlet</a>, 73<br />
+  <a href="./4-the-state-of-the-atmosphere.html#theta">potential</a>, 46, 47<br />
+  <a href="./4-the-state-of-the-atmosphere.html#thetae">pseudo-adiabatic equivalent potential</a>, 46<br />
+  <a href="./4-the-state-of-the-atmosphere.html#AT-ITR">radiometric</a>, 37, 78<br />
+  <a href="./4-the-state-of-the-atmosphere.html#recovery-t">recovery</a>, 32, 34<br />
+  <a href="./4-the-state-of-the-atmosphere.html#recovery-t">recovery vs. total</a>, 33<br />
+  <a href="./10-obsolete-variables.html#ttrf">reverse-flow</a>, 88<br />
+  <a href="./4-the-state-of-the-atmosphere.html#recovery-t">sensor</a>, 33<br />
+  static air, 33<br />
+  total, 33, 87<br />
+  virtual, 48<br />
+  virtual potential, 48<br />
+<a href="./6-air-chemistry-measurements.html#te03">TEO3</a>, 70<br />
+<a href="./6-air-chemistry-measurements.html#te03c">TEO3C</a>, 70<br />
+<a href="./6-air-chemistry-measurements.html#tep">TEO3P</a>, 70<br />
+<a href="./6-air-chemistry-measurements.html#tep">TEP</a>, 70<br />
+<a href="./6-air-chemistry-measurements.html#tet">TET</a>, 70<br />
+<a href="./3-the-state-of-the-aircraft.html#thdg">THDG</a>, 11<br />
+thermal conductivity, see conductivity, thermal<br />
+<a href="./4-the-state-of-the-atmosphere.html#theta">THETA</a>, 48<br />
+<a href="./4-the-state-of-the-atmosphere.html#thetae">THETAE</a>, 46<br />
+<a href="./4-the-state-of-the-atmosphere.html#thetaq">THETAQ</a>, 49<br />
+<a href="./4-the-state-of-the-atmosphere.html#thetav">THETAV</a>, 48<br />
+<a href="./10-obsolete-variables.html#thf">THF</a>, 86<br />
+<a href="./10-obsolete-variables.html#ltn51">THI</a>, 85<br />
+<a href="./2-general-information-about-data-files.html#time">time</a>, 7<br />
+  <a href="./2-general-information-about-data-files.html#base_time">base_time</a>, 7<br />
+  <a href="./2-general-information-about-data-files.html#time">example of usage</a>, 7<br />
+  <a href="./2-general-information-about-data-files.html#synchronization-of-measurements">interpolation</a>, 8<br />
+  <a href="./2-general-information-about-data-files.html#synchronization-of-measurements">lags</a>, 8<br />
+  <a href="./2-general-information-about-data-files.html#synchronization-of-measurements">offset</a>, 7<br />
+  <a href="./2-general-information-about-data-files.html#synchronization-of-measurements">shifts</a>, 8<br />
+  <a href="./2-general-information-about-data-files.html#time">variable Time</a>, 7<br />
+  <a href="./2-general-information-about-data-files.html#variables-used-to-denote-time">variables</a>, 6<br />
+<a href="./3-the-state-of-the-aircraft.html#ggtrk">TKAT_G</a>, 20<br />
+<a href="./10-obsolete-variables.html#tmlag">TMLAG</a>, 85<br />
+<a href="./6-air-chemistry-measurements.html#awas-cims-qcls-toga">TOGA</a>, 72<br />
+<a href="./10-obsolete-variables.html#tptime">TPTIME</a>, 85<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">trailing cone</a>, 30<br />
+transducer<br />
+  barometric, 29<br />
+  Paroscientific, 30<br />
+<a href="./1-introduction.html#constants-and-symbols">triple point of water</a>, 4<br />
+<a href="./8-radiation-variables.html#trstx">TRSTB</a>, 78<br />
+<a href="./4-the-state-of-the-atmosphere.html#true-airspeed">true airspeed</a>, see airspeed<br />
+<a href="./10-obsolete-variables.html#ttkp">TTKP</a>, 88<br />
+<a href="./10-obsolete-variables.html#ttrf">TTRF</a>, 87<br />
+<a href="./10-obsolete-variables.html#ttx">TTx</a>, 87<br />
+<a href="./4-the-state-of-the-atmosphere.html#TVIR">TVIR</a>, 48<br />
+<a href="./5-cloud-physics-variables.html#size-distribution">UHSAS</a>, 77<br />
+  <a href="./7-aerosol-particle-measurements.html#pflw">flow</a>, 76<br />
+  <a href="./7-aerosol-particle-measurements.html#pflw">STP</a>, 76<br />
+<a href="./4-the-state-of-the-atmosphere.html#ui-vi-wi">UI</a>, 55<br />
+<a href="./4-the-state-of-the-atmosphere.html#uic-vic">UIC</a>, 56<br />
+uncertainty<br />
+  wind<br />
+    <a href="./4-the-state-of-the-atmosphere.html#wind">Technical Note</a>, 51<br />
+<a href="./2-general-information-about-data-files.html#units-and-abbreviations">units</a>, 5<br />
+  exceptions to SI, 5<br />
+  hertz, 6<br />
+  ppmb, 5<br />
+<a href="./1-introduction.html#constants-and-symbols">universal gas constant</a>, 4<br />
+<a href="./7-aerosol-particle-measurements.html#upress">UPRESS</a>, 76<br />
+<a href="./7-aerosol-particle-measurements.html#pflw">USFLWC</a>, 76<br />
+<a href="./7-aerosol-particle-measurements.html#pflw">USMPFLW</a>, 76<br />
+<a href="./10-obsolete-variables.html#uvx">UVx</a>, 92<br />
+<a href="./4-the-state-of-the-atmosphere.html#ux-vy">UX</a>, 56<br />
+<a href="./4-the-state-of-the-atmosphere.html#uxc-vyc">UXC</a>, 57<br />
+variable<br />
+  <a href="./2-general-information-about-data-files#distinction-between-original-measurements%20and-derived-variables">derived</a>, 9<br />
+  <a href="./2-general-information-about-data-files#variable-names-in-equations">names in brackets</a>, 8<br />
+  <a href="./4-the-state-of-the-atmosphere.html#variable-names">preferred choice</a>, 29<br />
+variable names<br />
+  <a href="./4-the-state-of-the-atmosphere.html#variable-names">conventions</a>, 29<br />
+  <a href="./5-cloud-physics-variables.html#sensors-1-D-probes">hydrometeor probes</a>, 60<br />
+<a href="./10-obsolete-variables.html#cryo-hygro">VCRH</a>, 89<br />
+<a href="./3-the-state-of-the-aircraft.html#vew">VEW</a>, 15<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvew">VEW_G</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#vewc-vnsc">VEWC</a>, 28<br />
+<a href="./4-the-state-of-the-atmosphere.html#ui-vi-wi">VI</a>, 55<br />
+<a href="./4-the-state-of-the-atmosphere.html#uic-vic">VIC</a>, 56<br />
+<a href="./5-cloud-physics-variables.html#plwcc">viscosity</a>, 59<br />
+<a href="./8-radiation-variables.html#visxc">VISxC</a>, 80<br />
+<a href="./8-radiation-variables.html#visxht">VISxHT</a>, 80<br />
+<a href="./8-radiation-variables.html#visxht">VISxHTV</a>, 80<br />
+<a href="./8-radiation-variables.html#visxv">VISxV</a>, 79<br />
+<a href="./10-obsolete-variables.html#vla">VLA</a>, 90<br />
+<a href="./10-obsolete-variables.html#vla">VLA1</a>, 90<br />
+<a href="./3-the-state-of-the-aircraft.html#vns">VNS</a>, 15<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvns">VNS_G</a>, 18<br />
+<a href="./3-the-state-of-the-aircraft.html#vewc-vnsc">VNSC</a>, 28<br />
+<a href="./3-the-state-of-the-aircraft.html#vspd">VSPD</a>, 13<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvspd">VSPD_G</a>, 19<br />
+<a href="./4-the-state-of-the-atmosphere.html#ux-vy">VY</a>, 56<br />
+<a href="./4-the-state-of-the-atmosphere.html#uxc-vyc">VY</a>, 56<br />
+<a href="./4-the-state-of-the-atmosphere.html#uxc-vyc">VYC</a>, 57<br />
+<a href="./3-the-state-of-the-aircraft.html#ggvspd">VZI</a>, 86<br />
+<a href="./10-obsolete-variables.html#vzi">VZI</a>, 86<br />
+water<br />
+  <a href="./5-cloud-physics-variables.html#plwcc">boiling point</a>, 58<br />
+water vapor<br />
+  <a href="./4-the-state-of-the-atmosphere.html#rho">density</a>, 41, 42, 44<br />
+  <a href="./4-the-state-of-the-atmosphere.html#MR">mixing ratio</a>, 45<br />
+<a href="./4-the-state-of-the-atmosphere.html#ws-wd">WD</a>, 56<br />
+<a href="./4-the-state-of-the-atmosphere.html#wsc-wdc">WDC</a>, 56<br />
+<a href="./10-obsolete-variables.html#wspd">WDRCTN</a>, 86<br />
+wetting<br />
+  <a href="./4-the-state-of-the-atmosphere.html#AT-ITR">of thermometers</a>, 37<br />
+<a href="./1-introduction.html#constants-and-symbols">WGS-84 geoid</a>, 4<br />
+<a href="./3-the-state-of-the-aircraft.html#ggalt">WGS84</a>, 19<br />
+<a href="./4-the-state-of-the-atmosphere.html#ui-vi-wi">WI</a>, 55<br />
+<a href="./4-the-state-of-the-atmosphere.html#wic">WIC</a>, 56<br />
+<a href="./4-the-state-of-the-atmosphere.html#wind">wind</a>, 55<br />
+  <a href="./4-the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector">components</a>, 55<br />
+  <a href="./4-the-state-of-the-atmosphere.html#wsc-wdc">direction</a>, 56<br />
+  <a href="./4-the-state-of-the-atmosphere.html#wsc-wdc">GPS-corrected</a>, 56<br />
+  <a href="./4-the-state-of-the-atmosphere.html#uxc-vyc">lateral component</a>, 57<br />
+  <a href="./4-the-state-of-the-atmosphere.html#uxc-vyc">longitudinal component</a>, 57<br />
+  <a href="./4-the-state-of-the-atmosphere.html#relative-wind">relative</a>, 52<br />
+  <a href="./4-the-state-of-the-atmosphere.html#ws-wd">sign convention</a>, 55<br />
+  <a href="./4-the-state-of-the-atmosphere.html#wsc-wdc">speed</a>, 56<br />
+  uncertainty<br />
+    <a href="./4-the-state-of-the-atmosphere.html#wind">Tech Note</a>, 10, 51<br />
+  <a href="./4-the-state-of-the-atmosphere.html#wsc-wdc">vector</a>, 55, 56<br />
+  <a href="./4-the-state-of-the-atmosphere.html#wic">vertical</a>, 56<br />
+<a href="./3-the-state-of-the-aircraft#global-positioning-systems">World Geodetic System</a>, 19<br />
+<a href="./3-the-state-of-the-aircraft.html#wp3">WP3</a>, 12<br />
+<a href="./4-the-state-of-the-atmosphere.html#ws-wd">WS</a>, 56<br />
+<a href="./4-the-state-of-the-atmosphere.html#wsc-wdc">WSC</a>, 56<br />
+<a href="./10-obsolete-variables.html#wspd">WSPD</a>, 86<br />
+<a href="./6-air-chemistry-measurements.html#xf03fs">XFO3FNO</a>, 69<br />
+<a href="./6-air-chemistry-measurements.html#xf03fs">XFO3FS</a>, 69<br />
+<a href="./6-air-chemistry-measurements.html#xf03p">XFO3P</a>, 69<br />
+<a href="./7-aerosol-particle-measurements.html#xicnc">XICN</a>, 74<br />
+<a href="./7-aerosol-particle-measurements.html#xicnc">XICNC</a>, 74<br />
+<a href="./4-the-state-of-the-atmosphere.html#mach-number">XMACH2</a>, 52<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNCLF</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNMBT</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNO</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#mr-no-no2">XNOCAL</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNOCF</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNOSF</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNOY</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNOYP</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNOZA</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNSAF</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNST</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#mr-no-no2">XNYCAL</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#no-noy">XNZAF</a>, 71<br />
+<a href="./6-air-chemistry-measurements.html#f03-acd">XO3</a>, 69<br />
+<a href="./3-the-state-of-the-aircraft.html#humidity">XSIGV_UVH</a>, 42<br />
+<a href="./10-obsolete-variables.html#xuvi">XUVI</a>, 90<br />
+<a href="./10-obsolete-variables.html#xuvi">XUVP</a>, 90<br />
+<a href="./10-obsolete-variables.html#xuvi">XUVT</a>, 90<br />
+<a href="./10-obsolete-variables.html#ltn51">XVI</a>, 85<br />
+<a href="./2-general-information-about-data-files.html#mdy%7C">YEAR</a>, 7<br />
+<a href="./10-obsolete-variables.html#ltn51%7C">YVI</a>, 85</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="appendix-d-needing-attention.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="site_libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

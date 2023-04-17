@@ -1,0 +1,11 @@
+              RAF Technical Note: Processing Algorithms
+
+This repository contains the text files for the RAF Technical Note on
+processing algorithms that are used for processing data collected
+on the RAF research aircraft. The variables that appear in archived
+data are defined here, and the algorithms used in their calculation
+are described. This document does not describe the instrumentation
+used, but there are many links to such descriptions. The goal of this
+document is to describe both current and past algorithms, so it is
+expected that this document will be modified often so that it can
+remain current. 

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 Obsolete Variables | RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="10 Obsolete Variables | RAF Technical Note: Processing Algorithms" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 Obsolete Variables | RAF Technical Note: Processing Algorithms" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 Obsolete Variables | RAF Technical Note: Processing Algorithms" />
+  
+  
+  
+
+<meta name="author" content="RAF RSIG" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="9-experimental-variables.html"/>
+<link rel="next" href="appendix-a-list-of-symbols.html"/>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="site_libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="site_libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="site_libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#index">Preface<span></span></a></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#alphabetical-list-of-variables"><i class="fa fa-check"></i><b>1.2</b> Alphabetical List of Variables<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#constants-and-symbols"><i class="fa fa-check"></i><b>1.3</b> Constants and Symbols<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html"><i class="fa fa-check"></i><b>2</b> General Information About Data Files<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#units-and-abbreviations"><i class="fa fa-check"></i><b>2.1</b> Units and Abbreviations<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#variables-used-to-denote-time"><i class="fa fa-check"></i><b>2.2</b> Variables Used to Denote Time<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#synchronization-of-measurements"><i class="fa fa-check"></i><b>2.3</b> Synchronization of Measurements<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#other-comments-on-terminology"><i class="fa fa-check"></i><b>2.4</b> Other Comments on Terminology<span></span></a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#variable-names-in-equations"><i class="fa fa-check"></i><b>2.4.1</b> Variable Names in Equations<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#distinction-between-original-measurements-and-derived-variables"><i class="fa fa-check"></i><b>2.4.2</b> Distinction Between Original Measurements and Derived Variables<span></span></a></li>
+<li class="chapter" data-level="2.4.3" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#dimensions-in-equations"><i class="fa fa-check"></i><b>2.4.3</b> Dimensions in Equations<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html"><i class="fa fa-check"></i><b>3</b> The State of the Aircraft<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#inertial-reference-systems"><i class="fa fa-check"></i><b>3.1</b> Inertial Reference Systems<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#standard-variables"><i class="fa fa-check"></i><b>3.1.1</b> Standard Variables<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#special-use-irs"><i class="fa fa-check"></i><b>3.1.2</b> Additional Special-Use Variables<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#global-positioning-systems"><i class="fa fa-check"></i><b>3.2</b> Global Positioning Systems<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude"><i class="fa fa-check"></i><b>3.3</b> Other Measurements of Aircraft Altitude<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#combining-irs-and-gps-measurements"><i class="fa fa-check"></i><b>3.4</b> Combining IRS and GPS Measurements<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html"><i class="fa fa-check"></i><b>4</b> The State of the Atmosphere<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations"><i class="fa fa-check"></i><b>4.1</b> Information on Instruments and Calibrations<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#variable-names"><i class="fa fa-check"></i><b>4.2</b> Variable Names<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#pressure"><i class="fa fa-check"></i><b>4.3</b> Pressure<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#standard-pressure-measurements"><i class="fa fa-check"></i><b>4.3.1</b> Standard Pressure Measurements<span></span></a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#p-special">Special Pressure Measurements (hPa): PSDPx, CAVP, PCAB, PSURF<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#temperature-section"><i class="fa fa-check"></i><b>4.4</b> Temperature<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#humidity"><i class="fa fa-check"></i><b>4.5</b> Humidity<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#derived-thermodynamic-variables"><i class="fa fa-check"></i><b>4.6</b> Derived Thermodynamic Variables<span></span></a>
+<ul>
+<li><a href="4-the-state-of-the-atmosphere.html#thetav">Virtual Potential Temperature (K): THETAV<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#wind"><i class="fa fa-check"></i><b>4.7</b> Wind<span></span></a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#relative-wind"><i class="fa fa-check"></i><b>4.7.1</b> Relative Wind<span></span></a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#akrd">Attack Angle, Radome (<span class="math inline">º</span>): AKRD<span></span></a></li>
+<li class="chapter" data-level="4.7.2" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector"><i class="fa fa-check"></i><b>4.7.2</b> Wind Components and the Wind Vector<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#special-use-remote"><i class="fa fa-check"></i><b>4.8</b> Special-Use Remote Sensors<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html"><i class="fa fa-check"></i><b>5</b> Cloud Physics Variables<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#LWC"><i class="fa fa-check"></i><b>5.1</b> Measurements of Liquid Water Content<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#sensors-1-D-probes"><i class="fa fa-check"></i><b>5.2</b> Sensors Detecting Individual Hydrometeors (1-D Probes)<span></span></a>
+<ul>
+<li><a href="5-cloud-physics-variables.html#CRPC">Count Rate Per Channel: ACDP, AFSSP, AS100, AF300, AS200, APCAS, A200X, A260X, A200Y, AUHSAS<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#size-distribution">Size Distribution:<span></span></a></li>
+<li class="chapter" data-level="5.2.1" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#concentration-cm-3-concd-concf-conc3-concp-concu"><i class="fa fa-check"></i><b>5.2.1</b> Concentration (cm<span class="math inline"><sup> − 3</sup></span>): CONCD, CONCF, CONC3, CONCP, CONCU;<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#mean-diameter">Mean Diameter (<span class="math inline"><em>μ</em></span>m): DBARD, DBARF, DBAR3, DBAR6, DBARP, DBARX, DBARY, DBARU<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#dispersion">Dispersion (dimensionless): DISPD, DISPF, DISP3, DISP6, DISPP, DISPX, DISPY, DISPU<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#PSD-LWC">Liquid Water Content (g m<strong><span class="math inline"><sup> − 3</sup></span></strong>): PLWCD, PLWCF, PLWCX, PLWC6, PLWCY<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#DBZ">Radar Reflectivity Factor (dbZ): DBZF, DBZX, DBZ6, DBZY, DBZD<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#effective-radius">Effective Radius (<span class="math inline"><em>μ</em></span>m): REFFD, REFFF<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#fssp-range">FSSP-100 Range (dimensionless): FRNG, FRANGE<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#hydrometeor-imaging-probes"><i class="fa fa-check"></i><b>5.3</b> Hydrometeor Imaging Probes<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html"><i class="fa fa-check"></i><b>6</b> Air Chemistry Measurements<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html#variables-in-standard-data-files"><i class="fa fa-check"></i><b>6.1</b> Variables in Standard Data Files<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html#awas-cims-qcls-toga"><i class="fa fa-check"></i><b>6.2</b> Variables in Special Data Sets<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html"><i class="fa fa-check"></i><b>7</b> Aerosol Particle Measurements<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#condensation-nucleus-counter"><i class="fa fa-check"></i><b>7.1</b> Condensation Nucleus Counter<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#aerosol-spec"><i class="fa fa-check"></i><b>7.2</b> Aerosol Spectrometers<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#special-aerosol"><i class="fa fa-check"></i><b>7.3</b> Special Aerosol Measurements<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html"><i class="fa fa-check"></i><b>8</b> Radiation Variables<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#measurements-of-irradiance-and-radiometric-temperature"><i class="fa fa-check"></i><b>8.1</b> Measurements of Irradiance and Radiometric Temperature<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#harp"><i class="fa fa-check"></i><b>8.2</b> Spectral Irradiance and Actinic Flux<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#solar-angles"><i class="fa fa-check"></i><b>8.3</b> Solar Angles<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-experimental-variables.html"><a href="9-experimental-variables.html"><i class="fa fa-check"></i><b>9</b> Experimental Variables<span></span></a></li>
+<li class="chapter" data-level="10" data-path="10-obsolete-variables.html"><a href="10-obsolete-variables.html"><i class="fa fa-check"></i><b>10</b> Obsolete Variables<span></span></a></li>
+<li class="appendix"><span><b>Appendices<span></span></b></span></li>
+<li><a href="appendix-a-list-of-symbols.html#appendix-a-list-of-symbols">Appendix A: List of Symbols<span></span></a></li>
+<li><a href="appendix-b-variable-names.html#appendix-b-variable-names">Appendix B: Variable Names<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#appendix-c-editing-the-t.n.">Appendix C: Editing The T.N.<span></span></a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#notes-regarding-the-construction-and-structure-of-this-document">Notes regarding the construction and structure of this document:<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-or-pages-of-this-document-lyx-version">Referencing Specific Sections or Pages of this Document (LyX version):<span></span></a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#variables">Variables<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#page-numbers-lyx-version">Page Numbers (LyX Version)<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#sections-and-subsections">Sections and Subsections<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#adding-new-targets">Adding New Targets<span></span></a></li>
+</ul></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-of-this-document-rmarkdown-version">Referencing Specific Sections of this Document (RMarkdown version):<span></span></a></li>
+</ul></li>
+<li><a href="appendix-d-needing-attention.html#appendix-d-needing-attention">Appendix D: Needing Attention<span></span></a></li>
+<li class="chapter" data-level="A" data-path="A-index-1.html"><a href="A-index-1.html"><i class="fa fa-check"></i><b>A</b> Index<span></span></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RAF Technical Note: Processing Algorithms</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="obsolete-variables" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Obsolete Variables<a href="10-obsolete-variables.html#obsolete-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>
+RAF retired the “GENPRO” processor, the software program previously used to produce data sets, in 1993, but data files produced by that processor are still retained and available for use. Also, there are some instruments that are now retired but provided measurements in some archived data files. Obsolete variable names that are associated only with GENPRO or a retired instrument are discussed below, for reference and to facilitate use of old data files.
+</p>
+<div id="tptime" class="section level4 unnumbered hasAnchor">
+<h4>Unaltered Tape Time (s): TPTIME<a href="10-obsolete-variables.html#tptime" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+This variable is derived by converting the HOUR, MINUTE and SECOND to elapsed seconds after midnight of the current day. If time increments to the next day, its value is not reset to zero, but 86400 seconds are added to produce ever-increasing values for the data set.
+</p>
+</div>
+<div id="ptime" class="section level4 unnumbered hasAnchor">
+<h4>Processor Time (s): PTIME<a href="10-obsolete-variables.html#ptime" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+This is an internal time variable created by the GENPRO processor. It represents elapsed seconds after midnight. It differs from TPTIME in that, after it has been set at the beginning of the data set, it is incremented internally for each second of data processed. If duplicate or missing raw data records exist, it can differ from TPTIME. It is guaranteed to be a monotonically increasing and continuous series of values.
+</p>
+</div>
+<div id="tmlag" class="section level4 unnumbered hasAnchor">
+<h4>INS: Data System Time Lag (s): TMLAG<a href="10-obsolete-variables.html#tmlag" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+TMLAG is the amount of time between the reference time of a Litton LTN-5l Inertial Navigation System (INS) and the data system clock, in seconds. TMLAG will always be greater than zero and less than 2.
+</p>
+</div>
+<div id="loranc" class="section level4 unnumbered hasAnchor">
+<h4>LORAN-C Variables:<a href="10-obsolete-variables.html#loranc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<strong> Latitude and Longitude (</strong><span class="math inline">º</span><strong>): CLAT, CLON</strong><br />
+<strong>Circular Error of Probability (n mi): CCEP</strong><br />
+<strong>Ground Speed (m/s): CGS</strong><br />
+<strong>Status: CSTAT</strong><br />
+<strong>Time (s): CSEC</strong><br />
+<strong>Fractional Time (s): CFSEC</strong>
+</p>
+<p>Before the advent of GPS, NCAR/RAF operated a LORAN-C receiver that provided information on the position and groundspeed of the aircraft. The measurements of latitude and longitude from this system are CLAT and CLON, measured at 1 Hz and with positive values of longitude to the east and positive values of latitude to the north. and CCEP provides an estimate of the uncertainty in those measurements (in units of nautical miles). A status word, CSTAT, was used to record a value of 15 when the system was operational. The ground speed and reference times were also recorded in the above corresponding variables. The sum of CSEC and CFSEC represented the time of the measurement, which was not always the time in the data file when the measurements were recorded.</p>
+</div>
+<div id="ltn51" class="section level4 unnumbered hasAnchor">
+<h4>LTN-51 Variables:<a href="10-obsolete-variables.html#ltn51" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>
+<strong>INS Latitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><u>ALAT</u></strong><br />
+<strong>INS Longitude (</strong><span class="math inline">º</span><strong>):</strong> <strong><u>ALON</u></strong><br />
+<strong>Raw INS Ground Speed X Component (m/s):</strong> <strong><u>XVI</u></strong><br />
+<strong>Raw INS Ground Speed Y Component (m/s):</strong> <strong><u>YVI</u></strong><br />
+<strong>Raw INS True Heading (</strong><span class="math inline">º</span><strong>):</strong> <strong><u>THI</u></strong><br />
+<strong>INS Wander Angle (</strong><span class="math inline">º</span><strong>):</strong> <strong><u>ALPHA</u></strong><br />
+<strong>INS Platform Heading (</strong><span class="math inline">º</span><strong>):</strong> <strong><u>PHDG</u></strong>
+</p>
+These variables from the Litton LTN-51 Inertial Navigation System (INS) are analogous to the modern variables discussed in Section <a href="3-the-state-of-the-aircraft.html#inertial-reference-systems">3.1</a> The measurements of latitude and longitude were provided with 1-Hz frequency and had a resolution of 0.0014<span class="math inline">º</span>, while the ground speed components were provided at 10 Hz and had resolution equal to 0.012 m/s. The X component of the ground speed was along the longitudinal axis of the aircraft <em>at the time of alignment,</em> and the Y axis was in the starboard direction at the time of alignment. PHDG recorded the orientation of the platform relative to true north, with resolution 0.0028<span class="math inline">º</span>. THI was the true heading of the aircraft, produced at 5 Hz with resolution of 0.0014<span class="math inline">º</span>. The “wander angle” is an INS-only variable that recorded the angle of the INS platform x-axis relative to its original orientation; it “wandered” in response to east-west motion of the aircraft on a spherical Earth.
+</p>
+</div>
+<div id="vzi" class="section level4 unnumbered hasAnchor">
+<h4>Raw Aircraft Vertical Velocity (m/s): VZI<a href="10-obsolete-variables.html#vzi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is an integrated output from an up/down binary counter connected to the INS vertical accelerometer. Resolution is 0.012 m/s. Due to changes in local gravity and accumulated errors, this often develops a significant offset during flight.</p>
+</div>
+<div id="thf" class="section level4 unnumbered hasAnchor">
+<h4>Aircraft True Heading (</strong><span class="math inline">º</span><strong>): THF<a href="10-obsolete-variables.html#thf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+This measurement of aircraft heading was derived from the angle between the horizontal projection of the aircraft center and true north: THF = PHDG + ALPHA. Resolution is 0.0028<span class="math inline">º</span>.
+</p>
+</div>
+<div id="gsf-obsolete" class="section level4 unnumbered hasAnchor">
+<h4>Aircraft Ground Speed and East/North Components (m/s): GSF, VEW, VNS<a href="10-obsolete-variables.html#gsf-obsolete" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+These variables have the same names as the modern variables for ground speed. (Cf. Section <a href="3-the-state-of-the-aircraft.html#the-state-of-the-aircraft">3</a>.) GSF is the magnitude of the ground speed determined by the INS, as derived from XVI and YVI:<br />
+
+<p class="box2">
+<span class="math display" id="eq:GSF">\[\begin{equation}
+\mathrm{GSF=\sqrt{\{XVI\}^{2}+\{YVI\}^{2}}}
+\tag{10.1}
+\end{equation}\]</span>
+</p>
+<p>VEW and VNS are the east and north projections of this ground speed, derived using THF for the aircraft heading.</p>
+</div>
+<div id="wspd" class="section level4 unnumbered hasAnchor">
+<h4>Wind Speed and Direction (m/s, <span class="math inline">º</span>): WSPD, WDRCTN<a href="10-obsolete-variables.html#wspd" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+These variables are calculated from UI and VI, the east and north components of the wind determined as described in RAF Bulletin No. 23 and summarized in Section <a href="4-the-state-of-the-atmosphere.html#wind">4.7</a>:<span id="punch:10-1" label="punch:10-1">[punch:10-1]</span>
+</p>
+<p class="box2">
+<span class="math display" id="eq:WDobs" id="eq:WSobs">\[\begin{align}
+\mathrm{WS} = &amp; \sqrt{\mathrm{\{UI\}^{2}+\{VI\}^{2}}} \tag{10.2}\\
+\mathrm{WD} = &amp; \mathrm{\frac{180^{\circ}}{\pi}atan2(-\{UI\},}-\{VI\})+180^{\circ}
+\tag{10.3}
+\end{align}\]</span>
+</p>
+</div>
+<div id="vanes" class="section level4 unnumbered hasAnchor">
+<h4>Raw Attack and Sideslip Force (Fixed Vane) (g): AFIXx, BFIXx<a href="10-obsolete-variables.html#vanes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>AFIXx and BFIXx are amplified outputs from strain-gauges on fixed-vane sensors mounted at the end of a gust boom in the horizontal or vertical planes, respectively of the aircraft . The “force” on the vanes (calibrated in “equivalent grams” at Jefferson County Airport gravity) varies as a function of the aircraft attack or sideslip angles and dynamic pressure. Here x refers to left or right for AFIXx or top or bottom for BFIXx.</p>
+</div>
+<div id="akfxx" class="section level4 unnumbered hasAnchor">
+<h4>Attack Angle or Sideslip Angle (Fixed Vanes) (</strong><span class="math inline">º</span><strong>): AKFXx, SSFXx<a href="10-obsolete-variables.html#akfxx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>AKFXx and SSFXx are the respective angles of attack and sideslip computed from AFIXx or BFIXx and QCx (either boom or gust dynamic pressure). An empirically derived function, HSSATK, is used to determine the attack pr sideslip angle based on wind tunnel test data.</p>
+</div>
+<div id="qcb" class="section level4 unnumbered hasAnchor">
+<h4>Dynamic Pressure (Boom or Gust Probe) (mb): QCB or QCBC; QCG or QCGC<a href="10-obsolete-variables.html#qcb" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>These variables, measured by a differential pressure gauge, record the difference between a pitot (total) pressure and a static pressure. The QCBC and QCGC values are corrected for local flow-field distortion. The boom and gust probe measurements referred to the same aircraft structure. The different designations used for those measurements specified the transducer used and its location. In the gust probe dynamic pressure measurement (QCG), a Rosemount Model 1332 differential pressure transducer was located closer to the sensor in the gust probe itself, whereas in the boom measurement (QCB), a Rosemount Model 1221 pressure transducer was typically located in the aircraft nose.</p>
+</div>
+<div id="atc" class="section level4 unnumbered hasAnchor">
+<h4>Ambient Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): ATC<a href="10-obsolete-variables.html#atc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A variable obtained by combining the avionics temperature on the GV, AT_A, with a Rosemount temperature, so that the absolute value tracked AT_A but faster response was provided by the Rosemount temperature. This was used in some early GV projects because there were unresolved problems with the data-system temperature sensors and it was thought that AT_A provided a more accurate result, but AT_A was filtered to have slow response to it was combined with the faster-response signal from the Rosemount sensor.</p>
+</div>
+<div id="ttx" class="section level4 unnumbered hasAnchor">
+<h4>Total Temperature (<span class="math inline"><em></em><sup>∘</sup></span>C): TTx<a href="10-obsolete-variables.html#ttx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This variable was used before 2014 for measurements of the recovery temperature, for which the variable is now <strong>RTx</strong>. Because the quantity measured is not the total temperature, the variables TTx were replaced by RTx, but the meaning historically was the same as that now described for <strong>RTX</strong>, apart from how humidity is now handled.</p>
+</div>
+<div id="ttrf" class="section level4 unnumbered hasAnchor">
+<h4>Total Temperature, Reverse Flow (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): TTRF<a href="10-obsolete-variables.html#ttrf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>TTRF is the recovery temperature from a calibrated NCAR reverse-flow temperature sensor, for which the housing was designed to separate water droplets and protect the element from wetting in cloud.</p>
+</div>
+<div id="ttkp" class="section level4 unnumbered hasAnchor">
+<h4>Total Temperature (Fast Response) (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): TTKP<a href="10-obsolete-variables.html#ttkp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is the output of recovery temperature from the NCAR fast-response temperature probe, originally designed by Karl Danninger. (See the discussion of total temperature in Section <a href="4-the-state-of-the-atmosphere.html#temperature-section">4.4</a>.)</p>
+</div>
+<div id="atrf" class="section level4 unnumbered hasAnchor">
+<h4>Ambient Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): ATRF<a href="10-obsolete-variables.html#atrf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The ambient temperature computed using the NCAR reverse-flow temperature sensor. (See the discussion in Section <a href="4-the-state-of-the-atmosphere.html#temperature-section">4.4</a>.)</p>
+</div>
+<div id="atkp" class="section level4 unnumbered hasAnchor">
+<h4>Ambient Temperature (Fast Response) (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): ATKP<a href="10-obsolete-variables.html#atkp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The ambient temperature computed using the fast-response temperature probe. (See the discussion of ambient temperature in Section <a href="4-the-state-of-the-atmosphere.html#temperature-section">4.4</a>.)</p>
+</div>
+<div id="jwlwc" class="section level4 unnumbered hasAnchor">
+<h4>Raw Cloud Technology (Johnson-Williams) Liquid Water Content (<span class="math inline"><em>g</em>/<em>m</em><sup>3</sup></span>): LWC<a href="10-obsolete-variables.html#jwlwc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is the raw output of a Johnson-Williams liquid water content sensor converted to units of grams per cubic meter. The Johnson-Williams indicator measures the evaporative cooling caused by the latent heat of vaporization of droplets contacting the heated sensing element by sensing changes in its resistance as it cools. Through calibration this resistance is converted to a liquid water content. A “compensation” wire is also mounted in the J-W sensor, parallel to the droplet stream, to compensate for cooling effects of the airstream. Typically the instrument is set for a true airspeed of 200 knots. The instrument must be zeroed in “cloud-free air.” The Johnson-Williams liquid water content sensor is designed for the cloud droplet spectrum. There is some evidence to indicate that droplets larger than 30 <span class="math inline"><em>μ</em><em>m</em></span> are shed before completely vaporizing on the sensor element. This tends to underestimate the liquid water content.</p>
+</div>
+<div id="jwlw-corrected" class="section level4 unnumbered hasAnchor">
+<h4>Corrected Cloud Technology (Johnson-Williams) Liquid Water Content (g/m<sup>3</sup>): LWCC<a href="10-obsolete-variables.html#jwlw-corrected" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+This is the corrected liquid water content obtained by using the aircraft’s true airspeed after removing the zero offset: LWCC=LWC<span class="math inline"><em>U</em><sub><em>a</em></sub>/<em>U</em><sub><em>r</em><em>e</em><em>f</em></sub></span> where <span class="math inline"><em>U</em><sub><em>a</em></sub></span> is the true airspeed of the aircraft and <span class="math inline"><em>U</em><sub><em>r</em><em>e</em><em>f</em></sub></span> is the true airspeed set on the dial of the instrument. <span class="math inline"><em>U</em><sub><em>r</em><em>e</em><em>f</em></sub></span> was normally 200 kts = 102.88889 m/s.
+</p>
+</div>
+<div id="ias" class="section level4 unnumbered hasAnchor">
+<h4>Indicated Airspeed (knots): IAS<a href="10-obsolete-variables.html#ias" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+In some old data files, a variable representing the indicated airspeed was included because this was used for some derived variables. The indicated airspeed is the airspeed that would produce the observed difference between dynamic and static pressure under standard conditions of 1013.25 mb and <span class="math inline">15<sup>∘</sup></span>C.
+</p>
+</div>
+<div id="edpc" class="section level4 unnumbered hasAnchor">
+<h4>Water Vapor Pressure (mb): EDPC<a href="10-obsolete-variables.html#edpc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is a derived intermediate variable used in the calculation of several derived thermodynamic variables. The vapor pressure over a plane water surface is obtained by the method of Paul R. Lowe (1977), a derived, sixth-order, Chebyshev polynomial fit to the Goff-Gratch Formulation (1946) as a function of temperature expressed in <span class="math inline"><em></em><sup>∘</sup><em>C</em></span>. The error is much less than 1% over the range -50<span class="math inline">º</span>C to +50<span class="math inline">º</span>C. EDPC was calculated using this method for most RAF research projects between 1993 and 1996. This variable did not have the enhancement factor applied that was discussed in Appendix C of Bulletin 9. A variable of the same name but calculated differently replaced this in 1996, and with changes described in Section <a href="4-the-state-of-the-atmosphere.html#humidity">4.5</a> continues in use, recently replaced by EWx.<span id="punch:10-2" label="punch:10-2">[punch:10-2]</span></p>
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+<style type="text/css">
+.box-out {
+  background-color: palegrey;
+  border: 2px solid darkgrey;
+  font-size: 10pt;
+}
+</style>
+<p class="box2">
+For air temperature <span class="math inline">\(T &lt; -50^\circ\)</span>C:<br />
+<span class="math display" id="eq:EDPC1">\[\begin{align}
+\mathrm{\{EDPC\}} &amp;= 4.4685 + T(0.27347 + T (6.83811\times 10^{-3}\notag \\
+&amp;+ T(8.7094x10^{-5} + T(5.63513x10^{-7} + 1.47796 × 10^{-9}T)))
+\tag{10.4}
+\end{align}\]</span>
+For air temperature <span class="math inline">\(T \ge -50^\circ\)</span>C:<br />
+<span class="math display" id="eq:EDPC2">\[\begin{align}
+\mathrm{\{EDPC\}} &amp;= 6.107799961 + T(0.4436518521 + T(0.01428945805\notag \\
+&amp;+ T(2.650648471 × 10^{-4} + T(3.031240396 × 10^{-6}\notag \\
+&amp;+ T (2.034080948 × 10^{-8} + 6.136820929 × 10^{-11}T)))))
+\tag{10.5}
+\end{align}\]</span>
+</p>
+</div>
+<div id="cryo-hygro" class="section level4 unnumbered hasAnchor">
+<h4>Cryogenic Hygrometer Variables:<a href="10-obsolete-variables.html#cryo-hygro" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Inlet Pressure (hPa): CRHP</strong><br />
+<strong>Frost Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): VCRH</strong><br />
+<strong>Corrected Frost Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): FPCRC</strong><br />
+<strong>Corrected Dew Point Temperature (<span class="math inline"><em></em><sup>∘</sup><em>C</em></span>): DPCRC</strong><br /></p>
+<p>The first two of these measurements were made directly in the chamber of the cryogenic hygrometer, a now obsolete cabin-mounted instrument connected to outside air by an inlet line. VCRH was determined from a third-order calibration equation applied to the voltage measured by the instrument. <span id="punch:10-3" label="punch:10-3">[punch:10-3]</span>
+The corrected frost point and dew point temperatures are those determined after corrections are applied to the direct measurements from a cryogenic hygrometer. These measurements were from a now obsolete instrument but the variables are included here because they appear in some old data files. To obtain estimates of the ambient frost point and dew point, the measurements made inside the chamber of the cryogenic hygrometer (CVRH and CRHP) must be corrected for the difference in water vapor pressure between that chamber and ambient conditions. The ratio of the chamber pressure to the ambient pressure is assumed to be the same as the ratio of the chamber vapor pressure to the ambient vapor pressure. The vapor pressure in the chamber was determined from the Goff-Gratch (1946) equation<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>
+for saturation vapor pressure with respect to a plane ice surface. This vapor pressure was then used with CRHP and a measure of the ambient pressure (PSXC) to determine the vapor pressure in the outside air, and this was converted to an equivalent dew-point. The instrument was only used for measurements of frost point less than -15<span class="math inline"><em></em><sup>∘</sup></span>C because it did not function well above that frost point. <span id="punch:10-4" label="punch:10-4">[punch:10-4]</span>The steps are documented below:</p>
+<p class="box">
+<a href="10-obsolete-variables.html#cryo-hygro">VCRH</a> = frost point inside the cryogenic hygrometer [<span class="math inline">\(^{\circ}\)</span>C]<br />
+<a href="10-obsolete-variables.html#cryo-hygro">CRHP</a> = pressure inside the chamber of the cryogenic hygrometer [hPa]<br />
+<a href="./4-the-state-of-the-atmosphere.html#psx">PSXC</a> = reference ambient pressure [hPa]<br />
+f<span class="math inline">\(_{i}\)</span> = enhancement factor (see Appendix C of Bulletin 9)<br />
+<span class="math inline">\(F_{1}\)</span>(<span class="math inline">\(T_{d}\)</span>) =Goff-Gratch formula for vapor pressure at dew
+point <span class="math inline">\(T_{d}\)</span><br />
+<span class="math inline">\(F_{2}(T_{f})\)</span> = Goff-Gratch formula for vapor pressure at frost
+point <span class="math inline">\(T_{f}\)</span><br />
+<span class="math inline">\(T_{3}\)</span> = temperature at the triple point of water = 273.16 K
+</p>
+<p class="box2">
+chamber vapor pressure <span class="math inline">\(e_{ic}\)</span> (hPa):<br />
+<span class="math display" id="eq:DPCRCbox1">\[\begin{equation}
+e_{ic}=(6.1071\,\mathrm{mb})\times10^{A}  
+\tag{10.6}
+\end{equation}\]</span><br />
+where
+<span class="math display" id="eq:DPCRCbox2">\[\begin{align}  
+A=&amp;-9.09718\left(\frac{T_{3}}{\mathrm{\{VCRH\}}+T_{3}}-1\right) \notag \\
++ &amp; 3.56654\log_{10}\left(\frac{T_{3}}{\mathrm{\{VCRH\}}+T_{3}}\right) \notag \\
++ &amp; 0.876793\left(1-\frac{\mathrm{\{VCRH\}}+T_{3}}{T_{3}}\right)
+\tag{10.7}
+\end{align}\]</span><br />
+The ambient vapor pressure <span class="math inline">\(e_{a}\)</span> (hPa) then is:<br />
+<span class="math display" id="eq:DPCRCbox3">\[\begin{equation}
+e_{a}=e_{ic}\left(\frac{\mathrm{\{PSXC\}}}{\mathrm{\{CRHP\}}}\right)f_{i}
+\tag{10.8}
+\end{equation}\]</span><br />
+The ambient dew and frost points DPCRC and FPCRC are found iteratively by finding
+the values that lead to <span class="math inline">\(e_a\)</span> in the Goff-Gratch equations:<br />
+<span class="math display" id="eq:DPXRXbox4">\[\begin{align}
+e_{a} &amp; = F_{1}\left(\mathrm{\{DPCRC\}}\right)\notag \\
+ &amp; = F_{2}\left(\mathrm{\{FPCRC\}}\right)
+\tag{10.9}
+\end{align}\]</span>
+</p>
+</div>
+<div id="vla" class="section level4 unnumbered hasAnchor">
+<h4>Voltage Output From the Lyman-alpha Sensor (V): VLA<a href="10-obsolete-variables.html#vla" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<em>The voltage output from the Lyman-alpha absorption hygrometer</em>. This instrument provided fast-response, high-resolution measurements of water vapor density. (If a second sensor was used, a 1 was added to the variable name associated with the second sensor.) The sensors are now obsolete.
+</p>
+</div>
+<div id="xuvi" class="section level4 unnumbered hasAnchor">
+<h4>Voltage Output from the UV Hygrometer (V): XUVI<a href="10-obsolete-variables.html#xuvi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>The voltage from a modern (as of 2009) version of the Lyman-alpha hygrometer, which provides a signal that represents water vapor density.</em> The instrument also provides measurements of pressure and temperature inside the sensing cavity; they are, respectively, <strong><u>XUVP</u></strong> and <strong><u>XUVT</u></strong>. These variables and the processing algorithm below have now been replaced by XSIGV_UVH and the algorithm discussed with the variable EW_UVH.</p>
+<p class="box">
+<a href="10-obsolete-variables.html#xuvi">XUVI</a> = output from the UV Hygrometer, after application of calibration
+coefficients<br />
+<a href="./4-the-state-of-the-atmosphere.html#dewpt-corrected">DPXC</a> = corrected dewpoint from some preferred source,
+<span class="math inline">\(^{\circ}\)</span>C<br />
+<a href="./4-the-state-of-the-atmosphere.html#ambient-t">ATX</a> = preferred temperature, <span class="math inline">\(^{\circ}\)</span>C<br />
+<a href="./4-the-state-of-the-atmosphere.html#rho">RHODT</a> =water vapor density determined by a chilled-mirror
+sensor<br />
+Tau = time constant for the exponential update (typically 300 s)
+</p>
+<p class="box2">
+For valid measurements (i.e., when DPXC <span class="math inline">\(&lt;\)</span> ATX and XUVI and RHODT are not missing}:<br />
+<span class="math display" id="eq:RHOUVbox1">\[\begin{equation}
+\mathrm{Offset}\mathrel{+}\mathrel{\mkern-1mu}=(\mathrm{\{RHODT\}-\{XUVI\}-Offset})/Tau
+\tag{10.10}
+\end{equation}\]</span>
+<span class="math display" id="eq:RHOUBbox2">\[\begin{equation}
+\mathrm{\{RHOUV\} = \{XUVI\} + Offset}
+\tag{10.11}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="irx" class="section level4 unnumbered hasAnchor">
+<h4>Raw Pyrgeometer Output (W m<sup>-2</sup>): IRx<a href="10-obsolete-variables.html#irx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span id="EppleyReference" label="EppleyReference">[EppleyReference]</span>A pyrgeometer manufactured by Eppley Laboratory, Inc. measures long-wave irradiance using a calibrated thermopile. It has a coated glass hemisphere that transmits radiation in a bandwidth between 3.5 <span class="math inline"><em>μ</em><em>m</em></span> and 50 <span class="math inline"><em>μ</em><em>m</em></span>. It is calibrated at RAF according to procedures specified by Albrecht and Cox (1977). (See the reference in the next paragraph.) The pyrgeometers are usually flown in pairs, one up-looking and one down-looking. The letter ’x’ denotes either bottom (B) or top (T).<br />
+<strong>Corrected Infrared Irradiance (W m<span class="math inline"><em></em><sup> − 2</sup></span>):</strong> <strong><u>IRxC</u></strong><br />
+Because the pyrgeometer measures net radiation, IRx must be corrected for emission from the dome covering the sensor and for emission from the thermopile itself. IRxC is the corrected infrared irradiance, determined following procedures of <a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0450%281977%29016%3C0190%3APFIPP%3E2.0.CO%3B2">Albrecht and Cox, 1977</a>.</p>
+<p class="box">
+<a href="10-obsolete-variables.html#irx">IRx</a> = raw pyrgeometer output [W<span class="math inline">\(\,\)</span>m<span class="math inline">\(^{-2}\)</span>]<br />
+<span class="math inline">\(T_{D}\)</span> = dome temperature [K]<br />
+<span class="math inline">\(T_{S}\)</span> = ``sink’’ temperature (approx. the thermopile temperature)
+[K]<br />
+<span class="math inline">\(\epsilon\)</span> = emissivity of the thermopile (dimensionless) = 0.986<br />
+<span class="math inline">\(\beta\)</span> = empirical constant dependent on the dome type = 5.5<br />
+<span class="math inline">\(\sigma\)</span> = Stephan-Boltzmann constant = 5.6704<span class="math inline">\(\times10^{-8}\)</span> W<span class="math inline">\(\,\)</span>m<span class="math inline">\(^{-2}\)</span>K<span class="math inline">\(^{-4}\)</span>
+</p>
+<p class="box2">
+<span class="math display" id="eq:IRxTbox">\[\begin{equation}
+\mathrm{\{IRxC\}}=\mathrm{\{IRx\}}-\beta\sigma(T_{D}^{4}-T_{S}^{4})+\epsilon\sigma T_{S}^{4}
+\tag{10.12}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="swx" class="section level4 unnumbered hasAnchor">
+<h4>Shortwave Irradiance (W/m<sup>2</sup>): SWx<a href="10-obsolete-variables.html#swx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+An Eppley Laboratory, Inc., pyranometer measures short-wave irradiance. The dome normally used is UG295 glass, which gives wide coverage of the solar spectrum (from 0.285 <span class="math inline"><em>μ</em><em>m</em></span> to 2.8 <span class="math inline"><em>μ</em><em>m</em></span>). Different bandwidths can be obtained by use of different glass domes, available from RAF upon request. (See Bulletin No. 25.) The pyranometers are usually flown in pairs, one up-looking and one down-looking. They are calibrated periodically at the NOAA Solar Radiation Facility in Boulder, Colorado. The letter ’x’ denotes either bottom (B) or top (T).
+</p>
+</div>
+<div id="swtc" class="section level4 unnumbered hasAnchor">
+<h4>Corrected Incoming Shortwave Irradiance (W/m<sup>2</sup>): SWTC<a href="10-obsolete-variables.html#swtc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The down-welling shortwave irradiance measured by the difference between SWT and SWB) is corrected to take into account the sun angle and small variations in the aircraft attitude angles (pitch and roll). The correction is limited to <span class="math inline"> ± 6<sup>∘</sup></span> in either angle, so these measurements should be considered invalid beyond these limits. This is the derived output of incoming (down-welling) shortwave irradiance, taking into account both solar position (sun angle) and modest variations in aircraft attitude (at present, restricted to less than 6<span class="math inline">º</span> in pitch and/or roll). (For more information, refer to <a href="https://opensky.ucar.edu/islandora/object/archives%3A6963">RAF Bulletin 25</a>.)<span id="punch:10-5" label="punch:10-5">[punch:10-5]</span></p>
+</div>
+<div id="uvx" class="section level4 unnumbered hasAnchor">
+<h4>Ultraviolet Irradiance (W/m<sup>2</sup>): UVx<a href="10-obsolete-variables.html#uvx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A pair of UV radiometer/photometers measure either down-welling (x=T) or up-welling (x=B) irradiance in the ultraviolet, approximately from 0.295 <span class="math inline"><em>μ</em><em>m</em></span> to 0.385 <span class="math inline"><em>μ</em><em>m</em></span>. These units are periodically returned to the Eppley Laboratories for recalibration.</p>
+</div>
+<div id="co" class="section level4 unnumbered hasAnchor">
+<h4>Raw Carbon Monoxide Concentration (ppb): CO<a href="10-obsolete-variables.html#co" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+CO is the uncorrected output of the TECO model 48 CO analyzer. <span id="punch:10-6" label="punch:10-6">[punch:10-6]</span>This instrument measures the concentration of CO by gas filter correlation. The optics of the version operated by the RAF have been modified to increase the light through the absorption cell, and a zero trap has been added that periodically removes CO from the sample air stream to obtain an accurate zero. This permits correction for the significant temperature-dependent drift of the zero level of the measurement.
+</p>
+</div>
+<div id="co-vars" class="section level4 unnumbered hasAnchor">
+<h4>Carbon Monoxide Analyzer Variables:<a href="10-obsolete-variables.html#co-vars" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<strong>Status (V): CMODE</strong><br />
+<strong>Baseline Zero Signal (V): COZRO</strong><br />
+**Raw Carbon Monoxide Signal, Baseline Corrected (V): COCOR*</span></strong>
+</p>
+<p><strong><br />
+</strong>Corrected Carbon Monoxide Concentration (ppmv): COCAL**<br /></p>
+<p>CMODE records if the CO analyzer is supplied with air from which CO has been removed and so is recording its zero level. When CMODE is less than 0.2 V, the instrument is in the normal operational mode, and when CMODE is greater than 8.0 V the instrument is in the “zero” mode. When measurements are processed, the zero-mode signals are represented by a cubic spline to obtain a reference baseline for the signal (COZRO), and this baseline is subtracted from the measured value (CO) to obtain COCOR. This variable still jumps to zero periodically and does not include the calibration that enters the corrected variable, COCAL, which is the calibrated signal from the CO instrument after correction for drift of the baseline and after application of the appropriate calibration coefficients to produce units of ppmv. The quality of the baseline fit can be judged by examining the offset at the zero points. If there are relatively small changes in the baseline, the zero offset will be only a few ppbv. If there have been rapid changes in the baseline, the zero offset can be up to 50 ppbv. The magnitude of the offset at the zero values gives a good measure of uncertainty in the data set. The detection limit is 10 ppbv, with an uncertainty of <span class="math inline"> ± 15%</span>. At 1 Hz, data will have considerable variability, so 10-s averaging is often useful when the measurements are used for analysis.</p>
+</div>
+<div id="o3fs" class="section level4 unnumbered hasAnchor">
+<h4>Raw Chemiluminescent Ozone Signal (V): O3FS<a href="10-obsolete-variables.html#o3fs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>Voltage output from the chemiluminescence ozone instrument,</em> which operates on the basis of reacting nitric oxide with ozone and detecting the resulting chemiluminescence.</p>
+</div>
+<div id="SCLWC" class="section level4 unnumbered hasAnchor">
+<h4>Derived Supercooled Liquid Water Content (g/m<sup>3</sup>): SCLWC<a href="10-obsolete-variables.html#SCLWC" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This variable is the supercooled liquid water content obtained from the change in accreted mass on the Rosemount 871F ice-accretion probe over one second. The output is not valid during the probe deicing cycle. This cycle is apparent in the RICE output (a peak followed by a decrease to near zero). Supercooled liquid water content is determined by first calculating a water drop impingement rate which is a function of the effective surface area, the collection efficiency, the true airspeed, and the supercooled liquid water content. The impingement rate obtained is equated to the accreted mass of ice collected by the probe in one second (empirical voltage/mass relationship). The resulting equation is solved for supercooled water content. This calculation is not included in normal processing or special processing, but some users of the instrument use an approach like the following to calculate supercooled liquid water:<span id="punch:10-8" label="punch:10-8">[punch:10-8]</span></p>
+<p class="box">
+A = effective surface area of the probe [m<span class="math inline">\(^{2}\)</span>]<br />
+<span class="math inline">\(\Delta t\)</span> = time interval
+during which an increment of mass accretes [s]<br />
+<span class="math inline">\(\Delta m\)</span> = mass of ice accreted on the
+probe in the time interval <span class="math inline">\(\Delta t\)</span> [g]<br />
+<span class="math inline">\(U_{a}\)</span> = true airspeed [m/s]
+</p>
+<p class="box2">
+<span class="math display" id="eq:SCLWCbox">\[\begin{equation}
+\mathrm{\{SCLWC\}}=A\,U_{a}\frac{\Delta m}{\Delta t}
+\tag{10.13}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="freset" class="section level4 unnumbered hasAnchor">
+<h4>FSSP-100 Fast Resets</strong> (number per sample interval): FRST, FRESET<a href="10-obsolete-variables.html#freset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>The rate at which fast resets occur in an FSSP-100 probe.</em> The FSSP-100 records events called “fast resets” that occur when a particle traverses the beam outside the depth-of-field and therefore is not accepted for sizing. To avoid the processing time associated with sizing, the probe resets quickly in this case, but there is still some dead time when the probe cannot record another event. Fast resets consume a time determined by circuit characteristics, and that time has been determined in laboratory tests of the FSSP circuitry. This variable is needed in addition to the “Total Stobes” to determine what fraction of the time the probe is unable to accept another particle, and this “dead time” enters calculation of the concentration for the original (old) FSSP.</p>
+</div>
+<div id="fstrob" class="section level4 unnumbered hasAnchor">
+<h4>FSSP-100 Total Strobes (number per sample interval): FSTB, FSTROB<a href="10-obsolete-variables.html#fstrob" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>The rate at which strobes are generated in an FSSP-100 probe.</em> A “strobe” is generated in the FSSP-100 whenever a particle is detected within its depth-of-field. Not all such particles are accepted for inclusion in the size distribution, however, because some pass through the outer regions of the illuminating laser beam and therefore produce shorter and smaller-amplitude pulses than those passing through the center of the beam. The probe maintains a running estimate of the average transit time and rejects particles with transit times shorter than this average. The total number of strobes recorded is therefore more than the number of sized particles, and the ratio of strobes to accepted particles can indicate quality of operation of the probe. Also, the strobes require processing and so contribute to the dead time of the probe, affecting the concentration unless a correction is made. See <a href="https://opensky.ucar.edu/islandora/object/archives%3A8155">RAF Bulletin 24</a> for more discussion on the operation of the “old” FSSP.</p>
+</div>
+<div id="fbmfr" class="section level4 unnumbered hasAnchor">
+<h4>FSSP-100 Beam Fraction (dimensionless): FBMFR<a href="10-obsolete-variables.html#fbmfr" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>The ratio of the number of velocity-accepted particles (particles that pass through the effective beam diameter) to the total number of particles detected in the depth-of-field of the beam (the total strobes).</em> See the discussion of Total Strobes for more information.</p>
+<p class="box">
+{<a href="./5-cloud-physics-variables.html#CRPC">AFSSP</a>}<span class="math inline">\(_{i}\)</span> = valid particles sized in size interval i<br />
+{<a href="10-obsolete-variables.html#fstrob">FSTROB</a>} = strobes generated by particles in the depth-of-field,<br />
+              per sample interval
+</p>
+<p class="box2">
+<span class="math display" id="eq:FBMFRbox">\[\begin{equation}
+\mathrm{\{FBMFR\}=\{AFSSP\}/\{FSTROB\}}
+\tag{10.14}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="fact" class="section level4 unnumbered hasAnchor">
+<h4>FSSP-100 Calculated Activity Fraction (dimensionless): FACT<a href="10-obsolete-variables.html#fact" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This variable represents the fraction of the time that the FSSP is unable to count and size particles (its “dead time”). The activity fraction is not measured directly but is estimated from fast resets and total strobes along with measurements of the dead times associated with each (as determined in laboratory tests). The characteristic times are in the NetCDF header (for recent projects).</p>
+<p class="box">
+<a href="10-obsolete-variables.html#fstrob">FSTROB</a> = strobes generated by particles in the depth-of-field,<br />
+          per sample interval<br />
+<a href="10-obsolete-variables.html#freset">FRESET</a> = ``fast resets’’ generated per sample interval<br />
+<span class="math inline">\(t_{1}\)</span> = slow reset time (for each strobe)<br />
+<span class="math inline">\(t_{2}\)</span> - fast reset time (for each fast reset)
+</p>
+<p class="box2">
+<span class="math display" id="eq:FACTbox">\[\begin{equation}
+\mathrm{\{FACT\}=\{FSTROB\}}\times t_{1}+\mathrm{\{FRESET\}}\times t_{2}
+\tag{10.15}
+\end{equation}\]</span>
+</p>
+</div>
+<div id="AACT" class="section level4 unnumbered hasAnchor">
+<h4>PCAS Raw Activity (dimensionless): PACT, AACT<a href="10-obsolete-variables.html#AACT" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+The PCAS probe provides this measure of dead time, the time that the probe is unable to sample particles because the electronics are occupied with processing particles. The manufacturer suggests that the actual dead time (<span class="math inline">\(f_{PCAS}\)</span>) is given by the following formula, which should be used when determining concentrations for the PCAS:<br />
+
+<p class="box">
+<span class="math display">\[F_{PCAS} = 1024\,\mathrm{s}^{-1}\]</span>
+</p>
+<p class="box2">
+<span class="math display" id="eq:fPCAS">\[\begin{equation}
+f_{PCAS} = 0.52\frac{\mathrm{\{PACT\}}}{F_{PCAS}}
+\tag{10.16}
+\end{equation}\]</span>
+</p>
+However, PACT (or AACT) is the variable archived in the data files.<br />
+</p>
+</div>
+</div>
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="55">
+<li id="fn55"><p>Goff, J. A., and S. Gratch (1946) Low-pressure properties of water from 160 to 212 °F, referenced and used in the Smithsonian Tables (List, 1980).<a href="10-obsolete-variables.html#fnref55" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="9-experimental-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-a-list-of-symbols.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="site_libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

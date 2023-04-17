@@ -1,0 +1,14 @@
+<p class=box>
+$d_{e,i}$\sindex[lis]{dei@$d_{e,i}$= equivalent melted diameter for channel i of a hydrometeor
+spectrometer} = equivalent melted diameter for channel $i$ of probe x  
+\{Cy$_{i}$\}, i1, i2 as for mean diameter above  
+$\varrho_{w}$\sindex[lis]{rhow@$\rho_{w}$= density of liquid water}
+= density of water [$10^{3}kg/m^{3}$]  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{PLWCx\}}=\frac{\pi\varrho_{w}}{6}{\textstyle \sum_{i=i1}^{i2}}{\displaystyle {\displaystyle \left\{ \mathrm{Cy}_{i}\right\} d_{e,i}^{3}}}
+(\#eq:LWCbox)
+\end{equation}
+(units and a scale factor are selected so that the output variable
+is in units of g$\,$m$^{-3}$)
+</p>  

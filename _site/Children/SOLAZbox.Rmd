@@ -1,0 +1,19 @@
+```{r child='boxStyles.Rmd'}
+```
+
+<p class=box>
+$\theta_{L}$ = local hour angle (radians): see \@ref(eq:SOLELbox2)  
+\{SOLDE\} = solar declination angle (radians): see \@ref(eq:SOLDEbox)  
+\{SOLEL\} = solar elevation angle (radians): see \@ref(eq:SOLELbox3)  
+\{SOLAZ\} = solar azimuth angle [radians]  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{SOLAZ\}=\arcsin\left(\frac{\cos\mathrm{\{SOLDE\}\sin\theta_{L}}}{\cos\mathrm{\{SOLEL\}}}\right)}
+(\#eq:SOLAZbox1)
+\end{equation}
+If\ sin(\{SOLAZ\})\ <\ sin(\{SOLDE\})/sin($\phi):$  
+\begin{equation}
+\mathrm{\{SOLAZ\}} = \pi/2-\mathrm{\{SOLAZ\}}
+(\#eq:SOLAZbox2)
+\end{equation}
+</p>  

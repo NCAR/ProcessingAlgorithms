@@ -1,0 +1,32 @@
+<p class=box>
+CNTS = particle counts per sample interval from the CN counter\index{CNTS}  
+$\Delta t$ = \sindex[lis]{Deltat@$\Delta t$=time interval}interval
+between recorded samples [s]  
+$D$ = scale factor (legacy; normally 1)  
+$C_{flow}$ = \sindex[lis]{Cflow@$C_{flow}$ = flow conversion factor}conversion
+factor, (1000/60) cm$^{3}$L$^{-1}$min s$^{-1}$  
+FCNC = corrected sample flow rate (VLPM) for instrument conditions\index{FCNC}  
+$t_{vv}$ = average time a particle is in the view volume  
+\ \ \ \ \ \ \ = 0.4$\times10^{-6}$\ s  
+PCN = pressure at the inlet to the CN counter [hPa]\index{PCN}  
+CNTEMP = temperature at the inlet of the sample tube [$^{\circ}$C]\index{CNTEMP}  
+PSXC = corrected ambient pressure [hPa]\index{PSXC}  
+ATX = ambient temperature [$^{\circ}$C]\index{ATX}  
+$T_{0}$ = 273.15\ K  
+</p><p class=box2>
+\begin{equation}
+\mathrm{A=\frac{\{CNTS\}}{\mathrm{(\{FCNC\}\times C_{flow})}\Delta t}\,D}
+(\#eq:CONCNbox1)
+\end{equation}
+The flow under instrument conditions, corrected for coincidence, is
+then  
+\begin{equation}
+B\mathrm{=A}\,e^{At_{vv}(\mathrm{\{FCNC\}\times C_{flow})}}
+(\#eq:CONCNbox2)
+\end{equation}
+and the concentration under ambient conditions is\index{CONCN}  
+\begin{equation}
+\mathrm{\{CONCN\}}=B\frac{\mathrm{\{PSXC\}}}{\mathrm{\{PCN\}}}\frac{\mathrm{(\{CNTEMP\}}+T_{0})}{(\mathrm{\{ATX\}}+T_{0})}
+(\#eq:CONCNbox3)
+\end{equation}
+</p>  

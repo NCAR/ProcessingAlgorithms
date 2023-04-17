@@ -1,0 +1,14 @@
+
+<p class=box>
+A = \sindex[lis]{A=area}effective surface area of the probe [m$^{2}$]  
+$\Delta t$ = time interval\sindex[lis]{Deltat@$\Delta t$=time interval}\sindex[lis]{t@$t$=time}
+during which an increment of mass accretes [s]  
+$\Delta m$ = mass\sindex[lis]{m@$m$=mass} of ice accreted on the
+probe in the time interval $\Delta t$ [g]  
+$U_{a}$ = true airspeed [m/s]  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{SCLWC\}}=A\,U_{a}\frac{\Delta m}{\Delta t}
+(\#eq:SCLWCbox)
+\end{equation}
+</p>  

@@ -1,0 +1,520 @@
+# (APPENDIX) Appendices {-} 
+
+# Appendix A: List of Symbols {.unnumbered}
+
+<!-- Generated from Symbols.pdf via "convert -density 200 Symbols.pdf -quality 90 Symbols.jpg"  -->
+
+<div class="figure">
+  <img src="Symbols-0.jpg" width="1200" height="1200" />
+  <img src="Symbols-1.jpg" width="1200" height="1200" />
+</div>
+
+<!-- <div class="vscroll-plot"> -->
+```{r  echo=FALSE, out.width = "95%", attr.output='style="max-height: 8000px;"'}
+# knitr::include_graphics('Symbols.pdf') 
+```
+<!-- </div> -->
+
+# Appendix B: Variable Names {-}
+
+Links are to the primary discussion of each variable. $\ddagger$ denotes an obsolete variable. 
+
+
+Variable Name | Variable Name | Variable Name | Variable Name | Variable Name 
+------------- | ------------- | ------------- | ------------- | -------------
+[A200X](./5-cloud-physics-variables.html#CRPC)| [A200Y](./5-cloud-physics-variables.html#CRPC)| [A260X](./5-cloud-physics-variables.html#CRPC)| [AACT](./10-obsolete-variables.html#AACT)| [ACDP](./5-cloud-physics-variables.html#CRPC)
+[ACINS](./3-the-state-of-the-aircraft.html#ACINS)| [ADIFR](./4-the-state-of-the-atmosphere.html#adifr)| [AF300](./5-cloud-physics-variables.html#CRPC)| [AFIXx$\ddagger$](./10-obsolete-variables.html#vanes)| [AFSSP](./5-cloud-physics-variables.html#CRPC)
+[A1DC](./5-cloud-physics-variables.html#a1dc-a1dp)| [A1DP](./5-cloud-physics-variables.html#a1dc-a1dp)|  [AKFXx$\ddagger$](./10-obsolete-variables.html#akfxx)| [AKRD](./4-the-state-of-the-atmosphere.html#akrd)| [ALAT$\ddagger$](./10-obsolete-variables.html#ltn51)
+[ALON$\ddagger$](./10-obsolete-variables.html#ltn51)|  [ALPHA$\ddagger$](./10-obsolete-variables.html#ltn51)| [ALT](./3-the-state-of-the-aircraft.html#alt)|  [ALTG](./3-the-state-of-the-aircraft.html#altg)| [ALTX$\ddagger$](./3-the-state-of-the-aircraft.html#altx)
+[AMS](./7-aerosol-particle-measurements.html#special-aerosol)| [APCAS](./5-cloud-physics-variables.html#CRPC)| [AS100](./5-cloud-physics-variables.html#CRPC)| [AS200](./5-cloud-physics-variables.html#CRPC)| [ATC](./10-obsolete-variables.html#atc)
+[AT_ITR](./4-the-state-of-the-atmosphere.html#at-itr)| [ATKP$\ddagger$](./10-obsolete-variables.html#atkp)| [ATRF$\ddagger$](./10-obsolete-variables.html#atrf)| [ATTACK](./4-the-state-of-the-atmosphere.html#attack)| [ATx](./4-the-state-of-the-atmosphere.html#ambient-t)
+[ATX](./4-the-state-of-the-atmosphere.html#ambient-t)| [ATxH](./4-the-state-of-the-atmosphere.html#ambient-t)| [ATxD](./4-the-state-of-the-atmosphere.html#ambient-t)| [AUHSAS](./5-cloud-physics-variables.html#CRPC)| [AVAPS](./4-the-state-of-the-atmosphere.html#special-use-remote)
+[AWAS](./6-air-chemistry-measurements.html#awas-cims-qcls-toga)| [base_time](./2-general-information-about-data-files.html#base-time)| [BDIFR](./4-the-state-of-the-atmosphere.html#bdifr)| [BFIXx$\ddagger$](./10-obsolete-variables.html#vanes)| [BLATA](./3-the-state-of-the-aircraft.html#blata)
+[BLONA](./3-the-state-of-the-aircraft.html#blona)| [BNORMA](./3-the-state-of-the-aircraft.html#bnorma)| [BPITCHR](./3-the-state-of-the-aircraft.html#bpitchr)| [BROLLR](./3-the-state-of-the-aircraft.html#brollr)| [BYAWR](./3-the-state-of-the-aircraft.html#byawr)
+[C1DC](./5-cloud-physics-variables.html#c1dc-c1dp)| [C1DP](./5-cloud-physics-variables.html#c1dc-c1dp)| [C200X](./5-cloud-physics-variables.html#size-distribution)| [C200Y](./5-cloud-physics-variables.html#size-distribution)| [C260X](./5-cloud-physics-variables.html#size-distribution)
+[CAVP_x](./4-the-state-of-the-atmosphere.html#p-special)| [CCDP](./5-cloud-physics-variables.html#size-distribution)| [CCEP$\ddagger$](./10-obsolete-variables.html#loranc)| [CF300](./5-cloud-physics-variables.html#size-distribution)| [CFSEC$\ddagger$](./10-obsolete-variables.html#loranc)
+[CFSSP](./5-cloud-physics-variables.html#size-distribution)| [CGS$\ddagger$](./10-obsolete-variables.html#loranc)| [CH4_PICx](./6-air-chemistry-measurements.html#co2-pic)| [CIMS](./6-air-chemistry-measurements.html#awas-cims-qcls-toga)| [CLAT$\ddagger$](./10-obsolete-variables.html#loranc)
+[CLON$\ddagger$](./10-obsolete-variables.html#loranc)| [CMODE](./10-obsolete-variables.html#co-vars)| [CNTEMP](./7-aerosol-particle-measurements.html#cntemp)| [CNTS](./7-aerosol-particle-measurements.html#cnts)| [CO](./10-obsolete-variables.html#co)
+[CO2_PICx](./6-air-chemistry-measurements.html#co2-pic)| [COCAL](./10-obsolete-variables.html#co-vars)| [COCOR](./10-obsolete-variables.html#co-vars)| [COMR_AL](./6-air-chemistry-measurements.html#comr-al)| [CONC1DC](./5-cloud-physics-variables.html#conc2d)
+[CONC1DC100](./5-cloud-physics-variables.html#conc2d)| [CONC1DC150](./5-cloud-physics-variables.html#conc2d)| [CONC1DP](./5-cloud-physics-variables.html#conc2d)| [CONC3](./5-cloud-physics-variables.html#concentration)| [CONC6](./5-cloud-physics-variables.html#concentration)
+[CONCD](./5-cloud-physics-variables.html#concentration)| [CONCF](./5-cloud-physics-variables.html#concentration)| [CONCH_UVH](./4-the-state-of-the-atmosphere.html#uvh-n)| [CONCN](./7-aerosol-particle-measurements.html#concn)| [CONCP](./7-aerosol-particle-measurements.html#special-aerosol)
+[CONCP](./5-cloud-physics-variables.html#concentration)| [CONCU](./7-aerosol-particle-measurements.html#concu-concp)| [CONCU](./5-cloud-physics-variables.html#concentration)| [CONCU100](./5-cloud-physics-variables.html#concentration)| [CONCU500](./5-cloud-physics-variables.html#concentration)
+[CONCV_VXL](./4-the-state-of-the-atmosphere.html#vcsel-corr)| [CONCX](./5-cloud-physics-variables.html#concentration)| [CONCY](./5-cloud-physics-variables.html#concentration)| [CORAW_AL](./6-air-chemistry-measurements.html#coraw-al)| [COZRO](./10-obsolete-variables.html#co-vars)
+[CPCAS](./5-cloud-physics-variables.html#size-distribution)| [CRHP](./10-obsolete-variables.html#cryo-hygro)| [CS100](./5-cloud-physics-variables.html#size-distribution)| [CS200](./5-cloud-physics-variables.html#size-distribution)| [CSEC$\ddagger$](./10-obsolete-variables.html#loranc)
+[CSTAT$\ddagger$](./10-obsolete-variables.html#loranc)| [CUHSAS](./5-cloud-physics-variables.html#size-distribution)| [DAY](./2-general-information-about-data-files.html#mdy)| [DBAR1DC](./5-cloud-physics-variables.html#dbar2d)| [DBAR1DP](./5-cloud-physics-variables.html#dbar2d)
+[DBAR3](./5-cloud-physics-variables.html#mean-diameter)| [DBAR6](./5-cloud-physics-variables.html#mean-diameter)| [DBARD](./5-cloud-physics-variables.html#mean-diameter)| [DBARF](./5-cloud-physics-variables.html#mean-diameter)| [DBARP](./5-cloud-physics-variables.html#mean-diameter)
+[DBARU](./5-cloud-physics-variables.html#mean-diameter)| [DBARX](./5-cloud-physics-variables.html#mean-diameter)| [DBARY](./5-cloud-physics-variables.html#mean-diameter)| [DBZ1DC](./5-cloud-physics-variables.html#dbz2d)| [DBZ1DP](./5-cloud-physics-variables.html#dbz2d)
+[DBZ6](./5-cloud-physics-variables.html#DBZ)| [DBZD](./5-cloud-physics-variables.html#DBZ)| [DBZF](./5-cloud-physics-variables.html#DBZ)| [DBZX](./5-cloud-physics-variables.html#DBZ)| [DBZY](./5-cloud-physics-variables.html#DBZ)
+[DEI](./3-the-state-of-the-aircraft.html#dei-dni)| [DISP1DC](./5-cloud-physics-variables.html#disp2d)| [DISP1DP](./5-cloud-physics-variables.html#disp2d)| [DISP3](./5-cloud-physics-variables.html#dispersion)| [DISP6](./5-cloud-physics-variables.html#dispersion)
+[DISPD](./5-cloud-physics-variables.html#dispersion)| [DISPF](./5-cloud-physics-variables.html#dispersion)| [DISPP](./5-cloud-physics-variables.html#dispersion)| [DISPU](./5-cloud-physics-variables.html#dispersion)| [DISPX](./5-cloud-physics-variables.html#dispersion)
+[DISPY](./5-cloud-physics-variables.html#dispersion)| [DNI](./3-the-state-of-the-aircraft.html#dei-dni)| [DP_CR2C](./4-the-state-of-the-atmosphere.html#dp-cr2)| [DPCRC](./10-obsolete-variables.html#cryo-hygro)| [DP_VXL](./4-the-state-of-the-atmosphere.html#vcsel-dp)
+[DPx](./4-the-state-of-the-atmosphere.html#dew-point)| [DPx](./4-the-state-of-the-atmosphere.html#dew-point)| [DPxC](./4-the-state-of-the-atmosphere.html#dewpt-corrected)| [DPXC](./4-the-state-of-the-atmosphere.html#dewpt-corrected)| [DP_x](./4-the-state-of-the-atmosphere.html#dew-point)
+[DT1DC](./5-cloud-physics-variables.html#dt1dc)| [DVALUE](./4-the-state-of-the-atmosphere.html#dvalue)| [EDPC](./4-the-state-of-the-atmosphere.html#ewx)| [EDPC$\ddagger$](./10-obsolete-variables.html#edpc)| [EW_UVH](./4-the-state-of-the-atmosphere.html#ewx)
+[EWx](./4-the-state-of-the-atmosphere.html#ewx)| [EWX](./4-the-state-of-the-atmosphere.html#ewx)| [FACT](./10-obsolete-variables.html#fact)| [FBMFR](./10-obsolete-variables.html#fbmfr)| [FCN](./7-aerosol-particle-measurements.html#fcnc)
+[FCNC](./7-aerosol-particle-measurements.html#fcnc)| [FO3_ACD](./6-air-chemistry-measurements.html#fo3-acd)| [FO3_CL](./6-air-chemistry-measurements.html#fo3-acd)| [FO3_x](./6-air-chemistry-measurements.html#fo3-acd)| [FP_CR2](./4-the-state-of-the-atmosphere.html#mirror-cr2)
+[FPCRC](./10-obsolete-variables.html#cryo-hygro)| [FRANGE](./5-cloud-physics-variables.html#fssp-range)| [FRESET](./10-obsolete-variables.html#freset)| [FRNG](./5-cloud-physics-variables.html#fssp-range)| [FRST](./10-obsolete-variables.html#freset)
+[FSTB](./10-obsolete-variables.html#fstrob)| [FSTROB](./10-obsolete-variables.html#fstrob)| [FXAZIM](./3-the-state-of-the-aircraft.html#fxazim)| [FXDIST](./3-the-state-of-the-aircraft.html#fxazim)| [GALT_A](./3-the-state-of-the-aircraft.html#ggalt)
+[GEOPHT](./3-the-state-of-the-aircraft.html#geopth)| [GGALT](./3-the-state-of-the-aircraft.html#ggalt)| [GGALTC$\ddagger$](./3-the-state-of-the-aircraft.html#altx)| [GGEOIDHT](./3-the-state-of-the-aircraft.html#ggeoidht)| [GGHWGS](./3-the-state-of-the-aircraft.html#gghwgs)
+[GGLAT](./3-the-state-of-the-aircraft.html#gglat)| [GGLON](./3-the-state-of-the-aircraft.html#gglon)| [GGNSAT](./3-the-state-of-the-aircraft.html#ggnsat)| [GGQUAL](./3-the-state-of-the-aircraft.html#ggqual)| [GGSPD](./3-the-state-of-the-aircraft.html#ggspd)
+[GGSTATUS](./3-the-state-of-the-aircraft.html#ggstatus)| [GGTRK](./3-the-state-of-the-aircraft.html#ggtrk)| [GGVEW](./3-the-state-of-the-aircraft.html#ggvew)| [GGVNS](./3-the-state-of-the-aircraft.html#ggvns)| [GGVSPD](./3-the-state-of-the-aircraft.html#ggvspd)
+[GLAT](./3-the-state-of-the-aircraft.html#gglat)| [GLON](./3-the-state-of-the-aircraft.html#gglon)| [GMODE$\ddagger$](./3-the-state-of-the-aircraft.html#gmode)| [GNI](./7-aerosol-particle-measurements.html#special-aerosol)|  [GNSS](./4-the-state-of-the-atmosphere.html#special-use-remote)
+[GSF](./3-the-state-of-the-aircraft.html#gsf)| [GSF_G](./3-the-state-of-the-aircraft.html#ggspd)| [GSF$\ddagger$](./10-obsolete-variables.html#gsf-obsolete)| [GSTAT_G](./3-the-state-of-the-aircraft.html#ggstatus)| [GSTAT](./3-the-state-of-the-aircraft.html#ggstatus)
+[GVZI$\ddagger$](./3-the-state-of-the-aircraft.html#ggvspd)| [HARP](./8-radiation-variables.html#harp)| [HGM](./3-the-state-of-the-aircraft.html#hgm)| [HGM232](./3-the-state-of-the-aircraft.html#hgm-232)| [HGME](./3-the-state-of-the-aircraft.html#hgme-159)
+[HI3$\ddagger$](./3-the-state-of-the-aircraft.html#hi3)| [HOUR](./2-general-information-about-data-files.html#hms)| [IAS](./10-obsolete-variables.html#ias)| [IRx](./10-obsolete-variables.html#irx)| [IRxC](./8-radiation-variables.html#irxc)
+[IRXC](./8-radiation-variables.html#irxc)| [IRxHT](./8-radiation-variables.html#irxht)| [IRxHTV](./8-radiation-variables.html#irxht)| [IRXV](./8-radiation-variables.html#irxv)| [LAT](./3-the-state-of-the-aircraft.html#latitude)
+[LATC](./3-the-state-of-the-aircraft.html#latc-lonc)| [LAT_G](./3-the-state-of-the-aircraft.html#gglat)| [LON](./3-the-state-of-the-aircraft.html#longitude)| [LONC](./3-the-state-of-the-aircraft.html#latc-lonc)| [LON_G](./3-the-state-of-the-aircraft.html#gglon)
+[LWC$\ddagger$](./10-obsolete-variables.html#jwlwc)| [LWCC$\ddagger$](./10-obsolete-variables.html#jwlw-corrected)| [MACH](./4-the-state-of-the-atmosphere.html#mach-number)| [MACHx](./4-the-state-of-the-atmosphere.html#mach-number)| [MACHX](./4-the-state-of-the-atmosphere.html#mach-number)]
+[MINUTE](./2-general-information-about-data-files.html#hms)| [MIRRORT_CR2](./4-the-state-of-the-atmosphere.html#mirror-cr2)| [MR](./4-the-state-of-the-atmosphere.html#MR)| [MONTH](./2-general-information-about-data-files.html#mdy)| [MRCR](./4-the-state-of-the-atmosphere.html#MR)
+[MRLA](./4-the-state-of-the-atmosphere.html#MR)| [MRLH](./4-the-state-of-the-atmosphere.html#MR)| [MRVXL](./4-the-state-of-the-atmosphere.html#MR)| [NO](./6-air-chemistry-measurements.html#no-noy)| [NO~y~](./6-air-chemistry-measurements.html#no-noy)
+[O3FS](./10-obsolete-variables.html#o3fs)| [O3MR_CL](./6-air-chemistry-measurements.html#f03-acd)| [MTP](./4-the-state-of-the-atmosphere.html#special-use-remote)| [OAT](./4-the-state-of-the-atmosphere.html#oat)| [PACT](./10-obsolete-variables.html#AACT)
+[PALT](./3-the-state-of-the-aircraft.html#palt)| [PCAB](./4-the-state-of-the-atmosphere.html#p-special)| [PCN](./7-aerosol-particle-measurements.html#pcn)| [P_CR2](./4-the-state-of-the-atmosphere.html#p-special)| [PFLW](./7-aerosol-particle-measurements.html#pflw)
+[PFLWC](./7-aerosol-particle-measurements.html#pflw)| [PHDG$\ddagger$](./10-obsolete-variables.html#ltn51)| [PITCH](./3-the-state-of-the-aircraft.html#pitch)|  [PLWC](./5-cloud-physics-variables.html#plwc)| [PLWC1](./5-cloud-physics-variables.html#plwc)
+[PLWC1DC](./5-cloud-physics-variables.html#lwc2d)| [PLWC1DP](./5-cloud-physics-variables.html#lwc2d)| [PLWC6](./5-cloud-physics-variables.html#PSD-LWC)| [PLWCC](./5-cloud-physics-variables.html#plwcc)| [PLWCC1](./5-cloud-physics-variables.html#plwcc)
+[PLWCD](./5-cloud-physics-variables.html#PSD-LWC)| [PLWCF](./5-cloud-physics-variables.html#PSD-LWC)| [PLWCG](./5-cloud-physics-variables.html#plwcg)| [PLWCX](./5-cloud-physics-variables.html#PSD-LWC)| [PLWCY](./5-cloud-physics-variables.html#PSD-LWC)
+[PS_A](./4-the-state-of-the-atmosphere.html#psx)| [PSDPx](./4-the-state-of-the-atmosphere.html#p-special)| [PSFD](./4-the-state-of-the-atmosphere.html#psx)| [PSFRD](./4-the-state-of-the-atmosphere.html#psx)| [PSURF](./4-the-state-of-the-atmosphere.html#p-special)
+[PSX](./4-the-state-of-the-atmosphere.html#psx)| [PSxC](./4-the-state-of-the-atmosphere.html#psx)| [PSXC](./4-the-state-of-the-atmosphere.html#psx)| [PSx](./4-the-state-of-the-atmosphere.html#psx)| [PTIME$\ddagger$](./10-obsolete-variables.html#ptime)
+[QC_A](./4-the-state-of-the-atmosphere.html#qcx)| [QCBC$\ddagger$](./10-obsolete-variables.html#qcb)| [QCB$\ddagger$](./10-obsolete-variables.html#qcb)| [QCGC$\ddagger$](./10-obsolete-variables.html#qcb)| [QCG$\ddagger$](./10-obsolete-variables.html#qcb)
+[QCLS](./6-air-chemistry-measurements.html#awas-cims-qcls-toga)| [QCx](./4-the-state-of-the-atmosphere.html#qcx)| [QCX](./4-the-state-of-the-atmosphere.html#qcx)| [QCxC](./4-the-state-of-the-atmosphere.html#qcx)| [QCXC](./4-the-state-of-the-atmosphere.html#qcx)
+[RAWCONC_VXL](./4-the-state-of-the-atmosphere.html#vcsel-uncor)| [REFF2DC](./5-cloud-physics-variables.html#reff2d)| [REFF2DP](./5-cloud-physics-variables.html#reff2d)| [REFFD](./5-cloud-physics-variables.html#effective-radius)| [REFFF](./5-cloud-physics-variables.html#effective-radius)
+[RHOLA](./4-the-state-of-the-atmosphere.html#rho)| [RHOUV](./4-the-state-of-the-atmosphere.html#rho)| [RHOx](./4-the-state-of-the-atmosphere.html#rho)| [RHUM](./4-the-state-of-the-atmosphere.html#rhumw)| [RHUMI](./4-the-state-of-the-atmosphere.html#rhumi)
+[RICE](./5-cloud-physics-variables.html#rice)| [ROC](./3-the-state-of-the-aircraft.html#roc)| [ROLL](./3-the-state-of-the-aircraft.html#roll)| [RSTx](./8-radiation-variables.html#rstx)| [RTHRx](./4-the-state-of-the-atmosphere.html#recovery-t)
+[RTx](./4-the-state-of-the-atmosphere.html#recovery-t)| [RTX](./4-the-state-of-the-atmosphere.html#recovery-t)| [RTxH](./4-the-state-of-the-atmosphere.html#recovery-t)| [SECOND](./2-general-information-about-data-files.html#hms)| [SCLWC](./10-obsolete-variables.html#sclwc)
+[SFC](./3-the-state-of-the-aircraft.html#sfc)| [SMPS](./7-aerosol-particle-measurements.html#special-aerosol)| [SOLAZ](./8-radiation-variables.html#solaz)| [SOLDE](./8-radiation-variables.html#solde)| [SOLEL](./8-radiation-variables.html#solel)
+[SOLZE](./8-radiation-variables.html#solze)| [SPHUM](./4-the-state-of-the-atmosphere.html#sphum)| [SPxPitch](./8-radiation-variables.html#spx)| [SPxRoll](./8-radiation-variables.html#spx)| [SSFXx$\ddagger$](./10-obsolete-variables.html#akfxx)
+[SSLIP](./4-the-state-of-the-atmosphere.html#sslip)| [SSRD](./4-the-state-of-the-atmosphere.html#ssrd)| [SWTC](./10-obsolete-variables.html#swtc)| [SWx](./10-obsolete-variables.html#swx)| [TASx](./4-the-state-of-the-atmosphere.html#true-airspeed)
+[TASX](./4-the-state-of-the-atmosphere.html#true-airspeed)| [TASHC](./4-the-state-of-the-atmosphere.html#tashc)| [TASxD](./4-the-state-of-the-atmosphere.html#true-airspeed)| [TCAVB](./8-radiation-variables.html#rstx)| [TCAVT](./8-radiation-variables.html#rstx)
+[TCNTP](./7-aerosol-particle-measurements.html#tcntu-tcntp)| [TCNTU](./7-aerosol-particle-measurements.html#tcntu-tcntp)| [TEMP1](./7-aerosol-particle-measurements.html#cntemp)| [TEMP2](./7-aerosol-particle-measurements.html#cntemp)| [TEO3](./6-air-chemistry-measurements.html#te03)
+[TEO3C](./6-air-chemistry-measurements.html#te03c)| [TEO3P](./6-air-chemistry-measurements.html#tep)| [TEP](./6-air-chemistry-measurements.html#tep)| [TET](./6-air-chemistry-measurements.html#tet)| [THDG](./3-the-state-of-the-aircraft.html#thdg)] 
+[THETA](./4-the-state-of-the-atmosphere.html#theta)| [THETAE](./4-the-state-of-the-atmosphere.html#thetae)| [THETAP](./4-the-state-of-the-atmosphere.html#thetae)| [THETAQ](./4-the-state-of-the-atmosphere.html#thetaq)| [THETAV](./4-the-state-of-the-atmosphere.html#thetav)
+[THF$\ddagger$](./10-obsolete-variables.html#thf)| [THI$\ddagger$](./10-obsolete-variables.html#ltn51)| [Time](./2-general-information-about-data-files.html#time)| [time_offset](./2-general-information-about-data-files.html#time-offset)| [TKAT_G](./3-the-state-of-the-aircraft.html#ggtrk)
+[TMLAG$\ddagger$](./10-obsolete-variables.html#tmlag)| [TOGA](./6-air-chemistry-measurements.html#awas-cims-qcls-toga)| [TPTIME$\ddagger$](./10-obsolete-variables.html#tptime)| [TRSTB](./8-radiation-variables.html#trstx)| [TRSTT](./8-radiation-variables.html#trstx)
+[TTKP$\ddagger$](./10-obsolete-variables.html#ttkp)|  [TTRF$\ddagger$](./10-obsolete-variables.html#ttrf)| [TTx$\ddagger$](./10-obsolete-variables.html#ttx)| [TVIR](./4-the-state-of-the-atmosphere.html#TVIR)| [UI](./4-the-state-of-the-atmosphere.html#ui-vi-wi)
+[UIC](./4-the-state-of-the-atmosphere.html#uic-vic)| [UPRESS](./7-aerosol-particle-measurements.html#upress)| [USFLWC](./7-aerosol-particle-measurements.html#pflw)| [USMPFLW](./7-aerosol-particle-measurements.html#pflw)| [UVx](./10-obsolete-variables.html#uvx)
+[UX](./4-the-state-of-the-atmosphere.html#ux-vy)| [UXC](./4-the-state-of-the-atmosphere.html#uxc-vyc)| [VCRH](./10-obsolete-variables.html#cryo-hygro)| [VEW$\ddagger$](./10-obsolete-variables.html#gsf-obsolete)| [VEWC](./3-the-state-of-the-aircraft.html#vewc-vnsc)
+[VEW](./3-the-state-of-the-aircraft.html#vew)_| [VEW_G$\ddagger$](./3-the-state-of-the-aircraft.html#ggvew)| [VI](./4-the-state-of-the-atmosphere.html#ui-vi-wi)| [VIC](./4-the-state-of-the-atmosphere.html#uic-vic)| [VISxC](./8-radiation-variables.html#visxc)
+[VISxHT](./8-radiation-variables.html#visxht)| [VISxHTV](./8-radiation-variables.html#visxht)| [VISxV](./8-radiation-variables.html#visxv)| [VLA$\ddagger$](./10-obsolete-variables.html#vla)| [VNS](./3-the-state-of-the-aircraft.html#vns)
+[VNSC](./3-the-state-of-the-aircraft.html#vewc-vnsc)| [VNS_G](./3-the-state-of-the-aircraft.html#ggvns)| [VNS$\ddagger$](./10-obsolete-variables.html#gsf-obsolete)| [VSPD](./3-the-state-of-the-aircraft.html#vspd)| [VSPD_G](./3-the-state-of-the-aircraft.html#ggvspd)
+[VY](./4-the-state-of-the-atmosphere.html#ux-vy)| [VYC](./4-the-state-of-the-atmosphere.html#uxc-vyc)| [VZI$\ddagger$](./10-obsolete-variables.html#vzi)| [WD](./4-the-state-of-the-atmosphere.html#ws-wd)| [WDC](./4-the-state-of-the-atmosphere.html#wsc-wdc)
+[WDRCTN$\ddagger$](./10-obsolete-variables.html#wspd)| [WI](./4-the-state-of-the-atmosphere.html#ui-vi-wi)| [WIC](./4-the-state-of-the-atmosphere.html#wic)| [WP3](./3-the-state-of-the-aircraft.html#wp3)| [WS](./4-the-state-of-the-atmosphere.html#ws-wd)
+[WSC](./4-the-state-of-the-atmosphere.html#wsc-wdc)| [WSPD$\ddagger$](./10-obsolete-variables.html#wspd)| [XCOMR](./6-air-chemistry-measurements.html#comr-al)| [XCOMR_AL$\ddagger$](./6-air-chemistry-measurements.html#comr-al)| [XFO3FNO](./6-air-chemistry-measurements.html#xf03fs) 
+[XFO3FS](./6-air-chemistry-measurements.html#xf03fs)| [XFO3P](./6-air-chemistry-measurements.html#xf03p)| [XICN](./7-aerosol-particle-measurements.html#xicnc)| [XICNC](./7-aerosol-particle-measurements.html#xicnc)| [XMACH2](./4-the-state-of-the-atmosphere.html#mach-number)
+[XNCLF](./6-air-chemistry-measurements.html#no-noy)| [XNMBT](./6-air-chemistry-measurements.html#no-noy)| [XNO](./6-air-chemistry-measurements.html#no-noy)| [XNOCAL](./6-air-chemistry-measurements.html#mr-no-no2)| [XNYCAL](./6-air-chemistry-measurements.html#mr-no-no2)
+[XNOCF](./6-air-chemistry-measurements.html#no-noy)| [XNOSF](./6-air-chemistry-measurements.html#no-noy)| [XNOY](./6-air-chemistry-measurements.html#no-noy)| [XNOYP](./6-air-chemistry-measurements.html#no-noy)| [XNOZA](./6-air-chemistry-measurements.html#no-noy)
+[XNSAF](./6-air-chemistry-measurements.html#no-noy)| [XNST](./6-air-chemistry-measurements.html#no-noy)| [XNZAF](./6-air-chemistry-measurements.html#no-noy)| [XO3](./6-air-chemistry-measurements.html#f03-acd)| [XSIG_UVH](./4-the-state-of-the-atmosphere.html#uvh-voltage)
+[XUVI](./10-obsolete-variables.html#xuvi)| [XUVP](./10-obsolete-variables.html#xuvi)| [XUVT](./10-obsolete-variables.html#xuvi)| [XVI$\ddagger$](./10-obsolete-variables.html#ltn51)| [YEAR](./2-general-information-about-data-files.html#mdy)
+[YVI$\ddagger$](./10-obsolete-variables.html#ltn51)| 
+
+# Appendix C: Editing The T.N. {.unnumbered}
+
+## Notes regarding the construction and structure of this document:{-}
+
+* The original version is ProcessingAlgorithms.lyx, which needs ’LyX’, a user interface to TeX. It is available on EOL machines like tikal. Start it with “lyx ProcessingAlgorithms.lyx”. This version
+was last updated in Feb 2019. It can be obtained from the [GitHub site](https://github.com/WilliamCooper/ProcessingAlgorithms). Copy this to an RStudio project file to use this version.  
+* A revised version is written in RMarkdown to facilitate editing by others. It provides an HTML version of the document suitable for hosting on web servers. To obtain this version, download [this repository](https://github.com/WilliamCooper/ProcessingAlgorithms/tree/Rmd). This works best
+if output: bookdown::gitbook is selected. Download this branch to an RStudio project directory and use "the"knit" to construct the web site. The output will be in a directory names "_site" and can be moved from there to a web server. For example, if the web server delivers files from /var/www/html, make a new
+directory there called "ProcessingAlgorithms" and move all files from "_site" to "ProcessingAlgorithms".
+Then view the document via http://URL/ProcessingAlgorithms where URL is the appropriate reference for
+your web files.  
+    + The R Markdown files have a mix of conventions including HTML, LaTeX formulas, and R Markdown
+conventions. At some point, it may be useful to become more consistent, e.g., by
+changine HTML references to R Markdown reference, changing HTML italics to R Markdown italics,
+changing table structures from HTML to R Markdown kable format, etc.  
+    + The R Markdown files do not produce a useful PDF file, at least in their present status.  
+* The document is broken into many sections, referenced by the above file, so they must be present also. In the lyx version they have names like Section3.lyx. In the Rmd version, they reside as, e.g., Section3.Rmd in the "Children" directory.  
+* The lyx document generates three indices: a regular index, a list of symbols, and a list of variables. The references for these are embedded in the .lyx files, and they can be modified or more can be added via the “Insert -&gt; Index Entry” controls. These practices are useful when generating index entries:  
+    + entries like ’wind!relative’ will generate index entries as subordinate entries with ’relative’ below ’wind’. 
+    In the Rmd version, the index is not generated automatically but the existing links should
+    remain valid as the text is changed. To add a variable, use a subsection or
+    subsubsection entry and identify a label by following the heading with {#newlabel}.
+    Then follow the pattern in the existing index to add an entry for the new term. Also add
+    a similar link to the list of variables in Appendix B.
+
+    + I have tried to emphasize using nouns to start index entries, so for example I would favor “coefficient!calibration” over “calibration coefficient.  
+    + It is sometimes useful to generate “see xxx” entries, which can be done as follows in
+    the LyX version: “INS|see {Inertial Navigation System}” where the part in braces is also in LaTeX code, generated by pressing CNTL-L.  
+* Creating a PDF-format file in LyX usually will generate these lists also.  
+* The LyX files have embedded notes with additional information that should be retained, and exporting to LaTeX will lose this information, so it will be useful to retain the LyX format. The suggested next steps in the table above, for example, almost all have associated notes that will appear in yellow and will help identify where the comment applies.  
+* It is sometimes easiest to edit the PDF file directly. Some of the web references have been changed in this way and can be adjusted as the reference files are moved, e.g., from my Google Drive to the EOL web pages. For this purpose, I found master-pdf-editor useful. This will lose continuity, however, because then the links can’t be re-generated by running LyX.  
+* As of Feb 2019, many links formerly to google-drive addresses or eol system files have been changed to https://github.com/NCAR/aircraft_ProcessingAlgorithms links. In that directory there is a file (’links’) with a list of all the links in the document. It is worthwhile when updating this document to check that all the links remain current. One way is to use these R statements and then check EURL to see that the links are all found:
+```
+    links <- readlines(’./links’); EURL <- rep(FALSE, length(links));
+    for (i in 1:length(links)) {EURL<- RCurl::url.exists(links[i])}
+```
+  
+  
+* For the Rmd version: 
+  + In place of the Table of Symbols, there is Appendix A. It is a .gif copy of the LyX-generated table, and there is no easy way to update it except vis LyX.
+  + In place of the "Variable Names" index, there is Appendix B that lists the variable names and includes links to appropriate references to variables in the technical note. This is not generated automatically, so when a new variable is added to the document a new entry with appropriate links should be added to Appendix B. Follow the style in "Children/Appendices.Rmd" and add an appropriate target for the link to the new discussion of the variable, which should be a 4th-level or higher heading.
+  
+
+
+## Referencing Specific Sections or Pages of this Document (LyX version): {.unnumbered}
+
+### Variables {.unnumbered}
+
+<p>The document includes named destinations for each variable name, so when used in a URL that destination can be reached. This is done differently in different browsers or PDF viewers:</p>
+<ul class="incremental">
+<li><p>For a web browser like Chrome or Firefox, use the “nameddest” reference; e.g., for the discussion of variable ATX, use<br />
+<code>firefox http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf#nameddest=ATX</code></p></li>
+<li><p>For a pdf viewer like evince, use this syntax:<br />
+<code>evince -n ATX http://www.eol.ucar.edu/system/files/ProcessingAlgorithms.pdf</code></p></li>
+</ul>
+<p>Most variable names can be used in these URL modifiers. Here is a list of available targets by section in the report:</p>
+<p><span class="underline">Section 1:</span> Time</p>
+<p><span class="underline">Section 2:</span> <span>[</span>none<span>]</span></p>
+<p><span class="underline">Section 3:</span> ACINS ALT BLATA BLONA BNORMA BPITCHR BROLLR BYAWR DEI DNI FXAZIM FXDIST GGALT GGLAT GGLON GGNSAT GGOIDHT GGSPD GGSTATUS GGTRK GGVEW GGVNS GGVSPD GGWUAL GMODE GSF HGM HGM232 HGME HI3 LAT LATC LON LONC PALT PITCH ROLL THDG VEW VEWC VNS VNSC VSPD</p>
+<p><span class="underline">Section 4:</span> ADIFR AKRD AT_ITR ATx ATX ATxD ATxJ BDIFR CAVP_x CONCH_UVH CONCV_VXL DP_CR2C DP_VXL DPx DP_x DPxC DPXC DVALUE EDPC EW_UHV EWx EWX FP_CR2 MACHx MACHX MIRRORT_CR2 MIRRTMP_DPX MR MRCR MRLA MRLH MRVCL OAT PCAB PS_A PSDPx PSFD PSFRD PSURF PSx PSX PSxC PSXC QCx QCX QCxC QCXC RAWCONC_VXL RHOx RHUM RHUMI RTHRx RTx RTX RTxH SPHUM SSLIP TASHC TASx TASX TASxD THETA THETAE THETAP THETAQ THETAV TVIR UI UIC UX UXC VI VIC VY VYC WD WDC WI WIC WS WSC XSIGV_UHV</p>
+<p><span class="underline">Section 5:</span> A1DC A1DP A200X A200Y A260X ACDP AF300 AFSSP APCAS AS100 AUHSAS C1DC C1DP C200X C200Y C260X CCDP CF300 CFSSP COMCP CONC1DC CONC1DC100 CONC1DC150 CONC1DP CONC3 CONC6 CONCD CONCF CONCU CONCX CONCY CPCAS CS100 CUHSAS DBAR1DC DBAR1DP DBAR3 DBAR6 DBARD DBARF DBARP DBARU DBARX DBARY DBZ DBZ1DC DBZ1DP DISP1DC DISP1DP DISP3 DISP6 DISPD DISPF DISPP DISPU DISPX DISPY DT1DC FRANGE FRNG PLWC1 PLWC1DC PLWC1DP PLWC6 PLWCC PLWCC1 PLWCD PLWCF PLWCG PLWCX PLWCY REFF2DC REFF2DP REFFD REFFF RICE</p>
+<p><span class="underline">Section 6:</span> CO2_PIC COMR_AL CORAW_AL FO3_ACD FO3_CL O3MR_CL TEO3 TEO3C TEO3P TEP TET XFO3FNO XFO3FS XFO3P XNCLF XNMBT XNO XNOCAL XNOCF XNOSF XNOY XNOYP XNOZA XNSAF XNST XNYCAL XNZAF XO3</p>
+<p><span class="underline">Section 7:</span> CNTEMP CNTS CONCN CONCP CONCU CONCU100 CONCU500 FCN FCNC PCN PFLW PFLWC TCHTP TCNTL TEMP1 TEMP2 UPRESS USFLWC USMPFLW XICN XICNC</p>
+<p><span class="underline">Section 8:</span> IRxHT IRxV RSTx SPxPitch SPxRoll TRSTx VISxC VISxHT VISxV</p>
+<p><span class="underline">Section 9:</span> <span>[</span>none<span>]</span></p>
+<p><span class="underline">Section 10:</span> OBSOLETE</p>
+
+### Page Numbers (LyX Version){.unnumbered}
+
+<p>To reference a specific page in the document, use a web reference like this:<br />
+<code>ProcessingAlgorithms.pdf#page=44</code></p>
+<p>In evince, this syntax will work, or the page number can be specified in this way:</p>
+<p><code>evince -p 115 ProcessingAlgorithms.pdf</code></p>
+
+### Sections and Subsections {.unnumbered}
+<p>Targets have not been provided for other parts of the document, but the above method of referencing pages can be used to link to specific sections and other components of the document.</p>
+
+### Adding New Targets {-}
+
+<p>When a new variable is added, a new anchor point can be added by inserting, in LaTeX mode, "\\nop{LAT}" at the appropriate point in the LyX document. ("\\nop" has been defined to use \hypertarget but displace the reference upward one line.) In addition, when a new variable is added, entries should be made in the index items and the variable-names list, following the pattern used for existing variables, and if appropriate any new symbols used in discussing the algorithm should be added to the similar symbols list.  
+
+## Referencing Specific Sections of this Document (RMarkdown version): {.unnumbered}
+
+Most discussions of variables are in subsubsubsections with appropriate labels, and those labels can be referenced as in the model provided by Appendix B.  
+
+# Appendix D: Needing Attention {.unnumbered}
+
+<!-- It would be useful to replace this html table with an Rmd table. -->
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>page</strong></th>
+<th style="text-align: left;"><strong>suggested action</strong></th>
+<th style="text-align: left;"><strong>who?</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Update MW table for current CO2 concentration</td>
+<td style="text-align: left;">done, WAC 2019 – keep updating</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Add, to constants table, a reference to what has been in use previously. (See Code.amlib as saved 2011, for examples)</td>
+<td style="text-align: left;">WAC – not sure if needed?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Ask Teresa and Mike R. to review the discussion re trace-gas units</td>
+<td style="text-align: left;">done, MR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Get info from Chris W describing interpolation and time adjustments, for inclusion as an addition to the section on times. Revise section.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Get place to put algorithm notes, and include links to those additional discussions in this document.</td>
+<td style="text-align: left;">done WAC</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">In algorithm boxes, when variables are referenced, make those references active links to the discussion of the variable</td>
+<td style="text-align: left;">WAC: mostly done now in Rmd version</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Get description of the history of the C-130 INS, with characteristics for the Litton at least.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Add history of GPS systems: What was used when (C-130 at least)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Add/clarify section on height-above-terrain; modify to ref. geoid. Need to change HeightAboveTerrain() script.</td>
+<td style="text-align: left;">partly done, WAC,</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">check/clarify discussion of height-above-geoid and, generally, geopotential vs geometric vs geoid height</td>
+<td style="text-align: left;">done - WAC</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Add a variable representing geopotential height and change DVALUE to be based on it minus PALT</td>
+<td style="text-align: left;">WAC - done</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Clarify meaning of mode and status for old GPS units, and if used anymore</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Add new section on ALTC? Info is there in comments. Implement?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">should there be a vertical velocity of the AC based on data-system GPS? ROC as used for reprocessing, and WIR as backup to WIC?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Check/update sensors used on both aircraft.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Add to historical description of PCORs, esp. re subroutine references (QCF, MACH_A, ADIFR)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Add a discussion of the additional corrections to QCR that could make this less sensitive to AOA? Algorithm is developed and documented; implement? Coefficients in ProcessingAlgorithms.pdf are based on ARISTO2016 flight 6.</td>
+<td style="text-align: left;">WAC - done</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Suggestion: consider ALT_G and avoid ALT for GPS avionics variable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Consider change to spherical geometry for distance north and east of reference point because range of GV is so great</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">need to explain how the two measures of longitude, with high and low resolution, are used together.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Need to implement the discussion re correction for the displacement of the GPS antenna from the INS. When done, need to add LG=-4.30 m to the attributes for GGVSPD, GGVEW, GGVNS (GV) and get appropriate values for the C-130</td>
+<td style="text-align: left;">WAC - done</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Get Dick Friesen or someone to review and update the discussion of GPS GSTAT</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Revise the values listed for the complementary-filter feedback to match what is used now – better with lower values than listed</td>
+<td style="text-align: left;">WAC</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">It might be useful to disable the roll test in gpsc.c, now that GPS is better than when this was implemented</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Goodrich Technical Report 5755: should we get permission and post this? (FAAM has it posted)</td>
+<td style="text-align: left;">(It is posted now)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">In-cloud air T radiometer: could use more detail re the processing algorithm</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Check all the complex M-K section, esp. <span class="math inline"><em>T</em><sub><em>k</em></sub></span> and DP interp. function</td>
+<td style="text-align: left;">done - WAC</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Consider changing name to FP_CR2 in preference to MIRRORT_CR2?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">For CONCV_VXL, I think we need cal coefficients and equations used</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">For RHOx, the code now uses 216.68 instead of 100000/461.5228=216.674 as specified here; change?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Check that current code uses the modified PCOR function with humidity correction and early-error corrected</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">The PSURF definition references PSFDC; replace with PSXC?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">“ATTACK” and “SSLIP” differ from other “preferred” variables by not having “X” at the end. Consider name change?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">The variable WIC is described as “GPS-corrected” but that is misleading because it is really based, for aircraft motion, solely on GPS in recent usage (where dependence is on GGVSPD). Contrast to WDC/WSC which are really GPS-corrected. Suggest a different name, like “Wind Vector, Vertical Component, using GPS”?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Re Gerber probe, I didn’t find code for this; need to describe the algorithm.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">It would be useful to update Bulletin 24 re hydrometeor spectrometers, with info from Bansemer and reference to work by Korolev, Strapp, Jensen, etc.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Is “PMS/CSIRO King” correct? DMT?</td>
+<td style="text-align: left;">OK - JBJ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Variables like AS200 have names with “Raw Accumulation” – seems awkward, consider name change? Maybe “Count” per channel?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">add the variables for total counts?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">some additions are needed here: RAFFD, PVOLU, TCNTD (total counts all cells, CDP); housekeeping variables? All: first and last bins? UHSAS: T and P in canister including UPRESS intensity, etc., better in sect 7</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">REFF2DC seems mis-named; all others based on 1D sizing from 2D have names involving 2DC</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">need Teresa and/or Andy W to check this section</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">need to understand and document what te03c.c does, and perhaps move to obsolete?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Is NO-related discussion OK? is this right: The one named NO2 is actually for NOy?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">In true measurement mode, XNOZA and XNZAF will be near zero – is this right?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">I think the corrected-NO mixing ratio section may need revision?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">“has the provision for the addition of water vapor ” – does that mean this is always done, or only sometimes?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">to “0.1-360 s” add “but is typically set to 0.1 s”?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">UPRESS: the attributes for this variable say the units are kPa; is that incorrect? Mike R lists it as hPa.</td>
+<td style="text-align: left;">resolved</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">check signs here for WD and WS; this differs from the section-9 equation ... ??</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">For EDPC, the <-50 branch looks suspicious and needs checking</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">For old cryogenic hygrometer, find and include the 3rd-order equation referenced here</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">check Goff-Gratch formulas; there was some ambiguity in what was in B9</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Should include basic equation for SWTC</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">re TECO CO: is the direct measurement (ppb) a mass ratio? Need explanation here if so to describe difference between ppb and ppbv</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">COCAL: how does this differ from XCOMR? Why is this in the “obsolete” section? Same for O3FS?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">For SCLWC, this is missing crucial information like how accreted mass is obtained from voltage. Couldn’t find the algorithm. Consider Mazin version? Or old one for Wyo KA?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">There are some additional notes regarding obsolete variables, esp. involving FSSP processing, that are not included here.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">WIC, GGALT, etc.</td>
+<td style="text-align: left;">Review and correct descriptive attributes (e.g., WIC, GGALT, <span>*</span>DGPS</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">StdSpeedofSound is wrong; enters ias.c – obsolete now?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">fix Rd in xlate/const.c: calculated with wrong Md, although right one is listed later in routine. (trivial difference)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Lv defined in xlate/const.c is not latent heat but derivative of latent heat vs T. Used correctly in thetap.c and plwcc.c, but deceptively commented</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review and approve new AKRD description</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>

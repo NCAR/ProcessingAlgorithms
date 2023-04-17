@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Appendix D: Needing Attention | RAF Technical Note: Processing Algorithms</title>
+  <meta name="description" content="Appendix D: Needing Attention | RAF Technical Note: Processing Algorithms" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Appendix D: Needing Attention | RAF Technical Note: Processing Algorithms" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Appendix D: Needing Attention | RAF Technical Note: Processing Algorithms" />
+  
+  
+  
+
+<meta name="author" content="RAF RSIG" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="appendix-c-editing-the-t.n..html"/>
+<link rel="next" href="A-index-1.html"/>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="site_libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="site_libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="site_libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#index">Preface<span></span></a></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#background-information"><i class="fa fa-check"></i><b>1.1</b> Background Information<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#alphabetical-list-of-variables"><i class="fa fa-check"></i><b>1.2</b> Alphabetical List of Variables<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#constants-and-symbols"><i class="fa fa-check"></i><b>1.3</b> Constants and Symbols<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html"><i class="fa fa-check"></i><b>2</b> General Information About Data Files<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#units-and-abbreviations"><i class="fa fa-check"></i><b>2.1</b> Units and Abbreviations<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#variables-used-to-denote-time"><i class="fa fa-check"></i><b>2.2</b> Variables Used to Denote Time<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#synchronization-of-measurements"><i class="fa fa-check"></i><b>2.3</b> Synchronization of Measurements<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#other-comments-on-terminology"><i class="fa fa-check"></i><b>2.4</b> Other Comments on Terminology<span></span></a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#variable-names-in-equations"><i class="fa fa-check"></i><b>2.4.1</b> Variable Names in Equations<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#distinction-between-original-measurements-and-derived-variables"><i class="fa fa-check"></i><b>2.4.2</b> Distinction Between Original Measurements and Derived Variables<span></span></a></li>
+<li class="chapter" data-level="2.4.3" data-path="2-general-information-about-data-files.html"><a href="2-general-information-about-data-files.html#dimensions-in-equations"><i class="fa fa-check"></i><b>2.4.3</b> Dimensions in Equations<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html"><i class="fa fa-check"></i><b>3</b> The State of the Aircraft<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#inertial-reference-systems"><i class="fa fa-check"></i><b>3.1</b> Inertial Reference Systems<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#standard-variables"><i class="fa fa-check"></i><b>3.1.1</b> Standard Variables<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#special-use-irs"><i class="fa fa-check"></i><b>3.1.2</b> Additional Special-Use Variables<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#global-positioning-systems"><i class="fa fa-check"></i><b>3.2</b> Global Positioning Systems<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#other-measurements-of-aircraft-altitude"><i class="fa fa-check"></i><b>3.3</b> Other Measurements of Aircraft Altitude<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="3-the-state-of-the-aircraft.html"><a href="3-the-state-of-the-aircraft.html#combining-irs-and-gps-measurements"><i class="fa fa-check"></i><b>3.4</b> Combining IRS and GPS Measurements<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html"><i class="fa fa-check"></i><b>4</b> The State of the Atmosphere<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#information-on-instruments-and-calibrations"><i class="fa fa-check"></i><b>4.1</b> Information on Instruments and Calibrations<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#variable-names"><i class="fa fa-check"></i><b>4.2</b> Variable Names<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#pressure"><i class="fa fa-check"></i><b>4.3</b> Pressure<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#standard-pressure-measurements"><i class="fa fa-check"></i><b>4.3.1</b> Standard Pressure Measurements<span></span></a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#p-special">Special Pressure Measurements (hPa): PSDPx, CAVP, PCAB, PSURF<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#temperature-section"><i class="fa fa-check"></i><b>4.4</b> Temperature<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#humidity"><i class="fa fa-check"></i><b>4.5</b> Humidity<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#derived-thermodynamic-variables"><i class="fa fa-check"></i><b>4.6</b> Derived Thermodynamic Variables<span></span></a>
+<ul>
+<li><a href="4-the-state-of-the-atmosphere.html#thetav">Virtual Potential Temperature (K): THETAV<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#wind"><i class="fa fa-check"></i><b>4.7</b> Wind<span></span></a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#relative-wind"><i class="fa fa-check"></i><b>4.7.1</b> Relative Wind<span></span></a></li>
+<li><a href="4-the-state-of-the-atmosphere.html#akrd">Attack Angle, Radome (<span class="math inline">º</span>): AKRD<span></span></a></li>
+<li class="chapter" data-level="4.7.2" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#wind-components-and-the-wind-vector"><i class="fa fa-check"></i><b>4.7.2</b> Wind Components and the Wind Vector<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="4-the-state-of-the-atmosphere.html"><a href="4-the-state-of-the-atmosphere.html#special-use-remote"><i class="fa fa-check"></i><b>4.8</b> Special-Use Remote Sensors<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html"><i class="fa fa-check"></i><b>5</b> Cloud Physics Variables<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#LWC"><i class="fa fa-check"></i><b>5.1</b> Measurements of Liquid Water Content<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#sensors-1-D-probes"><i class="fa fa-check"></i><b>5.2</b> Sensors Detecting Individual Hydrometeors (1-D Probes)<span></span></a>
+<ul>
+<li><a href="5-cloud-physics-variables.html#CRPC">Count Rate Per Channel: ACDP, AFSSP, AS100, AF300, AS200, APCAS, A200X, A260X, A200Y, AUHSAS<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#size-distribution">Size Distribution:<span></span></a></li>
+<li class="chapter" data-level="5.2.1" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#concentration-cm-3-concd-concf-conc3-concp-concu"><i class="fa fa-check"></i><b>5.2.1</b> Concentration (cm<span class="math inline"><sup> − 3</sup></span>): CONCD, CONCF, CONC3, CONCP, CONCU;<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#mean-diameter">Mean Diameter (<span class="math inline"><em>μ</em></span>m): DBARD, DBARF, DBAR3, DBAR6, DBARP, DBARX, DBARY, DBARU<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#dispersion">Dispersion (dimensionless): DISPD, DISPF, DISP3, DISP6, DISPP, DISPX, DISPY, DISPU<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#PSD-LWC">Liquid Water Content (g m<strong><span class="math inline"><sup> − 3</sup></span></strong>): PLWCD, PLWCF, PLWCX, PLWC6, PLWCY<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#DBZ">Radar Reflectivity Factor (dbZ): DBZF, DBZX, DBZ6, DBZY, DBZD<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#effective-radius">Effective Radius (<span class="math inline"><em>μ</em></span>m): REFFD, REFFF<span></span></a></li>
+<li><a href="5-cloud-physics-variables.html#fssp-range">FSSP-100 Range (dimensionless): FRNG, FRANGE<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-cloud-physics-variables.html"><a href="5-cloud-physics-variables.html#hydrometeor-imaging-probes"><i class="fa fa-check"></i><b>5.3</b> Hydrometeor Imaging Probes<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html"><i class="fa fa-check"></i><b>6</b> Air Chemistry Measurements<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html#variables-in-standard-data-files"><i class="fa fa-check"></i><b>6.1</b> Variables in Standard Data Files<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="6-air-chemistry-measurements.html"><a href="6-air-chemistry-measurements.html#awas-cims-qcls-toga"><i class="fa fa-check"></i><b>6.2</b> Variables in Special Data Sets<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html"><i class="fa fa-check"></i><b>7</b> Aerosol Particle Measurements<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#condensation-nucleus-counter"><i class="fa fa-check"></i><b>7.1</b> Condensation Nucleus Counter<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#aerosol-spec"><i class="fa fa-check"></i><b>7.2</b> Aerosol Spectrometers<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="7-aerosol-particle-measurements.html"><a href="7-aerosol-particle-measurements.html#special-aerosol"><i class="fa fa-check"></i><b>7.3</b> Special Aerosol Measurements<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html"><i class="fa fa-check"></i><b>8</b> Radiation Variables<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#measurements-of-irradiance-and-radiometric-temperature"><i class="fa fa-check"></i><b>8.1</b> Measurements of Irradiance and Radiometric Temperature<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#harp"><i class="fa fa-check"></i><b>8.2</b> Spectral Irradiance and Actinic Flux<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="8-radiation-variables.html"><a href="8-radiation-variables.html#solar-angles"><i class="fa fa-check"></i><b>8.3</b> Solar Angles<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-experimental-variables.html"><a href="9-experimental-variables.html"><i class="fa fa-check"></i><b>9</b> Experimental Variables<span></span></a></li>
+<li class="chapter" data-level="10" data-path="10-obsolete-variables.html"><a href="10-obsolete-variables.html"><i class="fa fa-check"></i><b>10</b> Obsolete Variables<span></span></a></li>
+<li class="appendix"><span><b>Appendices<span></span></b></span></li>
+<li><a href="appendix-a-list-of-symbols.html#appendix-a-list-of-symbols">Appendix A: List of Symbols<span></span></a></li>
+<li><a href="appendix-b-variable-names.html#appendix-b-variable-names">Appendix B: Variable Names<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#appendix-c-editing-the-t.n.">Appendix C: Editing The T.N.<span></span></a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#notes-regarding-the-construction-and-structure-of-this-document">Notes regarding the construction and structure of this document:<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-or-pages-of-this-document-lyx-version">Referencing Specific Sections or Pages of this Document (LyX version):<span></span></a>
+<ul>
+<li><a href="appendix-c-editing-the-t.n..html#variables">Variables<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#page-numbers-lyx-version">Page Numbers (LyX Version)<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#sections-and-subsections">Sections and Subsections<span></span></a></li>
+<li><a href="appendix-c-editing-the-t.n..html#adding-new-targets">Adding New Targets<span></span></a></li>
+</ul></li>
+<li><a href="appendix-c-editing-the-t.n..html#referencing-specific-sections-of-this-document-rmarkdown-version">Referencing Specific Sections of this Document (RMarkdown version):<span></span></a></li>
+</ul></li>
+<li><a href="appendix-d-needing-attention.html#appendix-d-needing-attention">Appendix D: Needing Attention<span></span></a></li>
+<li class="chapter" data-level="A" data-path="A-index-1.html"><a href="A-index-1.html"><i class="fa fa-check"></i><b>A</b> Index<span></span></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RAF Technical Note: Processing Algorithms</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix-d-needing-attention" class="section level1 unnumbered hasAnchor">
+<h1>Appendix D: Needing Attention<a href="appendix-d-needing-attention.html#appendix-d-needing-attention" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- It would be useful to replace this html table with an Rmd table. -->
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">
+<strong>page</strong>
+</th>
+<th style="text-align: left;">
+<strong>suggested action</strong>
+</th>
+<th style="text-align: left;">
+<strong>who?</strong>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Update MW table for current CO2 concentration
+</td>
+<td style="text-align: left;">
+done, WAC 2019 – keep updating
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Add, to constants table, a reference to what has been in use previously. (See Code.amlib as saved 2011, for examples)
+</td>
+<td style="text-align: left;">
+WAC – not sure if needed?
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Ask Teresa and Mike R. to review the discussion re trace-gas units
+</td>
+<td style="text-align: left;">
+done, MR
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Get info from Chris W describing interpolation and time adjustments, for inclusion as an addition to the section on times. Revise section.
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Get place to put algorithm notes, and include links to those additional discussions in this document.
+</td>
+<td style="text-align: left;">
+done WAC
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+In algorithm boxes, when variables are referenced, make those references active links to the discussion of the variable
+</td>
+<td style="text-align: left;">
+WAC: mostly done now in Rmd version
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Get description of the history of the C-130 INS, with characteristics for the Litton at least.
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Add history of GPS systems: What was used when (C-130 at least)
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Add/clarify section on height-above-terrain; modify to ref. geoid. Need to change HeightAboveTerrain() script.
+</td>
+<td style="text-align: left;">
+partly done, WAC,
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+check/clarify discussion of height-above-geoid and, generally, geopotential vs geometric vs geoid height
+</td>
+<td style="text-align: left;">
+done - WAC
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Add a variable representing geopotential height and change DVALUE to be based on it minus PALT
+</td>
+<td style="text-align: left;">
+WAC - done
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Clarify meaning of mode and status for old GPS units, and if used anymore
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Add new section on ALTC? Info is there in comments. Implement?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+should there be a vertical velocity of the AC based on data-system GPS? ROC as used for reprocessing, and WIR as backup to WIC?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Check/update sensors used on both aircraft.
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Add to historical description of PCORs, esp. re subroutine references (QCF, MACH_A, ADIFR)
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Add a discussion of the additional corrections to QCR that could make this less sensitive to AOA? Algorithm is developed and documented; implement? Coefficients in ProcessingAlgorithms.pdf are based on ARISTO2016 flight 6.
+</td>
+<td style="text-align: left;">
+WAC - done
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Suggestion: consider ALT_G and avoid ALT for GPS avionics variable
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Consider change to spherical geometry for distance north and east of reference point because range of GV is so great
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+need to explain how the two measures of longitude, with high and low resolution, are used together.
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Need to implement the discussion re correction for the displacement of the GPS antenna from the INS. When done, need to add LG=-4.30 m to the attributes for GGVSPD, GGVEW, GGVNS (GV) and get appropriate values for the C-130
+</td>
+<td style="text-align: left;">
+WAC - done
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Get Dick Friesen or someone to review and update the discussion of GPS GSTAT
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Revise the values listed for the complementary-filter feedback to match what is used now – better with lower values than listed
+</td>
+<td style="text-align: left;">
+WAC
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+It might be useful to disable the roll test in gpsc.c, now that GPS is better than when this was implemented
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Goodrich Technical Report 5755: should we get permission and post this? (FAAM has it posted)
+</td>
+<td style="text-align: left;">
+(It is posted now)
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+In-cloud air T radiometer: could use more detail re the processing algorithm
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Check all the complex M-K section, esp. <span class="math inline"><em>T</em><sub><em>k</em></sub></span> and DP interp. function
+</td>
+<td style="text-align: left;">
+done - WAC
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Consider changing name to FP_CR2 in preference to MIRRORT_CR2?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+For CONCV_VXL, I think we need cal coefficients and equations used
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+For RHOx, the code now uses 216.68 instead of 100000/461.5228=216.674 as specified here; change?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Check that current code uses the modified PCOR function with humidity correction and early-error corrected
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+The PSURF definition references PSFDC; replace with PSXC?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+“ATTACK” and “SSLIP” differ from other “preferred” variables by not having “X” at the end. Consider name change?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+The variable WIC is described as “GPS-corrected” but that is misleading because it is really based, for aircraft motion, solely on GPS in recent usage (where dependence is on GGVSPD). Contrast to WDC/WSC which are really GPS-corrected. Suggest a different name, like “Wind Vector, Vertical Component, using GPS”?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Re Gerber probe, I didn’t find code for this; need to describe the algorithm.
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+It would be useful to update Bulletin 24 re hydrometeor spectrometers, with info from Bansemer and reference to work by Korolev, Strapp, Jensen, etc.
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Is “PMS/CSIRO King” correct? DMT?
+</td>
+<td style="text-align: left;">
+OK - JBJ
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Variables like AS200 have names with “Raw Accumulation” – seems awkward, consider name change? Maybe “Count” per channel?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+add the variables for total counts?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+some additions are needed here: RAFFD, PVOLU, TCNTD (total counts all cells, CDP); housekeeping variables? All: first and last bins? UHSAS: T and P in canister including UPRESS intensity, etc., better in sect 7
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+REFF2DC seems mis-named; all others based on 1D sizing from 2D have names involving 2DC
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+need Teresa and/or Andy W to check this section
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+need to understand and document what te03c.c does, and perhaps move to obsolete?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Is NO-related discussion OK? is this right: The one named NO2 is actually for NOy?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+In true measurement mode, XNOZA and XNZAF will be near zero – is this right?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+I think the corrected-NO mixing ratio section may need revision?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+“has the provision for the addition of water vapor” – does that mean this is always done, or only sometimes?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+to “0.1-360 s” add “but is typically set to 0.1 s”?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+UPRESS: the attributes for this variable say the units are kPa; is that incorrect? Mike R lists it as hPa.
+</td>
+<td style="text-align: left;">
+resolved
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+check signs here for WD and WS; this differs from the section-9 equation … ??
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+For EDPC, the &lt;-50 branch looks suspicious and needs checking
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+For old cryogenic hygrometer, find and include the 3rd-order equation referenced here
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+check Goff-Gratch formulas; there was some ambiguity in what was in B9
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Should include basic equation for SWTC
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+re TECO CO: is the direct measurement (ppb) a mass ratio? Need explanation here if so to describe difference between ppb and ppbv
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+COCAL: how does this differ from XCOMR? Why is this in the “obsolete” section? Same for O3FS?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+For SCLWC, this is missing crucial information like how accreted mass is obtained from voltage. Couldn’t find the algorithm. Consider Mazin version? Or old one for Wyo KA?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+There are some additional notes regarding obsolete variables, esp. involving FSSP processing, that are not included here.
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+WIC, GGALT, etc.
+</td>
+<td style="text-align: left;">
+Review and correct descriptive attributes (e.g., WIC, GGALT, <span>*</span>DGPS
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+StdSpeedofSound is wrong; enters ias.c – obsolete now?
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+fix Rd in xlate/const.c: calculated with wrong Md, although right one is listed later in routine. (trivial difference)
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Lv defined in xlate/const.c is not latent heat but derivative of latent heat vs T. Used correctly in thetap.c and plwcc.c, but deceptively commented
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">
+</td>
+<td style="text-align: left;">
+Review and approve new AKRD description
+</td>
+<td style="text-align: left;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="appendix-c-editing-the-t.n..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="A-index-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="site_libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

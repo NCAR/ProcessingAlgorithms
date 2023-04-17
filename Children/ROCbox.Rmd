@@ -1,0 +1,62 @@
+<style>
+p.box {
+background-color: #F8F8F8;
+padding: 10px;
+border: 2px solid black;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+</style>
+
+<style>
+p.box2 {
+background-color: #FFFFFF;
+padding: 10px;
+border: 2px solid red;
+margin-left: 10px;
+margin-right: 10px;
+border-radius: 1px;
+}
+</style>
+
+<!-- \fbox{\begin{minipage}[t]{0.95\textwidth}% -->
+<p class=box>
+\begin{align}
+g(z,\lambda)=g_{e}\left(\frac{1+g_{1}\sin^{2}(\lambda)}{(1-g_{2}\sin^{2}\lambda)^{1/2}}\right)(1-(k_{1}-k_{2}\sin^{2}(\lambda))z+k_{3}z^{2})
+(\#eq:gsublambda)
+\end{align}  
+\ \ \ \ \ \ \ where $g_{e}=9.780327$\ m\ s$^{-2}$, $g_{1}=0.00193185$, $g_{2}=0.00669438$, and  
+\ \ \ \ \ \ \  {$k_{1},k_{2},k_{3}$} = {3.15704$\times 10^{-7}\mathrm{m}^{-1}$,
+2.10269$\times 10^{-9}\mathrm{m}^{-1}$, 7.37452$\times 10^{-14}\mathrm{m}^{-2}$}  
+$g$ = \label{-constant-g}acceleration of gravity\ \ $^{(a)}$\footnote{ } at latitude $\lambda$ and altitude $z$ above the WGS-84 \index{WGS-84 geoid}geoid\
+$R_{d}{}^{\dagger}$ = gas constant for dry air  
+$T_{K}$ = absolute temperature = (ATX + 273.15)  
+$a$ = [ACINS](#acins) = upward acceleration as measured by the INS [m\ s^-2^]  
+$p$ = [PSXC](#psx) = measured ambient pressure [hPa]  
+$\Delta p$ = difference between current and last value of PSXC  
+$\Delta t$ = time between samples (1/$f$ where $f$ is the sample
+frequency)  
+$F_{L}$ = low-pass Butterworth filter (cf.\ p.\ \pageref{compFilter}).  
+</p>
+
+<p class=box2>
+\ 1. From consecutive measurements of pressure, estimate the rate of climb
+from the hydrostatic equation:  
+\begin{equation}
+w_{p}=-\frac{R_{d}T_{k}}{gp}\frac{\Delta p}{\Delta t}
+(\#eq:wphe)  
+\end{equation}  
+\ 2. Add the current measurement of acceleration to the cumulative sum:
+\begin{equation}
+w_{p}^{*}\leftarrow w_{p}^{*}+a\Delta t
+(\#eq:wpstar)
+\end{equation}  
+\ 3. Define ROC as the sum of $w_{p}^{*}$ and the low-pass filtered value
+of ($w_{p}-w_{p}^{*}$):  
+\begin{align}
+\mathrm{ROC} & =w_{p}^{*}+F_{L}(w_{p}-w_{p}^{*})
+(\#eq:ROC)  
+\end{align}
+</p>
+  

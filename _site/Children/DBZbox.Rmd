@@ -1,0 +1,11 @@
+<p class=box>
+$d_{i}$ = diameter for channel $i$ of probe x  
+\{Cy$_{i}$\}, i1, and i2 as for mean diameter above  
+$Z_{r}$ \sindex[lis]{Zr@$Z_{r}$= scale factor for calculation of the radar reflectivity
+factor}= reference factor for units = 1\ mm$^{6}$m$^{-3}$  
+</p><p class=box2>
+\begin{equation}
+\mathrm{\{DBZx\}}=10\log_{10}\left({\textstyle \frac{1}{Z_{r}}\sum_{i=i1}^{i2}}{\displaystyle {\displaystyle \left\{ \mathrm{Cy}_{i}\right\} d_{i}^{6}}}\right)
+(\#eq:DBZbox)
+\end{equation}
+</p>  
