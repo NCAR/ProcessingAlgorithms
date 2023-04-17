@@ -18,6 +18,6 @@ When referencing this RAF Technical Note on processing algorithms, please use th
 
 ### Notes to maintainers
 
-The Rmd branch of this repository is used to generate the content at https://ncar.github.io/aircraft_ProcessingAlgorithms/index.html
+The master branch of this repository is used to generate the content at https://ncar.github.io/aircraft_ProcessingAlgorithms/index.html
 
 Each time this document is updated, the change log on the within the Preface should be updated with a description of the change. A static PDF should be generated to capture the previous version (before the change) so that citations can reference the version of the document that was used. 
