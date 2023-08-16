@@ -5,7 +5,7 @@
 <!-- <h2 id="condensation-nucleus-counters">Condensation Nucleus Counters</h2> -->
 ## Condensation Nucleus Counter {#condensation-nucleus-counter}
 
-<p>RAF uses two modified TSI, Inc. <a href="http://www.eol.ucar.edu/instruments/condensation-nucleus-counter-water-or-butanol">condensation nucleus counters</a> to measure the total concentration of ultrafine particles in the atmosphere, a 3760A using n-butyl alcohol and a water-based 3786 WCN (water condensation nucleus) counter. Both are sensitive to particles in the approximate diameter range from 0.010–3 <span lang="el">m</span>m.<br />
+<p>RAF uses two modified TSI, Inc. <a href="https://www.eol.ucar.edu/instruments/condensation-nucleus-counter-butanol">condensation nucleus counters</a> to measure the total concentration of ultrafine particles in the atmosphere, a 3760A using n-butyl alcohol and a water-based 3786 WCN (water condensation nucleus) counter. Both are sensitive to particles in the approximate diameter range from 0.010–3 <span lang="el">m</span>m.<br />
 </p>
 
 #### CN Counter Inlet Pressure (hPa): PCN {-#pcn}
@@ -76,7 +76,7 @@ The total particle counts in each sample interval for, respectively, the UHSAS a
 <!-- <h2 id="special-aerosol-measurements">Special Aerosol Measurements</h2> -->
 ## Special Aerosol Measurements {#special-aerosol}
 
-<p>Data from an aerosol mass spectrometer, a scanning mobility particle spectrometer, and a giant nucleus impactor are recorded by these instruments in separate data files and are not recorded by the aircraft data system. The <a name=anc_data>ancillary data sets</a> are not merged into the netCDF archives produced by EOL, so the special data files must be used for these measurements. The data formats are described with the instruments at the references given below:<br />
+<p>Data from an aerosol mass spectrometer, a scanning mobility particle spectrometer, and a giant nucleus impactor are recorded by these instruments in separate data files and are not recorded by the aircraft data system. The ancillary data sets are not merged into the netCDF archives produced by EOL, so the special data files must be used for these measurements. The data formats are described with the instruments at the references given below:<br />
 <br />
 
 * <strong>Aerosol Mass Spectrometer (AMS) data files</strong> contain size-segregated chemical composition of non-refractory, submicron aerosol particles. The instrument is described here: [AMS](https://www.eol.ucar.edu/instruments/time-flight-aerosol-mass-spectrometer).  

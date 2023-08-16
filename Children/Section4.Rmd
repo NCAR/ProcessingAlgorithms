@@ -2,7 +2,7 @@
 
 ## Information on Instruments and Calibrations
 
-The instruments used to collect the measurements that lead to the variables in this section are described on the EOL web site, in the “State Parameters” section at <a href="http://www.eol.ucar.edu/aircraft-instrumentation">this URL</a>. The data acquisition and processing for these variables and the calibration coefficients used where applicable are described.
+The instruments used to collect the measurements that lead to the variables in this section are described on the EOL web site, in the “State Parameters” section at <a href="https://www.eol.ucar.edu/research-facilities/airborne-instrumentation">this URL</a>. The data acquisition and processing for these variables and the calibration coefficients used where applicable are described.
  
 ## Variable Names
 
