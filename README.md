@@ -20,4 +20,8 @@ When referencing this RAF Technical Note on processing algorithms, please use th
 
 The master branch of this repository is used to generate the content at https://ncar.github.io/aircraft_ProcessingAlgorithms/index.html
 
+Changes to content should only be performed to the .Rmd files, which will be built to generate the HTML files. 
+
+Once code changes have been committed and pushed to this repo, the GitHub Pages site will udpate to reflect the updated content. 
+
 Each time this document is updated, the change log on the within the Preface should be updated with a description of the change. A static PDF should be generated to capture the previous version (before the change) so that citations can reference the version of the document that was used. 
